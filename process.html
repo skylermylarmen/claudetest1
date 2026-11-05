@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Process — Skyler Kapel</title>
+<meta name="description" content="Skyler Kapel — graphic & brand design, industrial / product design, and product visualization.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Process — Skyler Kapel">
+<meta property="og:description" content="Skyler Kapel — graphic & brand design, industrial / product design, and product visualization.">
+<meta property="og:url" content="https://studio-pi-eight-18.vercel.app/process.html">
+<meta property="og:image" content="https://studio-pi-eight-18.vercel.app/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="site.css">
+<style>
+    .sc-placeholder{background:color-mix(in srgb,currentColor 8%,transparent);
+      border:1px solid color-mix(in srgb,currentColor 50%,transparent);
+      border-radius:2px;box-sizing:border-box;overflow:hidden}
+    @keyframes sc-shine{0%{background-position:100% 50%}100%{background-position:0% 50%}}
+    html.sc-dc-streaming .sc-placeholder,
+    html.sc-dc-streaming .sc-interp.sc-missing{position:relative;
+      background:color-mix(in srgb,currentColor 5%,transparent);
+      border-color:transparent}
+    html.sc-dc-streaming .sc-placeholder::before,
+    html.sc-dc-streaming .sc-interp.sc-missing::before{content:'';
+      position:absolute;inset:0;pointer-events:none;
+      background:linear-gradient(90deg,rgba(217,119,87,0) 25%,rgba(247,225,211,.95) 37%,rgba(217,119,87,0) 63%);
+      background-size:400% 100%;animation:sc-shine 1.4s ease infinite}
+    html.sc-dc-streaming .sc-placeholder:nth-child(n+9 of .sc-placeholder)::before,
+    html.sc-dc-streaming .sc-interp.sc-missing:nth-child(n+9 of .sc-interp.sc-missing)::before{animation:none;
+      background:color-mix(in srgb,currentColor 8%,transparent)}
+    .sc-placeholder-error{padding:4px 8px;font:11px/1.4 ui-monospace,monospace;
+      color:color-mix(in srgb,currentColor 70%,transparent);word-break:break-word}
+    .sc-interp.sc-missing{display:inline-block;width:2em;height:1em;overflow:hidden;
+      vertical-align:text-bottom;background:rgba(255,255,255,.3);border:1px solid rgba(0,0,0,.5);
+      border-radius:2px;box-sizing:border-box;color:transparent;
+      user-select:none}
+    .sc-interp.sc-unresolved{font-family:ui-monospace,monospace;font-size:.85em;
+      color:color-mix(in srgb,currentColor 50%,transparent);
+      background:color-mix(in srgb,currentColor 10%,transparent);border-radius:3px;
+      padding:0 3px}
+    .sc-host.sc-has-error{position:relative}
+    .sc-logic-error{position:absolute;top:8px;left:8px;z-index:2147483647;max-width:60ch;
+      padding:6px 10px;background:#b00020;color:#fff;font:12px/1.4 ui-monospace,monospace;
+      border-radius:4px;white-space:pre-wrap;pointer-events:none}
+    /* Mirrors PRINT_BASELINE_CSS in apps/web deck-stage-export.ts — keep both
+       in sync until dc-runtime regains a build step. */
+    @media print {
+      @page { margin: 0.5cm; }
+      figure, table { break-inside: avoid; }
+      #dc-root, #dc-root > .sc-host { height: auto; }
+      *, *::before, *::after {
+        print-color-adjust: exact; -webkit-print-color-adjust: exact;
+        backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+        animation-delay: -99s !important; animation-duration: .001s !important;
+        animation-iteration-count: 1 !important; animation-fill-mode: both !important;
+        animation-play-state: running !important; transition-duration: 0s !important;
+      }
+    }
+  </style>
+
+
+<style>x-dc{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&amp;family=Yellowtail&amp;family=Archivo:wdth,wght@62..125,400..900&amp;family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=Familjen+Grotesk:wght@400..700&amp;family=Fraunces:ital,opsz,wght@1,9..144,400..700&amp;family=Instrument+Serif:ital@0;1&amp;family=Inter+Tight:wght@400..900&amp;family=Newsreader:ital,opsz,wght@1,6..72,400..600&amp;display=swap"><style>
+body{margin:0;background:#fff;font-family:'Stack Sans Headline',sans-serif}
+a{color:inherit}a:hover{color:#ED217C}
+.pg{background:#fff;color:#000}
+.bg-paper{background:#F3EFE6}
+.bg-black{background:#0c0c0c;color:#fff}
+.bg-black .logo{filter:invert(1)}
+.bg-dots{background-color:#fff;background-image:radial-gradient(rgba(0,0,0,.2) 1.3px,transparent 1.5px);background-size:22px 22px}
+.bg-lines{background-color:#fff;background-image:linear-gradient(rgba(0,0,0,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.07) 1px,transparent 1px);background-size:40px 40px}
+.h,.hn,.hp{font-family:'Stack Sans Headline',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:-0.035em;line-height:.95}
+.b{font-family:'Stack Sans Headline',sans-serif;font-weight:400}
+.s{font-family:'Yellowtail',cursive;font-style:normal;text-transform:none;letter-spacing:0}
+.f-familjen .h,.f-familjen .hn,.f-familjen .hp{font-family:'Familjen Grotesk',sans-serif;font-weight:700}
+.f-familjen .b{font-family:'Familjen Grotesk',sans-serif}
+.f-familjen .s{font-family:'Instrument Serif',serif;font-style:italic}
+.f-intertight .h,.f-intertight .hn,.f-intertight .hp{font-family:'Inter Tight',sans-serif;font-weight:800}
+.f-intertight .b{font-family:'Inter Tight',sans-serif}
+.f-intertight .s{font-family:'Newsreader',serif;font-style:italic}
+.f-archivo .h,.f-archivo .hn,.f-archivo .hp{font-family:'Archivo',sans-serif;font-weight:800;font-stretch:62.5%}
+.f-archivo .b{font-family:'Archivo',sans-serif}
+.f-archivo .s{font-family:'Instrument Serif',serif;font-style:italic}
+.f-bricolage .h,.f-bricolage .hn,.f-bricolage .hp{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-stretch:75%}
+.f-bricolage .b{font-family:'Bricolage Grotesque',sans-serif}
+.f-bricolage .s{font-family:'Fraunces',serif;font-style:italic}
+.lbl{text-transform:uppercase;letter-spacing:.14em}
+.nocaps-h .h{text-transform:none;letter-spacing:-0.02em}
+.nocaps-nav .hn{text-transform:none;letter-spacing:-0.02em}
+.nocaps-name .hp{text-transform:none;letter-spacing:-0.02em}
+.nocaps-lbl .lbl{text-transform:none;letter-spacing:.02em}
+.caps-body .b{text-transform:uppercase}
+.mut{opacity:.68}
+.nv{position:relative;display:block;overflow:hidden;text-decoration:none;color:inherit;line-height:.95}
+.nv-s{display:block;transition:opacity .2s}
+.nv-l{position:absolute;top:0;left:0;white-space:nowrap;opacity:0}
+.nv-l>span{display:inline-block;animation:nvLoop 2.4s linear infinite}
+.nv:hover .nv-s,.nv:focus-visible .nv-s{opacity:0}
+.nv:hover .nv-l,.nv:focus-visible .nv-l{opacity:1}
+.nv[aria-current="page"] .nv-s{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:4px}
+.c-pink{color:#ED217C}.c-teal{color:#13A89E}.c-orange{color:#F26A21}.c-indigo{color:#4E5EAB}
+.bg-black .c-indigo{color:#7D8AD0}
+@keyframes nvLoop{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.lt{position:fixed;right:24px;bottom:24px;z-index:50;display:block;text-decoration:none;border-radius:50%}
+.lt-spin{position:absolute;inset:0;animation:ltSpin 22s linear infinite}
+.lt-spin img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .7s,transform .9s cubic-bezier(.65,0,.35,1)}
+.lt-g{position:absolute;inset:9%;background-size:300% 300%;animation:ltShift 6s ease-in-out infinite,ltPulse 9s ease-in-out infinite;-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center}
+.lt-m1{-webkit-mask-image:url(img/v2/fc66362242a12b93240851f96cd6e0ce.webp);mask-image:url(img/v2/fc66362242a12b93240851f96cd6e0ce.webp)}
+.lt-m2{-webkit-mask-image:url(img/v2/462acafe037c55818aa9c6716b2143a3.webp);mask-image:url(img/v2/462acafe037c55818aa9c6716b2143a3.webp)}
+.lt-m3{-webkit-mask-image:url(img/v2/917b74be750651eafb6dc7d24ce35f58.webp);mask-image:url(img/v2/917b74be750651eafb6dc7d24ce35f58.webp)}
+.lt-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center;pointer-events:none;text-shadow:0 1px 8px rgba(0,0,0,.25)}
+.lt:hover .lt-g,.lt:focus-visible .lt-g{opacity:1!important}
+.lt:focus-visible{outline:3px solid #ED217C;outline-offset:4px}
+@keyframes ltSpin{to{transform:rotate(360deg)}}
+@keyframes ltShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes ltPulse{0%,55%{opacity:0}68%,88%{opacity:1}100%{opacity:0}}
+.wrap{width:100%;max-width:1200px;margin:0 auto;box-sizing:border-box;padding:32px 48px 160px;display:flex;flex-direction:column;gap:64px}
+.rule{border-top:1.5px solid currentColor}
+.fig{display:grid;gap:12px}
+.fig figure{position:relative;margin:0;overflow:hidden;background:rgba(128,128,128,.12)}
+.libp{display:flex;flex-direction:column;gap:12px;padding:16px;border-radius:16px;background:#111;color:#fff}
+.libp-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(76px,1fr));gap:6px}
+.libp figure{position:relative;margin:0;aspect-ratio:4/3;background:#222;overflow:hidden;border-radius:6px}
+.libp img{display:block;width:100%;height:100%;object-fit:cover}
+.libp .num{left:4px;top:4px;padding:3px 7px;font-size:11px}
+.num{position:absolute;left:8px;top:8px;z-index:2;padding:5px 10px;border-radius:999px;background:#ED217C;color:#fff;font-size:12px;font-weight:700;letter-spacing:.04em;pointer-events:none}
+.fig img{display:block;width:100%;height:100%}
+.blk{display:flex;flex-direction:column;gap:10px;width:100%;margin:0 auto}
+.pn{all:unset;box-sizing:border-box;cursor:pointer;width:48px;height:48px;border:1.5px solid currentColor;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;transition:background .2s,color .2s}
+.pn:hover,.pn:focus-visible{background:#ED217C;border-color:#ED217C;color:#fff}
+.hdr{display:flex;align-items:center;justify-content:space-between;padding:22px 48px}
+.ftr{display:flex;justify-content:space-between;gap:16px;padding:20px 48px;font-size:12px}
+@media (max-width:760px){.fig{grid-template-columns:minmax(0,1fr)!important}.hdr,.ftr{padding-left:20px!important;padding-right:20px!important}.wrap{padding-left:20px!important;padding-right:20px!important}.two{grid-template-columns:minmax(0,1fr)!important}}
+.lt-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}.lt-rot{transform-origin:0 0;animation:ltSpin 22s linear infinite}.lt-gfx{opacity:0;animation:ltPulse 9s ease-in-out infinite}.lt-off{display:none}.lt:hover .lt-gfx,.lt:focus-visible .lt-gfx{opacity:1!important}.lt:hover .lt-rot{animation-play-state:paused}.lt-circ{transform-origin:0 0;animation:ltSpin 18s linear infinite reverse}
+
+
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:56px;align-items:start}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;background:#000;color:#fff;text-decoration:none;font-size:14px;border:0;cursor:pointer;transition:background .2s}
+.btn:hover,.btn:focus-visible{background:#ED217C;color:#fff}
+.bg-black .btn{background:#fff;color:#000}
+.field{display:flex;flex-direction:column;gap:8px}
+.field input,.field textarea{font:inherit;font-size:17px;color:inherit;background:transparent;border:0;border-bottom:1.5px solid currentColor;padding:10px 0;outline:none;border-radius:0}
+.field input:focus,.field textarea:focus{border-bottom-color:#ED217C}
+.row-link{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:18px 0;border-bottom:1.5px solid currentColor;text-decoration:none;color:inherit}
+.row-link:hover{color:#ED217C}
+.role{display:flex;flex-direction:column;gap:10px;padding:22px 0;border-top:1.5px solid currentColor}
+.role ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px}
+.tile{position:relative;display:block;aspect-ratio:1/1;overflow:hidden;background:rgba(128,128,128,.12);color:#fff;text-decoration:none}
+.tile img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.tile:hover img{transform:scale(1.05)}
+.tile-cap{position:absolute;left:0;right:0;bottom:0;padding:10px 12px;background:#000;transform:translateY(101%);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.tile:hover .tile-cap,.tile:focus-visible .tile-cap{transform:none}
+.pidx a{text-decoration:none}
+.sticky{position:sticky;top:24px}
+
+.rv{opacity:0;transform:translateY(26px) scale(.98);transition:opacity .6s ease,transform .7s cubic-bezier(.34,1.56,.64,1)}
+.rv-in{opacity:1;transform:none}
+.step{display:grid;grid-template-columns:96px minmax(0,1fr) minmax(0,1.2fr);gap:28px;align-items:center;padding:26px 0;border-top:1.5px solid currentColor}
+.step-n{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
+.step:hover .step-n{transform:translateY(-6px) rotate(-8deg)}
+.pcard{display:flex;flex-direction:column;gap:16px;padding:28px;border-radius:22px;border:1.5px solid currentColor;transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
+.pcard:hover{transform:rotate(-1.5deg) translateY(-4px)}
+.pdot{width:18px;height:18px;border-radius:50%}
+.cta{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px;padding:40px 0;border-top:1.5px solid currentColor;border-bottom:1.5px solid currentColor;text-decoration:none;color:inherit}
+.cta:hover{color:#ED217C}
+.cta svg{transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
+.cta:hover svg{transform:translateX(10px)}
+@media (max-width:760px){.step{grid-template-columns:72px minmax(0,1fr)}.step p{grid-column:1 / -1}}
+</style></head>
+<body>
+<div id="dc-root"><div class="sc-host" data-sc-name="Process"><div class="pg f-original bg-white comp-stacked" style="min-height: 100vh; display: flex; flex-direction: column;"><header class="hdr"><a href="index.html" aria-label="Home" style="display: block; line-height: 0;"><img class="logo" src="img/v2/9d529029643a2387a5634c97af8e0ced.webp" alt="sk" style="height: 58px; width: auto; display: block;"></a><nav aria-label="Main" class="hn" style="display: flex; flex-direction: column; align-items: flex-end; font-size: 24px;"><a class="nv" href="process.html" aria-current="page"><span class="nv-s">Process</span><span class="nv-l c-orange" aria-hidden="true"><span>Process&nbsp;Process&nbsp;Process&nbsp;Process&nbsp;</span></span></a><a class="nv" href="contact.html"><span class="nv-s">Contact</span><span class="nv-l c-pink" aria-hidden="true"><span>Contact&nbsp;Contact&nbsp;Contact&nbsp;Contact&nbsp;</span></span></a><a class="nv" href="resume.html"><span class="nv-s">Resume</span><span class="nv-l c-teal" aria-hidden="true"><span>Resume&nbsp;Resume&nbsp;Resume&nbsp;Resume&nbsp;</span></span></a><a class="nv" href="portfolios.html"><span class="nv-s">Portfolios</span><span class="nv-l c-indigo" aria-hidden="true"><span>Portfolios&nbsp;Portfolios&nbsp;Portfolios&nbsp;Portfolios&nbsp;</span></span></a></nav></header><div aria-hidden="true" style="height: 34px; background-color: rgb(255, 255, 255); background-image: repeating-linear-gradient(45deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 8.5px, rgb(255, 255, 255) 8.5px, rgb(255, 255, 255) 17px); background-size: 24px 24px; background-position: 176px 0px;"></div><main class="wrap"><div style="display: flex; flex-direction: column; gap: 14px;"><span class="b lbl mut" style="font-size: 12px;">How I work</span><h1 class="h" style="margin: 0px; font-size: min(120px, 13vw);">Process</h1></div><section style="display: flex; flex-direction: column;"><div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding-bottom: 14px;"><h2 class="h" style="margin: 0px; font-size: 56px;">Workflow</h2><span class="b lbl mut" style="font-size: 12px;">Five steps</span></div><div class="step rv rv-in" style="transition-delay: 0ms;"><span class="step-n h" style="background: rgb(237, 33, 124); color: rgb(255, 255, 255);">01</span><h3 class="h" style="margin: 0px; font-size: 36px;">Pull references</h3><p class="b" style="margin: 0px; font-size: 17px; line-height: 1.55;">Gather what is working in the category and well outside it, so the direction is grounded before anything is drawn.</p></div><div class="step rv rv-in" style="transition-delay: 70ms;"><span class="step-n h" style="background: rgb(255, 242, 0); color: rgb(0, 0, 0);">02</span><h3 class="h" style="margin: 0px; font-size: 36px;">Decide on the vibe</h3><p class="b" style="margin: 0px; font-size: 17px; line-height: 1.55;">Set the tone, palette and type direction early, and keep it reserved.</p></div><div class="step rv rv-in" style="transition-delay: 140ms;"><span class="step-n h" style="background: rgb(19, 168, 158); color: rgb(255, 255, 255);">03</span><h3 class="h" style="margin: 0px; font-size: 36px;">Wireframe in Illustrator</h3><p class="b" style="margin: 0px; font-size: 17px; line-height: 1.55;">Lay out structure and hierarchy at full scale before any polish.</p></div><div class="step rv rv-in" style="transition-delay: 210ms;"><span class="step-n h" style="background: rgb(78, 94, 171); color: rgb(255, 255, 255);">04</span><h3 class="h" style="margin: 0px; font-size: 36px;">Compile the assets</h3><p class="b" style="margin: 0px; font-size: 17px; line-height: 1.55;">Organize every asset, font and image so production runs clean.</p></div><div class="step rv rv-in" style="transition-delay: 280ms;"><span class="step-n h" style="background: rgb(225, 228, 52); color: rgb(0, 0, 0);">05</span><h3 class="h" style="margin: 0px; font-size: 36px;">Simple story value</h3><p class="b" style="margin: 0px; font-size: 17px; line-height: 1.55;">Write a short story and the value it brings for each project, like a branding deck.</p></div></section><section style="display: flex; flex-direction: column; gap: 24px;"><div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px;"><h2 class="h" style="margin: 0px; font-size: 56px;">Why this layout</h2><span class="b lbl mut" style="font-size: 12px;">Principles</span></div><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px;"><article class="pcard rv rv-in" style="transition-delay: 0ms;"><span class="pdot" style="background: rgb(237, 33, 124);"></span><h3 class="h" style="margin: 0px; font-size: 40px;">Simplicity</h3><p class="b" style="margin: 0px; font-size: 17px; line-height: 1.55;">With access to every tool, the natural way to stand out is a reserved palette, used well. The people worth doing business with are smart; they don’t need things thrown in their face.</p></article><article class="pcard rv rv-in" style="transition-delay: 90ms;"><span class="pdot" style="background: rgb(19, 168, 158);"></span><h3 class="h" style="margin: 0px; font-size: 40px;">Storytelling</h3><p class="b" style="margin: 0px; font-size: 17px; line-height: 1.55;">Other brands may do similar things, but your identity is unique. What can you say about yourself without words?</p></article><article class="pcard rv rv-in" style="transition-delay: 180ms;"><span class="pdot" style="background: rgb(78, 94, 171);"></span><h3 class="h" style="margin: 0px; font-size: 40px;">Value</h3><p class="b" style="margin: 0px; font-size: 17px; line-height: 1.55;">Bad marketing assumes the customer is stupid. Good marketing communicates the value you bring to them.</p></article></div></section><a class="cta" href="contact.html"><span style="display: flex; flex-direction: column; gap: 10px;"><span class="b lbl mut" style="font-size: 12px;">Next step</span><span class="h" style="font-size: min(88px, 10vw);">Start a project</span></span><svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="M13 6l6 6-6 6"></path></svg></a></main><footer class="ftr b rule"><span class="mut">© 2026 Skyler Kapel</span><span class="mut">Brand · Packaging · Industrial · Visualization</span></footer><a class="lt" href="contact.html" aria-label="Let's talk" style="width: 150px; height: 150px;"><svg class="lt-svg" viewBox="-60 -60 120 120" aria-hidden="true"><defs><linearGradient id="ltgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2E3A8C"></stop><stop offset="0.5" stop-color="#7E8CD6"></stop><stop offset="1" stop-color="#C9CFF2"></stop><animateTransform attributeName="gradientTransform" type="rotate" from="0 0.5 0.5" to="360 0.5 0.5" dur="6s" repeatCount="indefinite"></animateTransform></linearGradient><pattern id="ltp-Checker" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="#fff"></rect><rect width="3" height="3" fill="#000"></rect><rect x="3" y="3" width="3" height="3" fill="#000"></rect></pattern><pattern id="ltp-Stripes" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="#fff"></rect><rect width="2.5" height="5" fill="#000"></rect></pattern><pattern id="ltp-Dots" width="5" height="5" patternUnits="userSpaceOnUse"><rect width="5" height="5" fill="#fff"></rect><circle cx="2.5" cy="2.5" r="1.3" fill="#000"></circle></pattern><pattern id="ltp-Grid" width="5" height="5" patternUnits="userSpaceOnUse"><rect width="5" height="5" fill="#fff"></rect><path d="M0.00 -50.00L1.74 -49.81L3.44 -49.26L5.09 -48.39L6.64 -47.28L8.11 -46.02L9.51 -44.72L10.84 -43.48L12.15 -42.37L13.48 -41.48L14.86 -40.84L16.34 -40.44L17.93 -40.27L19.64 -40.27L21.46 -40.37L23.36 -40.47L25.30 -40.49L27.21 -40.33L29.02 -39.95L30.68 -39.27L32.14 -38.30L33.35 -37.04L34.30 -35.52L35.00 -33.80L35.48 -31.94L35.80 -30.04L36.03 -28.15L36.25 -26.34L36.55 -24.65L36.99 -23.11L37.64 -21.73L38.51 -20.48L39.62 -19.32L40.93 -18.22L42.39 -17.13L43.91 -15.98L45.40 -14.75L46.77 -13.41L47.91 -11.94L48.75 -10.36L49.24 -8.68L49.35 -6.94L49.10 -5.16L48.53 -3.39L47.71 -1.67L46.73 0.00L45.69 1.60L44.70 3.13L43.84 4.61L43.19 6.07L42.80 7.55L42.66 9.07L42.77 10.66L43.07 12.35L43.48 14.13L43.91 15.98L44.26 17.88L44.45 19.79L44.38 21.64L44.01 23.40L43.30 25.00L42.27 26.41L40.93 27.61L39.36 28.60L37.62 29.39L35.80 30.04L33.98 30.59L32.23 31.13L30.62 31.71L29.19 32.41L27.93 33.29L26.85 34.37L25.91 35.66L25.06 37.15L24.23 38.77L23.36 40.47L22.41 42.15L21.33 43.73L20.08 45.11L18.67 46.21L17.10 46.98L15.40 47.40L13.61 47.46L11.77 47.21L9.93 46.70L8.11 46.02L6.36 45.27L4.68 44.56L3.08 43.98L1.52 43.59L0.00 43.46L-1.52 43.59L-3.08 43.98L-4.68 44.56L-6.36 45.27L-8.11 46.02L-9.93 46.70L-11.77 47.21L-13.61 47.46L-15.40 47.40L-17.10 46.98L-18.67 46.21L-20.08 45.11L-21.33 43.73L-22.41 42.15L-23.36 40.47L-24.23 38.77L-25.06 37.15L-25.91 35.66L-26.85 34.37L-27.93 33.29L-29.19 32.41L-30.62 31.71L-32.23 31.13L-33.98 30.59L-35.80 30.04L-37.62 29.39L-39.36 28.60L-40.93 27.61L-42.27 26.41L-43.30 25.00L-44.01 23.40L-44.38 21.64L-44.45 19.79L-44.26 17.88L-43.91 15.98L-43.48 14.13L-43.07 12.35L-42.77 10.66L-42.66 9.07L-42.80 7.55L-43.19 6.07L-43.84 4.61L-44.70 3.13L-45.69 1.60L-46.73 0.00L-47.71 -1.67L-48.53 -3.39L-49.10 -5.16L-49.35 -6.94L-49.24 -8.68L-48.75 -10.36L-47.91 -11.94L-46.77 -13.41L-45.40 -14.75L-43.91 -15.98L-42.39 -17.13L-40.93 -18.22L-39.62 -19.32L-38.51 -20.48L-37.64 -21.73L-36.99 -23.11L-36.55 -24.65L-36.25 -26.34L-36.03 -28.15L-35.80 -30.04L-35.48 -31.94L-35.00 -33.80L-34.30 -35.52L-33.35 -37.04L-32.14 -38.30L-30.68 -39.27L-29.02 -39.95L-27.21 -40.33L-25.30 -40.49L-23.36 -40.47L-21.46 -40.37L-19.64 -40.27L-17.93 -40.27L-16.34 -40.44L-14.86 -40.84L-13.48 -41.48L-12.15 -42.37L-10.84 -43.48L-9.51 -44.72L-8.11 -46.02L-6.64 -47.28L-5.09 -48.39L-3.44 -49.26L-1.74 -49.81Z" stroke="#000" stroke-width="0.8"></path></pattern><pattern id="ltp-Triangles" width="5" height="5" patternUnits="userSpaceOnUse"><rect width="5" height="5" fill="#fff"></rect><path d="M0.00 -50.00L1.74 -49.81L3.44 -49.26L5.09 -48.39L6.64 -47.28L8.11 -46.02L9.51 -44.72L10.84 -43.48L12.15 -42.37L13.48 -41.48L14.86 -40.84L16.34 -40.44L17.93 -40.27L19.64 -40.27L21.46 -40.37L23.36 -40.47L25.30 -40.49L27.21 -40.33L29.02 -39.95L30.68 -39.27L32.14 -38.30L33.35 -37.04L34.30 -35.52L35.00 -33.80L35.48 -31.94L35.80 -30.04L36.03 -28.15L36.25 -26.34L36.55 -24.65L36.99 -23.11L37.64 -21.73L38.51 -20.48L39.62 -19.32L40.93 -18.22L42.39 -17.13L43.91 -15.98L45.40 -14.75L46.77 -13.41L47.91 -11.94L48.75 -10.36L49.24 -8.68L49.35 -6.94L49.10 -5.16L48.53 -3.39L47.71 -1.67L46.73 0.00L45.69 1.60L44.70 3.13L43.84 4.61L43.19 6.07L42.80 7.55L42.66 9.07L42.77 10.66L43.07 12.35L43.48 14.13L43.91 15.98L44.26 17.88L44.45 19.79L44.38 21.64L44.01 23.40L43.30 25.00L42.27 26.41L40.93 27.61L39.36 28.60L37.62 29.39L35.80 30.04L33.98 30.59L32.23 31.13L30.62 31.71L29.19 32.41L27.93 33.29L26.85 34.37L25.91 35.66L25.06 37.15L24.23 38.77L23.36 40.47L22.41 42.15L21.33 43.73L20.08 45.11L18.67 46.21L17.10 46.98L15.40 47.40L13.61 47.46L11.77 47.21L9.93 46.70L8.11 46.02L6.36 45.27L4.68 44.56L3.08 43.98L1.52 43.59L0.00 43.46L-1.52 43.59L-3.08 43.98L-4.68 44.56L-6.36 45.27L-8.11 46.02L-9.93 46.70L-11.77 47.21L-13.61 47.46L-15.40 47.40L-17.10 46.98L-18.67 46.21L-20.08 45.11L-21.33 43.73L-22.41 42.15L-23.36 40.47L-24.23 38.77L-25.06 37.15L-25.91 35.66L-26.85 34.37L-27.93 33.29L-29.19 32.41L-30.62 31.71L-32.23 31.13L-33.98 30.59L-35.80 30.04L-37.62 29.39L-39.36 28.60L-40.93 27.61L-42.27 26.41L-43.30 25.00L-44.01 23.40L-44.38 21.64L-44.45 19.79L-44.26 17.88L-43.91 15.98L-43.48 14.13L-43.07 12.35L-42.77 10.66L-42.66 9.07L-42.80 7.55L-43.19 6.07L-43.84 4.61L-44.70 3.13L-45.69 1.60L-46.73 0.00L-47.71 -1.67L-48.53 -3.39L-49.10 -5.16L-49.35 -6.94L-49.24 -8.68L-48.75 -10.36L-47.91 -11.94L-46.77 -13.41L-45.40 -14.75L-43.91 -15.98L-42.39 -17.13L-40.93 -18.22L-39.62 -19.32L-38.51 -20.48L-37.64 -21.73L-36.99 -23.11L-36.55 -24.65L-36.25 -26.34L-36.03 -28.15L-35.80 -30.04L-35.48 -31.94L-35.00 -33.80L-34.30 -35.52L-33.35 -37.04L-32.14 -38.30L-30.68 -39.27L-29.02 -39.95L-27.21 -40.33L-25.30 -40.49L-23.36 -40.47L-21.46 -40.37L-19.64 -40.27L-17.93 -40.27L-16.34 -40.44L-14.86 -40.84L-13.48 -41.48L-12.15 -42.37L-10.84 -43.48L-9.51 -44.72L-8.11 -46.02L-6.64 -47.28L-5.09 -48.39L-3.44 -49.26L-1.74 -49.81Z" fill="#000"></path></pattern><path id="ltcirc" d="M0.00 -50.00L1.74 -49.81L3.44 -49.26L5.09 -48.39L6.64 -47.28L8.11 -46.02L9.51 -44.72L10.84 -43.48L12.15 -42.37L13.48 -41.48L14.86 -40.84L16.34 -40.44L17.93 -40.27L19.64 -40.27L21.46 -40.37L23.36 -40.47L25.30 -40.49L27.21 -40.33L29.02 -39.95L30.68 -39.27L32.14 -38.30L33.35 -37.04L34.30 -35.52L35.00 -33.80L35.48 -31.94L35.80 -30.04L36.03 -28.15L36.25 -26.34L36.55 -24.65L36.99 -23.11L37.64 -21.73L38.51 -20.48L39.62 -19.32L40.93 -18.22L42.39 -17.13L43.91 -15.98L45.40 -14.75L46.77 -13.41L47.91 -11.94L48.75 -10.36L49.24 -8.68L49.35 -6.94L49.10 -5.16L48.53 -3.39L47.71 -1.67L46.73 0.00L45.69 1.60L44.70 3.13L43.84 4.61L43.19 6.07L42.80 7.55L42.66 9.07L42.77 10.66L43.07 12.35L43.48 14.13L43.91 15.98L44.26 17.88L44.45 19.79L44.38 21.64L44.01 23.40L43.30 25.00L42.27 26.41L40.93 27.61L39.36 28.60L37.62 29.39L35.80 30.04L33.98 30.59L32.23 31.13L30.62 31.71L29.19 32.41L27.93 33.29L26.85 34.37L25.91 35.66L25.06 37.15L24.23 38.77L23.36 40.47L22.41 42.15L21.33 43.73L20.08 45.11L18.67 46.21L17.10 46.98L15.40 47.40L13.61 47.46L11.77 47.21L9.93 46.70L8.11 46.02L6.36 45.27L4.68 44.56L3.08 43.98L1.52 43.59L0.00 43.46L-1.52 43.59L-3.08 43.98L-4.68 44.56L-6.36 45.27L-8.11 46.02L-9.93 46.70L-11.77 47.21L-13.61 47.46L-15.40 47.40L-17.10 46.98L-18.67 46.21L-20.08 45.11L-21.33 43.73L-22.41 42.15L-23.36 40.47L-24.23 38.77L-25.06 37.15L-25.91 35.66L-26.85 34.37L-27.93 33.29L-29.19 32.41L-30.62 31.71L-32.23 31.13L-33.98 30.59L-35.80 30.04L-37.62 29.39L-39.36 28.60L-40.93 27.61L-42.27 26.41L-43.30 25.00L-44.01 23.40L-44.38 21.64L-44.45 19.79L-44.26 17.88L-43.91 15.98L-43.48 14.13L-43.07 12.35L-42.77 10.66L-42.66 9.07L-42.80 7.55L-43.19 6.07L-43.84 4.61L-44.70 3.13L-45.69 1.60L-46.73 0.00L-47.71 -1.67L-48.53 -3.39L-49.10 -5.16L-49.35 -6.94L-49.24 -8.68L-48.75 -10.36L-47.91 -11.94L-46.77 -13.41L-45.40 -14.75L-43.91 -15.98L-42.39 -17.13L-40.93 -18.22L-39.62 -19.32L-38.51 -20.48L-37.64 -21.73L-36.99 -23.11L-36.55 -24.65L-36.25 -26.34L-36.03 -28.15L-35.80 -30.04L-35.48 -31.94L-35.00 -33.80L-34.30 -35.52L-33.35 -37.04L-32.14 -38.30L-30.68 -39.27L-29.02 -39.95L-27.21 -40.33L-25.30 -40.49L-23.36 -40.47L-21.46 -40.37L-19.64 -40.27L-17.93 -40.27L-16.34 -40.44L-14.86 -40.84L-13.48 -41.48L-12.15 -42.37L-10.84 -43.48L-9.51 -44.72L-8.11 -46.02L-6.64 -47.28L-5.09 -48.39L-3.44 -49.26L-1.74 -49.81Z"></path></defs><g class="lt-rot" style="animation-duration: 10s;"><path d="M0.00 -50.00L1.74 -49.81L3.44 -49.26L5.09 -48.39L6.64 -47.28L8.11 -46.02L9.51 -44.72L10.84 -43.48L12.15 -42.37L13.48 -41.48L14.86 -40.84L16.34 -40.44L17.93 -40.27L19.64 -40.27L21.46 -40.37L23.36 -40.47L25.30 -40.49L27.21 -40.33L29.02 -39.95L30.68 -39.27L32.14 -38.30L33.35 -37.04L34.30 -35.52L35.00 -33.80L35.48 -31.94L35.80 -30.04L36.03 -28.15L36.25 -26.34L36.55 -24.65L36.99 -23.11L37.64 -21.73L38.51 -20.48L39.62 -19.32L40.93 -18.22L42.39 -17.13L43.91 -15.98L45.40 -14.75L46.77 -13.41L47.91 -11.94L48.75 -10.36L49.24 -8.68L49.35 -6.94L49.10 -5.16L48.53 -3.39L47.71 -1.67L46.73 0.00L45.69 1.60L44.70 3.13L43.84 4.61L43.19 6.07L42.80 7.55L42.66 9.07L42.77 10.66L43.07 12.35L43.48 14.13L43.91 15.98L44.26 17.88L44.45 19.79L44.38 21.64L44.01 23.40L43.30 25.00L42.27 26.41L40.93 27.61L39.36 28.60L37.62 29.39L35.80 30.04L33.98 30.59L32.23 31.13L30.62 31.71L29.19 32.41L27.93 33.29L26.85 34.37L25.91 35.66L25.06 37.15L24.23 38.77L23.36 40.47L22.41 42.15L21.33 43.73L20.08 45.11L18.67 46.21L17.10 46.98L15.40 47.40L13.61 47.46L11.77 47.21L9.93 46.70L8.11 46.02L6.36 45.27L4.68 44.56L3.08 43.98L1.52 43.59L0.00 43.46L-1.52 43.59L-3.08 43.98L-4.68 44.56L-6.36 45.27L-8.11 46.02L-9.93 46.70L-11.77 47.21L-13.61 47.46L-15.40 47.40L-17.10 46.98L-18.67 46.21L-20.08 45.11L-21.33 43.73L-22.41 42.15L-23.36 40.47L-24.23 38.77L-25.06 37.15L-25.91 35.66L-26.85 34.37L-27.93 33.29L-29.19 32.41L-30.62 31.71L-32.23 31.13L-33.98 30.59L-35.80 30.04L-37.62 29.39L-39.36 28.60L-40.93 27.61L-42.27 26.41L-43.30 25.00L-44.01 23.40L-44.38 21.64L-44.45 19.79L-44.26 17.88L-43.91 15.98L-43.48 14.13L-43.07 12.35L-42.77 10.66L-42.66 9.07L-42.80 7.55L-43.19 6.07L-43.84 4.61L-44.70 3.13L-45.69 1.60L-46.73 0.00L-47.71 -1.67L-48.53 -3.39L-49.10 -5.16L-49.35 -6.94L-49.24 -8.68L-48.75 -10.36L-47.91 -11.94L-46.77 -13.41L-45.40 -14.75L-43.91 -15.98L-42.39 -17.13L-40.93 -18.22L-39.62 -19.32L-38.51 -20.48L-37.64 -21.73L-36.99 -23.11L-36.55 -24.65L-36.25 -26.34L-36.03 -28.15L-35.80 -30.04L-35.48 -31.94L-35.00 -33.80L-34.30 -35.52L-33.35 -37.04L-32.14 -38.30L-30.68 -39.27L-29.02 -39.95L-27.21 -40.33L-25.30 -40.49L-23.36 -40.47L-21.46 -40.37L-19.64 -40.27L-17.93 -40.27L-16.34 -40.44L-14.86 -40.84L-13.48 -41.48L-12.15 -42.37L-10.84 -43.48L-9.51 -44.72L-8.11 -46.02L-6.64 -47.28L-5.09 -48.39L-3.44 -49.26L-1.74 -49.81Z" fill="#4E5EAB" stroke="none" stroke-width="0" stroke-linejoin="round"></path><path class="lt-gfx" d="M0.00 -50.00L1.74 -49.81L3.44 -49.26L5.09 -48.39L6.64 -47.28L8.11 -46.02L9.51 -44.72L10.84 -43.48L12.15 -42.37L13.48 -41.48L14.86 -40.84L16.34 -40.44L17.93 -40.27L19.64 -40.27L21.46 -40.37L23.36 -40.47L25.30 -40.49L27.21 -40.33L29.02 -39.95L30.68 -39.27L32.14 -38.30L33.35 -37.04L34.30 -35.52L35.00 -33.80L35.48 -31.94L35.80 -30.04L36.03 -28.15L36.25 -26.34L36.55 -24.65L36.99 -23.11L37.64 -21.73L38.51 -20.48L39.62 -19.32L40.93 -18.22L42.39 -17.13L43.91 -15.98L45.40 -14.75L46.77 -13.41L47.91 -11.94L48.75 -10.36L49.24 -8.68L49.35 -6.94L49.10 -5.16L48.53 -3.39L47.71 -1.67L46.73 0.00L45.69 1.60L44.70 3.13L43.84 4.61L43.19 6.07L42.80 7.55L42.66 9.07L42.77 10.66L43.07 12.35L43.48 14.13L43.91 15.98L44.26 17.88L44.45 19.79L44.38 21.64L44.01 23.40L43.30 25.00L42.27 26.41L40.93 27.61L39.36 28.60L37.62 29.39L35.80 30.04L33.98 30.59L32.23 31.13L30.62 31.71L29.19 32.41L27.93 33.29L26.85 34.37L25.91 35.66L25.06 37.15L24.23 38.77L23.36 40.47L22.41 42.15L21.33 43.73L20.08 45.11L18.67 46.21L17.10 46.98L15.40 47.40L13.61 47.46L11.77 47.21L9.93 46.70L8.11 46.02L6.36 45.27L4.68 44.56L3.08 43.98L1.52 43.59L0.00 43.46L-1.52 43.59L-3.08 43.98L-4.68 44.56L-6.36 45.27L-8.11 46.02L-9.93 46.70L-11.77 47.21L-13.61 47.46L-15.40 47.40L-17.10 46.98L-18.67 46.21L-20.08 45.11L-21.33 43.73L-22.41 42.15L-23.36 40.47L-24.23 38.77L-25.06 37.15L-25.91 35.66L-26.85 34.37L-27.93 33.29L-29.19 32.41L-30.62 31.71L-32.23 31.13L-33.98 30.59L-35.80 30.04L-37.62 29.39L-39.36 28.60L-40.93 27.61L-42.27 26.41L-43.30 25.00L-44.01 23.40L-44.38 21.64L-44.45 19.79L-44.26 17.88L-43.91 15.98L-43.48 14.13L-43.07 12.35L-42.77 10.66L-42.66 9.07L-42.80 7.55L-43.19 6.07L-43.84 4.61L-44.70 3.13L-45.69 1.60L-46.73 0.00L-47.71 -1.67L-48.53 -3.39L-49.10 -5.16L-49.35 -6.94L-49.24 -8.68L-48.75 -10.36L-47.91 -11.94L-46.77 -13.41L-45.40 -14.75L-43.91 -15.98L-42.39 -17.13L-40.93 -18.22L-39.62 -19.32L-38.51 -20.48L-37.64 -21.73L-36.99 -23.11L-36.55 -24.65L-36.25 -26.34L-36.03 -28.15L-35.80 -30.04L-35.48 -31.94L-35.00 -33.80L-34.30 -35.52L-33.35 -37.04L-32.14 -38.30L-30.68 -39.27L-29.02 -39.95L-27.21 -40.33L-25.30 -40.49L-23.36 -40.47L-21.46 -40.37L-19.64 -40.27L-17.93 -40.27L-16.34 -40.44L-14.86 -40.84L-13.48 -41.48L-12.15 -42.37L-10.84 -43.48L-9.51 -44.72L-8.11 -46.02L-6.64 -47.28L-5.09 -48.39L-3.44 -49.26L-1.74 -49.81Z" fill="url(#ltgrad)" transform="scale(0.9)" style="animation-duration: 9s;"></path></g></svg><span class="lt-label h" style="font-size: 19px; line-height: 1;">Let's<br>talk</span></a></div></div></div>
+
+
+
+<script src="site.js" defer></script>
+</body></html>

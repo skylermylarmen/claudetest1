@@ -1,0 +1,24 @@
+/* Shared extras for every page. Page-specific styles live inside each page. */
+[hidden] { display: none !important; }
+
+/* Soft fade-in when a page loads */
+@keyframes pageIn { from { opacity: 0; } to { opacity: 1; } }
+body { animation: pageIn .6s ease both; }
+
+/* Project switcher menu (project pages) */
+.menu[data-switch] { position: absolute; top: 100%; left: 0; z-index: 40; margin-top: 8px; }
+
+/* Gentle 3D tilt on gallery cards (set by site.js) */
+.card .card-img, .tile { transition: transform .45s cubic-bezier(.2, .7, .2, 1); transform-style: preserve-3d; will-change: transform; }
+
+/* Respect people who turn motion off */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+  .rv { opacity: 1 !important; transform: none !important; }
+}
+
+/* Phones: keep giant headings from pushing the page sideways */
+@media (max-width: 600px) {
+  h1, h2, h3 { overflow-wrap: break-word; }
+}
+html, body { overflow-x: clip; }
