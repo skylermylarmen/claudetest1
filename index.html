@@ -1,137 +1,157 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Studio — Sales Page v1</title>
+<title>Skyler — Design</title>
 <style>
-:root{--bg:#f4f1ea;--ink:#141414;--card:#e6e1d6;--accent:hsl(265 80% 60%);--radius:24px;--glow:60vmin;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root{--bg:#121212;--ink:#f2efe8;--card:#242424}}
+@font-face{font-family:Stack;src:url(fonts/StackSansHeadline-Regular.ttf);font-weight:400;font-display:swap}
+@font-face{font-family:Stack;src:url(fonts/StackSansHeadline-Bold.ttf);font-weight:700;font-display:swap}
+@font-face{font-family:Yellowtail;src:url(fonts/Yellowtail-Regular.ttf);font-display:swap}
+:root{--bg:#000;--bar:#fff;--ink:#fff;--bar-ink:#000;--accent:#ee2a7b;--radius:8px;--glow:60vmin;--gap:12px;box-sizing:border-box}
 *{box-sizing:border-box;margin:0}
-body{background:var(--bg);color:var(--ink);font-family:"Helvetica Neue",Arial,sans-serif;min-height:100vh;overflow-x:hidden}
-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 5vw;border-bottom:2px solid var(--ink);position:sticky;top:0;background:var(--bg);z-index:5}
-.logo{font-weight:800;letter-spacing:-.03em;font-size:1.3rem}
-nav ul{display:flex;gap:clamp(14px,3vw,40px);list-style:none;padding:0}
-nav a{color:var(--ink);text-decoration:none;font-weight:700;text-transform:uppercase;font-size:.9rem;display:block;height:1.2em;line-height:1.2;overflow:hidden}
-nav a span{display:block;transition:transform .5s cubic-bezier(.7,0,.2,1)}
-nav a span+span{color:var(--accent)}
-nav a:hover span{transform:translateY(-100%)}
-main section{display:none;padding:6vh 5vw}
+body{background:var(--bg);color:var(--ink);font-family:Stack,"Helvetica Neue",Arial,sans-serif;min-height:100vh;overflow-x:hidden}
+header{background:var(--bar);color:var(--bar-ink);display:flex;justify-content:space-between;align-items:flex-start;padding:calc(18px + env(safe-area-inset-top,0px)) 6vw 18px;position:sticky;top:0;z-index:5}
+.logo{font:700 clamp(2.4rem,6vw,4.4rem)/1 Stack;letter-spacing:-.06em;color:var(--bar-ink);text-decoration:none}
+nav{display:flex;flex-direction:column;align-items:flex-end}
+nav a{--c:#000;display:block;overflow:hidden;white-space:nowrap;color:var(--bar-ink);text-decoration:none;font-weight:700;text-transform:uppercase;letter-spacing:-.05em;font-size:clamp(1.3rem,4.4vw,3.2rem);line-height:.92}
+nav a i{display:flex;gap:.5em;font-style:normal;transition:transform .9s cubic-bezier(.65,0,.25,1)}
+nav a i b{font-weight:inherit;transition:color .7s ease}
+nav a:hover i{transform:translateX(calc(-100% - .5em))}
+nav a:hover i b{color:var(--c)}
+main section{display:none;padding:5vh 6vw 12vh}
 main section.on{display:block}
-.hero{min-height:56vh;display:flex;flex-direction:column;justify-content:center;gap:24px;max-width:900px}
-.hero h1{font-size:clamp(2.6rem,9vw,7rem);line-height:.95;letter-spacing:-.04em}
-.hero h1 em{font-style:normal;color:var(--accent)}
-.hero p{font-size:1.15rem;max-width:520px;line-height:1.5}
-.btn{align-self:flex-start;border:2px solid var(--ink);background:none;color:var(--ink);font:700 1rem inherit;font-family:inherit;padding:14px 22px;border-radius:999px;cursor:pointer;display:flex;gap:12px;align-items:center;transition:background .4s,color .4s}
-.btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
-.arrow{display:inline-block;font-size:1.4rem;transform-style:preserve-3d}
-.gh{display:flex;justify-content:space-between;align-items:center;margin:8vh 0 20px}
-.gh h2{font-size:1.6rem;letter-spacing:-.02em}
-#spin{width:90px;height:90px;overflow:visible}
-#spin polygon{fill:var(--accent);transition:fill .4s}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px}
-.tile{aspect-ratio:4/5;border-radius:var(--radius);background:var(--card);cursor:pointer;display:grid;place-items:center;font-weight:700;opacity:.95}
-.ov{position:fixed;inset:0;display:none;place-items:center;z-index:20;background:color-mix(in srgb,var(--bg) 70%,transparent);backdrop-filter:blur(6px)}
-.ov.on{display:grid}
-.blob{position:absolute;width:var(--glow);height:var(--glow);background:radial-gradient(circle,var(--accent),transparent 68%);filter:blur(40px);opacity:.7;animation:morph 6s ease-in-out infinite alternate;border-radius:50%}
-@keyframes morph{to{border-radius:38% 62% 55% 45%/55% 40% 60% 45%;transform:rotate(40deg) scale(1.1)}}
-.big,.sat{position:absolute;border-radius:var(--radius);background:var(--card);display:grid;place-items:center;font-weight:700;border:2px solid var(--ink)}
-.big{width:min(46vmin,320px);aspect-ratio:4/5}
-.sat{width:min(16vmin,110px);aspect-ratio:1}
-#tw{position:fixed;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:30;background:var(--bg);border:2px solid var(--ink);border-radius:14px;padding:10px 14px;font-size:.8rem;max-width:260px}
+.hero{max-width:1000px;display:flex;flex-direction:column;gap:18px;padding:4vh 0}
+.hey{font:clamp(1.1rem,2.2vw,1.6rem) Yellowtail}
+.hero h1{font-size:clamp(1.8rem,5.6vw,4.4rem);line-height:1;letter-spacing:-.05em;text-transform:uppercase;display:flex;flex-wrap:wrap;gap:.35em;align-items:center}
+.btn{background:var(--accent);border:0;border-radius:var(--radius);width:clamp(80px,10vw,130px);height:clamp(36px,4.6vw,58px);cursor:pointer;display:grid;place-items:center;color:#000;transition:filter .6s ease,transform .6s ease}
+.btn:hover{filter:brightness(1.12);transform:scale(1.03)}
+.arrow{display:block;font-size:clamp(1.6rem,3vw,2.6rem);line-height:1;font-weight:700}
+.hero p{font-size:clamp(1rem,2vw,1.5rem);max-width:760px;line-height:1.15;letter-spacing:-.02em;padding-right:min(18vw,170px)}
+.hero{position:relative}
+#spin{position:absolute;right:0;bottom:0;width:clamp(90px,14vw,160px);height:clamp(90px,14vw,160px);overflow:visible;pointer-events:none}
+#spin path{fill:var(--accent)}
+.rows{display:flex;flex-direction:column;gap:var(--gap)}
+.row{display:flex;gap:var(--gap)}
+.r1{height:clamp(130px,21vw,290px)}.r2{height:clamp(190px,31vw,440px)}
+.tile{flex:var(--f) 1 0;min-width:0;border-radius:var(--radius);overflow:hidden;cursor:pointer;background:#111}
+.tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s ease,filter .8s ease;filter:brightness(.92)}
+.tile:hover img{transform:scale(1.04);filter:brightness(1.05)}
+@media(max-width:640px){.row{flex-wrap:wrap;height:auto!important}.tile{flex:1 1 45%;aspect-ratio:1}}
+.ov{position:fixed;inset:0;display:none;z-index:20;background:rgba(0,0,0,.72);backdrop-filter:blur(8px)}
+.ov.on{display:block}
+.blob,.big,.sat{position:absolute;left:50%;top:50%}
+.blob{width:var(--glow);height:var(--glow);background:radial-gradient(circle,var(--accent),transparent 68%);filter:blur(45px);animation:morph 7s ease-in-out infinite alternate;border-radius:50%}
+@keyframes morph{to{border-radius:38% 62% 55% 45%/55% 40% 60% 45%;rotate:40deg}}
+.big{max-width:min(78vw,640px);max-height:64vh;border-radius:var(--radius);box-shadow:0 20px 80px rgba(0,0,0,.5)}
+.sat{width:min(17vmin,120px);aspect-ratio:1;object-fit:cover;border-radius:var(--radius);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25)}
+#tw{position:fixed;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:30;background:#fff;color:#000;border-radius:12px;padding:10px 14px;font:.78rem Helvetica,Arial,sans-serif;max-width:250px}
 #tw summary{cursor:pointer;font-weight:700}
 #tw label{display:grid;grid-template-columns:1fr 90px;gap:8px;margin-top:8px;align-items:center}
 #tw select,#tw button{font:inherit;margin-top:8px}
 </style></head><body>
-<nav><div class="logo">STUDIO</div>
-<ul id="links"></ul></nav>
+<header><a class="logo" href="#home">sk</a><nav id="nav"></nav></header>
 <main>
 <section id="home" class="on">
- <div class="hero"><h1 id="ht"></h1><p id="hp"></p>
- <button class="btn" id="hb"><span id="hbt"></span><span class="arrow" id="ar">→</span></button></div>
- <div class="gh"><h2>Selected work</h2>
- <svg id="spin" viewBox="-60 -60 120 120"><polygon id="poly"/></svg></div>
- <div class="grid" id="grid"></div>
+ <div class="hero"><div class="hey">Hey! Welcome to my site. I’m Skyler and I specialize in:</div>
+ <h1><span id="ht"></span><button class="btn" id="hb" aria-label="Next specialty"><span class="arrow" id="ar">→</span></button></h1>
+ <p id="hp"></p><svg id="spin" viewBox="-60 -60 120 120"><path id="blob"/></svg></div>
+ <div class="rows"><div class="row r1" id="r1"></div><div class="row r2" id="r2"></div></div>
 </section>
-<section id="work"><h1>Work</h1></section>
-<section id="about"><h1>About</h1></section>
-<section id="services"><h1>Services</h1></section>
 <section id="contact"><h1>Contact</h1></section>
+<section id="resume"><h1>Resume</h1></section>
+<section id="portfolios"><h1>Portfolios</h1></section>
 </main>
 <div class="ov" id="ov"><div class="blob"></div></div>
 <details id="tw"><summary>Tweaks</summary>
-<label>Roundness <input type="range" id="c_r" min="0" max="60" value="24"></label>
+<label>Roundness <input type="range" id="c_r" min="0" max="60" value="8"></label>
 <label>Glow size <input type="range" id="c_g" min="30" max="90" value="60"></label>
-<label>Accent hue <input type="range" id="c_h" min="0" max="360" value="265"></label>
-<label>Color drift <input type="range" id="c_d" min="0" max="120" value="30"></label>
-<label>Drift speed <input type="range" id="c_s" min="2" max="30" value="12"></label>
-<label>Tile stagger <input type="range" id="c_t" min="0" max="20" value="8"></label>
-<select id="c_st"><option value="0">Graphic</option><option value="1">Product</option><option value="2">Industrial</option></select>
+<label>Color shift <input type="range" id="c_h" min="0" max="360" value="0"></label>
+<label>Color drift <input type="range" id="c_d" min="0" max="60" value="12"></label>
+<label>Drift speed <input type="range" id="c_s" min="4" max="40" value="14"></label>
+<label>Tile stagger <input type="range" id="c_t" min="0" max="25" value="9"></label>
+<select id="c_st"></select>
 <button id="replay">Replay gallery intro</button></details>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script>
 // ===== CONFIG: edit these to change the site =====
+const I="img/";
 const CONFIG={
- pages:["home","work","about","services","contact"],
+ pages:[["contact","#ee2a7b"],["resume","#14a89c"],["portfolios","#5260ae"]],
  states:[
-  {t:"Graphic <em>design</em>",p:"Identity, type and illustration with a goofy but restrained edge.",b:"See graphic work"},
-  {t:"Product <em>design</em>",p:"Objects that feel considered, from sketch to shelf.",b:"See product work"},
-  {t:"Industrial <em>design</em>",p:"Form, function and manufacturing, kept simple.",b:"See industrial work"}],
- tiles:6, hue:265, drift:30, driftSpeed:12, stagger:.08, spinEvery:2.2
+  {name:"Graphic",t:"Graphic & Brand Design",c:"#ee2a7b",p:"Graphics articulate a brand’s values and define how it communicates with customers to convey its story."},
+  {name:"Product",t:"Product Design",c:"#14a89c",p:"Packaging and objects that feel considered, from first sketch to the shelf."},
+  {name:"Industrial",t:"Industrial Design",c:"#5260ae",p:"Form, function and manufacturing, kept simple and made to be built."}],
+ // row 1 and row 2 tiles: f = relative width, set = images shown when the tile opens (blank slots if fewer)
+ tiles:[
+  [{img:"mtrx-mtrx-deck-recovered-03-alt.webp",f:1,set:["mtrx-mtrx-deck-recovered-04.webp","mtrx-mtrx-deck-recovered-05.webp"]},
+   {img:"xomox-gradient-abstract-shot.webp",f:.75,set:["xomox-green-texture.webp"]},
+   {img:"farrah-moan-farrah-moan-main-logo.webp",f:1,set:[]},
+   {img:"reverra-reverra-concepts-deck-06.webp",f:1.9,set:["reverra-reverra-detox-lemon.webp","reverra-reverra-performance-berry.webp","reverra-reverra-recovery-mouth-vitality-copy-5.webp","reverra-reverra-vitality-citrus-copy.webp"]}],
+  [{img:"amazing-botanicals-grass-shot.webp",f:1,set:[]},
+   {img:"3x-zlushy-hand-3x.webp",f:1,set:[]},
+   {img:"xomox-green-texture.webp",f:1,set:[]},
+   {img:"face-allies-face-allies-main-logo-render.webp",f:1,set:[]}]],
+ stagger:.09, spinEvery:3.2
 };
-const $=s=>document.querySelector(s), root=document.documentElement;
+const $=s=>document.querySelector(s),root=document.documentElement;
 // nav
-$("#links").innerHTML=CONFIG.pages.map(p=>`<li><a href="#${p}"><span>${p}</span><span>${p}</span></a></li>`).join("");
-// pages (hash routing)
-function route(){const h=location.hash.slice(1)||"home";document.querySelectorAll("main section").forEach(s=>s.classList.toggle("on",s.id===h));scrollTo(0,0)}
-addEventListener("hashchange",route);route();
+$("#nav").innerHTML=CONFIG.pages.map(([p,c])=>`<a href="#${p}" style="--c:${c}"><i><b>${p}</b><b>${p}</b></i></a>`).join("");
+function route(){const h=location.hash.slice(1)||"home";document.querySelectorAll("main section").forEach(s=>s.classList.toggle("on",s.id===h));scrollTo(0,0);gsap.fromTo("main",{opacity:0,y:12},{opacity:1,y:0,duration:.7,ease:"power2.out"})}
+addEventListener("hashchange",route);
+// color (smooth tweens everywhere)
+const C={h:0,s:0,l:0},D={v:0};let shift=0;
+function hex2hsl(x){let r=parseInt(x.slice(1,3),16)/255,g=parseInt(x.slice(3,5),16)/255,b=parseInt(x.slice(5,7),16)/255;const M=Math.max(r,g,b),m=Math.min(r,g,b),l=(M+m)/2;let h=0,s=0;if(M!=m){const d=M-m;s=l>.5?d/(2-M-m):d/(M+m);h=M==r?(g-b)/d+(g<b?6:0):M==g?(b-r)/d+2:(r-g)/d+4;h*=60}return{h,s:s*100,l:l*100}}
+function paint(){root.style.setProperty("--accent",`hsl(${C.h+D.v+shift} ${C.s}% ${C.l}%)`)}
+function setColor(hex,dur){const t=hex2hsl(hex);let dh=t.h-C.h;if(dh>180)t.h-=360;if(dh<-180)t.h+=360;gsap.to(C,{...t,duration:dur,ease:"sine.inOut",onUpdate:paint})}
+Object.assign(C,hex2hsl(CONFIG.states[0].c));paint();
+let drift;const startDrift=(amt=+$("#c_d").value,sp=+$("#c_s").value)=>{drift&&drift.kill();D.v=0;drift=gsap.to(D,{v:amt,duration:sp,ease:"sine.inOut",yoyo:true,repeat:-1,onUpdate:paint})};
+startDrift();
 // header states
-let st=0;
-function setText(i){const s=CONFIG.states[i];$("#ht").innerHTML=s.t;$("#hp").textContent=s.p;$("#hbt").textContent=s.b}
-function goState(i,flip=true){
- const tl=gsap.timeline();
- if(flip)tl.to("#ar",{rotationX:"+=360",duration:.7,ease:"power2.inOut",transformPerspective:300},0);
- tl.to(["#ht","#hp","#hb"],{y:-20,opacity:0,duration:.25,stagger:.05},0)
-  .add(()=>{st=i;setText(i);$("#c_st").value=i})
-  .fromTo(["#ht","#hp","#hb"],{y:20,opacity:0},{y:0,opacity:1,duration:.45,stagger:.08,ease:"back.out(1.6)"});
-}
+let st=0;const els=["#ht","#hp"];
+$("#c_st").innerHTML=CONFIG.states.map((s,i)=>`<option value="${i}">${s.name}</option>`).join("");
+function setText(i){$("#ht").textContent=CONFIG.states[i].t;$("#hp").textContent=CONFIG.states[i].p}
 setText(0);
+function goState(i,flip=true){
+ setColor(CONFIG.states[i].c,1.1);
+ const tl=gsap.timeline();
+ if(flip)tl.to("#ar",{rotationX:"+=360",duration:1,ease:"power2.inOut",transformPerspective:400},0);
+ tl.to(els,{y:-10,opacity:0,duration:.45,stagger:.06,ease:"sine.in"},0)
+  .add(()=>{st=i;setText(i);$("#c_st").value=i})
+  .fromTo(els,{y:14,opacity:0},{y:0,opacity:1,duration:.8,stagger:.1,ease:"sine.out"});
+}
 $("#hb").onclick=()=>goState((st+1)%CONFIG.states.length);
 $("#c_st").onchange=e=>goState(+e.target.value,false);
 // gallery
-$("#grid").innerHTML=Array.from({length:CONFIG.tiles},(_,i)=>`<div class="tile" data-i="${i}" style="background:hsl(${(i*40+30)} 30% 70%/.5)">Project ${i+1}</div>`).join("");
-const intro=()=>gsap.fromTo(".tile",{y:60,opacity:0},{y:0,opacity:.95,duration:.7,stagger:CONFIG.stagger,ease:"back.out(1.4)"});
+const all=[];
+CONFIG.tiles.forEach((row,r)=>{$("#r"+(r+1)).innerHTML=row.map(t=>{all.push(t);return`<div class="tile" style="--f:${t.f}" data-i="${all.length-1}"><img src="${I+t.img}" alt="" loading="lazy"></div>`}).join("")});
+const intro=()=>gsap.fromTo(".tile",{y:30,opacity:0,scale:.96},{y:0,opacity:1,scale:1,duration:1.1,stagger:CONFIG.stagger,ease:"sine.out"});
 intro();$("#replay").onclick=intro;
 const ov=$("#ov");let items=[];
 function openTile(i){
- ov.classList.add("on");
- items.forEach(e=>e.remove());items=[];
- const big=document.createElement("div");big.className="big";big.textContent="Project "+(+i+1);
- ov.append(big);items.push(big);
- const n=5,r=Math.min(innerWidth,innerHeight)*.34;
- for(let k=0;k<n;k++){const s=document.createElement("div");s.className="sat";s.textContent="+";ov.append(s);items.push(s);
+ const t=all[i];items.forEach(e=>e.remove());items=[];
+ ov.classList.add("on");gsap.set(ov,{opacity:0});gsap.to(ov,{opacity:1,duration:.5,ease:"sine.out"});
+ const big=new Image();big.src=I+t.img;big.className="big";ov.append(big);items.push(big);
+ gsap.set(".blob",{xPercent:-50,yPercent:-50});
+ gsap.fromTo(".blob",{scale:.3,opacity:0},{scale:1,opacity:.75,duration:1.4,ease:"sine.out"});
+ gsap.fromTo(big,{xPercent:-50,yPercent:-50,scale:.85,opacity:0},{scale:1,opacity:1,duration:.9,ease:"sine.out"});
+ const n=5,rx=Math.min(innerWidth*.4,420),ry=Math.min(innerHeight*.36,300);
+ for(let k=0;k<n;k++){const src=t.set[k];const s=src?new Image():document.createElement("div");if(src)s.src=I+src;s.className="sat";ov.append(s);items.push(s);
   const a=(k/n)*Math.PI*2-Math.PI/2;
-  gsap.fromTo(s,{x:0,y:0,scale:0,opacity:0},{x:Math.cos(a)*r*1.25,y:Math.sin(a)*r*1.1,scale:1,opacity:1,duration:.8,delay:.15+k*.07,ease:"back.out(2)"});}
- gsap.fromTo(big,{scale:.6,opacity:0},{scale:1,opacity:1,duration:.5,ease:"back.out(1.5)"});
- gsap.fromTo(".blob",{scale:.2,opacity:0},{scale:1,opacity:.7,duration:.9,ease:"power3.out"});
+  gsap.fromTo(s,{xPercent:-50,yPercent:-50,x:0,y:0,scale:.2,opacity:0},{x:Math.cos(a)*rx,y:Math.sin(a)*ry,scale:1,opacity:1,duration:1.3,delay:.2+k*.09,ease:"power3.out"});}
 }
-function closeOv(){gsap.to(ov,{opacity:0,duration:.25,onComplete:()=>{ov.classList.remove("on");gsap.set(ov,{opacity:1})}})}
-$("#grid").onclick=e=>{const t=e.target.closest(".tile");if(t)openTile(t.dataset.i)};
+function closeOv(){if(!ov.classList.contains("on"))return;gsap.to(ov,{opacity:0,duration:.5,ease:"sine.in",onComplete:()=>ov.classList.remove("on")})}
+document.addEventListener("click",e=>{const t=e.target.closest(".tile");if(t)openTile(t.dataset.i)});
 ov.onclick=closeOv;addEventListener("keydown",e=>e.key==="Escape"&&closeOv());
-// spinner from primitives
-const P={t:0,rot:0,n:8};
-function draw(){const pts=[];for(let i=0;i<P.n*2;i++){const r=i%2?50*(1-.55*P.t):50;const a=(i/(P.n*2))*Math.PI*2+P.rot;pts.push((Math.cos(a)*r).toFixed(1)+","+(Math.sin(a)*r).toFixed(1))}$("#poly").setAttribute("points",pts.join(" "))}
-gsap.ticker.add(()=>{P.rot+=.012;draw()});
-(function shift(){const ns=[3,4,5,6,8];P.n=ns[Math.floor(Math.random()*ns.length)];gsap.to(P,{t:Math.random(),duration:CONFIG.spinEvery,ease:"elastic.out(1,.5)",onComplete:shift})})();
-// color drift (site-wide, gentle)
-const H={v:0};let driftTween;
-function setHue(){root.style.setProperty("--accent",`hsl(${(CONFIG.hue+H.v)%360} 80% 60%)`)}
-function startDrift(){driftTween&&driftTween.kill();driftTween=gsap.to(H,{v:CONFIG.drift,duration:CONFIG.driftSpeed,ease:"sine.inOut",yoyo:true,repeat:-1,onUpdate:setHue})}
-startDrift();setHue();
-// tweak wiring
+// spinner: wavy blob from primitives, lobes shift 5-9
+const P={rot:0,amp:.12,k:7};
+gsap.ticker.add(()=>{P.rot+=.008;let d="";for(let i=0;i<=120;i++){const a=i/120*Math.PI*2,r=44*(1+P.amp*Math.cos(P.k*a+P.rot*6));d+=(i?"L":"M")+(Math.cos(a+P.rot)*r).toFixed(1)+" "+(Math.sin(a+P.rot)*r).toFixed(1)}$("#blob").setAttribute("d",d+"Z")});
+(function shape(){const ks=[5,6,7,8,9],k=ks[Math.floor(Math.random()*ks.length)];
+ gsap.timeline({onComplete:()=>gsap.delayedCall(CONFIG.spinEvery,shape)}).to(P,{amp:.02,duration:1.2,ease:"sine.inOut"}).add(()=>P.k=k).to(P,{amp:.1+Math.random()*.08,duration:1.6,ease:"sine.inOut"})})();
+// tweaks
 const bind=(id,fn)=>$(id).oninput=e=>fn(+e.target.value);
 bind("#c_r",v=>root.style.setProperty("--radius",v+"px"));
 bind("#c_g",v=>root.style.setProperty("--glow",v+"vmin"));
-bind("#c_h",v=>{CONFIG.hue=v;setHue()});
-bind("#c_d",v=>{CONFIG.drift=v;startDrift()});
-bind("#c_s",v=>{CONFIG.driftSpeed=v;startDrift()});
+bind("#c_h",v=>{shift=v;paint()});
+bind("#c_d",v=>startDrift(v,+$("#c_s").value));
+bind("#c_s",v=>startDrift(+$("#c_d").value,v));
 bind("#c_t",v=>CONFIG.stagger=v/100);
 </script></body></html>
