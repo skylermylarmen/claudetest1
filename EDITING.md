@@ -22,6 +22,7 @@ Small text fixes can still be made directly in these files (below), but the next
 | Contact | `contact.html` |
 | Resume | `resume.html` |
 | Portfolios | `portfolios.html` |
+| Fiamma pitch presentation (private, not indexed) | `fiamma/index.html` (images in `fiamma/ref/`) |
 | Project pages | `work-reverra.html`, `work-mtrx.html`, `work-zlushy.html`, `work-amazingbotanicals.html`, `work-xomox.html`, `work-faceallies.html`, `work-highrollers.html`, `work-ironsky.html`, `work-farrahmoan.html`, `work-kronton.html` |
 
 ## Quick edits on github.com (no tools needed)
@@ -51,7 +52,7 @@ All images are in `img/v2/`. A new image you add on the canvas needs to be copie
 ## Site-wide extras
 
 - `site.css` has the page fade-in, reduced-motion support, and phone fixes.
-- `site.js` has the 3D tilt on gallery cards (change `MAX_TILT` for more or less tilt).
+- `site.js` has the flickering Fiamma ember (bottom left, opens `/fiamma/`) and the 3D tilt on gallery cards (change `MAX_TILT` for more or less tilt).
 - `vercel.json` points the canvas image links (`/_blob/...`) at the files in `img/v2/`.
 - Share preview image: `og.png`. Browser tab icon: `favicon.png`.
 
