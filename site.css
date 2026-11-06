@@ -53,3 +53,22 @@ html.sk-load::before { content: ""; position: fixed; inset: 0; z-index: 21474836
 .sk-loader.done .in { transform: translateY(-14px); opacity: 0; }
 @keyframes skBreathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
 @media (prefers-reduced-motion: reduce) { .sk-loader img { animation: none; } }
+
+/* Phones: the "I specialize in" switcher (all homes). Smaller so the longest title
+   ("Industrial / Product Design") and its arrow fit on one line without touching. */
+@media (max-width: 600px) {
+  .sp-btn { font-size: 5.6vw !important; }
+  .sp-btn > span:first-child { perspective-origin: 0 50% !important; } /* keep the 3D flip text on the left margin */
+  .sp-btn .arw { margin-left: .4em; }
+}
+
+/* Phones: Home B (list view) project rows. Smaller thumbnails and names so nothing
+   runs into the arrow; scope and year columns are hidden. */
+@media (max-width: 760px) {
+  .row { grid-template-columns: 28px 76px minmax(0, 1fr) 20px !important; gap: 12px !important; padding: 12px 4px !important; }
+  .row img { width: 76px !important; height: 54px !important; }
+  .row .h { font-size: clamp(19px, 6vw, 26px) !important; line-height: 1.02; overflow-wrap: break-word; }
+  .row .b { font-size: 12px !important; }
+  .opt-head { grid-template-columns: 28px 76px minmax(0, 1fr) 20px !important; gap: 12px !important; padding: 0 4px 10px !important; }
+  .opt-head span:nth-child(4), .opt-head span:nth-child(5) { display: none; }
+}
