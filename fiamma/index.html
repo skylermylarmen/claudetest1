@@ -165,7 +165,14 @@ a{color:inherit}
 .swatches button.on,.swatches button:hover{color:var(--ink);border-color:var(--ember)}
 
 /* demo: crest (double borders) */
-.d-crest{height:290px;display:grid;place-items:center;background:#efe7dc;color:#1b1412}
+.d-crest{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:26px;padding:26px 28px;background:#efe7dc;color:#1b1412;position:relative;overflow:hidden}
+.d-crest .ghost{position:absolute;inset:0;display:grid;align-content:center;font-family:var(--serif);font-size:34px;line-height:1.05;letter-spacing:.08em;color:rgba(27,20,18,.045);text-align:center;transform:rotate(180deg);pointer-events:none;white-space:nowrap}
+.spec{position:relative;text-align:left}
+.spec .word{font-family:var(--serif);font-size:clamp(44px,5vw,64px);line-height:.95;letter-spacing:.04em}
+.spec .rule{height:1px;background:#1b1412;margin:12px 0;opacity:.6}
+.spec .small{font-family:var(--serif);font-size:12.5px;letter-spacing:.22em;line-height:1.9;text-transform:uppercase}
+.spec .meta{margin-top:10px;font:500 9px/1.6 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:#7b6a5f}
+@media (max-width:560px){.d-crest{grid-template-columns:1fr;justify-items:center}.spec{text-align:center}}
 .crest{width:230px;height:230px;position:relative}
 .crest svg{position:absolute;inset:0}
 .crest-t{font-family:var(--serif)}
@@ -577,11 +584,11 @@ a{color:inherit}
       <p class="lede">The name is Italian, so the type can be too. Beautiful carved serifs and an engraved crest give an elevated, versatile base.</p>
       <ul><li>High-end and crafted, with a real cultural touch point</li><li>Not the be-all and end-all. It's a direction to fuse with the atmosphere</li></ul>
       <div class="chips"><span class="chip">Type</span><span class="chip">Crest</span></div>
-      <div class="demo d-crest"><div class="crest">
+      <div class="demo d-crest"><div class="ghost" aria-hidden="true"><div>CALORE · FLUSSO · RINASCITA</div><div>STUDIO DI FUOCO · RED BANK</div><div>DAL MMXXVI · FIAMMA</div></div><div class="crest">
         <svg viewBox="0 0 230 230"><g fill="none" stroke="#1b1412"><circle cx="115" cy="115" r="110" stroke-width="1.4"/><circle cx="115" cy="115" r="105" stroke-width=".8"/><circle cx="115" cy="115" r="74" stroke-width=".8"/><circle cx="115" cy="115" r="69" stroke-width="1.4"/></g></svg>
         <svg viewBox="0 0 230 230" class="spin"><defs><path id="cp" d="M115,115 m-84,0 a84,84 0 1,1 168,0 a84,84 0 1,1 -168,0"/></defs>
           <text font-size="12.5" letter-spacing="3.2" fill="#1b1412" class="crest-t"><textPath href="#cp">FIAMMA · STUDIO · RED BANK · DAL MMXXVI ·</textPath></text></svg>
-        <div class="f">F</div></div></div>
+        <div class="f">F</div></div><div class="spec"><div class="word">FIAMMA</div><div class="rule"></div><div class="small">Calore · Flusso · Rinascita<br>Studio di fuoco · Red Bank<br>Dal MMXXVI</div><div class="meta">Heat · Flow · Rebirth — type specimen (concept)</div></div></div>
     </div>
   </article>
   <article class="ref">
