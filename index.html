@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en"><head>
+<html lang="en">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Skyler Kapel — Design</title>
 <meta name="description" content="Skyler Kapel — graphic & brand design, industrial / product design, and product visualization.">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -13,56 +13,18 @@
 <meta property="og:image" content="https://studio-pi-eight-18.vercel.app/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="site.css">
+<script src="site.js" defer></script>
+
+<title>Skyler Kapel — Design</title>
+<script src="support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&amp;family=Yellowtail&amp;family=Archivo:wdth,wght@62..125,400..900&amp;family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=Familjen+Grotesk:wght@400..700&amp;family=Fraunces:ital,opsz,wght@1,9..144,400..700&amp;family=Instrument+Serif:ital@0;1&amp;family=Inter+Tight:wght@400..900&amp;family=Newsreader:ital,opsz,wght@1,6..72,400..600&amp;display=swap">
 <style>
-    .sc-placeholder{background:color-mix(in srgb,currentColor 8%,transparent);
-      border:1px solid color-mix(in srgb,currentColor 50%,transparent);
-      border-radius:2px;box-sizing:border-box;overflow:hidden}
-    @keyframes sc-shine{0%{background-position:100% 50%}100%{background-position:0% 50%}}
-    html.sc-dc-streaming .sc-placeholder,
-    html.sc-dc-streaming .sc-interp.sc-missing{position:relative;
-      background:color-mix(in srgb,currentColor 5%,transparent);
-      border-color:transparent}
-    html.sc-dc-streaming .sc-placeholder::before,
-    html.sc-dc-streaming .sc-interp.sc-missing::before{content:'';
-      position:absolute;inset:0;pointer-events:none;
-      background:linear-gradient(90deg,rgba(217,119,87,0) 25%,rgba(247,225,211,.95) 37%,rgba(217,119,87,0) 63%);
-      background-size:400% 100%;animation:sc-shine 1.4s ease infinite}
-    html.sc-dc-streaming .sc-placeholder:nth-child(n+9 of .sc-placeholder)::before,
-    html.sc-dc-streaming .sc-interp.sc-missing:nth-child(n+9 of .sc-interp.sc-missing)::before{animation:none;
-      background:color-mix(in srgb,currentColor 8%,transparent)}
-    .sc-placeholder-error{padding:4px 8px;font:11px/1.4 ui-monospace,monospace;
-      color:color-mix(in srgb,currentColor 70%,transparent);word-break:break-word}
-    .sc-interp.sc-missing{display:inline-block;width:2em;height:1em;overflow:hidden;
-      vertical-align:text-bottom;background:rgba(255,255,255,.3);border:1px solid rgba(0,0,0,.5);
-      border-radius:2px;box-sizing:border-box;color:transparent;
-      user-select:none}
-    .sc-interp.sc-unresolved{font-family:ui-monospace,monospace;font-size:.85em;
-      color:color-mix(in srgb,currentColor 50%,transparent);
-      background:color-mix(in srgb,currentColor 10%,transparent);border-radius:3px;
-      padding:0 3px}
-    .sc-host.sc-has-error{position:relative}
-    .sc-logic-error{position:absolute;top:8px;left:8px;z-index:2147483647;max-width:60ch;
-      padding:6px 10px;background:#b00020;color:#fff;font:12px/1.4 ui-monospace,monospace;
-      border-radius:4px;white-space:pre-wrap;pointer-events:none}
-    /* Mirrors PRINT_BASELINE_CSS in apps/web deck-stage-export.ts — keep both
-       in sync until dc-runtime regains a build step. */
-    @media print {
-      @page { margin: 0.5cm; }
-      figure, table { break-inside: avoid; }
-      #dc-root, #dc-root > .sc-host { height: auto; }
-      *, *::before, *::after {
-        print-color-adjust: exact; -webkit-print-color-adjust: exact;
-        backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
-        animation-delay: -99s !important; animation-duration: .001s !important;
-        animation-iteration-count: 1 !important; animation-fill-mode: both !important;
-        animation-play-state: running !important; transition-duration: 0s !important;
-      }
-    }
-  </style>
-
-
-<style>x-dc{display:none!important}</style>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&amp;family=Yellowtail&amp;family=Archivo:wdth,wght@62..125,400..900&amp;family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=Familjen+Grotesk:wght@400..700&amp;family=Fraunces:ital,opsz,wght@1,9..144,400..700&amp;family=Instrument+Serif:ital@0;1&amp;family=Inter+Tight:wght@400..900&amp;family=Newsreader:ital,opsz,wght@1,6..72,400..600&amp;display=swap"><style>
 .disc-i:hover .disc-n,.disc-i:focus-visible .disc-n{color:#ED217C}@keyframes drvIn{from{opacity:0;transform:translateY(22px) scale(.98)}to{opacity:1;transform:none}}.drv{animation:drvIn .8s cubic-bezier(.34,1.56,.64,1) both}.disc-num{display:inline-block;transition:transform .5s cubic-bezier(.34,1.56,.64,1)}.disc-i:hover .disc-num,.disc-i:focus-visible .disc-num{transform:translateY(-4px) rotate(-8deg)}@media (prefers-reduced-motion: reduce){.drv{animation:none}}
 body{margin:0;background:#fff}
 a{color:inherit}a:hover{color:#ED217C}
@@ -107,9 +69,9 @@ body{font-family:'Stack Sans Headline',sans-serif}
 .lt-spin{position:absolute;inset:0;animation:ltSpin 22s linear infinite}
 .lt-spin img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .7s,transform .9s cubic-bezier(.65,0,.35,1)}
 .lt-g{position:absolute;inset:9%;background-size:300% 300%;animation:ltShift 6s ease-in-out infinite,ltPulse 9s ease-in-out infinite;-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center}
-.lt-m1{-webkit-mask-image:url(img/v2/fc66362242a12b93240851f96cd6e0ce.webp);mask-image:url(img/v2/fc66362242a12b93240851f96cd6e0ce.webp)}
-.lt-m2{-webkit-mask-image:url(img/v2/462acafe037c55818aa9c6716b2143a3.webp);mask-image:url(img/v2/462acafe037c55818aa9c6716b2143a3.webp)}
-.lt-m3{-webkit-mask-image:url(img/v2/917b74be750651eafb6dc7d24ce35f58.webp);mask-image:url(img/v2/917b74be750651eafb6dc7d24ce35f58.webp)}
+.lt-m1{-webkit-mask-image:url(/_blob/fc66362242a12b93240851f96cd6e0ce);mask-image:url(/_blob/fc66362242a12b93240851f96cd6e0ce)}
+.lt-m2{-webkit-mask-image:url(/_blob/462acafe037c55818aa9c6716b2143a3);mask-image:url(/_blob/462acafe037c55818aa9c6716b2143a3)}
+.lt-m3{-webkit-mask-image:url(/_blob/917b74be750651eafb6dc7d24ce35f58);mask-image:url(/_blob/917b74be750651eafb6dc7d24ce35f58)}
 .lt-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center;pointer-events:none;text-shadow:0 1px 8px rgba(0,0,0,.25)}
 .lt:hover .lt-g,.lt:focus-visible .lt-g{opacity:1!important}
 .lt:focus-visible{outline:3px solid #ED217C;outline-offset:4px}
@@ -124,11 +86,585 @@ body{font-family:'Stack Sans Headline',sans-serif}
 @keyframes ltSpin{to{transform:rotate(360deg)}}
 @keyframes ltShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 @keyframes ltPulse{0%,55%{opacity:0}68%,88%{opacity:1}100%{opacity:0}}
-</style></head>
-<body>
-<div id="dc-root"><div class="sc-host" data-sc-name="Home-Split"><div class="f-original   " style="display: flex; flex-wrap: wrap; align-items: flex-start; background: rgb(255, 255, 255); color: rgb(0, 0, 0); min-height: 100vh;"><aside class="panel" style="flex: 1 1 560px; min-width: 0px; box-sizing: border-box; background: rgb(0, 0, 0); color: rgb(255, 255, 255); display: flex;"><div class="pad" style="flex: 1 1 0%; min-width: 0px; display: flex; flex-direction: column; justify-content: space-between; gap: 64px; padding: 28px 40px 40px 48px; box-sizing: border-box;"><header style="display: flex; align-items: center; justify-content: space-between;"><a href="index.html" aria-label="Home" style="display: block; line-height: 0;"><img src="img/v2/9d529029643a2387a5634c97af8e0ced.webp" alt="sk" style="height: 58px; width: auto; display: block; filter: invert(1);"></a><nav aria-label="Main" class="hn" style="display: flex; flex-direction: column; align-items: flex-end; font-size: 24px;"><a class="nv" href="process.html"><span class="nv-s">Process</span><span class="nv-l c-orange" aria-hidden="true"><span>Process&nbsp;Process&nbsp;Process&nbsp;Process&nbsp;</span></span></a><a class="nv" href="contact.html"><span class="nv-s">Contact</span><span class="nv-l c-pink" aria-hidden="true"><span>Contact&nbsp;Contact&nbsp;Contact&nbsp;Contact&nbsp;</span></span></a><a class="nv" href="resume.html"><span class="nv-s">Resume</span><span class="nv-l c-teal" aria-hidden="true"><span>Resume&nbsp;Resume&nbsp;Resume&nbsp;Resume&nbsp;</span></span></a><a class="nv" href="portfolios.html"><span class="nv-s">Portfolios</span><span class="nv-l c-indigo" aria-hidden="true"><span>Portfolios&nbsp;Portfolios&nbsp;Portfolios&nbsp;Portfolios&nbsp;</span></span></a></nav></header><section aria-label="Specialties" style="display: flex; flex-direction: column; gap: 14px;"><p class="s" style="margin: 0px; font-size: 26px; line-height: 1.1; color: rgb(255, 255, 255);">Welcome to my website! I'm Skyler, and I specialize in:</p><div style="display: flex; flex-direction: column; border-top: 1.5px solid; margin-top: 10px;"><a class="disc-i drv" href="portfolios.html" style="animation-delay: 150ms; display: grid; grid-template-columns: 36px minmax(0px, 1fr); gap: 6px 12px; padding: 16px 0px; border-bottom: 1px solid rgb(51, 51, 51); text-decoration: none; color: inherit;"><span class="b disc-num" style="font-size: 12px; letter-spacing: 0.12em; opacity: 0.7; padding-top: 6px;">01</span><span class="h disc-n" style="font-size: 30px; transition: color 0.2s;">Graphic &amp; Brand Design</span><span></span><span class="b" style="font-size: 14px; line-height: 1.45; opacity: 0.78;">Beyond the products themselves, branding and graphics articulate a brand's values and define how it communicates with customers to convey its story.</span></a><a class="disc-i drv" href="portfolios.html" style="animation-delay: 260ms; display: grid; grid-template-columns: 36px minmax(0px, 1fr); gap: 6px 12px; padding: 16px 0px; border-bottom: 1px solid rgb(51, 51, 51); text-decoration: none; color: inherit;"><span class="b disc-num" style="font-size: 12px; letter-spacing: 0.12em; opacity: 0.7; padding-top: 6px;">02</span><span class="h disc-n" style="font-size: 30px; transition: color 0.2s;">Industrial / Product Design</span><span></span><span class="b" style="font-size: 14px; line-height: 1.45; opacity: 0.78;">As an Industrial Designer, I take solutions into reality to create a better world through the products we interact with.</span></a><a class="disc-i drv" href="portfolios.html" style="animation-delay: 370ms; display: grid; grid-template-columns: 36px minmax(0px, 1fr); gap: 6px 12px; padding: 16px 0px; text-decoration: none; color: inherit;"><span class="b disc-num" style="font-size: 12px; letter-spacing: 0.12em; opacity: 0.7; padding-top: 6px;">03</span><span class="h disc-n" style="font-size: 30px; transition: color 0.2s;">Product Visualization</span><span></span><span class="b" style="font-size: 14px; line-height: 1.45; opacity: 0.78;">Elevating product displays and visualizations to a larger-than-life experience that conveys the emotions the product is designed to inspire.</span></a></div></section><div class="b" style="display: flex; justify-content: space-between; font-size: 12px; color: rgb(168, 168, 168);"><a class="cue-d b" href="#work">Scroll for more work <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M6 13l6 6 6-6"></path></svg></a><span>© 2026 Skyler Kapel</span></div></div><div aria-hidden="true" style="flex: 0 0 80px; align-self: stretch; background-color: rgb(255, 255, 255); background-image: linear-gradient(rgb(0, 0, 0) 0px, rgb(0, 0, 0) 2px, transparent 2px), linear-gradient(90deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 2px, transparent 2px); background-size: 40px 40px; background-position: 0px 30px;"></div></aside><main id="work" class="pad" style="flex: 999 1 560px; min-width: 0px; box-sizing: border-box; padding: 40px 48px 160px; display: flex; flex-direction: column; gap: 32px;"><div class="b" style="display: flex; justify-content: space-between; align-items: baseline; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: rgb(102, 102, 102); border-bottom: 1.5px solid rgb(0, 0, 0); padding-bottom: 12px;"><span>Selected work</span><span>10 projects</span></div><div class="cards" style="display: grid; grid-template-columns: repeat(2, minmax(0px, 1fr)); gap: 40px 24px;"><a class="card" href="work-reverra.html"><span class="card-img"><img src="img/v2/990dbb0138cff93d18e2e8f66cb03ead.webp" alt="Reverra" style="object-position: 50% 50%;"></span><span style="display: grid; grid-template-columns: 36px minmax(0px, 1fr); gap: 4px 8px; align-items: baseline;"><span class="b" style="font-size: 12px; color: rgb(102, 102, 102);">01</span><span class="h card-name" style="font-size: 30px; transition: color 0.2s;">Reverra</span><span></span><span class="b" style="font-size: 13px; color: rgb(85, 85, 85);">Brand refresh · Packaging · Rendering</span></span></a><a class="card" href="work-mtrx.html"><span class="card-img"><img src="img/v2/091aa1afb1811687aab2ddf4f8718b98.webp" alt="MTRX" style="object-position: 50% 50%;" loading="lazy" decoding="async"></span><span style="display: grid; grid-template-columns: 36px minmax(0px, 1fr); gap: 4px 8px; align-items: baseline;"><span class="b" style="font-size: 12px; color: rgb(102, 102, 102);">02</span><span class="h card-name" style="font-size: 30px; transition: color 0.2s;">MTRX</span><span></span><span class="b" style="font-size: 13px; color: rgb(85, 85, 85);">Brand identity · Packaging</span></span></a><a class="card" href="work-zlushy.html"><span class="card-img"><img src="img/v2/59862f5858b77ab5ddc88c73a9172026.webp" alt="Zlushy" style="object-position: 50% 50%;" loading="lazy" decoding="async"></span><span style="display: grid; grid-template-columns: 36px minmax(0px, 1fr); gap: 4px 8px; align-items: baseline;"><span class="b" style="font-size: 12px; color: rgb(102, 102, 102);">03</span><span class="h card-name" style="font-size: 30px; transition: color 0.2s;">Zlushy</span><span></span><span class="b" style="font-size: 13px; color: rgb(85, 85, 85);">Brand identity · Packaging</span></span></a><a class="card" href="work-amazingbotanicals.html"><span class="card-img"><img src="img/v2/be58079ab645b69e778004fd81157685.webp" alt="Amazing Botanicals" style="object-position: 50% 50%;" loading="lazy" decoding="async"></span><span style="display: grid; grid-template-columns: 36px minmax(0px, 1fr); gap: 4px 8px; align-items: baseline;"><span class="b" style="font-size: 12px; color: rgb(102, 102, 102);">04</span><span class="h card-name" style="font-size: 30px; transition: color 0.2s;">Amazing Botanicals</span><span></span><span class="b" style="font-size: 13px; color: rgb(85, 85, 85);">Brand identity · Packaging · Rendering</span></span></a><a class="card" href="work-xomox.html"><span class="card-img"><img src="img/v2/aac75b0efbf61741208cd759e819b75d.webp" alt="XOMOX" style="object-position: 50% 50%;" loading="lazy" decoding="async"></span><span style="display: grid; grid-template-columns: 36px minmax(0px, 1fr); gap: 4px 8px; align-items: baseline;"><span class="b" style="font-size: 12px; color: rgb(102, 102, 102);">05</span><span class="h card-name" style="font-size: 30px; transition: color 0.2s;">XOMOX</span><span></span><span class="b" style="font-size: 13px; color: rgb(85, 85, 85);">Jewelry visualization</span></span></a><a class="card" href="work-faceallies.html"><span class="card-img"><img src="img/v2/3cdf899d9bbed8b6925a6b161a5165ff.webp" alt="Face Allies" style="object-position: 50% 50%;" loading="lazy" decoding="async"></span><span style="display: grid; grid-template-columns: 36px minmax(0px, 1fr); gap: 4px 8px; align-items: baseline;"><span class="b" style="font-size: 12px; color: rgb(102, 102, 102);">06</span><span class="h card-name" style="font-size: 30px; transition: color 0.2s;">Face Allies</span><span></span><span class="b" style="font-size: 13px; color: rgb(85, 85, 85);">Logo · Event graphics · 3D</span></span></a><a class="card" href="work-highrollers.html"><span class="card-img"><img src="img/v2/f7f0d664e53ccbf65296d807f90e7697.webp" alt="High Rollers" style="object-position: 50% 50%;" loading="lazy" decoding="async"></span><span style="display: grid; grid-template-columns: 36px minmax(0px, 1fr); gap: 4px 8px; align-items: baseline;"><span class="b" style="font-size: 12px; color: rgb(102, 102, 102);">07</span><span class="h card-name" style="font-size: 30px; transition: color 0.2s;">High Rollers</span><span></span><span class="b" style="font-size: 13px; color: rgb(85, 85, 85);">Streetwear merch · Mascot</span></span></a><a class="card" href="work-ironsky.html"><span class="card-img"><img src="img/v2/95624000d4b0a9ffe17c7f4cd02953a8.webp" alt="Iron Sky Studios" style="object-position: 50% 50%;" loading="lazy" decoding="async"></span><span style="display: grid; grid-template-columns: 36px minmax(0px, 1fr); gap: 4px 8px; align-items: baseline;"><span class="b" style="font-size: 12px; color: rgb(102, 102, 102);">08</span><span class="h card-name" style="font-size: 30px; transition: color 0.2s;">Iron Sky Studios</span><span></span><span class="b" style="font-size: 13px; color: rgb(85, 85, 85);">Apparel · Illustration · Mailer</span></span></a><a class="card" href="work-farrahmoan.html"><span class="card-img"><img src="img/v2/5c3a6890547b3a0519d3abeee4b524ae.webp" alt="Farrah Moan" style="object-position: 50% 50%;" loading="lazy" decoding="async"></span><span style="display: grid; grid-template-columns: 36px minmax(0px, 1fr); gap: 4px 8px; align-items: baseline;"><span class="b" style="font-size: 12px; color: rgb(102, 102, 102);">09</span><span class="h card-name" style="font-size: 30px; transition: color 0.2s;">Farrah Moan</span><span></span><span class="b" style="font-size: 13px; color: rgb(85, 85, 85);">Logo · 3D scenes</span></span></a><a class="card" href="work-kronton.html"><span class="card-img"><img src="img/v2/55fdbb81d32fb15c68c40bea28dcba15.webp" alt="Kronton" style="object-position: 50% 50%;" loading="lazy" decoding="async"></span><span style="display: grid; grid-template-columns: 36px minmax(0px, 1fr); gap: 4px 8px; align-items: baseline;"><span class="b" style="font-size: 12px; color: rgb(102, 102, 102);">10</span><span class="h card-name" style="font-size: 30px; transition: color 0.2s;">Kronton</span><span></span><span class="b" style="font-size: 13px; color: rgb(85, 85, 85);">Product visualization</span></span></a></div></main><a class="lt" href="contact.html" aria-label="Let's talk" style="width: 150px; height: 150px;"><svg class="lt-svg" viewBox="-60 -60 120 120" aria-hidden="true"><defs><linearGradient id="ltgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2E3A8C"></stop><stop offset="0.5" stop-color="#7E8CD6"></stop><stop offset="1" stop-color="#C9CFF2"></stop><animateTransform attributeName="gradientTransform" type="rotate" from="0 0.5 0.5" to="360 0.5 0.5" dur="6s" repeatCount="indefinite"></animateTransform></linearGradient><pattern id="ltp-Checker" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="#fff"></rect><rect width="3" height="3" fill="#000"></rect><rect x="3" y="3" width="3" height="3" fill="#000"></rect></pattern><pattern id="ltp-Stripes" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="#fff"></rect><rect width="2.5" height="5" fill="#000"></rect></pattern><pattern id="ltp-Dots" width="5" height="5" patternUnits="userSpaceOnUse"><rect width="5" height="5" fill="#fff"></rect><circle cx="2.5" cy="2.5" r="1.3" fill="#000"></circle></pattern><pattern id="ltp-Grid" width="5" height="5" patternUnits="userSpaceOnUse"><rect width="5" height="5" fill="#fff"></rect><path d="M0.00 -50.00L1.74 -49.81L3.44 -49.26L5.09 -48.39L6.64 -47.28L8.11 -46.02L9.51 -44.72L10.84 -43.48L12.15 -42.37L13.48 -41.48L14.86 -40.84L16.34 -40.44L17.93 -40.27L19.64 -40.27L21.46 -40.37L23.36 -40.47L25.30 -40.49L27.21 -40.33L29.02 -39.95L30.68 -39.27L32.14 -38.30L33.35 -37.04L34.30 -35.52L35.00 -33.80L35.48 -31.94L35.80 -30.04L36.03 -28.15L36.25 -26.34L36.55 -24.65L36.99 -23.11L37.64 -21.73L38.51 -20.48L39.62 -19.32L40.93 -18.22L42.39 -17.13L43.91 -15.98L45.40 -14.75L46.77 -13.41L47.91 -11.94L48.75 -10.36L49.24 -8.68L49.35 -6.94L49.10 -5.16L48.53 -3.39L47.71 -1.67L46.73 0.00L45.69 1.60L44.70 3.13L43.84 4.61L43.19 6.07L42.80 7.55L42.66 9.07L42.77 10.66L43.07 12.35L43.48 14.13L43.91 15.98L44.26 17.88L44.45 19.79L44.38 21.64L44.01 23.40L43.30 25.00L42.27 26.41L40.93 27.61L39.36 28.60L37.62 29.39L35.80 30.04L33.98 30.59L32.23 31.13L30.62 31.71L29.19 32.41L27.93 33.29L26.85 34.37L25.91 35.66L25.06 37.15L24.23 38.77L23.36 40.47L22.41 42.15L21.33 43.73L20.08 45.11L18.67 46.21L17.10 46.98L15.40 47.40L13.61 47.46L11.77 47.21L9.93 46.70L8.11 46.02L6.36 45.27L4.68 44.56L3.08 43.98L1.52 43.59L0.00 43.46L-1.52 43.59L-3.08 43.98L-4.68 44.56L-6.36 45.27L-8.11 46.02L-9.93 46.70L-11.77 47.21L-13.61 47.46L-15.40 47.40L-17.10 46.98L-18.67 46.21L-20.08 45.11L-21.33 43.73L-22.41 42.15L-23.36 40.47L-24.23 38.77L-25.06 37.15L-25.91 35.66L-26.85 34.37L-27.93 33.29L-29.19 32.41L-30.62 31.71L-32.23 31.13L-33.98 30.59L-35.80 30.04L-37.62 29.39L-39.36 28.60L-40.93 27.61L-42.27 26.41L-43.30 25.00L-44.01 23.40L-44.38 21.64L-44.45 19.79L-44.26 17.88L-43.91 15.98L-43.48 14.13L-43.07 12.35L-42.77 10.66L-42.66 9.07L-42.80 7.55L-43.19 6.07L-43.84 4.61L-44.70 3.13L-45.69 1.60L-46.73 0.00L-47.71 -1.67L-48.53 -3.39L-49.10 -5.16L-49.35 -6.94L-49.24 -8.68L-48.75 -10.36L-47.91 -11.94L-46.77 -13.41L-45.40 -14.75L-43.91 -15.98L-42.39 -17.13L-40.93 -18.22L-39.62 -19.32L-38.51 -20.48L-37.64 -21.73L-36.99 -23.11L-36.55 -24.65L-36.25 -26.34L-36.03 -28.15L-35.80 -30.04L-35.48 -31.94L-35.00 -33.80L-34.30 -35.52L-33.35 -37.04L-32.14 -38.30L-30.68 -39.27L-29.02 -39.95L-27.21 -40.33L-25.30 -40.49L-23.36 -40.47L-21.46 -40.37L-19.64 -40.27L-17.93 -40.27L-16.34 -40.44L-14.86 -40.84L-13.48 -41.48L-12.15 -42.37L-10.84 -43.48L-9.51 -44.72L-8.11 -46.02L-6.64 -47.28L-5.09 -48.39L-3.44 -49.26L-1.74 -49.81Z" stroke="#000" stroke-width="0.8"></path></pattern><pattern id="ltp-Triangles" width="5" height="5" patternUnits="userSpaceOnUse"><rect width="5" height="5" fill="#fff"></rect><path d="M0.00 -50.00L1.74 -49.81L3.44 -49.26L5.09 -48.39L6.64 -47.28L8.11 -46.02L9.51 -44.72L10.84 -43.48L12.15 -42.37L13.48 -41.48L14.86 -40.84L16.34 -40.44L17.93 -40.27L19.64 -40.27L21.46 -40.37L23.36 -40.47L25.30 -40.49L27.21 -40.33L29.02 -39.95L30.68 -39.27L32.14 -38.30L33.35 -37.04L34.30 -35.52L35.00 -33.80L35.48 -31.94L35.80 -30.04L36.03 -28.15L36.25 -26.34L36.55 -24.65L36.99 -23.11L37.64 -21.73L38.51 -20.48L39.62 -19.32L40.93 -18.22L42.39 -17.13L43.91 -15.98L45.40 -14.75L46.77 -13.41L47.91 -11.94L48.75 -10.36L49.24 -8.68L49.35 -6.94L49.10 -5.16L48.53 -3.39L47.71 -1.67L46.73 0.00L45.69 1.60L44.70 3.13L43.84 4.61L43.19 6.07L42.80 7.55L42.66 9.07L42.77 10.66L43.07 12.35L43.48 14.13L43.91 15.98L44.26 17.88L44.45 19.79L44.38 21.64L44.01 23.40L43.30 25.00L42.27 26.41L40.93 27.61L39.36 28.60L37.62 29.39L35.80 30.04L33.98 30.59L32.23 31.13L30.62 31.71L29.19 32.41L27.93 33.29L26.85 34.37L25.91 35.66L25.06 37.15L24.23 38.77L23.36 40.47L22.41 42.15L21.33 43.73L20.08 45.11L18.67 46.21L17.10 46.98L15.40 47.40L13.61 47.46L11.77 47.21L9.93 46.70L8.11 46.02L6.36 45.27L4.68 44.56L3.08 43.98L1.52 43.59L0.00 43.46L-1.52 43.59L-3.08 43.98L-4.68 44.56L-6.36 45.27L-8.11 46.02L-9.93 46.70L-11.77 47.21L-13.61 47.46L-15.40 47.40L-17.10 46.98L-18.67 46.21L-20.08 45.11L-21.33 43.73L-22.41 42.15L-23.36 40.47L-24.23 38.77L-25.06 37.15L-25.91 35.66L-26.85 34.37L-27.93 33.29L-29.19 32.41L-30.62 31.71L-32.23 31.13L-33.98 30.59L-35.80 30.04L-37.62 29.39L-39.36 28.60L-40.93 27.61L-42.27 26.41L-43.30 25.00L-44.01 23.40L-44.38 21.64L-44.45 19.79L-44.26 17.88L-43.91 15.98L-43.48 14.13L-43.07 12.35L-42.77 10.66L-42.66 9.07L-42.80 7.55L-43.19 6.07L-43.84 4.61L-44.70 3.13L-45.69 1.60L-46.73 0.00L-47.71 -1.67L-48.53 -3.39L-49.10 -5.16L-49.35 -6.94L-49.24 -8.68L-48.75 -10.36L-47.91 -11.94L-46.77 -13.41L-45.40 -14.75L-43.91 -15.98L-42.39 -17.13L-40.93 -18.22L-39.62 -19.32L-38.51 -20.48L-37.64 -21.73L-36.99 -23.11L-36.55 -24.65L-36.25 -26.34L-36.03 -28.15L-35.80 -30.04L-35.48 -31.94L-35.00 -33.80L-34.30 -35.52L-33.35 -37.04L-32.14 -38.30L-30.68 -39.27L-29.02 -39.95L-27.21 -40.33L-25.30 -40.49L-23.36 -40.47L-21.46 -40.37L-19.64 -40.27L-17.93 -40.27L-16.34 -40.44L-14.86 -40.84L-13.48 -41.48L-12.15 -42.37L-10.84 -43.48L-9.51 -44.72L-8.11 -46.02L-6.64 -47.28L-5.09 -48.39L-3.44 -49.26L-1.74 -49.81Z" fill="#000"></path></pattern><path id="ltcirc" d="M0.00 -50.00L1.74 -49.81L3.44 -49.26L5.09 -48.39L6.64 -47.28L8.11 -46.02L9.51 -44.72L10.84 -43.48L12.15 -42.37L13.48 -41.48L14.86 -40.84L16.34 -40.44L17.93 -40.27L19.64 -40.27L21.46 -40.37L23.36 -40.47L25.30 -40.49L27.21 -40.33L29.02 -39.95L30.68 -39.27L32.14 -38.30L33.35 -37.04L34.30 -35.52L35.00 -33.80L35.48 -31.94L35.80 -30.04L36.03 -28.15L36.25 -26.34L36.55 -24.65L36.99 -23.11L37.64 -21.73L38.51 -20.48L39.62 -19.32L40.93 -18.22L42.39 -17.13L43.91 -15.98L45.40 -14.75L46.77 -13.41L47.91 -11.94L48.75 -10.36L49.24 -8.68L49.35 -6.94L49.10 -5.16L48.53 -3.39L47.71 -1.67L46.73 0.00L45.69 1.60L44.70 3.13L43.84 4.61L43.19 6.07L42.80 7.55L42.66 9.07L42.77 10.66L43.07 12.35L43.48 14.13L43.91 15.98L44.26 17.88L44.45 19.79L44.38 21.64L44.01 23.40L43.30 25.00L42.27 26.41L40.93 27.61L39.36 28.60L37.62 29.39L35.80 30.04L33.98 30.59L32.23 31.13L30.62 31.71L29.19 32.41L27.93 33.29L26.85 34.37L25.91 35.66L25.06 37.15L24.23 38.77L23.36 40.47L22.41 42.15L21.33 43.73L20.08 45.11L18.67 46.21L17.10 46.98L15.40 47.40L13.61 47.46L11.77 47.21L9.93 46.70L8.11 46.02L6.36 45.27L4.68 44.56L3.08 43.98L1.52 43.59L0.00 43.46L-1.52 43.59L-3.08 43.98L-4.68 44.56L-6.36 45.27L-8.11 46.02L-9.93 46.70L-11.77 47.21L-13.61 47.46L-15.40 47.40L-17.10 46.98L-18.67 46.21L-20.08 45.11L-21.33 43.73L-22.41 42.15L-23.36 40.47L-24.23 38.77L-25.06 37.15L-25.91 35.66L-26.85 34.37L-27.93 33.29L-29.19 32.41L-30.62 31.71L-32.23 31.13L-33.98 30.59L-35.80 30.04L-37.62 29.39L-39.36 28.60L-40.93 27.61L-42.27 26.41L-43.30 25.00L-44.01 23.40L-44.38 21.64L-44.45 19.79L-44.26 17.88L-43.91 15.98L-43.48 14.13L-43.07 12.35L-42.77 10.66L-42.66 9.07L-42.80 7.55L-43.19 6.07L-43.84 4.61L-44.70 3.13L-45.69 1.60L-46.73 0.00L-47.71 -1.67L-48.53 -3.39L-49.10 -5.16L-49.35 -6.94L-49.24 -8.68L-48.75 -10.36L-47.91 -11.94L-46.77 -13.41L-45.40 -14.75L-43.91 -15.98L-42.39 -17.13L-40.93 -18.22L-39.62 -19.32L-38.51 -20.48L-37.64 -21.73L-36.99 -23.11L-36.55 -24.65L-36.25 -26.34L-36.03 -28.15L-35.80 -30.04L-35.48 -31.94L-35.00 -33.80L-34.30 -35.52L-33.35 -37.04L-32.14 -38.30L-30.68 -39.27L-29.02 -39.95L-27.21 -40.33L-25.30 -40.49L-23.36 -40.47L-21.46 -40.37L-19.64 -40.27L-17.93 -40.27L-16.34 -40.44L-14.86 -40.84L-13.48 -41.48L-12.15 -42.37L-10.84 -43.48L-9.51 -44.72L-8.11 -46.02L-6.64 -47.28L-5.09 -48.39L-3.44 -49.26L-1.74 -49.81Z"></path></defs><g class="lt-rot" style="animation-duration: 10s;"><path d="M0.00 -50.00L1.74 -49.81L3.44 -49.26L5.09 -48.39L6.64 -47.28L8.11 -46.02L9.51 -44.72L10.84 -43.48L12.15 -42.37L13.48 -41.48L14.86 -40.84L16.34 -40.44L17.93 -40.27L19.64 -40.27L21.46 -40.37L23.36 -40.47L25.30 -40.49L27.21 -40.33L29.02 -39.95L30.68 -39.27L32.14 -38.30L33.35 -37.04L34.30 -35.52L35.00 -33.80L35.48 -31.94L35.80 -30.04L36.03 -28.15L36.25 -26.34L36.55 -24.65L36.99 -23.11L37.64 -21.73L38.51 -20.48L39.62 -19.32L40.93 -18.22L42.39 -17.13L43.91 -15.98L45.40 -14.75L46.77 -13.41L47.91 -11.94L48.75 -10.36L49.24 -8.68L49.35 -6.94L49.10 -5.16L48.53 -3.39L47.71 -1.67L46.73 0.00L45.69 1.60L44.70 3.13L43.84 4.61L43.19 6.07L42.80 7.55L42.66 9.07L42.77 10.66L43.07 12.35L43.48 14.13L43.91 15.98L44.26 17.88L44.45 19.79L44.38 21.64L44.01 23.40L43.30 25.00L42.27 26.41L40.93 27.61L39.36 28.60L37.62 29.39L35.80 30.04L33.98 30.59L32.23 31.13L30.62 31.71L29.19 32.41L27.93 33.29L26.85 34.37L25.91 35.66L25.06 37.15L24.23 38.77L23.36 40.47L22.41 42.15L21.33 43.73L20.08 45.11L18.67 46.21L17.10 46.98L15.40 47.40L13.61 47.46L11.77 47.21L9.93 46.70L8.11 46.02L6.36 45.27L4.68 44.56L3.08 43.98L1.52 43.59L0.00 43.46L-1.52 43.59L-3.08 43.98L-4.68 44.56L-6.36 45.27L-8.11 46.02L-9.93 46.70L-11.77 47.21L-13.61 47.46L-15.40 47.40L-17.10 46.98L-18.67 46.21L-20.08 45.11L-21.33 43.73L-22.41 42.15L-23.36 40.47L-24.23 38.77L-25.06 37.15L-25.91 35.66L-26.85 34.37L-27.93 33.29L-29.19 32.41L-30.62 31.71L-32.23 31.13L-33.98 30.59L-35.80 30.04L-37.62 29.39L-39.36 28.60L-40.93 27.61L-42.27 26.41L-43.30 25.00L-44.01 23.40L-44.38 21.64L-44.45 19.79L-44.26 17.88L-43.91 15.98L-43.48 14.13L-43.07 12.35L-42.77 10.66L-42.66 9.07L-42.80 7.55L-43.19 6.07L-43.84 4.61L-44.70 3.13L-45.69 1.60L-46.73 0.00L-47.71 -1.67L-48.53 -3.39L-49.10 -5.16L-49.35 -6.94L-49.24 -8.68L-48.75 -10.36L-47.91 -11.94L-46.77 -13.41L-45.40 -14.75L-43.91 -15.98L-42.39 -17.13L-40.93 -18.22L-39.62 -19.32L-38.51 -20.48L-37.64 -21.73L-36.99 -23.11L-36.55 -24.65L-36.25 -26.34L-36.03 -28.15L-35.80 -30.04L-35.48 -31.94L-35.00 -33.80L-34.30 -35.52L-33.35 -37.04L-32.14 -38.30L-30.68 -39.27L-29.02 -39.95L-27.21 -40.33L-25.30 -40.49L-23.36 -40.47L-21.46 -40.37L-19.64 -40.27L-17.93 -40.27L-16.34 -40.44L-14.86 -40.84L-13.48 -41.48L-12.15 -42.37L-10.84 -43.48L-9.51 -44.72L-8.11 -46.02L-6.64 -47.28L-5.09 -48.39L-3.44 -49.26L-1.74 -49.81Z" fill="#4E5EAB" stroke="none" stroke-width="0" stroke-linejoin="round"></path><path class="lt-gfx" d="M0.00 -50.00L1.74 -49.81L3.44 -49.26L5.09 -48.39L6.64 -47.28L8.11 -46.02L9.51 -44.72L10.84 -43.48L12.15 -42.37L13.48 -41.48L14.86 -40.84L16.34 -40.44L17.93 -40.27L19.64 -40.27L21.46 -40.37L23.36 -40.47L25.30 -40.49L27.21 -40.33L29.02 -39.95L30.68 -39.27L32.14 -38.30L33.35 -37.04L34.30 -35.52L35.00 -33.80L35.48 -31.94L35.80 -30.04L36.03 -28.15L36.25 -26.34L36.55 -24.65L36.99 -23.11L37.64 -21.73L38.51 -20.48L39.62 -19.32L40.93 -18.22L42.39 -17.13L43.91 -15.98L45.40 -14.75L46.77 -13.41L47.91 -11.94L48.75 -10.36L49.24 -8.68L49.35 -6.94L49.10 -5.16L48.53 -3.39L47.71 -1.67L46.73 0.00L45.69 1.60L44.70 3.13L43.84 4.61L43.19 6.07L42.80 7.55L42.66 9.07L42.77 10.66L43.07 12.35L43.48 14.13L43.91 15.98L44.26 17.88L44.45 19.79L44.38 21.64L44.01 23.40L43.30 25.00L42.27 26.41L40.93 27.61L39.36 28.60L37.62 29.39L35.80 30.04L33.98 30.59L32.23 31.13L30.62 31.71L29.19 32.41L27.93 33.29L26.85 34.37L25.91 35.66L25.06 37.15L24.23 38.77L23.36 40.47L22.41 42.15L21.33 43.73L20.08 45.11L18.67 46.21L17.10 46.98L15.40 47.40L13.61 47.46L11.77 47.21L9.93 46.70L8.11 46.02L6.36 45.27L4.68 44.56L3.08 43.98L1.52 43.59L0.00 43.46L-1.52 43.59L-3.08 43.98L-4.68 44.56L-6.36 45.27L-8.11 46.02L-9.93 46.70L-11.77 47.21L-13.61 47.46L-15.40 47.40L-17.10 46.98L-18.67 46.21L-20.08 45.11L-21.33 43.73L-22.41 42.15L-23.36 40.47L-24.23 38.77L-25.06 37.15L-25.91 35.66L-26.85 34.37L-27.93 33.29L-29.19 32.41L-30.62 31.71L-32.23 31.13L-33.98 30.59L-35.80 30.04L-37.62 29.39L-39.36 28.60L-40.93 27.61L-42.27 26.41L-43.30 25.00L-44.01 23.40L-44.38 21.64L-44.45 19.79L-44.26 17.88L-43.91 15.98L-43.48 14.13L-43.07 12.35L-42.77 10.66L-42.66 9.07L-42.80 7.55L-43.19 6.07L-43.84 4.61L-44.70 3.13L-45.69 1.60L-46.73 0.00L-47.71 -1.67L-48.53 -3.39L-49.10 -5.16L-49.35 -6.94L-49.24 -8.68L-48.75 -10.36L-47.91 -11.94L-46.77 -13.41L-45.40 -14.75L-43.91 -15.98L-42.39 -17.13L-40.93 -18.22L-39.62 -19.32L-38.51 -20.48L-37.64 -21.73L-36.99 -23.11L-36.55 -24.65L-36.25 -26.34L-36.03 -28.15L-35.80 -30.04L-35.48 -31.94L-35.00 -33.80L-34.30 -35.52L-33.35 -37.04L-32.14 -38.30L-30.68 -39.27L-29.02 -39.95L-27.21 -40.33L-25.30 -40.49L-23.36 -40.47L-21.46 -40.37L-19.64 -40.27L-17.93 -40.27L-16.34 -40.44L-14.86 -40.84L-13.48 -41.48L-12.15 -42.37L-10.84 -43.48L-9.51 -44.72L-8.11 -46.02L-6.64 -47.28L-5.09 -48.39L-3.44 -49.26L-1.74 -49.81Z" fill="url(#ltgrad)" transform="scale(0.9)" style="animation-duration: 9s;"></path></g></svg><span class="lt-label h" style="font-size: 19px; line-height: 1;">Let's<br>talk</span></a></div></div></div>
+.bg-white{background:#fff}.bg-paper{background:#F3EFE6}.bg-dots{background-color:#fff;background-image:radial-gradient(rgba(0,0,0,.2) 1.3px,transparent 1.5px);background-size:22px 22px}.bg-lines{background-color:#fff;background-image:linear-gradient(rgba(0,0,0,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.07) 1px,transparent 1px);background-size:40px 40px}.bg-k{background:#000}.bg-dots-k{background-color:#000;background-image:radial-gradient(rgba(255,255,255,.2) 1.3px,transparent 1.5px);background-size:22px 22px}.bg-lines-k{background-color:#000;background-image:linear-gradient(rgba(255,255,255,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.09) 1px,transparent 1px);background-size:40px 40px}
+.sp-caps,.nocaps-h .sp-caps{text-transform:uppercase!important;letter-spacing:-0.035em!important}.sp-nocaps,.sp-nocaps .h{text-transform:none!important;letter-spacing:-0.02em!important}
+</style>
+</helmet>
+<div class="f-{{fontKey}} {{capsCls}} {{bgCls}}" style="display: flex; flex-wrap: wrap; align-items: flex-start; color: #000; min-height: 100vh">
+<aside class="panel" style="flex: 1 1 560px; min-width: 0; box-sizing: border-box; background: #000; color: #fff; display: flex">
+<div class="pad" style="flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 64px; padding: 28px 40px 40px 48px; box-sizing: border-box">
+<header style="display: flex; align-items: center; justify-content: space-between">
+<a href="index.html" aria-label="Home" style="display: block; line-height: 0">
+<img src="/_blob/9d529029643a2387a5634c97af8e0ced" alt="sk" style="height: 58px; width: auto; display: block; filter: invert(1)">
+</a>
+<nav aria-label="Main" class="hn" style="display: flex; flex-direction: column; align-items: flex-end; font-size: 24px">
+<a class="nv" href="process.html"><span class="nv-s">Process</span><span class="nv-l c-orange" aria-hidden="true"><span>Process&nbsp;Process&nbsp;Process&nbsp;Process&nbsp;</span></span></a>
+<a class="nv" href="contact.html"><span class="nv-s">Contact</span><span class="nv-l c-pink" aria-hidden="true"><span>Contact&nbsp;Contact&nbsp;Contact&nbsp;Contact&nbsp;</span></span></a>
+<a class="nv" href="resume.html"><span class="nv-s">Resume</span><span class="nv-l c-teal" aria-hidden="true"><span>Resume&nbsp;Resume&nbsp;Resume&nbsp;Resume&nbsp;</span></span></a>
+<a class="nv" href="portfolios.html"><span class="nv-s">Portfolios</span><span class="nv-l c-indigo" aria-hidden="true"><span>Portfolios&nbsp;Portfolios&nbsp;Portfolios&nbsp;Portfolios&nbsp;</span></span></a>
+</nav>
+</header>
+<sc-if value="{{logoOn}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; justify-content: center"><img src="/_blob/2f5eeb373796419fcd5df0bf864e82cf" alt="sk 3D logo render" style="display: block; width: min({{logoW}}px, 42vh); max-width: 100%; aspect-ratio: 866 / 1080; object-fit: cover; border-radius: 14px"></div>
+</sc-if>
+<section aria-label="Specialties" onMouseEnter="{{pause}}" onMouseLeave="{{resume}}" style="display: flex; flex-direction: column; gap: 14px">
+<p class="s" style="margin: 0; font-size: 26px; line-height: 1.1; color: #fff">Welcome to my website! I'm Skyler, and I specialize in:</p>
+<sc-if value="{{useArrows}}" hint-placeholder-val="{{ true }}">
+<button class="sp-btn h {{spCapsCls}}" type="button" onClick="{{next}}" style="all: unset; cursor: pointer; display: flex; flex-direction: {{spDir}}; justify-content: {{spJust}}; align-items: {{spAlign}}; gap: {{spGap}}; font-size: {{spFs}}; transition: font-size .4s ease; white-space: nowrap; color: #fff">
+<span ref="{{spRef}}" style="position: relative; display: inline-block; height: 1em; width: {{cw}}; perspective: {{tpPersp}}; transition: width .6s ease-in-out">
+<span style="position: relative; display: block; height: 100%; transform-style: preserve-3d; transform: {{tpTf}}; transition: transform .85s cubic-bezier(.34,1.35,.64,1)">
+<span class="sp-t" ref="{{r0}}" aria-hidden="{{t0.hid}}" style="position: {{t0.pos}}; left: 0; top: 0; white-space: nowrap; opacity: {{t0.op}}; transform: {{t0.tf}}; filter: {{t0.bl}}; transition: opacity .5s ease, transform .6s ease-in-out, filter .5s ease; transform-origin: 0% 50%; height: 1em; line-height: 1; backface-visibility: hidden; -webkit-backface-visibility: hidden">Graphic &amp; Brand Design</span>
+<span class="sp-t" ref="{{r1}}" aria-hidden="{{t1.hid}}" style="position: {{t1.pos}}; left: 0; top: 0; white-space: nowrap; opacity: {{t1.op}}; transform: {{t1.tf}}; filter: {{t1.bl}}; transition: opacity .5s ease, transform .6s ease-in-out, filter .5s ease; transform-origin: 0% 50%; height: 1em; line-height: 1; backface-visibility: hidden; -webkit-backface-visibility: hidden">Industrial / Product Design</span>
+<span class="sp-t" ref="{{r2}}" aria-hidden="{{t2.hid}}" style="position: {{t2.pos}}; left: 0; top: 0; white-space: nowrap; opacity: {{t2.op}}; transform: {{t2.tf}}; filter: {{t2.bl}}; transition: opacity .5s ease, transform .6s ease-in-out, filter .5s ease; transform-origin: 0% 50%; height: 1em; line-height: 1; backface-visibility: hidden; -webkit-backface-visibility: hidden">Product Visualization</span>
+</span>
+</span>
+<sc-if value="{{arrMorph}}" hint-placeholder-val="{{ true }}">
+<span aria-hidden="true" class="arw" style="position: relative; display: inline-block; height: 0.74em; width: 2.03em">
+<span style="position: absolute; left: 0; top: 0; height: 100%; width: {{am.w}}; border-radius: {{am.br}}; background-color: {{am.bg}}; overflow: hidden; transition: width .6s ease-in-out, border-radius .6s ease-in-out, background-color .6s ease-in-out"><svg viewBox="0 0 203 74" preserveAspectRatio="none" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; opacity: {{am.to}}; transition: opacity .45s ease"><text x="101.5" y="64" text-anchor="middle" textLength="186" lengthAdjust="spacingAndGlyphs" font-size="76" font-weight="900" fill="#FFF200" style="font-family: 'Archivo', sans-serif; font-stretch: 62.5%">WHAT ELSE?</text></svg></span>
+<span style="position: absolute; top: 50%; left: {{am.al}}; width: {{am.aw}}; height: 0.11em; margin-top: -0.055em; opacity: {{am.ao}}; transition: left .6s ease-in-out, width .6s ease-in-out, opacity .3s ease">
+<span style="position: absolute; left: 0; right: 0.04em; top: 0; bottom: 0; border-radius: 0.06em; background-color: {{am.ac}}; transition: background-color .6s ease"></span>
+<span style="position: absolute; right: 0.02em; top: 50%; width: 0.3em; height: 0.3em; margin-top: -0.15em; box-sizing: border-box; border-top: 0.11em solid {{am.ac}}; border-right: 0.11em solid {{am.ac}}; transform: rotate(45deg); transition: border-color .6s ease"></span>
+</span>
+</span>
+</sc-if>
+<sc-if value="{{arrPrism}}" hint-placeholder-val="{{ false }}">
+<span aria-hidden="true" style="position: relative; display: inline-block; height: 0.74em; width: 2.03em; perspective: 4em">
+<span style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; transform-style: preserve-3d; transform: rotateX({{prismDeg}}deg); transition: transform .85s cubic-bezier(.34,1.35,.64,1)">
+<span class="pf" style="transform: rotateX(0deg) translateZ(0.2136em); background-color: #ED217C"><span style="position: absolute; top: 50%; left: 0.1em; width: 1.8em; height: 0.11em; margin-top: -0.055em"><span style="position: absolute; left: 0; right: 0.04em; top: 0; bottom: 0; border-radius: 0.06em; background-color: #000000"></span><span style="position: absolute; right: 0.02em; top: 50%; width: 0.3em; height: 0.3em; margin-top: -0.15em; box-sizing: border-box; border-top: 0.11em solid #000000; border-right: 0.11em solid #000000; transform: rotate(45deg)"></span></span></span>
+<span class="pf" style="transform: rotateX(120deg) translateZ(0.2136em)"><span style="position: absolute; left: 0; top: 0; width: 0.74em; height: 0.74em; border-radius: 50%; background-color: #E1E434"><span style="position: absolute; top: 50%; left: 0.15em; width: 0.44em; height: 0.11em; margin-top: -0.055em"><span style="position: absolute; left: 0; right: 0.04em; top: 0; bottom: 0; border-radius: 0.06em; background-color: #111B11"></span><span style="position: absolute; right: 0.02em; top: 50%; width: 0.3em; height: 0.3em; margin-top: -0.15em; box-sizing: border-box; border-top: 0.11em solid #111B11; border-right: 0.11em solid #111B11; transform: rotate(45deg)"></span></span></span></span>
+<span class="pf" style="transform: rotateX(240deg) translateZ(0.2136em); background-color: #13A89E"><svg viewBox="0 0 203 74" preserveAspectRatio="none" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%"><text x="101.5" y="64" text-anchor="middle" textLength="186" lengthAdjust="spacingAndGlyphs" font-size="76" font-weight="900" fill="#FFF200" style="font-family: 'Archivo', sans-serif; font-stretch: 62.5%">WHAT ELSE?</text></svg></span>
+</span>
+</span>
+</sc-if>
+</button>
+<div class="b" style="display: grid; max-width: 520px; font-size: 16px; line-height: 1.45; color: #cfcfcf">
+<p aria-hidden="{{t0.hid}}" style="grid-area: 1 / 1; margin: 0; opacity: {{t0.op}}; transition: opacity .5s">Beyond the products themselves, branding and graphics articulate a brand's values and define how it communicates with customers to convey its story.</p>
+<p aria-hidden="{{t1.hid}}" style="grid-area: 1 / 1; margin: 0; opacity: {{t1.op}}; transition: opacity .5s">As an Industrial Designer, I take solutions into reality to create a better world through the products we interact with.</p>
+<p aria-hidden="{{t2.hid}}" style="grid-area: 1 / 1; margin: 0; opacity: {{t2.op}}; transition: opacity .5s">Elevating product displays and visualizations to a larger-than-life experience that conveys the emotions the product is designed to inspire.</p>
+</div>
+</sc-if>
+<sc-if value="{{useList}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; border-top: 1.5px solid currentColor; margin-top: 10px">
+<a class="disc-i drv" href="portfolios.html" style="animation-delay: 150ms; display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 6px 12px; padding: 16px 0; border-bottom: 1px solid #333; text-decoration: none; color: inherit">
+<span class="b disc-num" style="font-size: 12px; letter-spacing: 0.12em; opacity: 0.7; padding-top: 6px">01</span>
+<span class="h disc-n" style="font-size: 30px; transition: color .2s">Graphic &amp; Brand Design</span>
+<span></span>
+<span class="b" style="font-size: 14px; line-height: 1.45; opacity: 0.78">Beyond the products themselves, branding and graphics articulate a brand's values and define how it communicates with customers to convey its story.</span>
+</a>
+<a class="disc-i drv" href="portfolios.html" style="animation-delay: 260ms; display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 6px 12px; padding: 16px 0; border-bottom: 1px solid #333; text-decoration: none; color: inherit">
+<span class="b disc-num" style="font-size: 12px; letter-spacing: 0.12em; opacity: 0.7; padding-top: 6px">02</span>
+<span class="h disc-n" style="font-size: 30px; transition: color .2s">Industrial / Product Design</span>
+<span></span>
+<span class="b" style="font-size: 14px; line-height: 1.45; opacity: 0.78">As an Industrial Designer, I take solutions into reality to create a better world through the products we interact with.</span>
+</a>
+<a class="disc-i drv" href="portfolios.html" style="animation-delay: 370ms; display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 6px 12px; padding: 16px 0; text-decoration: none; color: inherit">
+<span class="b disc-num" style="font-size: 12px; letter-spacing: 0.12em; opacity: 0.7; padding-top: 6px">03</span>
+<span class="h disc-n" style="font-size: 30px; transition: color .2s">Product Visualization</span>
+<span></span>
+<span class="b" style="font-size: 14px; line-height: 1.45; opacity: 0.78">Elevating product displays and visualizations to a larger-than-life experience that conveys the emotions the product is designed to inspire.</span>
+</a>
+</div>
+</sc-if>
+</section>
+<div class="b" style="display: flex; justify-content: space-between; font-size: 12px; color: #a8a8a8">
+<a class="cue-d b" href="#work">Scroll for more work <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M6 13l6 6 6-6"></path></svg></a>
+<span>© 2026 Skyler Kapel</span>
+</div>
+</div>
+<sc-if value="{{ckOn}}" hint-placeholder-val="{{ true }}">
+<div ref="{{ckRef}}" aria-hidden="true" style="flex: 0 0 {{tx.h}}px; align-self: stretch; background-color: {{tx.bg}}; background-image: {{tx.img}}; background-size: {{tx.size}}"></div>
+</sc-if>
+</aside>
+<main id="work" class="pad" style="flex: 999 1 560px; min-width: 0; box-sizing: border-box; padding: 40px 48px 160px; display: flex; flex-direction: column; gap: 32px">
+<div class="b" style="display: flex; justify-content: space-between; align-items: baseline; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #666; border-bottom: 1.5px solid #000; padding-bottom: 12px">
+<span>Selected work</span>
+<span>10 projects</span>
+</div>
+<div class="cards" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 24px">
+<a class="card" href="work-reverra.html">
+<span class="card-img"><img src="{{pvReverra.src}}" style="object-position: {{pvReverra.x}}% {{pvReverra.y}}%" alt="Reverra"></span>
+<span style="display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 4px 8px; align-items: baseline">
+<span class="b" style="font-size: 12px; color: #666">01</span>
+<span class="h card-name" style="font-size: 30px; transition: color .2s">Reverra</span>
+<span></span>
+<span class="b" style="font-size: 13px; color: #555">Brand refresh · Packaging · Rendering</span>
+</span>
+</a>
+<a class="card" href="work-mtrx.html">
+<span class="card-img"><img src="{{pvMTRX.src}}" style="object-position: {{pvMTRX.x}}% {{pvMTRX.y}}%" alt="MTRX"></span>
+<span style="display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 4px 8px; align-items: baseline">
+<span class="b" style="font-size: 12px; color: #666">02</span>
+<span class="h card-name" style="font-size: 30px; transition: color .2s">MTRX</span>
+<span></span>
+<span class="b" style="font-size: 13px; color: #555">Brand identity · Packaging</span>
+</span>
+</a>
+<a class="card" href="work-zlushy.html">
+<span class="card-img"><img src="{{pvZlushy.src}}" style="object-position: {{pvZlushy.x}}% {{pvZlushy.y}}%" alt="Zlushy"></span>
+<span style="display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 4px 8px; align-items: baseline">
+<span class="b" style="font-size: 12px; color: #666">03</span>
+<span class="h card-name" style="font-size: 30px; transition: color .2s">Zlushy</span>
+<span></span>
+<span class="b" style="font-size: 13px; color: #555">Brand identity · Packaging</span>
+</span>
+</a>
+<a class="card" href="work-amazingbotanicals.html">
+<span class="card-img"><img src="{{pvAmazingBotanicals.src}}" style="object-position: {{pvAmazingBotanicals.x}}% {{pvAmazingBotanicals.y}}%" alt="Amazing Botanicals"></span>
+<span style="display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 4px 8px; align-items: baseline">
+<span class="b" style="font-size: 12px; color: #666">04</span>
+<span class="h card-name" style="font-size: 30px; transition: color .2s">Amazing Botanicals</span>
+<span></span>
+<span class="b" style="font-size: 13px; color: #555">Brand identity · Packaging · Rendering</span>
+</span>
+</a>
+<a class="card" href="work-xomox.html">
+<span class="card-img"><img src="{{pvXOMOX.src}}" style="object-position: {{pvXOMOX.x}}% {{pvXOMOX.y}}%" alt="XOMOX"></span>
+<span style="display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 4px 8px; align-items: baseline">
+<span class="b" style="font-size: 12px; color: #666">05</span>
+<span class="h card-name" style="font-size: 30px; transition: color .2s">XOMOX</span>
+<span></span>
+<span class="b" style="font-size: 13px; color: #555">Jewelry visualization</span>
+</span>
+</a>
+<a class="card" href="work-faceallies.html">
+<span class="card-img"><img src="{{pvFaceAllies.src}}" style="object-position: {{pvFaceAllies.x}}% {{pvFaceAllies.y}}%" alt="Face Allies"></span>
+<span style="display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 4px 8px; align-items: baseline">
+<span class="b" style="font-size: 12px; color: #666">06</span>
+<span class="h card-name" style="font-size: 30px; transition: color .2s">Face Allies</span>
+<span></span>
+<span class="b" style="font-size: 13px; color: #555">Logo · Event graphics · 3D</span>
+</span>
+</a>
+<a class="card" href="work-highrollers.html">
+<span class="card-img"><img src="{{pvHighRollers.src}}" style="object-position: {{pvHighRollers.x}}% {{pvHighRollers.y}}%" alt="High Rollers"></span>
+<span style="display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 4px 8px; align-items: baseline">
+<span class="b" style="font-size: 12px; color: #666">07</span>
+<span class="h card-name" style="font-size: 30px; transition: color .2s">High Rollers</span>
+<span></span>
+<span class="b" style="font-size: 13px; color: #555">Streetwear merch · Mascot</span>
+</span>
+</a>
+<a class="card" href="work-ironsky.html">
+<span class="card-img"><img src="{{pvIronSky.src}}" style="object-position: {{pvIronSky.x}}% {{pvIronSky.y}}%" alt="Iron Sky Studios"></span>
+<span style="display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 4px 8px; align-items: baseline">
+<span class="b" style="font-size: 12px; color: #666">08</span>
+<span class="h card-name" style="font-size: 30px; transition: color .2s">Iron Sky Studios</span>
+<span></span>
+<span class="b" style="font-size: 13px; color: #555">Apparel · Illustration · Mailer</span>
+</span>
+</a>
+<a class="card" href="work-farrahmoan.html">
+<span class="card-img"><img src="{{pvFarrahMoan.src}}" style="object-position: {{pvFarrahMoan.x}}% {{pvFarrahMoan.y}}%" alt="Farrah Moan"></span>
+<span style="display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 4px 8px; align-items: baseline">
+<span class="b" style="font-size: 12px; color: #666">09</span>
+<span class="h card-name" style="font-size: 30px; transition: color .2s">Farrah Moan</span>
+<span></span>
+<span class="b" style="font-size: 13px; color: #555">Logo · 3D scenes</span>
+</span>
+</a>
+<a class="card" href="work-kronton.html">
+<span class="card-img"><img src="{{pvKronton.src}}" style="object-position: {{pvKronton.x}}% {{pvKronton.y}}%" alt="Kronton"></span>
+<span style="display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 4px 8px; align-items: baseline">
+<span class="b" style="font-size: 12px; color: #666">10</span>
+<span class="h card-name" style="font-size: 30px; transition: color .2s">Kronton</span>
+<span></span>
+<span class="b" style="font-size: 13px; color: #555">Product visualization</span>
+</span>
+</a>
+</div>
+</main>
+<a class="lt" href="contact.html" aria-label="Let's talk" style="width: {{ltPx}}px; height: {{ltPx}}px">
+<svg ref="{{ltRef}}" class="lt-svg" viewBox="-60 -60 120 120" aria-hidden="true">
+<defs><linearGradient id="ltgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="{{ltA}}"></stop><stop offset="0.5" stop-color="{{ltB}}"></stop><stop offset="1" stop-color="{{ltC}}"></stop><animateTransform attributeName="gradientTransform" type="rotate" from="0 0.5 0.5" to="360 0.5 0.5" dur="6s" repeatCount="indefinite"></animateTransform></linearGradient><pattern id="ltp-Checker" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="#fff"></rect><rect width="3" height="3" fill="#000"></rect><rect x="3" y="3" width="3" height="3" fill="#000"></rect></pattern><pattern id="ltp-Stripes" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="#fff"></rect><rect width="2.5" height="5" fill="#000"></rect></pattern><pattern id="ltp-Dots" width="5" height="5" patternUnits="userSpaceOnUse"><rect width="5" height="5" fill="#fff"></rect><circle cx="2.5" cy="2.5" r="1.3" fill="#000"></circle></pattern><pattern id="ltp-Grid" width="5" height="5" patternUnits="userSpaceOnUse"><rect width="5" height="5" fill="#fff"></rect><path d="M0 0.4H5M0.4 0V5" stroke="#000" stroke-width="0.8"></path></pattern><pattern id="ltp-Triangles" width="5" height="5" patternUnits="userSpaceOnUse"><rect width="5" height="5" fill="#fff"></rect><path d="M0 0L5 0L0 5Z" fill="#000"></path></pattern><path id="ltcirc" d="M0,-21 a21,21 0 1,1 0,42 a21,21 0 1,1 0,-42"></path></defs>
+<g class="lt-rot" style="animation-duration: {{ltSpinS}}s">
+<path d="{{ltD}}" fill="{{ltFill}}" stroke="{{ltStroke}}" stroke-width="{{ltStrokeW}}" stroke-linejoin="round"></path>
+<path class="{{ltGfxCls}}" d="{{ltD}}" fill="url(#ltgrad)" transform="scale(0.9)" style="animation-duration: {{ltEveryS}}s"></path>
+</g>
+<sc-if value="{{ltTxtCirc}}" hint-placeholder-val="{{ false }}"><g class="lt-circ"><text class="h" font-size="8.5" fill="#fff"><textPath href="#ltcirc" textLength="126" lengthAdjust="spacing">LET&#8217;S TALK &#8226; LET&#8217;S TALK &#8226;</textPath></text></g></sc-if>
+</svg>
+<sc-if value="{{ltTxtStack}}" hint-placeholder-val="{{ true }}"><span class="lt-label h" style="font-size: 19px; line-height: 1">Let's<br>talk</span></sc-if>
+<sc-if value="{{ltTxtLine}}" hint-placeholder-val="{{ false }}"><span class="lt-label h" style="font-size: 16px; line-height: 1; white-space: nowrap">Let's talk</span></sc-if>
+</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;Live site home page&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Home A — Splash&quot;,&quot;Home B — Index&quot;,&quot;Home D — Split&quot;],&quot;default&quot;:&quot;Home D — Split&quot;,&quot;section&quot;:&quot;Live site&quot;},&quot;Font pairing&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Original — Stack Sans + Yellowtail&quot;,&quot;Familjen Grotesk + Instrument Serif&quot;,&quot;Inter Tight + Newsreader&quot;,&quot;Archivo Condensed + Instrument Serif&quot;,&quot;Bricolage Grotesque + Fraunces&quot;],&quot;default&quot;:&quot;Original — Stack Sans + Yellowtail&quot;,&quot;section&quot;:&quot;Type&quot;},&quot;Caps · headings&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;section&quot;:&quot;Type&quot;},&quot;Caps · specialty line&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;section&quot;:&quot;Type&quot;},&quot;Caps · menu&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;section&quot;:&quot;Type&quot;},&quot;Caps · body text&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;section&quot;:&quot;Type&quot;},&quot;Background&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;White&quot;,&quot;Paper&quot;,&quot;Dot grid&quot;,&quot;Line grid&quot;],&quot;default&quot;:&quot;White&quot;,&quot;section&quot;:&quot;Background &amp; pattern&quot;},&quot;Pattern&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Checker&quot;,&quot;Stripes&quot;,&quot;Dots&quot;,&quot;Grid&quot;,&quot;Triangles&quot;,&quot;None&quot;],&quot;default&quot;:&quot;Checker&quot;,&quot;section&quot;:&quot;Background &amp; pattern&quot;},&quot;Pattern size&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:6,&quot;max&quot;:40,&quot;step&quot;:1,&quot;unit&quot;:&quot;px&quot;,&quot;default&quot;:13,&quot;section&quot;:&quot;Background &amp; pattern&quot;},&quot;Pattern moves&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;section&quot;:&quot;Background &amp; pattern&quot;},&quot;Pattern speed&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:5,&quot;max&quot;:200,&quot;step&quot;:5,&quot;unit&quot;:&quot;px/s&quot;,&quot;default&quot;:70,&quot;section&quot;:&quot;Background &amp; pattern&quot;},&quot;Specialty text size&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:24,&quot;max&quot;:96,&quot;step&quot;:1,&quot;unit&quot;:&quot;px&quot;,&quot;default&quot;:40,&quot;section&quot;:&quot;Specialty line&quot;},&quot;Seconds per specialty&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:1.5,&quot;max&quot;:10,&quot;step&quot;:0.5,&quot;unit&quot;:&quot;s&quot;,&quot;default&quot;:3.5,&quot;section&quot;:&quot;Specialty line&quot;},&quot;Arrow style&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Morph&quot;,&quot;Prism&quot;],&quot;default&quot;:&quot;Prism&quot;,&quot;section&quot;:&quot;Specialty line&quot;},&quot;Text on prism&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;section&quot;:&quot;Specialty line&quot;},&quot;Specialty style&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Morphing arrows&quot;,&quot;Discipline list&quot;],&quot;default&quot;:&quot;Discipline list&quot;,&quot;section&quot;:&quot;Specialty line&quot;},&quot;Specialty layout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Fit on one line&quot;,&quot;Shape first&quot;,&quot;Shape above&quot;],&quot;default&quot;:&quot;Shape above&quot;,&quot;section&quot;:&quot;Specialty line&quot;},&quot;Show logo render&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;section&quot;:&quot;Logo render&quot;},&quot;Logo render size&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:160,&quot;max&quot;:520,&quot;step&quot;:10,&quot;unit&quot;:&quot;px&quot;,&quot;default&quot;:520,&quot;section&quot;:&quot;Logo render&quot;},&quot;Button size&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:96,&quot;max&quot;:260,&quot;step&quot;:2,&quot;unit&quot;:&quot;px&quot;,&quot;default&quot;:150,&quot;section&quot;:&quot;Let's talk button&quot;},&quot;Button color&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#4E5EAB&quot;,&quot;options&quot;:[&quot;#4E5EAB&quot;,&quot;#2E3A8C&quot;,&quot;#13A89E&quot;,&quot;#ED217C&quot;,&quot;#000000&quot;],&quot;section&quot;:&quot;Let's talk button&quot;},&quot;Button spin&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Off&quot;,&quot;Slow&quot;,&quot;Medium&quot;,&quot;Fast&quot;],&quot;default&quot;:&quot;Fast&quot;,&quot;section&quot;:&quot;Let's talk button&quot;},&quot;Button shapes&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Star, cube, triangle, flower&quot;,&quot;Star only&quot;,&quot;Star + flower&quot;,&quot;Cube + triangle&quot;,&quot;Every shape&quot;],&quot;default&quot;:&quot;Every shape&quot;,&quot;section&quot;:&quot;Let's talk button&quot;},&quot;Shape speed&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Fast&quot;,&quot;Medium&quot;,&quot;Slow&quot;],&quot;default&quot;:&quot;Fast&quot;,&quot;section&quot;:&quot;Let's talk button&quot;},&quot;Button gradient&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Off&quot;,&quot;Indigo&quot;,&quot;Teal&quot;,&quot;Brand pops&quot;,&quot;Mono&quot;],&quot;default&quot;:&quot;Off&quot;,&quot;section&quot;:&quot;Let's talk button&quot;},&quot;Button text&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Stacked&quot;,&quot;One line&quot;,&quot;Circular&quot;,&quot;None&quot;],&quot;default&quot;:&quot;Stacked&quot;,&quot;section&quot;:&quot;Let's talk button&quot;},&quot;Button outline&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Match page pattern&quot;,&quot;White&quot;,&quot;None&quot;],&quot;default&quot;:&quot;None&quot;,&quot;section&quot;:&quot;Let's talk button&quot;},&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:1900}}">
+const FONT_KEYS = {
+  'Original — Stack Sans + Yellowtail': 'original',
+  'Familjen Grotesk + Instrument Serif': 'familjen',
+  'Inter Tight + Newsreader': 'intertight',
+  'Archivo Condensed + Instrument Serif': 'archivo',
+  'Bricolage Grotesque + Fraunces': 'bricolage'
+};
+const PROJECTS = [
+  { name: 'Reverra', scope: 'Brand refresh · Packaging · Rendering', thumb: '/_blob/990dbb0138cff93d18e2e8f66cb03ead' },
+  { name: 'MTRX', scope: 'Brand identity · Packaging', thumb: '/_blob/ca0d269219de1d778d3f5c2b1fe6e8ce' },
+  { name: 'Zlushy', scope: 'Brand identity · Packaging', thumb: '/_blob/8ac09b38bfa347a644a34f2df5f665c5' },
+  { name: 'Amazing Botanicals', scope: 'Brand identity · Packaging · Rendering', thumb: '/_blob/62336e1c48050b19c65bc35c98170607' },
+  { name: 'XOMOX', scope: 'Jewelry visualization', thumb: '/_blob/68b986d38ced5d4a3994d3153352dfa9' },
+  { name: 'Face Allies', scope: 'Logo · Event graphics · 3D', thumb: '/_blob/ee09cb9fa1f3e36a833cc72cc43abeca' },
+  { name: 'High Rollers', scope: 'Streetwear merch · Mascot', thumb: '/_blob/70242d241e19f625355cd826f160e5ff' },
+  { name: 'Iron Sky Studios', scope: 'Apparel · Illustration · Mailer', thumb: '/_blob/d1a4e8fed11bf7051d993b261febd552' },
+  { name: 'Farrah Moan', scope: 'Logo · 3D scenes', thumb: '/_blob/630690f265cfbe372daa9073bc695e7c' },
+  { name: 'Kronton', scope: 'Product visualization', thumb: '/_blob/55fdbb81d32fb15c68c40bea28dcba15' }
+];
 
 
 
-<script src="site.js" defer></script>
-</body></html>
+
+const LT_N = 180;
+function ltRadii(k, a) {
+  const r = [];
+  for (let i = 0; i < LT_N; i++) {
+    const t = (i / LT_N) * Math.PI * 2;
+    r.push((50 * (1 + a * Math.cos(k * t))) / (1 + a));
+  }
+  return r;
+}
+function ltPoly(n, off, scale) {
+  const seg = (Math.PI * 2) / n;
+  let r = [];
+  for (let i = 0; i < LT_N; i++) {
+    const t = (i / LT_N) * Math.PI * 2 + off;
+    const m = ((t % seg) + seg) % seg;
+    r.push(Math.cos(Math.PI / n) / Math.cos(m - Math.PI / n));
+  }
+  for (let pass = 0; pass < 3; pass++) {
+    const s = [];
+    for (let i = 0; i < LT_N; i++) {
+      let acc = 0;
+      for (let j = -4; j <= 4; j++) acc += r[(i + j + LT_N) % LT_N];
+      s.push(acc / 9);
+    }
+    r = s;
+  }
+  const mx = Math.max.apply(null, r);
+  return r.map((v) => (v / mx) * 50 * (scale || 1));
+}
+const LT_LIB = {
+  Star: ltRadii(5, 0.16),
+  Flower: ltRadii(6, 0.12),
+  Scallop: ltRadii(9, 0.07),
+  Cube: ltPoly(4, Math.PI / 4, 0.98),
+  Triangle: ltPoly(3, 0, 1.06),
+  Hexagon: ltPoly(6, 0, 1)
+};
+
+const LT_SETS = {
+  'Star, cube, triangle, flower': ['Star', 'Cube', 'Triangle', 'Flower'],
+  'Star only': ['Star'],
+  'Star + flower': ['Star', 'Flower'],
+  'Cube + triangle': ['Cube', 'Triangle'],
+  'Every shape': ['Star', 'Flower', 'Scallop', 'Cube', 'Triangle', 'Hexagon']
+};
+const LT_SPEEDS = { Fast: { hold: 1.0, morph: 350 }, Medium: { hold: 2.2, morph: 650 }, Slow: { hold: 4, morph: 1100 } };
+const LT_SPINS = { Off: 0, Slow: 40, Medium: 22, Fast: 10 };
+const LT_GRADS = { Indigo: ['#2E3A8C', '#7E8CD6', '#C9CFF2'], Teal: ['#0B5F5A', '#13A89E', '#BFE9E4'], 'Brand pops': ['#ED217C', '#FFF200', '#13A89E'], Mono: ['#111111', '#666666', '#DDDDDD'] };
+function ltCfg(p) {
+  const sp = LT_SPEEDS[p.buttonShapeSpeed] || LT_SPEEDS.Fast;
+  const g = LT_GRADS[p.buttonGradient ?? 'Indigo'];
+  const spin = LT_SPINS[p.buttonSpin ?? 'Medium'];
+  return {
+    px: Number(p.buttonSize ?? 150),
+    fill: p.buttonColor ?? '#4E5EAB',
+    spin: spin || 99999,
+    keys: LT_SETS[p.buttonShapes] || LT_SETS['Star, cube, triangle, flower'],
+    hold: sp.hold,
+    morph: sp.morph,
+    a: g ? g[0] : '#000', b: g ? g[1] : '#000', c: g ? g[2] : '#000',
+    gfx: 'lt-gfx' + (g ? '' : ' lt-off'),
+    stroke: (p.buttonOutline === 'None') ? 'none' : (p.buttonOutline === 'White' || (p.texture ?? 'Checker') === 'None') ? '#fff' : 'url(#ltp-' + (p.texture ?? 'Checker') + ')',
+    strokeW: p.buttonOutline === 'None' ? 0 : 7,
+    txt: p.buttonText ?? 'Stacked'
+  };
+}
+function ltPath(r) {
+  let s = '';
+  for (let i = 0; i < LT_N; i++) {
+    const t = (i / LT_N) * Math.PI * 2 - Math.PI / 2;
+    s += (i ? 'L' : 'M') + (r[i] * Math.cos(t)).toFixed(2) + ' ' + (r[i] * Math.sin(t)).toFixed(2);
+  }
+  return s + 'Z';
+}
+const LT_D0 = ltPath(LT_LIB.Star);
+function ltFrame(c, ts) {
+  const el = c.ltEl;
+  if (!el) return;
+  const p = RP(c.props);
+  const cf = ltCfg(p);
+  const keys = cf.keys;
+  const key = keys[((c.state.shape || 1) - 1) % keys.length];
+  if (c._lts !== key) {
+    c._ltFrom = c._ltCur || LT_LIB.Star;
+    c._ltTo = LT_LIB[key];
+    c._lt0 = ts;
+    c._lts = key;
+    c._ltDone = false;
+  }
+  if (!c._ltTo || c._ltDone) return;
+  const dur = cf.morph;
+  const k = Math.min(1, (ts - c._lt0) / dur);
+  const e = k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2;
+  const r = c._ltTo.map((v, i) => c._ltFrom[i] + (v - c._ltFrom[i]) * e);
+  c._ltCur = r;
+  const d = ltPath(r);
+  el.querySelectorAll('path').forEach((x) => x.setAttribute('d', d));
+  if (k >= 1) c._ltDone = true;
+}
+const PV_T = {"Reverra": {"cur": "990dbb0138cff93d18e2e8f66cb03ead", "lib": ["990dbb0138cff93d18e2e8f66cb03ead", "b66c13931f3d510ed6197de729037d96", "0a2ea612246b0a0e1595f3d442ae7899", "1ad15116c367f24c4b0219523f030a20", "8839c99f868e336bf1073f2bab5a46de", "47b9e66aa3142a747e891015366b504e", "bcab59349a964cc53f20c377bcd8bc70", "688f5c7018eadffdd31d1e0cd2124248", "94190be85de0b4da172166d4f1ebdd93", "c3ba74f6fc970001bdf32d98a255b115", "2ece8637a7503f5e91df0df4ab337d47", "ae4384c498f388e4bb6109ae7313770e", "c5f94c0ebf085cd0dd37d7717cc501b5", "039bd34f57a91761e0fac7a935111ef8", "67c18a9b5143b5e894c46ff90ec6e40a", "22f0a0a667fba29e2845bf6949af76a0", "58fc94582cb108658523d1307a6cee96", "662d4658ae392499be19f4f02631fef6", "f1fbd2cd99b459c5aedce2e86a5e7d7c"], "key": "Reverra preview"}, "MTRX": {"cur": "091aa1afb1811687aab2ddf4f8718b98", "lib": ["3c5b1b3f1cfc6e26b983b4dc1cc892d0", "551a75677d53ce1916893342a9aca5a3", "6d9aca6c7aac96f038618c3b8cb4d27f", "31019b2f48353e0bcb6484be46df622f", "6f5f7ad4f05954bc574b72b85d1c207c", "96acb05e82a1dc352fdc0e9fa2e11d3e", "fa126c918c204ef7b5daf31b8eb02aa5", "55423c911d50b5a06e9695d512d865aa", "ca0d269219de1d778d3f5c2b1fe6e8ce", "c394bf77f1b419cbf9e9c810980f986e"], "key": "MTRX preview"}, "Zlushy": {"cur": "59862f5858b77ab5ddc88c73a9172026", "lib": ["cf401fed8d326bfa89dfa7d96fbd4b1b", "47497d748db3110a27ececc7c7ecc6fb", "c0ef380c07d0d52ce78e489d3bc6ac57", "dbb22773ac95238529f371438d6e502d", "cfa9c31bb6d3b833c3b9990288b8239a", "2101098fa0199c17bfa8df2475c7f10b", "af21c4b49c99553c5682a14086a4e860", "5e181958331fc0401933fb2b65a71d35", "8ac09b38bfa347a644a34f2df5f665c5", "33e00dabc6aba7988f51ccb9c000a2e5", "59862f5858b77ab5ddc88c73a9172026", "ee8a81b1c2e3880c6cf0459513e20c0b", "1ba37b2e5e9745ef7994617cc958e098"], "key": "Zlushy preview"}, "AmazingBotanicals": {"cur": "be58079ab645b69e778004fd81157685", "lib": ["62336e1c48050b19c65bc35c98170607", "26401a8b3a13ec94c6830374b4f50324", "dd62d79b09be7ae410f2d56e73850785", "6b0e7e6dbb9b583f650df12ddad7374a", "1fe40dc31d74b385e1e1aadd5fc3640e", "ef8ca05a199ea3fc776179ea3dc68c53", "d402acfd279a9eafeb3f3024e9056eef", "1c09582432712216772d3794058de9f0", "0bfdeeae2c188f8eb69b18ca4b893e64", "77f51f26d1c0df2573e8431409d579d0", "ff7e04be28ed84d4e4dfa86ee0a82947", "da4b20838856d9d202d1374d059b9371", "be58079ab645b69e778004fd81157685"], "key": "Amazing Botanicals preview"}, "XOMOX": {"cur": "aac75b0efbf61741208cd759e819b75d", "lib": ["68b986d38ced5d4a3994d3153352dfa9", "64bf91f008f161816900693d63745632", "3c7c8ad67d7063f6e7ed3ca0b93aebda", "b7c586562e55109e9ac3aa051e718053", "31bb8c28c0a3555ece67a78664873eb0", "f86fb009367c8d41754c85304ee0abd5", "aac75b0efbf61741208cd759e819b75d", "ced89aae7b5a8ef6436508c47da3da45"], "key": "XOMOX preview"}, "FaceAllies": {"cur": "3cdf899d9bbed8b6925a6b161a5165ff", "lib": ["3cdf899d9bbed8b6925a6b161a5165ff", "e1c66a77357424924d7a3fcaaeef4bc9", "1cbf596cb184609b8ec7f215203a69d4", "51f86b131a7b1c11580e4c5329c3a3af", "31cf0df0e7f7ca224e6e662a5058b72f", "4304f3545128309e94effd3b6dce8685", "ee09cb9fa1f3e36a833cc72cc43abeca", "e99a5d37245183942558bb1bf278d842", "cc88814f1d6d9feb0a8213c4c0decc8b"], "key": "Face Allies preview"}, "HighRollers": {"cur": "015810268a5a9291af3aa88b7619d642", "lib": ["4de10777005abeadd339f38b7471e8ca", "0fdff6f40d4cbebbe167f0b553fcd0e0", "70242d241e19f625355cd826f160e5ff", "015810268a5a9291af3aa88b7619d642", "56e5626607381fab104879ea751a51da", "8d96e164708b090a4c07cfb0ec631371", "24fa4d1fb6a7f09b7044d7d186d84514", "f7f0d664e53ccbf65296d807f90e7697", "6359c4e4bb5e90ab2ace1a1c9d5cb576"], "key": "High Rollers preview"}, "IronSky": {"cur": "95624000d4b0a9ffe17c7f4cd02953a8", "lib": ["95624000d4b0a9ffe17c7f4cd02953a8", "d1a4e8fed11bf7051d993b261febd552", "beff2002e0c3eeec75c1d6a6fdb73d75", "dc6bebfb30c9697853fb0616e05e2444", "66e5fd8c85d0b2186f18d2cf6c7893f3", "aa893d4e448c7cbff539bb465ae3fc5e", "89bbd1c40f22bfa44825dea666f4555e", "9b0ab39c9877eab39f6d8e3bb32327f9"], "key": "Iron Sky Studios preview"}, "FarrahMoan": {"cur": "5c3a6890547b3a0519d3abeee4b524ae", "lib": ["630690f265cfbe372daa9073bc695e7c", "5c3a6890547b3a0519d3abeee4b524ae"], "key": "Farrah Moan preview"}, "Kronton": {"cur": "55fdbb81d32fb15c68c40bea28dcba15", "lib": ["55fdbb81d32fb15c68c40bea28dcba15"], "key": "Kronton preview"}};
+
+function pvParse(txt) {
+  const m = txt.match(/data-props=(?:"([^"]*)"|'([^']*)')/);
+  if (!m) return null;
+  const raw = (m[1] !== undefined ? m[1] : m[2]).replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&amp;/g, '&');
+  try { return JSON.parse(raw); } catch (e) { return null; }
+}
+function pvLoad(c, table) {
+  try {
+    fetch('home-a.html').then((r) => (r.ok ? r.text() : null)).then((txt) => {
+      if (!txt) return;
+      const d = pvParse(txt);
+      if (!d) return;
+      const out = {};
+      Object.keys(table).forEach((s) => {
+        const key = table[s].key || ('preview' + s); const v = d[key] && d[key].default;
+        const n = v ? parseInt(v, 10) : NaN;
+        if (n >= 1 && n <= table[s].lib.length) out[s] = table[s].lib[n - 1];
+      });
+      const oy = {};
+      Object.keys(table).forEach((s) => { const ck = (table[s].key || '').replace(' preview', ' crop'); if (d[ck] && d[ck].default != null) oy[s] = Number(d[ck].default); });
+      const ox = {}; Object.keys(table).forEach((s) => { const ck = (table[s].key || '').replace(' preview', ' crop X'); if (d[ck] && d[ck].default != null) ox[s] = Number(d[ck].default); }); c.setState({ pvm: out, pvmY: oy, pvmX: ox });
+    }).catch(() => {});
+  } catch (e) {}
+}
+function texture(t, s) {
+  const d = Math.round(s * 1.4142);
+  switch (t) {
+    case 'Stripes': return { img: 'repeating-linear-gradient(45deg, #000 0 ' + (s / 2) + 'px, #fff ' + (s / 2) + 'px ' + s + 'px)', size: d + 'px ' + d + 'px', h: s * 2 };
+    case 'Dots': return { img: 'radial-gradient(circle, #000 0 30%, transparent 32%)', size: s + 'px ' + s + 'px', h: s * 2 };
+    case 'Grid': return { img: 'linear-gradient(#000 0 2px, transparent 2px), linear-gradient(90deg, #000 0 2px, transparent 2px)', size: s + 'px ' + s + 'px', h: s * 2 };
+    case 'Triangles': return { img: 'linear-gradient(135deg, #000 50%, #fff 50%)', size: s + 'px ' + s + 'px', h: s * 2 };
+    default: return { img: 'repeating-conic-gradient(#000 0 25%, #fff 0 50%)', size: (s * 2) + 'px ' + (s * 2) + 'px', h: s * 2 };
+  }
+}
+
+const RP_MAP = {"Font pairing": "font", "Caps \u00b7 headings": "capsHeadings", "Caps \u00b7 project name": "capsName", "Caps \u00b7 menu": "capsNav", "Caps \u00b7 small labels": "capsLabels", "Caps \u00b7 body text": "capsBody", "Background": "background", "Pattern": "texture", "Pattern size": "checker", "Pattern moves": "checkerAnim", "Pattern speed": "checkerSpeed", "Layout": "composition", "Switch-project pill color": "cueColor", "Always show bottom toolbar": "toolbarAlways", "Specialty style": "specStyle", "Arrow style": "arrowStyle", "Specialty text size": "spSize", "Seconds per specialty": "spCycle", "Show logo render": "showLogo", "Logo render size": "logoSize", "Show image library": "showLibrary", "Show image numbers": "showNumbers", "Button size": "buttonSize", "Button color": "buttonColor", "Button text": "buttonText", "Button outline": "buttonOutline", "Button gradient": "buttonGradient", "Button shapes": "buttonShapes", "Shape speed": "buttonShapeSpeed", "Button spin": "buttonSpin"};
+const RP_CACHE = new WeakMap();
+function RP(p) {
+  if (!p) return {};
+  if (RP_CACHE.has(p)) return RP_CACHE.get(p);
+  const o = {};
+  Object.keys(p).forEach((k) => {
+    let n = RP_MAP[k];
+    if (!n) { const m = /^Spot (\d+)$/.exec(k); n = m ? 'img' + m[1] : k; }
+    o[n] = p[k];
+  });
+  RP_CACHE.set(p, o);
+  return o;
+}
+const HBG = {'White': 'bg-white', 'Paper': 'bg-paper', 'Dot grid': 'bg-dots', 'Line grid': 'bg-lines'};
+function coTx(c, tx, vert) {
+  return Object.assign({}, tx, { bg: '#fff' });
+}
+function dotCo(c, el) {
+  if (!el || !el.closest) return;
+  const p = RP(c.props);
+  const root = el.closest('.bg-dots, .bg-dots-k');
+  if (!root || (p.texture ?? 'Checker') !== 'Dots') {
+    if (c._coRoot) { c._coRoot.style.backgroundSize = ''; c._coRoot = null; }
+    return;
+  }
+  c._coRoot = root;
+  const s = Number(p.textureSize ?? 14);
+  const sz = s + 'px ' + s + 'px';
+  if (root.style.backgroundSize !== sz) root.style.backgroundSize = sz;
+  const rr = root.getBoundingClientRect(), er = el.getBoundingClientRect();
+  const m = (v) => -(((v % s) + s) % s);
+  const vert = el.offsetHeight > el.offsetWidth;
+  const off = p.textureAnim ? Math.round((c.ckOff || 0) * 10) / 10 : 0;
+  el.style.backgroundPosition = vert
+    ? m(er.left - rr.left).toFixed(1) + 'px ' + (m(er.top - rr.top) + off).toFixed(1) + 'px'
+    : (m(er.left - rr.left) + off).toFixed(1) + 'px ' + m(er.top - rr.top).toFixed(1) + 'px';
+}
+
+class Component extends DCLogic {
+  constructor(...args) {
+    super(...args);
+    this.state = { i: 0, paused: false, widths: null, shape: 1 };
+    this.t = [];
+    this.refs3 = [0, 1, 2].map((k) => (el) => { this.t[k] = el; });
+    this.measure = this.measure.bind(this);
+    this.ckEl = null;
+    this.ckRef = (el) => { this.ckEl = el; };
+    this.tick = this.tick.bind(this);
+    this.spRef = (el) => { this.spEl = el; };
+    this.ltRef = (el) => { this.ltEl = el; };
+  }
+  tick(ts) {
+    const last = this._ts || ts;
+    this._ts = ts;
+    const el = this.ckEl;
+    if (el) {
+      if (RP(this.props).checkerAnim) {
+        const sp = Number(RP(this.props).checkerSpeed ?? 30);
+        this.ckOff = ((this.ckOff || 0) + (sp * (ts - last)) / 1000) % 100000;
+        el.style.backgroundPosition = '0px ' + (Math.round(this.ckOff * 10) / 10) + 'px';
+      } else if (this.ckOff) {
+        this.ckOff = 0;
+        el.style.backgroundPosition = '0px 0px';
+      }
+    }
+    dotCo(this, this.ckEl);
+    ltFrame(this, ts);
+    this._raf = requestAnimationFrame(this.tick);
+  }
+  measure() {
+    const root = this.spEl || document;
+    const w = Array.from(root.querySelectorAll('.sp-t')).slice(0, 3).map((el) => Math.max(el.offsetWidth, el.scrollWidth));
+    if (w.length < 3) return;
+    if (!w.every((x) => x > 0)) return;
+    const prev = this.state.widths;
+    let avail = this.state.avail || 0, fsAt = this.state.fsAt || 0;
+    try { const sec = this.spEl && this.spEl.closest ? this.spEl.closest('section') : null; if (sec) avail = sec.clientWidth; fsAt = parseFloat(getComputedStyle(this.spEl).fontSize) || fsAt; } catch (e) {}
+    const ch = Math.abs(avail - (this.state.avail || 0)) > 1 || Math.abs(fsAt - (this.state.fsAt || 0)) > 0.25;
+    if (!prev || ch || prev.some((x, k) => Math.abs(x - w[k]) > 0.5)) this.setState({ widths: w, avail, fsAt });
+  }
+  startCycle() {
+    clearInterval(this._iv);
+    const s = Math.max(1.5, Number(RP(this.props).spCycle ?? 3.5));
+    this._iv = setInterval(() => { if (!this.state.paused) this.setState((st) => ({ i: (st.i + 1) % 3, steps: (st.steps || 0) + 1 })); }, s * 1000);
+  }
+  startShapes() {
+    clearInterval(this._sv);
+    const s = ltCfg(RP(this.props)).hold;
+    this._sv = setInterval(() => this.setState((st) => ({ shape: st.shape + 1 })), s * 1000);
+  }
+  remeasure() {
+    setTimeout(this.measure, 60);
+    setTimeout(this.measure, 700);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => this.measure());
+  }
+  componentDidMount() {
+    this.remeasure();
+    window.addEventListener('resize', this.measure);
+    try { if ('ResizeObserver' in window) { this._ro = new ResizeObserver(() => this.measure()); setTimeout(() => { const r = this.spEl || document; r.querySelectorAll('.sp-t').forEach((el) => this._ro && this._ro.observe(el)); const sec = this.spEl && this.spEl.closest && this.spEl.closest('section'); if (sec && this._ro) this._ro.observe(sec); }, 80); } } catch (e) {}
+    this.startCycle();
+    this.startShapes();
+    pvLoad(this, PV_T);
+    this._raf = requestAnimationFrame(this.tick);
+  }
+  componentDidUpdate(pp) {
+    if (RP(pp).font !== RP(this.props).font || RP(pp).spSize !== RP(this.props).spSize) this.remeasure();
+    if (RP(pp).spCycle !== RP(this.props).spCycle) this.startCycle();
+    if (RP(pp).buttonShapeSpeed !== RP(this.props).buttonShapeSpeed) this.startShapes();
+  }
+  componentWillUnmount() {
+    clearInterval(this._iv);
+    clearInterval(this._sv);
+    cancelAnimationFrame(this._raf);
+    window.removeEventListener('resize', this.measure);
+    if (this._ro) { this._ro.disconnect(); this._ro = null; }
+  }
+  renderVals() {
+    const i = this.state.i;
+    const AW = [2.03, 0.74, 2.03];
+    const AM = [
+      { w: '2.03em', br: '0em', bg: '#ED217C', al: '0.1em', aw: '1.8em', ao: 1, ac: '#000000', to: 0, ts: 0.6 },
+      { w: '0.74em', br: '0.37em', bg: '#E1E434', al: '0.15em', aw: '0.44em', ao: 1, ac: '#111B11', to: 0, ts: 0.3 },
+      { w: '2.03em', br: '0em', bg: '#13A89E', al: '0.8em', aw: '0.4em', ao: 0, ac: '#13A89E', to: 1, ts: 1 }
+    ];
+    const W = this.state.widths;
+    const size = Number(RP(this.props).spSize ?? 40);
+    const est = [22, 27, 21].map((n) => n * 0.5 * size);
+    const w = this.state.widths || est;
+    const TP = !!RP(this.props)['Text on prism'];
+    const tt = (k) => {
+      const on = k === i;
+      if (TP) return { op: 1, pos: W ? 'absolute' : (on ? 'relative' : 'absolute'), hid: on ? 'false' : 'true', bl: 'blur(0px)',
+        tf: 'rotateX(' + (k * 120) + 'deg) translateZ(0.29em)' + ((W && !on) ? ' scaleX(' + (W[i] / W[k]).toFixed(4) + ')' : ''), atf: 'none' };
+      const prev = k === (i + 2) % 3;
+      return {
+        op: on ? 1 : 0,
+        pos: W ? 'absolute' : (on ? 'relative' : 'absolute'),
+        hid: on ? 'false' : 'true',
+        tf: (W && !on) ? 'scaleX(' + (W[i] / W[k]).toFixed(4) + ')' : 'none',
+        bl: on ? 'blur(0px)' : 'blur(10px)',
+        atf: on ? 'scaleX(1)' : 'scaleX(' + (AW[i] / AW[k]).toFixed(3) + ')'
+      };
+    };
+    const sh = (n) => ({ op: this.state.shape === n ? 1 : 0, tf: this.state.shape === n ? 'rotate(0deg) scale(1)' : 'rotate(-50deg) scale(0.86)' });
+    const ck = Number(RP(this.props).checker ?? 14);
+    const PV = {"Reverra": {"cur": "990dbb0138cff93d18e2e8f66cb03ead", "lib": ["990dbb0138cff93d18e2e8f66cb03ead", "b66c13931f3d510ed6197de729037d96", "0a2ea612246b0a0e1595f3d442ae7899", "1ad15116c367f24c4b0219523f030a20", "8839c99f868e336bf1073f2bab5a46de", "47b9e66aa3142a747e891015366b504e", "bcab59349a964cc53f20c377bcd8bc70", "688f5c7018eadffdd31d1e0cd2124248", "94190be85de0b4da172166d4f1ebdd93", "c3ba74f6fc970001bdf32d98a255b115", "2ece8637a7503f5e91df0df4ab337d47", "ae4384c498f388e4bb6109ae7313770e", "c5f94c0ebf085cd0dd37d7717cc501b5", "039bd34f57a91761e0fac7a935111ef8", "67c18a9b5143b5e894c46ff90ec6e40a", "22f0a0a667fba29e2845bf6949af76a0", "58fc94582cb108658523d1307a6cee96", "662d4658ae392499be19f4f02631fef6", "f1fbd2cd99b459c5aedce2e86a5e7d7c"], "key": "Reverra preview"}, "MTRX": {"cur": "091aa1afb1811687aab2ddf4f8718b98", "lib": ["3c5b1b3f1cfc6e26b983b4dc1cc892d0", "551a75677d53ce1916893342a9aca5a3", "6d9aca6c7aac96f038618c3b8cb4d27f", "31019b2f48353e0bcb6484be46df622f", "6f5f7ad4f05954bc574b72b85d1c207c", "96acb05e82a1dc352fdc0e9fa2e11d3e", "fa126c918c204ef7b5daf31b8eb02aa5", "55423c911d50b5a06e9695d512d865aa", "ca0d269219de1d778d3f5c2b1fe6e8ce", "c394bf77f1b419cbf9e9c810980f986e"], "key": "MTRX preview"}, "Zlushy": {"cur": "59862f5858b77ab5ddc88c73a9172026", "lib": ["cf401fed8d326bfa89dfa7d96fbd4b1b", "47497d748db3110a27ececc7c7ecc6fb", "c0ef380c07d0d52ce78e489d3bc6ac57", "dbb22773ac95238529f371438d6e502d", "cfa9c31bb6d3b833c3b9990288b8239a", "2101098fa0199c17bfa8df2475c7f10b", "af21c4b49c99553c5682a14086a4e860", "5e181958331fc0401933fb2b65a71d35", "8ac09b38bfa347a644a34f2df5f665c5", "33e00dabc6aba7988f51ccb9c000a2e5", "59862f5858b77ab5ddc88c73a9172026", "ee8a81b1c2e3880c6cf0459513e20c0b", "1ba37b2e5e9745ef7994617cc958e098"], "key": "Zlushy preview"}, "AmazingBotanicals": {"cur": "be58079ab645b69e778004fd81157685", "lib": ["62336e1c48050b19c65bc35c98170607", "26401a8b3a13ec94c6830374b4f50324", "dd62d79b09be7ae410f2d56e73850785", "6b0e7e6dbb9b583f650df12ddad7374a", "1fe40dc31d74b385e1e1aadd5fc3640e", "ef8ca05a199ea3fc776179ea3dc68c53", "d402acfd279a9eafeb3f3024e9056eef", "1c09582432712216772d3794058de9f0", "0bfdeeae2c188f8eb69b18ca4b893e64", "77f51f26d1c0df2573e8431409d579d0", "ff7e04be28ed84d4e4dfa86ee0a82947", "da4b20838856d9d202d1374d059b9371", "be58079ab645b69e778004fd81157685"], "key": "Amazing Botanicals preview"}, "XOMOX": {"cur": "aac75b0efbf61741208cd759e819b75d", "lib": ["68b986d38ced5d4a3994d3153352dfa9", "64bf91f008f161816900693d63745632", "3c7c8ad67d7063f6e7ed3ca0b93aebda", "b7c586562e55109e9ac3aa051e718053", "31bb8c28c0a3555ece67a78664873eb0", "f86fb009367c8d41754c85304ee0abd5", "aac75b0efbf61741208cd759e819b75d", "ced89aae7b5a8ef6436508c47da3da45"], "key": "XOMOX preview"}, "FaceAllies": {"cur": "3cdf899d9bbed8b6925a6b161a5165ff", "lib": ["3cdf899d9bbed8b6925a6b161a5165ff", "e1c66a77357424924d7a3fcaaeef4bc9", "1cbf596cb184609b8ec7f215203a69d4", "51f86b131a7b1c11580e4c5329c3a3af", "31cf0df0e7f7ca224e6e662a5058b72f", "4304f3545128309e94effd3b6dce8685", "ee09cb9fa1f3e36a833cc72cc43abeca", "e99a5d37245183942558bb1bf278d842", "cc88814f1d6d9feb0a8213c4c0decc8b"], "key": "Face Allies preview"}, "HighRollers": {"cur": "015810268a5a9291af3aa88b7619d642", "lib": ["4de10777005abeadd339f38b7471e8ca", "0fdff6f40d4cbebbe167f0b553fcd0e0", "70242d241e19f625355cd826f160e5ff", "015810268a5a9291af3aa88b7619d642", "56e5626607381fab104879ea751a51da", "8d96e164708b090a4c07cfb0ec631371", "24fa4d1fb6a7f09b7044d7d186d84514", "f7f0d664e53ccbf65296d807f90e7697", "6359c4e4bb5e90ab2ace1a1c9d5cb576"], "key": "High Rollers preview"}, "IronSky": {"cur": "95624000d4b0a9ffe17c7f4cd02953a8", "lib": ["95624000d4b0a9ffe17c7f4cd02953a8", "d1a4e8fed11bf7051d993b261febd552", "beff2002e0c3eeec75c1d6a6fdb73d75", "dc6bebfb30c9697853fb0616e05e2444", "66e5fd8c85d0b2186f18d2cf6c7893f3", "aa893d4e448c7cbff539bb465ae3fc5e", "89bbd1c40f22bfa44825dea666f4555e", "9b0ab39c9877eab39f6d8e3bb32327f9"], "key": "Iron Sky Studios preview"}, "FarrahMoan": {"cur": "5c3a6890547b3a0519d3abeee4b524ae", "lib": ["630690f265cfbe372daa9073bc695e7c", "5c3a6890547b3a0519d3abeee4b524ae"], "key": "Farrah Moan preview"}, "Kronton": {"cur": "55fdbb81d32fb15c68c40bea28dcba15", "lib": ["55fdbb81d32fb15c68c40bea28dcba15"], "key": "Kronton preview"}};
+    const pvs = {};
+    Object.keys(PV).forEach((s) => { const v = RP(this.props)[PV[s].key]; const n = v ? parseInt(v, 10) : NaN; const id = (this.state.pvm && this.state.pvm[s]) || ((n >= 1 && n <= PV[s].lib.length) ? PV[s].lib[n - 1] : PV[s].cur); const ck = PV[s].key.replace(' preview', ' crop'); const yv = (this.state.pvmY && this.state.pvmY[s] != null) ? this.state.pvmY[s] : Number(RP(this.props)[ck] ?? 50); const xv = (this.state.pvmX && this.state.pvmX[s] != null) ? this.state.pvmX[s] : Number(RP(this.props)[ck + ' X'] ?? 50); pvs['pv' + s] = { src: '/_blob/' + id, y: yv, x: xv }; });
+    return {
+      ...pvs,
+      fontKey: FONT_KEYS[RP(this.props).font] || 'original',
+      spSize: size,
+      titleW: Math.round(w[i]) + 'px',
+      arrowW: ['2.03em', '0.74em', '2.03em'][i],
+      t0: tt(0), t1: tt(1), t2: tt(2),
+      tpTf: TP ? 'rotateX(' + (-((this.state.steps || 0) * 120)) + 'deg)' : 'none',
+      tpPersp: TP ? '6em' : 'none',
+      r0: this.refs3[0], r1: this.refs3[1], r2: this.refs3[2],
+      next: () => this.setState((st) => ({ i: (st.i + 1) % 3, steps: (st.steps || 0) + 1 })),
+      pause: () => this.setState({ paused: true }),
+      resume: () => this.setState({ paused: false }),
+      ck2: ck * 2,
+      bgCls: HBG[RP(this.props).background] || 'bg-white',
+      ckOn: (RP(this.props).texture ?? 'Checker') !== 'None',
+      tx: coTx(this, texture(RP(this.props).texture ?? 'Checker', ck), true),
+      capsCls: [RP(this.props).capsHeadings === false ? 'nocaps-h' : '', RP(this.props).capsNav === false ? 'nocaps-nav' : '', RP(this.props).capsBody ? 'caps-body' : ''].join(' '),
+      ckRef: this.ckRef,
+      useList: RP(this.props).specStyle === 'Discipline list',
+      useArrows: RP(this.props).specStyle !== 'Discipline list',
+      projects: PROJECTS.map((p, k) => ({ ...p, num: String(k + 1).padStart(2, '0') })),
+      ...(() => {
+        const lay = RP(this.props)['Specialty layout'] ?? 'Fit on one line';
+        const above = lay === 'Shape above';
+        let fs = 'min(' + size + 'px, 7vw)';
+        if (W && this.state.fsAt && this.state.avail) {
+          const r = Math.max.apply(null, W) / this.state.fsAt;
+          const need = above ? r + 0.3 : r + 2.03 + 0.42 + 0.15;
+          fs = Math.max(16, Math.min(size, Math.floor(this.state.avail / need))) + 'px';
+        }
+        return {
+          spFs: fs,
+          spDir: above ? 'column-reverse' : (lay === 'Shape first' ? 'row-reverse' : 'row'),
+          spJust: lay === 'Shape first' ? 'flex-end' : 'flex-start',
+          spAlign: above ? 'flex-start' : 'center',
+          spGap: above ? '0.28em' : '0.22em',
+          spCapsCls: RP(this.props)['Caps · specialty line'] === false ? 'sp-nocaps' : 'sp-caps'
+        };
+      })(),
+      cw: W ? 'calc(' + Math.ceil(W[i]) + 'px + 0.2em)' : 'auto',
+      spRef: this.spRef,
+      am: AM[i],
+      arrPrism: RP(this.props).arrowStyle === 'Prism',
+      arrMorph: RP(this.props).arrowStyle !== 'Prism',
+      prismDeg: -((this.state.steps || 0) * 120),
+      logoOn: RP(this.props).showLogo ?? true,
+      logoW: Number(RP(this.props).logoSize ?? 300),
+      libOn: !!RP(this.props).showLibrary,
+      ltCls: 'lt-g lt-m' + this.state.shape,
+      ltPx: ltCfg(RP(this.props)).px,
+      ltSpinS: ltCfg(RP(this.props)).spin,
+      ltEveryS: 9,
+      ltA: ltCfg(RP(this.props)).a,
+      ltB: ltCfg(RP(this.props)).b,
+      ltC: ltCfg(RP(this.props)).c,
+      ltGfxCls: ltCfg(RP(this.props)).gfx,
+      ltFill: ltCfg(RP(this.props)).fill,
+      ltStroke: ltCfg(RP(this.props)).stroke,
+      ltStrokeW: ltCfg(RP(this.props)).strokeW,
+      ltTxtStack: ltCfg(RP(this.props)).txt === 'Stacked',
+      ltTxtLine: ltCfg(RP(this.props)).txt === 'One line',
+      ltTxtCirc: ltCfg(RP(this.props)).txt === 'Circular',
+      ltRef: this.ltRef,
+      ltD: LT_D0,
+      s1: sh(1), s2: sh(2), s3: sh(3)
+    };
+  }
+}
+</script>
+</body>
+</html>

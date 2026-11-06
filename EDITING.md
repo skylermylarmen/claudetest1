@@ -6,16 +6,18 @@ Every change committed to `main` on GitHub goes live on Vercel automatically, us
 ## Where things come from
 
 - **The design canvas** ("SK Studio Site V2" in Claude) is the master copy. All the tweak controls live there.
-- **This repo** holds a plain-HTML copy of the canvas, one file per page. It has no build step and needs no tools to edit.
+- **This repo** holds the canvas pages themselves, one file per page, running on the same engine as the canvas (`support.js`). So everything that moves on the canvas moves on the live site too: morphing arrows, Let's talk shapes, the pattern strip, the book viewer, the Process timeline.
+- Tweak values are baked in from the canvas when you export.
 
-When you make big changes on the canvas, ask Claude: *"re-export the site from the canvas and push it."*
-For small fixes, edit the files here directly (below).
+When you change things on the canvas, ask Claude: *"re-export the site from the canvas and push it."* (Claude runs `tools/export.py`.)
+Small text fixes can still be made directly in these files (below), but the next export from the canvas will overwrite them, so make lasting changes on the canvas.
 
 ## Page map
 
 | Page | File |
 |---|---|
-| Home (option D, split layout) | `index.html` |
+| Home page (whichever you pick) | `index.html` |
+| Home A, B and D (all three kept) | `home-a.html`, `home-b.html`, `home-d.html` |
 | Process | `process.html` |
 | Contact | `contact.html` |
 | Resume | `resume.html` |
@@ -31,13 +33,14 @@ For small fixes, edit the files here directly (below).
 
 ## Swapping an image
 
-All images are in `img/v2/`. Each image has a long ID for a name, like `img/v2/7864755269e123054fd61c253f94c6bd.webp`.
+All images are in `img/v2/`. A new image you add on the canvas needs to be copied here too; Claude does that during an export. Each image has a long ID for a name, like `img/v2/7864755269e123054fd61c253f94c6bd.webp`.
 
 - **Easiest:** on github.com, right-click the image on the live site and choose "Copy image address" to get its filename. Then upload your new image to `img/v2/` with **the exact same filename**, replacing the old one.
 - Keep images as `.webp`, about 2000px wide or less, so the site stays fast. Photoshop, Squoosh.app, or Illustrator export can make webp files.
 
 ## Design controls (on the canvas)
 
+- **Which home page is live:** on **Home D**, Tweaks › Live site › "Live site home page" (A, B or D). Then ask Claude to re-export and push.
 - **Let's talk button:** tweak it on **Home D**. Every other page copies Home D's settings automatically.
 - **Gallery image position:** on **Home A**, under "Preview images (sitewide)":
   - "<Project> crop" moves an image **up/down**.
@@ -47,18 +50,9 @@ All images are in `img/v2/`. Each image has a long ID for a name, like `img/v2/7
 ## Site-wide extras
 
 - `site.css` has the page fade-in, reduced-motion support, and phone fixes.
-- `site.js` has:
-  - the scroll reveal on the Process page
-  - the "Click to switch project" menu
-  - the 3D tilt on gallery cards (change `MAX_TILT` for more or less tilt)
+- `site.js` has the 3D tilt on gallery cards (change `MAX_TILT` for more or less tilt).
+- `vercel.json` points the canvas image links (`/_blob/...`) at the files in `img/v2/`.
 - Share preview image: `og.png`. Browser tab icon: `favicon.png`.
-
-## Things that are simpler on the live site than on the canvas
-
-- The Let's talk button spins, but doesn't morph between shapes.
-- The checker/grid pattern strip doesn't scroll.
-
-Both work on the canvas. Ask Claude if you want them live too.
 
 ## The old v1 page
 

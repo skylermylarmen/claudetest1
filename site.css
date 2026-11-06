@@ -22,3 +22,8 @@ body { animation: pageIn .6s ease both; }
   h1, h2, h3 { overflow-wrap: break-word; }
 }
 html, body { overflow-x: clip; }
+
+/* Phones: smaller Let's talk button so it covers less text */
+@media (max-width: 600px) {
+  .lt { transform: scale(.72); transform-origin: bottom right; }
+}

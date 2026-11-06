@@ -1,0 +1,8 @@
+{
+  "cleanUrls": false,
+  "rewrites": [
+    { "source": "/_blob/96b28389198e6fd5cb16443de088cc1b", "destination": "/docs/Skyler-Kapel-Resume.pdf" },
+    { "source": "/_blob/8fcbe3d2ddce2968eb00aef9cafea9ab", "destination": "/js/three.min.js" },
+    { "source": "/_blob/:id", "destination": "/img/v2/:id.webp" }
+  ]
+}
