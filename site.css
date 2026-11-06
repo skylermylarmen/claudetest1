@@ -35,7 +35,8 @@ html, body { overflow-x: clip; }
 
 /* Page switch: the page fades out, then the next page fades in (the fade-in above).
    Script is in site.js. */
-html.sk-leaving body { opacity: 0; transition: opacity .3s ease; }
+@keyframes pageOut { from { opacity: 1; } to { opacity: 0; } }
+html.sk-leaving body { animation: pageOut .28s ease forwards; }
 
 /* First visit loader: covers the page until images and fonts are in (min 1s, max 5s).
    Only shows once per visit. Script is in site.js. */
