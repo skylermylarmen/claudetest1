@@ -339,6 +339,16 @@ a{color:inherit}
   .rv,.txt,.media img,.media video{opacity:1!important;transform:none!important;filter:none!important}
   .title{opacity:1}
 }
+
+/* ---------- chapter V: tools ---------- */
+.tools{max-width:1240px;margin:0 auto;padding:60px 16px 100px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.tool{display:flex;flex-direction:column;gap:14px;padding:22px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,rgba(255,74,28,.05),rgba(255,74,28,0));transition:border-color .5s,box-shadow .5s}
+.tool:hover{border-color:rgba(255,74,28,.4);box-shadow:0 0 30px rgba(255,74,28,.12)}
+.tool img{width:56px;height:56px;object-fit:contain}
+.tool h3{font-family:var(--serif);font-weight:400;font-size:24px;line-height:1.1}
+.tool p{color:var(--mute);font-size:15px;line-height:1.45}
+@media (max-width:900px){.tools{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.tools{grid-template-columns:minmax(0,1fr);gap:10px}.tool{flex-direction:row;align-items:center;gap:16px;padding:16px}.tool img{width:48px;height:48px;flex:none}.tool h3{font-size:21px;margin-bottom:2px}}
 </style>
 </head>
 <body>
@@ -690,6 +700,19 @@ a{color:inherit}
       <div class="demo d-display"><div class="dsign">FIAMMA</div><div class="shelves"><div class="cub"><div class="lt pebble"></div></div><div class="cub"><div class="lt tube"></div></div><div class="cub"><div class="lt orb"></div></div><div class="cub"><div class="lt drop"></div></div><div class="cub"><div class="lt cube"></div></div><div class="cub"><div class="lt ring"></div></div><div class="cub"><div class="lt orb"></div></div><div class="cub"><div class="lt drop"></div></div><div class="cub"><div class="lt pebble"></div></div><div class="cub"><div class="lt ring"></div></div><div class="cub"><div class="lt tube"></div></div><div class="cub"><div class="lt cube"></div></div></div><div class="dcap">In-studio display · every light on the same schedule</div></div></div>
     </div>
   </article>
+</div>
+
+<!-- CHAPTER V · TOOLS -->
+<section class="chapter"><div><div class="num rv">V</div><h2 class="rv d1">How we'll make it</h2><p class="rv d2">The tools behind it.</p></div></section>
+<div class="tools">
+  <div class="tool rv"><img src="/fiamma/ref/tools/illustrator.webp" alt="Illustrator" loading="lazy"><div><h3>Illustrator</h3><p>Graphics, logos and type</p></div></div>
+  <div class="tool rv d1"><img src="/fiamma/ref/tools/photoshop.webp" alt="Photoshop" loading="lazy"><div><h3>Photoshop</h3><p>Textures, edits and mockups</p></div></div>
+  <div class="tool rv d2"><img src="/fiamma/ref/tools/aftereffects.webp" alt="After Effects" loading="lazy"><div><h3>After Effects</h3><p>Motion graphics and animation</p></div></div>
+  <div class="tool rv d3"><img src="/fiamma/ref/tools/premiere.webp" alt="Premiere" loading="lazy"><div><h3>Premiere</h3><p>Video editing</p></div></div>
+  <div class="tool rv"><img src="/fiamma/ref/tools/blender.webp" alt="Blender" loading="lazy"><div><h3>Blender</h3><p>3D models and 3D motion graphics, connected to the AI tools</p></div></div>
+  <div class="tool rv d1"><img src="/fiamma/ref/tools/higgsfield.webp" alt="Higgsfield" loading="lazy"><div><h3>Higgsfield</h3><p>Coded motion graphics, linked with Claude and TouchDesigner</p></div></div>
+  <div class="tool rv d2"><img src="/fiamma/ref/tools/touchdesigner.webp" alt="TouchDesigner" loading="lazy"><div><h3>TouchDesigner</h3><p>Real-time visuals for the walls</p></div></div>
+  <div class="tool rv d3"><img src="/fiamma/ref/tools/claude.webp" alt="Claude" loading="lazy"><div><h3>Claude</h3><p>The website and custom tools, tying the whole setup together</p></div></div>
 </div>
 
 <!-- CLOSE -->
