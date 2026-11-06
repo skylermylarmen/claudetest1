@@ -195,6 +195,10 @@ a{color:inherit}
 .d-hall svg{width:100%;height:100%;display:block}
 
 /* demo: mirror */
+.d-lines{aspect-ratio:400/260;background:#120605}
+.d-lines svg{width:100%;height:100%;display:block}
+.d-lines .wl{animation:wlb 9s ease-in-out infinite}.d-lines .wc{animation:wlb 9s -4.5s ease-in-out infinite}
+@keyframes wlb{0%,100%{opacity:.75}45%{opacity:1}}
 .d-mirror{height:240px;display:grid;place-items:center;background:#120705}
 .mirror{width:84%;height:46%;border-radius:6px;background:linear-gradient(120deg,#170b08,#2d1610 55%,#170b08);
   box-shadow:0 0 0 1px rgba(255,140,80,.5),0 0 22px rgba(255,110,50,.75),0 0 60px rgba(255,90,40,.4);animation:halo 8s ease-in-out infinite}
@@ -345,7 +349,7 @@ a{color:inherit}
   <p class="rv d2">Fiamma is Italian for flame. The studio becomes a living light that changes with the time of day, the class and the heat. It feels crafted and high-end, with a little feminine spark, and it's made for every body.</p>
 </section>
 <div class="bigideas">
-  <div class="bi rv"><div class="n">01</div><h3>Walls that breathe</h3><p>Projection walls glow, shift color and pulse with each class. Every class gets its own set.</p></div>
+  <div class="bi rv"><div class="n">01</div><h3>Walls that breathe</h3><p>Projection walls glow, shift color and pulse with each class, and every class gets its own set. There's also a simpler option: warm LED lines that trace the room.</p></div>
   <div class="bi rv d1"><div class="n">02</div><h3>A kit of light</h3><p>One toolkit of effects (glow, grain, heat, countdowns) shared by the walls, socials and website.</p></div>
   <div class="bi rv d2"><div class="n">03</div><h3>Italian craft</h3><p>Carved serifs, a crest and a hand-painted mark, with a cheeky voice: "You look hot."</p></div>
 </div>
@@ -424,7 +428,43 @@ a{color:inherit}
     </div>
   </article>
   <article class="ref">
-    <div class="media"><span class="tag">Ref 03</span><img src="/fiamma/ref/sunrise.webp" alt="Silhouettes in front of glowing amber shape" loading="lazy"></div>
+    <div class="media wide"><span class="tag">Ref 03</span><img src="/fiamma/ref/lines.webp" alt="Warm wood sauna room lined with glowing LED strips" loading="lazy"></div>
+    <div class="txt">
+      <div class="idx">Space · Alternate vibe · Warm lines</div>
+      <h3>Lines of light, warm wood</h3>
+      <p class="lede">A simpler option than the full projection wall. Thin LED lines trace the benches, walls and ceiling, so the room glows from its edges.</p>
+      <ul><li>Calmer and more architectural, with a sauna and bathhouse feel</li><li>Works on its own, or together with projections: lines around the room and a projection wall up front</li><li>Line colors can follow the class, with one accent shape on the ceiling</li><li><b>Buildout:</b> warm wood or wood-look slats, recessed LED channels at bench, wall and ceiling lines</li></ul>
+      <div class="chips"><span class="chip">Main vibe option</span><span class="chip">Pairs with projections</span></div>
+      <div class="demo d-lines" id="dlines">
+      <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a2416"/><stop offset=".55" stop-color="#3a140c"/><stop offset="1" stop-color="#1a0705"/></linearGradient>
+          <linearGradient id="woodc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a1c10"/><stop offset="1" stop-color="#6a2c1a"/></linearGradient>
+          <filter id="lb" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="5"/></filter>
+          <filter id="lb2" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="14"/></filter>
+        </defs>
+        <rect width="400" height="260" fill="url(#wood)"/>
+        <polygon points="0,0 400,0 280,70 120,70" fill="url(#woodc)"/>
+        <polygon points="0,260 120,170 280,170 400,260" fill="#140605"/>
+        <g stroke="rgba(0,0,0,.35)" stroke-width=".8" fill="none"><path d="M0 10.0 L120 73.8 M400 10.0 L280 73.8"/><path d="M0 20.0 L120 77.7 M400 20.0 L280 77.7"/><path d="M0 30.0 L120 81.5 M400 30.0 L280 81.5"/><path d="M0 40.0 L120 85.4 M400 40.0 L280 85.4"/><path d="M0 50.0 L120 89.2 M400 50.0 L280 89.2"/><path d="M0 60.0 L120 93.1 M400 60.0 L280 93.1"/><path d="M0 70.0 L120 96.9 M400 70.0 L280 96.9"/><path d="M0 80.0 L120 100.8 M400 80.0 L280 100.8"/><path d="M0 90.0 L120 104.6 M400 90.0 L280 104.6"/><path d="M0 100.0 L120 108.5 M400 100.0 L280 108.5"/><path d="M0 110.0 L120 112.3 M400 110.0 L280 112.3"/><path d="M0 120.0 L120 116.2 M400 120.0 L280 116.2"/><path d="M0 130.0 L120 120.0 M400 130.0 L280 120.0"/><path d="M0 140.0 L120 123.8 M400 140.0 L280 123.8"/><path d="M0 150.0 L120 127.7 M400 150.0 L280 127.7"/><path d="M0 160.0 L120 131.5 M400 160.0 L280 131.5"/><path d="M0 170.0 L120 135.4 M400 170.0 L280 135.4"/><path d="M0 180.0 L120 139.2 M400 180.0 L280 139.2"/><path d="M0 190.0 L120 143.1 M400 190.0 L280 143.1"/><path d="M0 200.0 L120 146.9 M400 200.0 L280 146.9"/><path d="M0 210.0 L120 150.8 M400 210.0 L280 150.8"/><path d="M0 220.0 L120 154.6 M400 220.0 L280 154.6"/><path d="M0 230.0 L120 158.5 M400 230.0 L280 158.5"/><path d="M0 240.0 L120 162.3 M400 240.0 L280 162.3"/><path d="M0 250.0 L120 166.2 M400 250.0 L280 166.2"/><path d="M120 78.3 H280"/><path d="M120 86.7 H280"/><path d="M120 95.0 H280"/><path d="M120 103.3 H280"/><path d="M120 111.7 H280"/><path d="M120 120.0 H280"/><path d="M120 128.3 H280"/><path d="M120 136.7 H280"/><path d="M120 145.0 H280"/><path d="M120 153.3 H280"/><path d="M120 161.7 H280"/><path d="M44.4 0 L137.8 70"/><path d="M88.9 0 L155.6 70"/><path d="M133.3 0 L173.3 70"/><path d="M177.8 0 L191.1 70"/><path d="M222.2 0 L208.9 70"/><path d="M266.7 0 L226.7 70"/><path d="M311.1 0 L244.4 70"/><path d="M355.6 0 L262.2 70"/></g>
+        <polygon points="178,150 222,150 236,260 164,260" fill="#0d0404"/><polygon points="178,150 222,150 226,160 174,160" fill="#3a1410"/>
+        <g class="wl" fill="none" stroke-linecap="round">
+          <path d="M0 118.0 L120 115.4 H280 L400 118.0 M0 176.0 L120 137.7 H280 L400 176.0 M0 225.0 L120 156.5 H280 L400 225.0" stroke="var(--lc,#ff3a5a)" stroke-width="10" filter="url(#lb2)" opacity=".55"/>
+          <path d="M0 118.0 L120 115.4 H280 L400 118.0 M0 176.0 L120 137.7 H280 L400 176.0 M0 225.0 L120 156.5 H280 L400 225.0" stroke="var(--lc,#ff3a5a)" stroke-width="4" filter="url(#lb)"/>
+          <path d="M0 118.0 L120 115.4 H280 L400 118.0 M0 176.0 L120 137.7 H280 L400 176.0 M0 225.0 L120 156.5 H280 L400 225.0" stroke="#ffd6dc" stroke-width="1.2"/>
+        </g>
+        <g class="wc" fill="none">
+          <path d="M168 22 H232 L240 52 H160 Z" stroke="var(--cc,#6a6aff)" stroke-width="6" filter="url(#lb)"/>
+          <path d="M168 22 H232 L240 52 H160 Z" stroke="#dcdcff" stroke-width="1.2"/>
+        </g>
+        <ellipse cx="200" cy="246" rx="150" ry="16" fill="var(--lc,#ff3a5a)" opacity=".12" filter="url(#lb2)"/>
+      </svg>
+      </div>
+      <div class="swatches" id="lineSw" style="border:1px solid var(--line);border-top:0;border-radius:0 0 14px 14px;margin-top:-1px"><button class="on" data-l="#ff3a5a" data-c="#6a6aff">Rose + blue</button><button data-l="#ff6a2a" data-c="#ffb35c">Ember</button><button data-l="#ffb35c" data-c="#ffd9a0">Sunrise</button><button data-l="#ff2a2a" data-c="#ff2a2a">Red</button></div>
+    </div>
+  </article>
+  <article class="ref">
+    <div class="media"><span class="tag">Ref 04</span><img src="/fiamma/ref/sunrise.webp" alt="Silhouettes in front of glowing amber shape" loading="lazy"></div>
     <div class="txt">
       <div class="idx">Mode · Sunrise</div>
       <h3>Low light, early mornings</h3>
@@ -434,7 +474,7 @@ a{color:inherit}
     </div>
   </article>
   <article class="ref">
-    <div class="media"><span class="tag">Ref 04</span><img src="/fiamma/ref/midday.webp" alt="Yoga room with soft gradient wall" loading="lazy"></div>
+    <div class="media"><span class="tag">Ref 05</span><img src="/fiamma/ref/midday.webp" alt="Yoga room with soft gradient wall" loading="lazy"></div>
     <div class="txt">
       <div class="idx">Mode · Midday welcome</div>
       <h3>Bright, soft, open</h3>
@@ -444,7 +484,7 @@ a{color:inherit}
     </div>
   </article>
   <article class="ref">
-    <div class="media wide"><span class="tag">Ref 05</span><img src="/fiamma/ref/burlesque.webp" alt="Blurred silhouettes behind red frosted panels" loading="lazy"></div>
+    <div class="media wide"><span class="tag">Ref 06</span><img src="/fiamma/ref/burlesque.webp" alt="Blurred silhouettes behind red frosted panels" loading="lazy"></div>
     <div class="txt">
       <div class="idx">Mode · Burlesque intro</div>
       <h3>A showstopper</h3>
@@ -454,7 +494,7 @@ a{color:inherit}
     </div>
   </article>
   <article class="ref">
-    <div class="media"><span class="tag">Ref 06</span><img src="/fiamma/ref/circle.webp" alt="Room with glowing red circular light" loading="lazy"></div>
+    <div class="media"><span class="tag">Ref 07</span><img src="/fiamma/ref/circle.webp" alt="Room with glowing red circular light" loading="lazy"></div>
     <div class="txt">
       <div class="idx">Space · Feature circle (optional)</div>
       <h3>The accent spot</h3>
@@ -464,7 +504,7 @@ a{color:inherit}
     </div>
   </article>
   <article class="ref">
-    <div class="media"><span class="tag">Ref 07</span><img src="/fiamma/ref/mirror.webp" alt="Rounded mirror with glowing edge" loading="lazy"></div>
+    <div class="media"><span class="tag">Ref 08</span><img src="/fiamma/ref/mirror.webp" alt="Rounded mirror with glowing edge" loading="lazy"></div>
     <div class="txt">
       <div class="idx">Space · Mirror</div>
       <h3>Light only at the edges</h3>
@@ -475,7 +515,7 @@ a{color:inherit}
     </div>
   </article>
   <article class="ref">
-    <div class="media"><span class="tag">Ref 08</span><img src="/fiamma/ref/grid.webp" alt="Red grid ceiling with angled light tubes" loading="lazy"></div>
+    <div class="media"><span class="tag">Ref 09</span><img src="/fiamma/ref/grid.webp" alt="Red grid ceiling with angled light tubes" loading="lazy"></div>
     <div class="txt">
       <div class="idx">Space · Bathroom &amp; changing room</div>
       <h3>Break the fourth wall</h3>
@@ -491,7 +531,7 @@ a{color:inherit}
 <section class="chapter"><div><div class="num rv">II</div><h2 class="rv d1">The Kit</h2><p class="rv d2">The effects behind the room. They're used across the walls, the socials and the website.</p></div></section>
 <div class="refs">
   <article class="ref">
-    <div class="media"><span class="tag">Ref 09</span><img src="/fiamma/ref/fluted.webp" alt="Fluted translucent panel glowing red-orange" loading="lazy"></div>
+    <div class="media"><span class="tag">Ref 10</span><img src="/fiamma/ref/fluted.webp" alt="Fluted translucent panel glowing red-orange" loading="lazy"></div>
     <div class="txt">
       <div class="idx">Kit · Heat-up</div>
       <h3>Heat you can see</h3>
@@ -503,7 +543,7 @@ a{color:inherit}
     </div>
   </article>
   <article class="ref">
-    <div class="media"><span class="tag">Ref 10</span><video src="/fiamma/ref/redlight.mp4" autoplay muted loop playsinline></video></div>
+    <div class="media"><span class="tag">Ref 11</span><video src="/fiamma/ref/redlight.mp4" autoplay muted loop playsinline></video></div>
     <div class="txt">
       <div class="idx">Kit · The Floor</div>
       <h3>Countdowns &amp; the text sphere</h3>
@@ -514,7 +554,7 @@ a{color:inherit}
     </div>
   </article>
   <article class="ref">
-    <div class="media wide"><span class="tag">Ref 11</span><video src="/fiamma/ref/crt.mp4" autoplay muted loop playsinline></video></div>
+    <div class="media wide"><span class="tag">Ref 12</span><video src="/fiamma/ref/crt.mp4" autoplay muted loop playsinline></video></div>
     <div class="txt">
       <div class="idx">Kit · Glow + grain · Socials</div>
       <h3>The glow that shifts</h3>
@@ -530,7 +570,7 @@ a{color:inherit}
 <section class="chapter"><div><div class="num rv">III</div><h2 class="rv d1">Type &amp; Identity</h2><p class="rv d2">Pulled from the Italian world the name comes from, then fused with the heat and glow of the space.</p></div></section>
 <div class="refs">
   <article class="ref">
-    <div class="media"><span class="tag">Ref 12</span><img src="/fiamma/ref/figlio.webp" alt="Italian serif packaging with crest" loading="lazy"></div>
+    <div class="media"><span class="tag">Ref 13</span><img src="/fiamma/ref/figlio.webp" alt="Italian serif packaging with crest" loading="lazy"></div>
     <div class="txt">
       <div class="idx">Identity · Italian craft</div>
       <h3>Carved serifs &amp; a crest</h3>
@@ -545,7 +585,7 @@ a{color:inherit}
     </div>
   </article>
   <article class="ref">
-    <div class="media"><span class="tag">Ref 13</span><img src="/fiamma/ref/script.webp" alt="Hand-painted signature script poster" loading="lazy"></div>
+    <div class="media"><span class="tag">Ref 14</span><img src="/fiamma/ref/script.webp" alt="Hand-painted signature script poster" loading="lazy"></div>
     <div class="txt">
       <div class="idx">Identity · Logo direction</div>
       <h3>A hand-painted mark</h3>
@@ -555,7 +595,7 @@ a{color:inherit}
     </div>
   </article>
   <article class="ref">
-    <div class="media sq"><span class="tag">Ref 14</span><img src="/fiamma/ref/burn.webp" alt="Glowing condensed type" loading="lazy"></div>
+    <div class="media sq"><span class="tag">Ref 15</span><img src="/fiamma/ref/burn.webp" alt="Glowing condensed type" loading="lazy"></div>
     <div class="txt">
       <div class="idx">Identity · Class wordmarks</div>
       <h3>Every class gets a wordmark</h3>
@@ -568,7 +608,7 @@ a{color:inherit}
     </div>
   </article>
   <article class="ref">
-    <div class="media"><span class="tag">Ref 15</span><img src="/fiamma/ref/emblem.webp" alt="Line-drawn figure emblem" loading="lazy"></div>
+    <div class="media"><span class="tag">Ref 16</span><img src="/fiamma/ref/emblem.webp" alt="Line-drawn figure emblem" loading="lazy"></div>
     <div class="txt">
       <div class="idx">Identity · Emblems</div>
       <h3>An emblem for each class</h3>
@@ -578,7 +618,7 @@ a{color:inherit}
     </div>
   </article>
   <article class="ref">
-    <div class="media"><span class="tag">Ref 16</span><img src="/fiamma/ref/mat.webp" alt="Mat printed with YOU LOOK HOT" loading="lazy"></div>
+    <div class="media"><span class="tag">Ref 17</span><img src="/fiamma/ref/mat.webp" alt="Mat printed with YOU LOOK HOT" loading="lazy"></div>
     <div class="txt">
       <div class="idx">Identity · Voice</div>
       <h3>"You look hot."</h3>
@@ -594,7 +634,7 @@ a{color:inherit}
 <section class="chapter"><div><div class="num rv">IV</div><h2 class="rv d1">Take it home</h2><p class="rv d2">Merch that keeps people living with the brand, still on the light and fire theme.</p></div></section>
 <div class="refs">
   <article class="ref">
-    <div class="media sq"><span class="tag">Ref 17</span><img src="/fiamma/ref/cube.webp" alt="Glowing branded cube light" loading="lazy"></div>
+    <div class="media sq"><span class="tag">Ref 18</span><img src="/fiamma/ref/cube.webp" alt="Glowing branded cube light" loading="lazy"></div>
     <div class="txt">
       <div class="idx">Merch · Lights</div>
       <h3>A family of glow lights</h3>
@@ -719,6 +759,10 @@ a{color:inherit}
   /* burn circle: class names fade in and out */
   var bw=document.querySelectorAll('#bcircle .bword'),bi=0;
   setInterval(function(){bw[bi].classList.remove('on');bi=(bi+1)%bw.length;bw[bi].classList.add('on')},2600);
+
+  /* warm lines swatches */
+  var dl=document.getElementById('dlines');
+  document.querySelectorAll('#lineSw button').forEach(function(b){b.onclick=function(){document.querySelectorAll('#lineSw button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');dl.style.setProperty('--lc',b.dataset.l);dl.style.setProperty('--cc',b.dataset.c)}});
 
   /* merch lights: all on the same schedule */
   var lg=document.getElementById('merch'),clk=document.getElementById('clock');
