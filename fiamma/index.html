@@ -77,8 +77,24 @@ a{color:inherit}
 .fadein{opacity:0;animation:fade 1.6s var(--ease) forwards}
 @keyframes fade{to{opacity:1}}
 
+/* ---------- approach ---------- */
+.approach{padding:130px 16px 40px;text-align:center}
+.approach h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5.6vw,80px);line-height:1.05;max-width:16ch;margin:14px auto 0}
+.approach p{max-width:580px;margin:24px auto 0;color:var(--mute);font-size:17px}
+.steps{max-width:900px;margin:46px auto 0;display:grid;grid-template-columns:repeat(3,1fr);position:relative}
+.steps::before{content:"";position:absolute;left:16.6%;right:16.6%;top:9px;height:1px;background:linear-gradient(90deg,rgba(255,74,28,.6),rgba(255,74,28,.15))}
+.steps .dot{position:absolute;top:4px;left:16.6%;margin-left:-5.5px;width:11px;height:11px;border-radius:50%;background:#ffd2b0;box-shadow:0 0 10px 3px rgba(255,90,40,.9),0 0 28px 8px rgba(255,74,28,.45);animation:travel 7s var(--ease) infinite}
+@keyframes travel{0%{left:16.6%;transform:scale(1.6)}12%{transform:scale(1)}50%{left:50%}88%{left:83.4%;transform:scale(1)}100%{left:83.4%;transform:scale(.4);opacity:.6}}
+.step{display:grid;justify-items:center;gap:10px;padding:0 10px}
+.step i{width:19px;height:19px;border-radius:50%;border:1px solid rgba(255,90,40,.6);background:var(--bg)}
+.step b{font-family:var(--serif);font-weight:400;font-size:clamp(20px,2.2vw,28px)}
+.step span{font-size:14px;color:var(--mute);max-width:24ch}
+.step:first-child b{font-size:clamp(26px,3vw,38px)}
+.step:last-child b{font-size:clamp(17px,1.8vw,22px)}
+@media (max-width:600px){.steps{grid-template-columns:1fr;gap:26px}.steps::before,.steps .dot{display:none}}
+
 /* ---------- idea + big ideas ---------- */
-.idea{padding:140px 16px 60px;text-align:center}
+.idea{padding:110px 16px 60px;text-align:center}
 .idea h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,6.4vw,92px);line-height:1.05;max-width:14ch;margin:0 auto}
 .idea p{max-width:560px;margin:28px auto 0;color:var(--mute);font-size:17px}
 .bigideas{max-width:1240px;margin:0 auto;padding:40px 16px 40px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
@@ -346,6 +362,18 @@ a{color:inherit}
       Nothing here is final. This isn't even an official moodboard. It's a presentation of references, notes and directions to react to, not a finished brand identity, and every visual on this page is a concept.
     </div>
     <div class="cue fadein" style="animation-delay:3.8s">Scroll</div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="approach">
+  <div class="eyebrow rv">How I work</div>
+  <h2 class="rv d1">Start big. <span class="glow">Then</span> make it real.</h2>
+  <p class="rv d2">I like to start with the biggest, wildest version of every idea. We concept big and shoot for the stars first. Then we move forward together and decide what works for the studio, the space and the budget before bringing it to reality.</p>
+  <div class="steps rv d3"><div class="dot"></div>
+    <div class="step"><i></i><b>Dream big</b><span>Every idea at full volume, no limits yet</span></div>
+    <div class="step"><i></i><b>Refine</b><span>Keep what feels like Fiamma, cut the rest</span></div>
+    <div class="step"><i></i><b>Make it real</b><span>Build what works for the space, the timeline and the budget</span></div>
   </div>
 </section>
 
