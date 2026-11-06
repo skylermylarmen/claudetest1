@@ -53,7 +53,7 @@ All images are in `img/v2/`. A new image you add on the canvas needs to be copie
 
 - `site.css` has the page fade-in, reduced-motion support, and phone fixes.
 - First visit loader: the sk logo and a four-color bar cover the page until fonts and on-screen images are in (at least 1 second, at most 5). It shows once per visit. Code is at the end of `site.js` (`MIN` and `MAX`) and `site.css`.
-- Page switch: clicking a link between SK pages grows a color wash from the click point, then the next page fades it out. Colors follow the menu (Contact pink, Resume teal, Portfolios indigo, Process orange; other pages get one of those four). Code is at the end of `site.js` and `site.css`; change `620` in `site.js` to make the switch faster or slower.
+- Page switch: a simple fade out and fade in between SK pages. Code is near the end of `site.js` (change `280` for speed) and `site.css`.
 - `site.js` has the flickering Fiamma ember (bottom left, opens `/fiamma/`) and the 3D tilt on gallery cards (change `MAX_TILT` for more or less tilt).
 - `vercel.json` points the canvas image links (`/_blob/...`) at the files in `img/v2/`.
 - Share preview image: `og.png`. Browser tab icon: `favicon.png`.

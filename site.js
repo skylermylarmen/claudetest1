@@ -57,18 +57,9 @@
   });
 })();
 
-// Page switch: a color wash grows from the click point, then the next page fades it away.
-// Colors follow the menu (Contact pink, Resume teal, Portfolios indigo, Process orange).
+// Page switch: a simple fade. The page fades out, then the next page fades in.
 (function () {
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var PAL = ['#ED217C', '#13A89E', '#7D8AD0', '#F26A21'];
-  var BY = { contact: '#ED217C', resume: '#13A89E', portfolios: '#7D8AD0', process: '#F26A21' };
-  function colorFor(path) {
-    var n = (path.split('/').pop() || 'index').replace('.html', '') || 'index';
-    if (BY[n]) return BY[n];
-    var h = 0; for (var i = 0; i < n.length; i++) h = (h * 31 + n.charCodeAt(i)) >>> 0;
-    return PAL[h % PAL.length];
-  }
   document.addEventListener('click', function (e) {
     if (reduce || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     var a = e.target.closest && e.target.closest('a[href]');
@@ -77,17 +68,10 @@
     if (u.origin !== location.origin || /^\/fiamma/.test(u.pathname) || /\.(pdf|png|jpe?g|webp|zip)$/i.test(u.pathname)) return;
     if (u.pathname === location.pathname) return; // same page (anchors, back to top)
     e.preventDefault();
-    var c = colorFor(u.pathname), x = e.clientX || innerWidth / 2, y = e.clientY || innerHeight / 2;
-    try { sessionStorage.setItem('skWash', c); } catch (err) {}
-    var w = document.createElement('div'); w.className = 'sk-wash';
-    w.style.setProperty('--sk-wash', c); w.style.setProperty('--sk-x', x + 'px'); w.style.setProperty('--sk-y', y + 'px');
-    document.body.appendChild(w);
-    requestAnimationFrame(function () { requestAnimationFrame(function () { w.classList.add('go'); }); });
-    setTimeout(function () { location.href = u.href; }, 620);
+    document.documentElement.classList.add('sk-leaving');
+    setTimeout(function () { location.href = u.href; }, 280);
   });
-  window.addEventListener('pageshow', function () {
-    document.querySelectorAll('.sk-wash').forEach(function (w) { w.remove(); });
-  });
+  window.addEventListener('pageshow', function () { document.documentElement.classList.remove('sk-leaving'); });
 })();
 
 // First visit loader: waits for fonts and the images on screen, then fades away.
