@@ -55,6 +55,7 @@ All images are in `img/v2/`. A new image you add on the canvas needs to be copie
 - Loader: the sk logo and a four-color bar play whenever someone lands on the site from outside (a link, typed URL, new tab) or reloads. The bar always sweeps across smoothly (at least 1.6 seconds, `BAR` in site.js), even when everything is cached; slow loads hold it back, up to 4 seconds (`MAX`). It does not play when moving between SK pages or going back. Code is at the end of `site.js` (`MIN` and `MAX`) and `site.css`.
 - Rip protection: right-click, dragging images, long-press saving, text copying and Cmd/Ctrl+S, U and P are blocked on every page and on Fiamma. Email and phone links and form fields can still be copied. Code is at the end of `site.js` and `site.css` (and inline in `fiamma/index.html`). It only stops casual saving; screenshots and browser dev tools still work.
 - Page switch: a simple fade out and fade in between SK pages. Code is near the end of `site.js` (change `280` for speed) and `site.css`.
+- Headings never split a word across lines: on narrow screens `site.js` ("Fit headings") shrinks a heading just enough for its longest word to fit.
 - `site.js` has the flickering Fiamma ember (bottom left, opens `/fiamma/`) and the 3D tilt on gallery cards (change `MAX_TILT` for more or less tilt).
 - `vercel.json` points the canvas image links (`/_blob/...`) at the files in `img/v2/`.
 - Share preview image: `og.png`. Browser tab icon: `favicon.png`.

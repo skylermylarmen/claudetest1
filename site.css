@@ -17,10 +17,9 @@ body { animation: pageIn .6s ease both; }
   .rv { opacity: 1 !important; transform: none !important; }
 }
 
-/* Phones: keep giant headings from pushing the page sideways */
-@media (max-width: 600px) {
-  h1, h2, h3 { overflow-wrap: break-word; }
-}
+/* Headings never split a word across lines. If a word is too wide for the screen,
+   site.js shrinks that heading slightly until it fits (see "Fit headings"). */
+h1, h2, h3, h4, .h, .hp { overflow-wrap: normal; word-break: normal; hyphens: manual; }
 html, body { overflow-x: clip; }
 
 /* Phones: smaller Let's talk button so it covers less text */
@@ -41,12 +40,14 @@ html.sk-leaving body { animation: pageOut .28s ease forwards; }
 /* First visit loader: covers the page until images and fonts are in (min 1s, max 5s).
    Only shows once per visit. Script is in site.js. */
 html.sk-load { overflow: hidden; }
+/* the loader sits inside body, so skip the page fade-in while it shows (it was fading the bar out of view) */
+html.sk-load body { animation: none; }
 html.sk-load::before { content: ""; position: fixed; inset: 0; z-index: 2147483645; background: #fff url(img/sk-logo.png) no-repeat center calc(50% - 14.5px) / 74px auto; }
 .sk-loader { position: fixed; inset: 0; z-index: 2147483646; display: grid; place-items: center; background: #fff;
   transition: opacity .7s cubic-bezier(.2, .7, .2, 1), visibility .7s; }
 .sk-loader .in { display: flex; flex-direction: column; align-items: center; gap: 26px; transition: transform .7s cubic-bezier(.2, .7, .2, 1), opacity .5s; }
 .sk-loader img { width: 74px; height: auto; animation: skBreathe 1.8s ease-in-out infinite; }
-.sk-loader .bar { position: relative; width: 132px; height: 3px; border-radius: 3px; overflow: hidden; background: rgba(0, 0, 0, .08); }
+.sk-loader .bar { position: relative; width: 220px; height: 6px; border-radius: 6px; overflow: hidden; background: rgba(0, 0, 0, .1); }
 .sk-loader .bar i { position: absolute; inset: 0; transform-origin: left; transform: scaleX(var(--p, .04)); transition: transform .45s cubic-bezier(.2, .7, .2, 1);
   background: linear-gradient(90deg, #ED217C 0 25%, #13A89E 25% 50%, #7D8AD0 50% 75%, #F26A21 75% 100%); }
 .sk-loader.done { opacity: 0; visibility: hidden; }
@@ -67,7 +68,7 @@ html.sk-load::before { content: ""; position: fixed; inset: 0; z-index: 21474836
 @media (max-width: 760px) {
   .row { grid-template-columns: 28px 76px minmax(0, 1fr) 20px !important; gap: 12px !important; padding: 12px 4px !important; }
   .row img { width: 76px !important; height: 54px !important; }
-  .row .h { font-size: clamp(19px, 6vw, 26px) !important; line-height: 1.02; overflow-wrap: break-word; }
+  .row .h { font-size: clamp(19px, 6vw, 26px) !important; line-height: 1.02; overflow-wrap: normal; }
   .row .b { font-size: 12px !important; }
   .opt-head { grid-template-columns: 28px 76px minmax(0, 1fr) 20px !important; gap: 12px !important; padding: 0 4px 10px !important; }
   .opt-head span:nth-child(4), .opt-head span:nth-child(5) { display: none; }

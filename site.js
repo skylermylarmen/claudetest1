@@ -81,7 +81,7 @@
   if (!root.classList.contains('sk-load')) return;
   // BAR = the shortest time the bar takes to fill, so it always visibly sweeps across
   // (even when everything is cached). MAX = give up waiting on slow connections.
-  var BAR = 1600, HOLD = 260, MAX = 4000, t0 = 0, done = false, real = 0, shown = 0, closing = false;
+  var BAR = 1900, HOLD = 350, MAX = 4000, t0 = 0, done = false, real = 0, shown = 0, closing = false;
   function build() {
     var el = document.createElement('div'); el.className = 'sk-loader'; el.setAttribute('aria-hidden', 'true');
     el.innerHTML = '<div class="in"><img src="img/sk-logo.png" alt=""><div class="bar"><i></i></div></div>';
@@ -154,4 +154,46 @@
     var k = (e.key || '').toLowerCase();
     if ((e.metaKey || e.ctrlKey) && (k === 's' || k === 'u' || k === 'p')) e.preventDefault();
   });
+})();
+
+// Fit headings: on narrow screens a long word (e.g. "VISUALIZATIONS") would either overflow or split
+// mid-word. This shrinks just that heading until its longest word fits on one line. Never grows text.
+(function () {
+  var SEL = 'h1, h2, h3, h4, .hp, .h', MIN = 0.5, style = document.createElement('style'), n = 0;
+  document.head.appendChild(style);
+  function overflow(el) {
+    if (el.scrollWidth > el.clientWidth + 1 && getComputedStyle(el).display !== 'inline') return el.scrollWidth / el.clientWidth;
+    var r = el.getBoundingClientRect(), vw = document.documentElement.clientWidth;
+    if (r.right > vw - 8 && r.width > 0) return r.width / Math.max(40, r.width - (r.right - (vw - 8)));
+    return 0;
+  }
+  function fit() {
+    style.textContent = '';
+    var rules = [];
+    document.querySelectorAll(SEL).forEach(function (el) {
+      if (el.closest('.sk-loader, .menu, .tb, .lt') || !el.offsetParent) return;
+      var o = overflow(el);
+      if (!o || o <= 1) return;
+      var fs = parseFloat(getComputedStyle(el).fontSize), k = el.getAttribute('data-fit') || (el.setAttribute('data-fit', ++n), n);
+      var size = Math.max(fs * MIN, fs / o * 0.97);
+      rules.push('html body [data-fit][data-fit="' + k + '"]{font-size:' + size.toFixed(1) + 'px!important}');
+    });
+    style.textContent = rules.join('');
+    // a second pass catches headings whose line-wrapping changed after the first shrink
+    requestAnimationFrame(function () {
+      var more = [];
+      document.querySelectorAll('[data-fit]').forEach(function (el) {
+        var o = overflow(el); if (o > 1) {
+          var fs = parseFloat(getComputedStyle(el).fontSize);
+          more.push('html body [data-fit][data-fit="' + el.getAttribute('data-fit') + '"]{font-size:' + Math.max(8, fs / o * 0.97).toFixed(1) + 'px!important}');
+        }
+      });
+      if (more.length) style.textContent += more.join('');
+    });
+  }
+  var t; function later() { clearTimeout(t); t = setTimeout(fit, 120); }
+  addEventListener('resize', later);
+  addEventListener('load', later);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(later);
+  setTimeout(fit, 600); setTimeout(fit, 2000);
 })();
