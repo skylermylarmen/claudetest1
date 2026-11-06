@@ -27,3 +27,8 @@ html, body { overflow-x: clip; }
 @media (max-width: 600px) {
   .lt { transform: scale(.72); transform-origin: bottom right; }
 }
+
+/* Phones: Resume columns stack, so the left column must not stay pinned (it overlapped the experience text) */
+@media (max-width: 760px) {
+  .sticky { position: static !important; }
+}
