@@ -79,7 +79,7 @@
 (function () {
   var root = document.documentElement;
   if (!root.classList.contains('sk-load')) return;
-  var MIN = 1000, MAX = 5000, t0 = Date.now(), done = false;
+  var MIN = 1000, MAX = 3000, t0 = Date.now(), done = false;
   function build() {
     var el = document.createElement('div'); el.className = 'sk-loader'; el.setAttribute('aria-hidden', 'true');
     el.innerHTML = '<div class="in"><img src="img/sk-logo.png" alt=""><div class="bar"><i></i></div></div>';
@@ -120,4 +120,23 @@
       .then(finish, finish);
   }
   if (document.body) build(); else document.addEventListener('DOMContentLoaded', build);
+})();
+// Rip protection (deterrent): blocks right-click, dragging media, copying and save/view-source shortcuts.
+// Contact details (email/phone links) and form fields can still be selected and copied.
+(function () {
+  var OK = 'input, textarea, [contenteditable], a[href^="mailto"], a[href^="tel"]';
+  function ok(n) { return n && n.closest && n.closest(OK); }
+  document.addEventListener('contextmenu', function (e) { if (!ok(e.target)) e.preventDefault(); });
+  document.addEventListener('dragstart', function (e) { if (e.target && /^(IMG|VIDEO|SVG|CANVAS|A)$/i.test(e.target.nodeName || '')) e.preventDefault(); });
+  ['copy', 'cut'].forEach(function (t) {
+    document.addEventListener(t, function (e) {
+      var s = window.getSelection && window.getSelection(), n = s && s.anchorNode;
+      if (n && n.nodeType === 3) n = n.parentNode;
+      if (!ok(n) && !ok(document.activeElement)) e.preventDefault();
+    });
+  });
+  document.addEventListener('keydown', function (e) {
+    var k = (e.key || '').toLowerCase();
+    if ((e.metaKey || e.ctrlKey) && (k === 's' || k === 'u' || k === 'p')) e.preventDefault();
+  });
 })();

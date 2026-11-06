@@ -349,6 +349,10 @@ a{color:inherit}
 .tool p{color:var(--mute);font-size:15px;line-height:1.45}
 @media (max-width:900px){.tools{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.tools{grid-template-columns:minmax(0,1fr);gap:10px}.tool{flex-direction:row;align-items:center;gap:16px;padding:16px}.tool img{width:48px;height:48px;flex:none}.tool h3{font-size:21px;margin-bottom:2px}}
+
+/* Rip protection (deterrent) */
+img,video,svg,canvas{-webkit-user-drag:none;-webkit-touch-callout:none}
+body{-webkit-user-select:none;user-select:none}
 </style>
 </head>
 <body>
@@ -827,6 +831,27 @@ a{color:inherit}
   var S=[['06:00 · Sunrise wake','#ffc777','#e07a2a','rgba(255,170,80,.4)'],['12:30 · Midday','#ffb3c8','#ff6f9e','rgba(255,111,158,.35)'],['18:00 · Heat','#ff7a4a','#d6201a','rgba(255,74,28,.45)'],['21:30 · Wind down','#ffb37a','#7a2a10','rgba(160,60,20,.25)']],si=0;
   function sch(){var s=S[si];clk.textContent=s[0];lg.style.setProperty('--lc',s[1]);lg.style.setProperty('--lc2',s[2]);lg.style.setProperty('--lg',s[3]);si=(si+1)%S.length}
   sch();setInterval(sch,3500);
+})();
+</script>
+<script>
+// Rip protection (deterrent): blocks right-click, dragging media, copying and save/view-source shortcuts.
+// Contact details (email/phone links) and form fields can still be selected and copied.
+(function () {
+  var OK = 'input, textarea, [contenteditable], a[href^="mailto"], a[href^="tel"]';
+  function ok(n) { return n && n.closest && n.closest(OK); }
+  document.addEventListener('contextmenu', function (e) { if (!ok(e.target)) e.preventDefault(); });
+  document.addEventListener('dragstart', function (e) { if (e.target && /^(IMG|VIDEO|SVG|CANVAS|A)$/i.test(e.target.nodeName || '')) e.preventDefault(); });
+  ['copy', 'cut'].forEach(function (t) {
+    document.addEventListener(t, function (e) {
+      var s = window.getSelection && window.getSelection(), n = s && s.anchorNode;
+      if (n && n.nodeType === 3) n = n.parentNode;
+      if (!ok(n) && !ok(document.activeElement)) e.preventDefault();
+    });
+  });
+  document.addEventListener('keydown', function (e) {
+    var k = (e.key || '').toLowerCase();
+    if ((e.metaKey || e.ctrlKey) && (k === 's' || k === 'u' || k === 'p')) e.preventDefault();
+  });
 })();
 </script>
 </body>

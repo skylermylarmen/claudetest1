@@ -72,3 +72,9 @@ html.sk-load::before { content: ""; position: fixed; inset: 0; z-index: 21474836
   .opt-head { grid-template-columns: 28px 76px minmax(0, 1fr) 20px !important; gap: 12px !important; padding: 0 4px 10px !important; }
   .opt-head span:nth-child(4), .opt-head span:nth-child(5) { display: none; }
 }
+
+/* Rip protection (deterrent): no saving images by long-press, right-click or drag,
+   no text selection except contact details and form fields. Screenshots can't be blocked. */
+img, video, svg, canvas { -webkit-user-drag: none; -webkit-touch-callout: none; }
+body { -webkit-user-select: none; user-select: none; }
+input, textarea, [contenteditable], a[href^="mailto"], a[href^="tel"] { -webkit-user-select: text; user-select: text; }

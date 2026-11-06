@@ -35,7 +35,7 @@ def head(slug, title):
             f'<meta property="og:description" content="{desc}">\n<meta property="og:url" content="{url}">\n'
             f'<meta property="og:image" content="{SITE}og.png">\n<meta name="twitter:card" content="summary_large_image">\n'
             '<link rel="stylesheet" href="site.css">\n'
-            + '<script>try{var d=document.documentElement,w=sessionStorage.getItem("skWash");if(w){sessionStorage.removeItem("skWash");d.classList.add("sk-arrive");d.style.setProperty("--sk-wash",w)}else if(!sessionStorage.getItem("skSeen")){d.classList.add("sk-load")}sessionStorage.setItem("skSeen","1")}catch(e){}</script>\n'
+            + '<script>try{var n=(performance.getEntriesByType("navigation")[0]||{}).type,r=document.referrer,i=false;try{i=!!r&&new URL(r).origin===location.origin}catch(e){}if(n==="reload"||(!i&&n!=="back_forward"))document.documentElement.classList.add("sk-load")}catch(e){}</script>\n'
             + '<script src="site.js" defer></script>\n')
 
 def convert(name, slug):
