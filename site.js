@@ -89,3 +89,51 @@
     document.querySelectorAll('.sk-wash').forEach(function (w) { w.remove(); });
   });
 })();
+
+// First visit loader: waits for fonts and the images on screen, then fades away.
+// At least 1 second (so it never flashes), never more than 5 (slow connections).
+(function () {
+  var root = document.documentElement;
+  if (!root.classList.contains('sk-load')) return;
+  var MIN = 1000, MAX = 5000, t0 = Date.now(), done = false;
+  function build() {
+    var el = document.createElement('div'); el.className = 'sk-loader'; el.setAttribute('aria-hidden', 'true');
+    el.innerHTML = '<div class="in"><img src="img/sk-logo.png" alt=""><div class="bar"><i></i></div></div>';
+    document.body.appendChild(el);
+    var bar = el.querySelector('.bar i');
+    function setP(p) { bar.style.setProperty('--p', Math.max(.04, Math.min(1, p))); }
+    function finish() {
+      if (done) return; done = true; setP(1);
+      setTimeout(function () {
+        el.classList.add('done'); root.classList.remove('sk-load');
+        setTimeout(function () { el.remove(); }, 800);
+      }, Math.max(350, MIN - (Date.now() - t0)));
+    }
+    setTimeout(finish, MAX);
+    var fonts = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
+    function onScreenImages() {
+      return Array.prototype.filter.call(document.images, function (im) {
+        if (im.closest('.sk-loader')) return false;
+        var r = im.getBoundingClientRect();
+        return r.top < innerHeight * 1.5 && r.bottom > -10 && r.width > 0;
+      });
+    }
+    function waitImages() {
+      var ims = onScreenImages(), total = ims.length || 1, n = 0;
+      if (!ims.length) return Promise.resolve();
+      return Promise.all(ims.map(function (im) {
+        var p = (im.complete && im.naturalWidth) ? Promise.resolve() : new Promise(function (res) {
+          im.addEventListener('load', res, { once: true }); im.addEventListener('error', res, { once: true });
+          if (im.loading === 'lazy') im.loading = 'eager';
+        });
+        return p.then(function () { n++; setP(.2 + .75 * n / total); });
+      }));
+    }
+    function loaded() { return document.readyState === 'complete' ? Promise.resolve() : new Promise(function (r) { addEventListener('load', r, { once: true }); }); }
+    setP(.12);
+    loaded().then(function () { setP(.2); return new Promise(function (r) { setTimeout(r, 120); }); })
+      .then(function () { return Promise.all([fonts, waitImages()]); })
+      .then(finish, finish);
+  }
+  if (document.body) build(); else document.addEventListener('DOMContentLoaded', build);
+})();

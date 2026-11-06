@@ -42,3 +42,19 @@ html.sk-arrive::after { content: ""; position: fixed; inset: 0; z-index: 2147483
   background: var(--sk-wash, #ED217C); animation: skArrive .7s cubic-bezier(.2, .7, .2, 1) .08s both; }
 @keyframes skArrive { to { opacity: 0; visibility: hidden; } }
 @media (prefers-reduced-motion: reduce) { .sk-wash, html.sk-arrive::after { display: none; } }
+
+/* First visit loader: covers the page until images and fonts are in (min 1s, max 5s).
+   Only shows once per visit. Script is in site.js. */
+html.sk-load { overflow: hidden; }
+html.sk-load::before { content: ""; position: fixed; inset: 0; z-index: 2147483645; background: #fff url(img/sk-logo.png) no-repeat center calc(50% - 14.5px) / 74px auto; }
+.sk-loader { position: fixed; inset: 0; z-index: 2147483646; display: grid; place-items: center; background: #fff;
+  transition: opacity .7s cubic-bezier(.2, .7, .2, 1), visibility .7s; }
+.sk-loader .in { display: flex; flex-direction: column; align-items: center; gap: 26px; transition: transform .7s cubic-bezier(.2, .7, .2, 1), opacity .5s; }
+.sk-loader img { width: 74px; height: auto; animation: skBreathe 1.8s ease-in-out infinite; }
+.sk-loader .bar { position: relative; width: 132px; height: 3px; border-radius: 3px; overflow: hidden; background: rgba(0, 0, 0, .08); }
+.sk-loader .bar i { position: absolute; inset: 0; transform-origin: left; transform: scaleX(var(--p, .04)); transition: transform .45s cubic-bezier(.2, .7, .2, 1);
+  background: linear-gradient(90deg, #ED217C 0 25%, #13A89E 25% 50%, #7D8AD0 50% 75%, #F26A21 75% 100%); }
+.sk-loader.done { opacity: 0; visibility: hidden; }
+.sk-loader.done .in { transform: translateY(-14px); opacity: 0; }
+@keyframes skBreathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+@media (prefers-reduced-motion: reduce) { .sk-loader img { animation: none; } }
