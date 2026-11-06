@@ -174,15 +174,15 @@ a{color:inherit}
 @keyframes spin{to{transform:rotate(360deg)}}
 
 /* demo: burn circle */
-.d-burn{height:300px;display:grid;place-items:center;background:#070303}
+.d-burn{height:300px;display:grid;place-items:center;background:radial-gradient(circle at 50% 50%,rgba(255,60,30,.3) 0,rgba(255,40,20,.12) 150px,rgba(255,40,20,0) 260px),#070303}
 .bcircle{width:220px;height:220px;border-radius:50%;position:relative;overflow:hidden;background:#000;
-  box-shadow:0 0 30px 6px rgba(255,70,30,.55),0 0 90px 20px rgba(255,40,20,.3),0 0 160px 40px rgba(255,60,30,.12);animation:bglow 6s ease-in-out infinite}
-@keyframes bglow{50%{box-shadow:0 0 40px 10px rgba(255,90,40,.7),0 0 110px 26px rgba(255,50,30,.38),0 0 190px 50px rgba(255,60,30,.16)}}
+  box-shadow:0 0 26px 6px rgba(255,70,30,.6),0 0 64px 14px rgba(255,40,20,.3);animation:bglow 6s ease-in-out infinite}
+@keyframes bglow{50%{box-shadow:0 0 34px 9px rgba(255,90,40,.72),0 0 80px 20px rgba(255,50,30,.4)}}
 .bword{position:absolute;inset:0;display:grid;place-items:center;font:900 54px/1 var(--cond);text-transform:uppercase;letter-spacing:.01em;
   color:#ffd9a8;text-shadow:0 0 6px #fff1d0,0 0 18px #ff9a4a,0 0 36px #ff3a1a,0 0 70px #ff2a1a;filter:blur(.4px);
   opacity:0;transform:scale(.94);transition:opacity 1.3s ease,transform 2.6s var(--ease),filter 1.3s}
 .bword.on{opacity:1;transform:scale(1)}
-.bcircle .bn{position:absolute;inset:0;opacity:.18;mix-blend-mode:screen;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+.bcircle .bn{position:absolute;inset:0;opacity:.1;border-radius:50%;clip-path:circle(50% at 50% 50%);-webkit-mask-image:radial-gradient(circle,#000 52%,transparent 68%);mask-image:radial-gradient(circle,#000 52%,transparent 68%);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
 
 /* demo: mat */
 .d-mat{height:240px;display:grid;place-items:center;background:radial-gradient(ellipse at 40% 30%,#8a0a0a,#2a0202 70%)}
@@ -273,6 +273,17 @@ a{color:inherit}
 .lt.orb{width:66px;height:66px;border-radius:50%}
 .lt.drop{width:56px;height:80px;border-radius:50% 50% 50% 50%/62% 62% 38% 38%;clip-path:path("M28 0 C 40 22, 56 36, 56 52 A 28 28 0 0 1 0 52 C 0 36, 16 22, 28 0 Z")}
 .lt.ring{width:70px;height:70px;border-radius:50%;background:none;border:10px solid var(--lc,#ffc777);box-shadow:0 0 30px 4px var(--lg,rgba(255,170,80,.35)),inset 0 0 16px var(--lg,rgba(255,170,80,.35))}
+.d-display{background:linear-gradient(180deg,#0d0706,#170a08);padding:22px 18px 18px}
+.dsign{text-align:center;font-family:var(--serif);font-size:15px;letter-spacing:.5em;padding-left:.5em;margin-bottom:14px;color:#ffd9b8;text-shadow:0 0 10px var(--lc2,#e07a2a),0 0 26px var(--lc2,#e07a2a);transition:text-shadow 1.6s}
+.shelves{display:grid;grid-template-columns:repeat(4,1fr);gap:0 8px;padding:10px 10px 0;background:#0a0504;border-radius:6px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.05)}
+.cub{aspect-ratio:1/1.05;display:grid;place-items:center;position:relative;border-radius:3px 3px 0 0;
+  background:radial-gradient(ellipse at 50% 62%,var(--lg,rgba(255,170,80,.35)),rgba(10,5,4,0) 68%),#120807;transition:background 1.6s;
+  box-shadow:inset 0 12px 18px rgba(0,0,0,.55)}
+.cub::after{content:"";position:absolute;left:-4px;right:-4px;bottom:-6px;height:6px;background:linear-gradient(#3a1d14,#1a0b08);border-radius:1px}
+.shelves .cub:nth-child(n+5){margin-top:14px}
+.cub .lt{transform:scale(.48)}
+.cub small{position:absolute;bottom:5px;right:6px;font:500 7.5px/1 var(--mono);letter-spacing:.12em;color:rgba(255,220,200,.35)}
+.dcap{margin-top:14px;text-align:center;font:500 9.5px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
 .clock{margin-top:20px;text-align:center;font:500 10.5px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
 
 /* ---------- close ---------- */
@@ -590,7 +601,7 @@ a{color:inherit}
       <p class="lede">Selling lights as merch is perfect: a piece of the studio on your nightstand.</p>
       <ul><li>Cool shapes, not just a plain cube</li><li>On a schedule: sunrise to wake up, a slow wind-down at night</li><li>Displayed glowing together in the studio, so the merch is part of the room</li></ul>
       <div class="chips"><span class="chip">Merch</span><span class="chip">Display</span></div>
-      <div class="demo d-lights">
+      <div id="merch"><div class="demo d-lights">
         <div class="lgrid" id="lgrid">
           <div class="it"><div class="lt pebble"></div><small>Stone</small></div>
           <div class="it"><div class="lt tube"></div><small>Tube</small></div>
@@ -601,6 +612,7 @@ a{color:inherit}
         </div>
         <div class="clock" id="clock">06:00 · Sunrise wake</div>
       </div>
+      <div class="demo d-display"><div class="dsign">FIAMMA</div><div class="shelves"><div class="cub"><div class="lt pebble"></div></div><div class="cub"><div class="lt tube"></div></div><div class="cub"><div class="lt orb"></div></div><div class="cub"><div class="lt drop"></div></div><div class="cub"><div class="lt cube"></div></div><div class="cub"><div class="lt ring"></div></div><div class="cub"><div class="lt orb"></div></div><div class="cub"><div class="lt drop"></div></div><div class="cub"><div class="lt pebble"></div></div><div class="cub"><div class="lt ring"></div></div><div class="cub"><div class="lt tube"></div></div><div class="cub"><div class="lt cube"></div></div></div><div class="dcap">In-studio display · every light on the same schedule</div></div></div>
     </div>
   </article>
 </div>
@@ -709,7 +721,7 @@ a{color:inherit}
   setInterval(function(){bw[bi].classList.remove('on');bi=(bi+1)%bw.length;bw[bi].classList.add('on')},2600);
 
   /* merch lights: all on the same schedule */
-  var lg=document.getElementById('lgrid'),clk=document.getElementById('clock');
+  var lg=document.getElementById('merch'),clk=document.getElementById('clock');
   var S=[['06:00 · Sunrise wake','#ffc777','#e07a2a','rgba(255,170,80,.4)'],['12:30 · Midday','#ffb3c8','#ff6f9e','rgba(255,111,158,.35)'],['18:00 · Heat','#ff7a4a','#d6201a','rgba(255,74,28,.45)'],['21:30 · Wind down','#ffb37a','#7a2a10','rgba(160,60,20,.25)']],si=0;
   function sch(){var s=S[si];clk.textContent=s[0];lg.style.setProperty('--lc',s[1]);lg.style.setProperty('--lc2',s[2]);lg.style.setProperty('--lg',s[3]);si=(si+1)%S.length}
   sch();setInterval(sch,3500);
