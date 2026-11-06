@@ -89,7 +89,7 @@ a{color:inherit}a:hover{color:#ED217C}
 .libp img{display:block;width:100%;height:100%;object-fit:cover}
 .libp .num{left:4px;top:4px;padding:3px 7px;font-size:11px}
 .num{position:absolute;left:8px;top:8px;z-index:2;padding:5px 10px;border-radius:999px;background:#ED217C;color:#fff;font-size:12px;font-weight:700;letter-spacing:.04em;pointer-events:none}
-.fig img{display:block;width:100%;height:100%}
+.fig img,.fig video{display:block;width:100%;height:100%;object-fit:cover}
 .blk{display:flex;flex-direction:column;gap:10px;width:100%;margin:0 auto}
 .pn{all:unset;box-sizing:border-box;cursor:pointer;width:48px;height:48px;border:1.5px solid currentColor;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;transition:background .2s,color .2s}
 .pn:hover,.pn:focus-visible{background:#ED217C;border-color:#ED217C;color:#fff}
@@ -193,6 +193,7 @@ a{color:inherit}a:hover{color:#ED217C}
 <div class="libp-g">
 <figure><img src="/_blob/630690f265cfbe372daa9073bc695e7c" alt="" loading="lazy"><span class="num b">01</span></figure>
 <figure><img src="/_blob/5c3a6890547b3a0519d3abeee4b524ae" alt="" loading="lazy"><span class="num b">02</span></figure>
+<figure><img src="/_blob/9ce737676e944e8874d9b01d97074f2b" alt="" loading="lazy"><span class="num b">03</span></figure>
 </div>
 </div>
 </sc-if>
@@ -202,7 +203,7 @@ a{color:inherit}a:hover{color:#ED217C}
 </div>
 </div>
 <section class="intro">
-<h2 class="h" style="margin: 0; font-size: 44px; line-height: 1">Logo and 3D stream scenes for a creator.</h2>
+<h2 class="h" style="margin: 0; font-size: 44px; line-height: 1">Logo, Discord animations and 3D for Farrah Moan of RuPaul&#8217;s Drag Race.</h2>
 </section>
 <dl class="specs b">
 <div style="display: flex; flex-direction: column; gap: 8px">
@@ -211,7 +212,7 @@ a{color:inherit}a:hover{color:#ED217C}
 </div>
 <div style="display: flex; flex-direction: column; gap: 8px">
 <dt class="lbl mut" style="font-size: 11px">Scope</dt>
-<dd style="margin: 0; font-size: 15px; line-height: 1.4">Logo, 3D scenes, stream graphics</dd>
+<dd style="margin: 0; font-size: 15px; line-height: 1.4">Logo, monogram, Discord animations, 3D keychain</dd>
 </div>
 <div style="display: flex; flex-direction: column; gap: 8px">
 <dt class="lbl mut" style="font-size: 11px">Industry</dt>
@@ -224,9 +225,39 @@ a{color:inherit}a:hover{color:#ED217C}
 <h3 class="h chap-title" style="margin: 0; font-size: 56px">Logo</h3>
 </div>
 <div class="chap-body">
-<div class="blk" style="max-width: 560px">
-<div class="fig" style="grid-template-columns: repeat(1, minmax(0, 1fr))">
+<div class="blk" style="max-width: 100%">
+<div class="fig" style="grid-template-columns: repeat(2, minmax(0, 1fr))">
 <figure style="aspect-ratio: 1 / 1"><img src="{{s02.src}}" alt="" loading="lazy" style="object-fit: cover"><sc-if value="{{nums}}" hint-placeholder-val="{{ false }}"><span class="num b">{{s02.lab}}</span></sc-if></figure>
+<figure style="aspect-ratio: 1 / 1; background: #fff"><img src="{{s03.src}}" alt="Farrah Moan F monogram" loading="lazy" style="object-fit: contain"><sc-if value="{{nums}}" hint-placeholder-val="{{ false }}"><span class="num b">{{s03.lab}}</span></sc-if></figure>
+</div>
+</div>
+</div>
+</section>
+<section class="chap">
+<div class="chap-head">
+<div class="chap-meta b lbl" style="display: flex; align-items: center; gap: 12px; font-size: 12px"><span>02</span></div>
+<h3 class="h chap-title" style="margin: 0; font-size: 56px">Discord</h3>
+<p class="b chap-text" style="margin: 0; font-size: 18px; line-height: 1.5">Animated graphics for her Discord server.</p>
+</div>
+<div class="chap-body">
+<div class="blk" style="max-width: 100%">
+<div class="fig" style="grid-template-columns: minmax(0, 1.78fr) minmax(0, 1fr)">
+<figure style="aspect-ratio: 680 / 382"><video ref="{{vidRef}}" src="/_blob/57c688aa081f67951bf3dcb3cb74c37c" poster="/_blob/0f9f4ac0d11681ad3d8de5f523866d2a" autoplay="" muted="" loop="" playsinline="" preload="auto" aria-label="Farrah in a headset, animated"></video></figure>
+<figure style="aspect-ratio: 1 / 1"><video ref="{{vidRef}}" src="/_blob/c11ede40374470407cc8c89fd9975c28" poster="/_blob/466cf22abbb974828f10a71035202822" autoplay="" muted="" loop="" playsinline="" preload="auto" aria-label="Close-up animation"></video></figure>
+</div>
+</div>
+</div>
+</section>
+<section class="chap">
+<div class="chap-head">
+<div class="chap-meta b lbl" style="display: flex; align-items: center; gap: 12px; font-size: 12px"><span>03</span></div>
+<h3 class="h chap-title" style="margin: 0; font-size: 56px">Keychain</h3>
+<p class="b chap-text" style="margin: 0; font-size: 18px; line-height: 1.5">3D keychain, modeled and animated.</p>
+</div>
+<div class="chap-body">
+<div class="blk" style="max-width: 440px; margin: 0">
+<div class="fig" style="grid-template-columns: repeat(1, minmax(0, 1fr))">
+<figure style="aspect-ratio: 9 / 16"><video ref="{{vidRef}}" src="/_blob/0091415f2f2217fdaaed32288882f3de" poster="/_blob/7829416b28a58a37bba99c2ba430c200" autoplay="" muted="" loop="" playsinline="" preload="auto" aria-label="3D Farrah Moan keychain spinning"></video></figure>
 </div>
 </div>
 </div>
@@ -258,9 +289,9 @@ a{color:inherit}a:hover{color:#ED217C}
 </a>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"Font pairing":{"editor":"enum","options":["Original — Stack Sans + Yellowtail","Familjen Grotesk + Instrument Serif","Inter Tight + Newsreader","Archivo Condensed + Instrument Serif","Bricolage Grotesque + Fraunces"],"default":"Original — Stack Sans + Yellowtail","section":"Type"},"Caps · headings":{"editor":"boolean","default":true,"section":"Type"},"Caps · project name":{"editor":"boolean","default":true,"section":"Type"},"Caps · menu":{"editor":"boolean","default":true,"section":"Type"},"Caps · small labels":{"editor":"boolean","default":true,"section":"Type"},"Caps · body text":{"editor":"boolean","default":false,"section":"Type"},"Background":{"editor":"enum","options":["White","Paper","Black","Dot grid","Line grid"],"default":"White","section":"Background &amp; pattern"},"Pattern":{"editor":"enum","options":["Checker","Stripes","Dots","Grid","Triangles","None"],"default":"Checker","section":"Background &amp; pattern"},"Pattern size":{"editor":"range","min":6,"max":40,"step":1,"unit":"px","default":14,"section":"Background &amp; pattern"},"Pattern moves":{"editor":"boolean","default":false,"section":"Background &amp; pattern"},"Pattern speed":{"editor":"range","min":5,"max":200,"step":5,"unit":"px/s","default":30,"section":"Background &amp; pattern"},"Layout":{"editor":"enum","options":["Stacked","Side notes","Dense","Centered"],"default":"Stacked","section":"Layout"},"Switch-project pill color":{"editor":"color","default":"#FFF200","options":["#FFF200","#E1E434","#ED217C","#13A89E"],"section":"Layout"},"Always show bottom toolbar":{"editor":"boolean","default":false,"section":"Layout"},"Show image numbers":{"editor":"boolean","default":false,"section":"Images"},"Spot 01":{"editor":"enum","options":["01 · Hero","02 · Logo"],"default":"01 · Hero","section":"Images"},"Spot 02":{"editor":"enum","options":["01 · Hero","02 · Logo"],"default":"02 · Logo","section":"Images"},"Button size":{"editor":"range","min":96,"max":260,"step":2,"unit":"px","default":150,"section":"Let&#39;s talk button"},"Button color":{"editor":"color","default":"#4E5EAB","options":["#4E5EAB","#2E3A8C","#13A89E","#ED217C","#000000"],"section":"Let&#39;s talk button"},"Button spin":{"editor":"enum","options":["Off","Slow","Medium","Fast"],"default":"Fast","section":"Let&#39;s talk button"},"Button shapes":{"editor":"enum","options":["Star, cube, triangle, flower","Star only","Star + flower","Cube + triangle","Every shape"],"default":"Every shape","section":"Let&#39;s talk button"},"Shape speed":{"editor":"enum","options":["Fast","Medium","Slow"],"default":"Fast","section":"Let&#39;s talk button"},"Button text":{"editor":"enum","options":["Stacked","One line","Circular","None"],"default":"Stacked","section":"Let&#39;s talk button"},"Button outline":{"editor":"enum","options":["Match page pattern","White","None"],"default":"None","section":"Let&#39;s talk button"},"Button gradient":{"editor":"enum","options":["Off","Indigo","Teal","Brand pops","Mono"],"default":"Off","section":"Let&#39;s talk button"},"$preview":{"width":1440,"height":3100}}'>
-const LIB = ["630690f265cfbe372daa9073bc695e7c", "5c3a6890547b3a0519d3abeee4b524ae"];
-const SLOTS = 2;
+<script type="text/x-dc" data-dc-script data-props='{"Font pairing": {"editor": "enum", "options": ["Original — Stack Sans + Yellowtail", "Familjen Grotesk + Instrument Serif", "Inter Tight + Newsreader", "Archivo Condensed + Instrument Serif", "Bricolage Grotesque + Fraunces"], "default": "Original — Stack Sans + Yellowtail", "section": "Type"}, "Caps · headings": {"editor": "boolean", "default": true, "section": "Type"}, "Caps · project name": {"editor": "boolean", "default": true, "section": "Type"}, "Caps · menu": {"editor": "boolean", "default": true, "section": "Type"}, "Caps · small labels": {"editor": "boolean", "default": true, "section": "Type"}, "Caps · body text": {"editor": "boolean", "default": false, "section": "Type"}, "Background": {"editor": "enum", "options": ["White", "Paper", "Black", "Dot grid", "Line grid"], "default": "White", "section": "Background &amp; pattern"}, "Pattern": {"editor": "enum", "options": ["Checker", "Stripes", "Dots", "Grid", "Triangles", "None"], "default": "Checker", "section": "Background &amp; pattern"}, "Pattern size": {"editor": "range", "min": 6, "max": 40, "step": 1, "unit": "px", "default": 14, "section": "Background &amp; pattern"}, "Pattern moves": {"editor": "boolean", "default": false, "section": "Background &amp; pattern"}, "Pattern speed": {"editor": "range", "min": 5, "max": 200, "step": 5, "unit": "px/s", "default": 30, "section": "Background &amp; pattern"}, "Layout": {"editor": "enum", "options": ["Stacked", "Side notes", "Dense", "Centered"], "default": "Stacked", "section": "Layout"}, "Switch-project pill color": {"editor": "color", "default": "#FFF200", "options": ["#FFF200", "#E1E434", "#ED217C", "#13A89E"], "section": "Layout"}, "Always show bottom toolbar": {"editor": "boolean", "default": false, "section": "Layout"}, "Show image numbers": {"editor": "boolean", "default": false, "section": "Images"}, "Spot 01": {"editor": "enum", "options": ["01 · Hero", "02 · Logo", "03 · Monogram"], "default": "01 · Hero", "section": "Images"}, "Spot 02": {"editor": "enum", "options": ["01 · Hero", "02 · Logo", "03 · Monogram"], "default": "02 · Logo", "section": "Images"}, "Spot 03": {"editor": "enum", "options": ["01 · Hero", "02 · Logo", "03 · Monogram"], "default": "03 · Monogram", "section": "Images"}, "Button size": {"editor": "range", "min": 96, "max": 260, "step": 2, "unit": "px", "default": 150, "section": "Let&#39;s talk button"}, "Button color": {"editor": "color", "default": "#4E5EAB", "options": ["#4E5EAB", "#2E3A8C", "#13A89E", "#ED217C", "#000000"], "section": "Let&#39;s talk button"}, "Button spin": {"editor": "enum", "options": ["Off", "Slow", "Medium", "Fast"], "default": "Fast", "section": "Let&#39;s talk button"}, "Button shapes": {"editor": "enum", "options": ["Star, cube, triangle, flower", "Star only", "Star + flower", "Cube + triangle", "Every shape"], "default": "Every shape", "section": "Let&#39;s talk button"}, "Shape speed": {"editor": "enum", "options": ["Fast", "Medium", "Slow"], "default": "Fast", "section": "Let&#39;s talk button"}, "Button text": {"editor": "enum", "options": ["Stacked", "One line", "Circular", "None"], "default": "Stacked", "section": "Let&#39;s talk button"}, "Button outline": {"editor": "enum", "options": ["Match page pattern", "White", "None"], "default": "None", "section": "Let&#39;s talk button"}, "Button gradient": {"editor": "enum", "options": ["Off", "Indigo", "Teal", "Brand pops", "Mono"], "default": "Off", "section": "Let&#39;s talk button"}, "$preview": {"width": 1440, "height": 5000}}'>
+const LIB = ["630690f265cfbe372daa9073bc695e7c", "5c3a6890547b3a0519d3abeee4b524ae", "9ce737676e944e8874d9b01d97074f2b"];
+const SLOTS = 3;
 const FONT_KEYS = {'Original — Stack Sans + Yellowtail': 'original', 'Familjen Grotesk + Instrument Serif': 'familjen', 'Inter Tight + Newsreader': 'intertight', 'Archivo Condensed + Instrument Serif': 'archivo', 'Bricolage Grotesque + Fraunces': 'bricolage'};
 const BGS = {'White': 'bg-white', 'Paper': 'bg-paper', 'Black': 'bg-black', 'Dot grid': 'bg-dots', 'Line grid': 'bg-lines'};
 const COMPS = {'Stacked': 'comp-stacked', 'Side notes': 'comp-side', 'Dense': 'comp-dense', 'Centered': 'comp-centered'};
@@ -463,6 +494,13 @@ class Component extends DCLogic {
     this.tick = this.tick.bind(this);
     this.onScroll = this.onScroll.bind(this);
     this.ltRef = (el) => { this.ltEl = el; };
+    this.vidRef = (el) => {
+      if (!el || el._sk) return;
+      el._sk = true; el.muted = true; el.defaultMuted = true;
+      let still = false; try { still = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+      if (still) { el.removeAttribute('autoplay'); try { el.pause(); } catch (e) {} return; }
+      try { const pr = el.play(); if (pr && pr.catch) pr.catch(() => {}); } catch (e) {}
+    };
   }
   tick(ts) {
     const last = this._ts || ts;
@@ -568,6 +606,7 @@ class Component extends DCLogic {
       ltTxtLine: ltCfg(p).txt === 'One line',
       ltTxtCirc: ltCfg(p).txt === 'Circular',
       ltRef: this.ltRef,
+      vidRef: this.vidRef,
       ltD: LT_D0,
       s1: sh(1), s2: sh(2), s3: sh(3)
     };
