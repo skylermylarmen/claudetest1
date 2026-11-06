@@ -88,13 +88,17 @@ body{font-family:'Stack Sans Headline',sans-serif}
 @keyframes ltShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 @keyframes ltPulse{0%,55%{opacity:0}68%,88%{opacity:1}100%{opacity:0}}
 .bg-white{background:#fff}.bg-paper{background:#F3EFE6}.bg-dots{background-color:#fff;background-image:radial-gradient(rgba(0,0,0,.2) 1.3px,transparent 1.5px);background-size:22px 22px}.bg-lines{background-color:#fff;background-image:linear-gradient(rgba(0,0,0,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.07) 1px,transparent 1px);background-size:40px 40px}.bg-k{background:#000}.bg-dots-k{background-color:#000;background-image:radial-gradient(rgba(255,255,255,.2) 1.3px,transparent 1.5px);background-size:22px 22px}.bg-lines-k{background-color:#000;background-image:linear-gradient(rgba(255,255,255,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.09) 1px,transparent 1px);background-size:40px 40px}
+.hsw{flex:0 0 auto;width:44px;height:44px;border-radius:50%;border:1.5px solid currentColor;color:inherit;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;opacity:0;animation:hswFlash 3.2s ease-in-out infinite}@keyframes hswFlash{0%,62%,100%{opacity:0}74%,86%{opacity:.35}}.hsw:hover,.hsw:focus-visible{animation:none;opacity:.35}.hsw:focus-visible{outline:2px solid currentColor;outline-offset:3px}@media (prefers-reduced-motion:reduce){.hsw{animation:none;opacity:.25}}
 </style>
 </helmet>
 <div class="f-{{fontKey}} {{capsCls}} flt-{{filter}} {{bgCls}}" style="color: #000; min-height: 100vh; display: flex; flex-direction: column">
 <header class="hdr" style="display: flex; align-items: center; justify-content: space-between; padding: 22px 48px">
+<div style="display: flex; align-items: center; gap: 14px">
 <a href="index.html" aria-label="Home" style="display: block; line-height: 0">
 <img src="/_blob/9d529029643a2387a5634c97af8e0ced" alt="sk" style="height: 58px; width: auto; display: block">
 </a>
+<a class="hsw" href="home-d.html" aria-label="Switch home page (to Home D)" title="Switch home page"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h13"></path><path d="M14 4l4 4-4 4"></path><path d="M20 16H7"></path><path d="M10 12l-4 4 4 4"></path></svg></a>
+</div>
 <nav aria-label="Main" class="hn" style="display: flex; flex-direction: column; align-items: flex-end; font-size: 24px">
 <a class="nv" href="process.html"><span class="nv-s">Process</span><span class="nv-l c-orange" aria-hidden="true"><span>Process&nbsp;Process&nbsp;Process&nbsp;Process&nbsp;</span></span></a>
 <a class="nv" href="contact.html"><span class="nv-s">Contact</span><span class="nv-l c-pink" aria-hidden="true"><span>Contact&nbsp;Contact&nbsp;Contact&nbsp;Contact&nbsp;</span></span></a>

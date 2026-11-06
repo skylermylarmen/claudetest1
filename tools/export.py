@@ -43,6 +43,8 @@ def convert(name, slug):
     def link(m):
         n, hash_ = m.group(1), m.group(2) or ''
         return 'href="' + ('index.html' if n in HOMES.values() else PAGES.get(n, n) + '.html') + hash_ + '"'
+    # the home switcher button goes to the next home's own page, not the front page
+    t = re.sub(r'class="hsw" href="([A-Za-z0-9-]+)\.dc\.html"', lambda m: 'class="hsw" href="' + PAGES[m.group(1)] + '.html"', t)
     t = re.sub(r'href="([A-Za-z0-9-]+)\.dc\.html(#[^"]*)?"', link, t)
     t = t.replace('<script src="./support.js"></script>', '<script src="support.js"></script>')
     title = 'Skyler Kapel — Design' if slug in ('index', 'home-a', 'home-b', 'home-d') else TITLES.get(slug, re.search(r'<title>([^<]*)</title>', t).group(1)) + ' — Skyler Kapel'

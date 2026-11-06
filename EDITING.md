@@ -41,6 +41,7 @@ All images are in `img/v2/`. A new image you add on the canvas needs to be copie
 ## Design controls (on the canvas)
 
 - **Which home page is live:** on **Home D**, Tweaks › Live site › "Live site home page" (A, B or D). Then ask Claude to re-export and push.
+- **Home switcher button:** the faint flashing button next to the logo on each home cycles A → B → D, so you can show clients all three.
 - **Let's talk button:** tweak it on **Home D**. Every other page copies Home D's settings automatically.
 - **Gallery image position:** on **Home A**, under "Preview images (sitewide)":
   - "<Project> crop" moves an image **up/down**.
