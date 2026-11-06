@@ -79,20 +79,35 @@
 (function () {
   var root = document.documentElement;
   if (!root.classList.contains('sk-load')) return;
-  var MIN = 1000, MAX = 3000, t0 = Date.now(), done = false;
+  // BAR = the shortest time the bar takes to fill, so it always visibly sweeps across
+  // (even when everything is cached). MAX = give up waiting on slow connections.
+  var BAR = 1600, HOLD = 260, MAX = 4000, t0 = 0, done = false, real = 0, shown = 0, closing = false;
   function build() {
     var el = document.createElement('div'); el.className = 'sk-loader'; el.setAttribute('aria-hidden', 'true');
     el.innerHTML = '<div class="in"><img src="img/sk-logo.png" alt=""><div class="bar"><i></i></div></div>';
     document.body.appendChild(el);
     var bar = el.querySelector('.bar i');
-    function setP(p) { bar.style.setProperty('--p', Math.max(.04, Math.min(1, p))); }
-    function finish() {
-      if (done) return; done = true; setP(1);
-      setTimeout(function () {
-        el.classList.add('done'); root.classList.remove('sk-load');
-        setTimeout(function () { el.remove(); }, 800);
-      }, Math.max(350, MIN - (Date.now() - t0)));
+    bar.style.transition = 'none';
+    t0 = performance.now();
+    // real loading progress only ever holds the bar back; time sets the pace
+    function setP(p) { real = Math.max(real, Math.min(1, p)); }
+    function ease(x) { return 1 - Math.pow(1 - x, 3); }
+    function tick(now) {
+      var timeP = ease(Math.min(1, (now - t0) / BAR));
+      var cap = done ? 1 : Math.min(.92, .15 + real * .8);
+      var target = Math.min(timeP, cap);
+      shown += (Math.max(shown, target) - shown) * .22;
+      if (target - shown < .002) shown = target;
+      bar.style.setProperty('--p', Math.max(.02, shown));
+      if (done && shown >= .999) { if (!closing) { closing = true; setTimeout(close, HOLD); } return; }
+      requestAnimationFrame(tick);
     }
+    function close() {
+      el.classList.add('done'); root.classList.remove('sk-load');
+      setTimeout(function () { el.remove(); }, 800);
+    }
+    function finish() { if (done) return; done = true; setP(1); }
+    requestAnimationFrame(tick);
     setTimeout(finish, MAX);
     var fonts = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
     function onScreenImages() {
