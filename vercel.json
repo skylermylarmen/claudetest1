@@ -38,6 +38,14 @@
       "destination": "/img/v2/0091415f2f2217fdaaed32288882f3de.mp4"
     },
     {
+      "source": "/_blob/70dbcd6b677fb896aefa24dd64b598f9",
+      "destination": "/img/v2/70dbcd6b677fb896aefa24dd64b598f9.mp4"
+    },
+    {
+      "source": "/_blob/3d9e9d721586be9162d2bbc77fc0a355",
+      "destination": "/img/v2/3d9e9d721586be9162d2bbc77fc0a355.mp4"
+    },
+    {
       "source": "/_blob/:id",
       "destination": "/img/v2/:id.webp"
     }

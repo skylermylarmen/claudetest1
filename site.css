@@ -78,3 +78,10 @@ html.sk-load::before { content: ""; position: fixed; inset: 0; z-index: 21474836
 img, video, svg, canvas { -webkit-user-drag: none; -webkit-touch-callout: none; }
 body { -webkit-user-select: none; user-select: none; }
 input, textarea, [contenteditable], a[href^="mailto"], a[href^="tel"] { -webkit-user-select: text; user-select: text; }
+
+/* Phones: when the bottom toolbar (Top / Next project) slides up, lift the
+   Let's talk button above it so the two never overlap. */
+@media (max-width: 760px) {
+  .lt { transition: bottom .45s cubic-bezier(.34, 1.56, .64, 1); }
+  html:has(.tb.tb-on) .lt { bottom: 100px !important; }
+}
