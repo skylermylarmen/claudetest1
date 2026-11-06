@@ -1,8 +1,33 @@
 {
   "cleanUrls": false,
   "rewrites": [
-    { "source": "/_blob/96b28389198e6fd5cb16443de088cc1b", "destination": "/docs/Skyler-Kapel-Resume.pdf" },
-    { "source": "/_blob/8fcbe3d2ddce2968eb00aef9cafea9ab", "destination": "/js/three.min.js" },
-    { "source": "/_blob/:id", "destination": "/img/v2/:id.webp" }
+    {
+      "source": "/_blob/96b28389198e6fd5cb16443de088cc1b",
+      "destination": "/docs/Skyler-Kapel-Resume.pdf"
+    },
+    {
+      "source": "/_blob/8fcbe3d2ddce2968eb00aef9cafea9ab",
+      "destination": "/js/three.min.js"
+    },
+    {
+      "source": "/_blob/771b1ff15960da1d5af1985fae9c4f41",
+      "destination": "/img/v2/771b1ff15960da1d5af1985fae9c4f41.mp4"
+    },
+    {
+      "source": "/_blob/733938b8840fa4bebdf0570b8661e6aa",
+      "destination": "/img/v2/733938b8840fa4bebdf0570b8661e6aa.mp4"
+    },
+    {
+      "source": "/_blob/257609f2e939994b2bd8d451c2be2101",
+      "destination": "/img/v2/257609f2e939994b2bd8d451c2be2101.mp4"
+    },
+    {
+      "source": "/_blob/31f73686388802aa91b70759ae874a10",
+      "destination": "/img/v2/31f73686388802aa91b70759ae874a10.mp4"
+    },
+    {
+      "source": "/_blob/:id",
+      "destination": "/img/v2/:id.webp"
+    }
   ]
 }
