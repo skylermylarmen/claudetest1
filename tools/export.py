@@ -34,7 +34,9 @@ def head(slug, title):
             f'<meta property="og:type" content="website">\n<meta property="og:title" content="{title}">\n'
             f'<meta property="og:description" content="{desc}">\n<meta property="og:url" content="{url}">\n'
             f'<meta property="og:image" content="{SITE}og.png">\n<meta name="twitter:card" content="summary_large_image">\n'
-            '<link rel="stylesheet" href="site.css">\n<script src="site.js" defer></script>\n')
+            '<link rel="stylesheet" href="site.css">\n'
+            + '<script>try{var w=sessionStorage.getItem("skWash");if(w){sessionStorage.removeItem("skWash");document.documentElement.classList.add("sk-arrive");document.documentElement.style.setProperty("--sk-wash",w)}}catch(e){}</script>\n'
+            + '<script src="site.js" defer></script>\n')
 
 def convert(name, slug):
     t = open(os.path.join(SRC, name + '.dc.html')).read()

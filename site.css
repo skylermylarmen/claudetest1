@@ -32,3 +32,13 @@ html, body { overflow-x: clip; }
 @media (max-width: 760px) {
   .sticky { position: static !important; }
 }
+
+/* Page switch: a color wash grows from where you click (like the Fiamma entrance),
+   then fades away on the next page. Script is in site.js; colors match the menu. */
+.sk-wash { position: fixed; inset: 0; z-index: 2147483646; pointer-events: none; background: var(--sk-wash, #ED217C);
+  clip-path: circle(0 at var(--sk-x, 50%) var(--sk-y, 50%)); transition: clip-path .75s cubic-bezier(.6, .05, .3, 1); }
+.sk-wash.go { clip-path: circle(150% at var(--sk-x, 50%) var(--sk-y, 50%)); }
+html.sk-arrive::after { content: ""; position: fixed; inset: 0; z-index: 2147483646; pointer-events: none;
+  background: var(--sk-wash, #ED217C); animation: skArrive .7s cubic-bezier(.2, .7, .2, 1) .08s both; }
+@keyframes skArrive { to { opacity: 0; visibility: hidden; } }
+@media (prefers-reduced-motion: reduce) { .sk-wash, html.sk-arrive::after { display: none; } }
