@@ -89,7 +89,10 @@ a{color:inherit}a:hover{color:#ED217C}
 .libp img{display:block;width:100%;height:100%;object-fit:cover}
 .libp .num{left:4px;top:4px;padding:3px 7px;font-size:11px}
 .num{position:absolute;left:8px;top:8px;z-index:2;padding:5px 10px;border-radius:999px;background:#ED217C;color:#fff;font-size:12px;font-weight:700;letter-spacing:.04em;pointer-events:none}
-.fig img{display:block;width:100%;height:100%}
+.fig img,.fig video{display:block;width:100%;height:100%;object-fit:cover}
+.cap{margin:0;font-size:13px;line-height:1.45;opacity:.68}
+.shirt{display:flex;flex-direction:column;gap:12px}
+.shirt h4{margin:0;font-size:22px}
 .blk{display:flex;flex-direction:column;gap:10px;width:100%;margin:0 auto}
 .pn{all:unset;box-sizing:border-box;cursor:pointer;width:48px;height:48px;border:1.5px solid currentColor;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;transition:background .2s,color .2s}
 .pn:hover,.pn:focus-visible{background:#ED217C;border-color:#ED217C;color:#fff}
@@ -199,6 +202,11 @@ a{color:inherit}a:hover{color:#ED217C}
 <figure><img src="/_blob/aa893d4e448c7cbff539bb465ae3fc5e" alt="" loading="lazy"><span class="num b">06</span></figure>
 <figure><img src="/_blob/89bbd1c40f22bfa44825dea666f4555e" alt="" loading="lazy"><span class="num b">07</span></figure>
 <figure><img src="/_blob/9b0ab39c9877eab39f6d8e3bb32327f9" alt="" loading="lazy"><span class="num b">08</span></figure>
+<figure><img src="/_blob/eb0b29de1ed0eb121fba7b79a8cf72e8" alt="" loading="lazy"><span class="num b">09</span></figure>
+<figure><img src="/_blob/ac3d4d295158dfb4ac4a7406d779a470" alt="" loading="lazy"><span class="num b">10</span></figure>
+<figure><img src="/_blob/27836a4ff402b079e80bafe7f008317e" alt="" loading="lazy"><span class="num b">11</span></figure>
+<figure><img src="/_blob/c7bbbdeebd787b57b220746427520b40" alt="" loading="lazy"><span class="num b">12</span></figure>
+<figure><img src="/_blob/a2ad0d7d367f1327cfaa64af4306ff88" alt="" loading="lazy"><span class="num b">13</span></figure>
 </div>
 </div>
 </sc-if>
@@ -210,7 +218,11 @@ a{color:inherit}a:hover{color:#ED217C}
 </div>
 </div>
 <section class="intro">
-<h2 class="h" style="margin: 0; font-size: 44px; line-height: 1">Handmade apparel, illustration and print.</h2>
+<h2 class="h" style="margin: 0; font-size: 44px; line-height: 1">A handmade clothing line, stenciled, bleached and dyed by hand.</h2>
+<div class="b" style="display: flex; flex-direction: column; gap: 14px; font-size: 18px; line-height: 1.5">
+<p style="margin: 0">Iron Sky Studios started my freshman year of college as direct-to-garment prints of my digital art. I wanted the clothes to mean more than a print, so I moved to making every piece myself.</p>
+<p style="margin: 0">The line has since sold at a pop-up at Canal Street Market.</p>
+</div>
 </section>
 <dl class="specs b">
 <div style="display: flex; flex-direction: column; gap: 8px">
@@ -229,17 +241,22 @@ a{color:inherit}a:hover{color:#ED217C}
 <dt class="lbl mut" style="font-size: 11px">Industry</dt>
 <dd style="margin: 0; font-size: 15px; line-height: 1.4">Apparel</dd>
 </div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<dt class="lbl mut" style="font-size: 11px">Tools</dt>
+<dd style="margin: 0; font-size: 15px; line-height: 1.4">Laser cutter, Procreate, Illustrator, Photoshop, Blender</dd>
+</div>
 </dl>
 <section class="chap">
 <div class="chap-head">
 <div class="chap-meta b lbl" style="display: flex; align-items: center; gap: 12px; font-size: 12px"><span>01</span></div>
-<h3 class="h chap-title" style="margin: 0; font-size: 56px">Shirts</h3>
+<h3 class="h chap-title" style="margin: 0; font-size: 56px">Stencils &amp; layouts</h3>
+<p class="b chap-text" style="margin: 0; font-size: 18px; line-height: 1.5">Solid, dynamic shapes built for a strong bleach. Navy and lilac cotton were picked for the unusual colors they bleach into, and the two shirts were drawn as opposites: blue for violence, lilac for harmony.</p>
 </div>
 <div class="chap-body">
-<div class="blk" style="max-width: 880px">
+<div class="blk" style="max-width: 100%">
 <div class="fig" style="grid-template-columns: repeat(2, minmax(0, 1fr))">
-<figure style="aspect-ratio: 1 / 1"><img src="{{s04.src}}" alt="" loading="lazy" style="object-fit: cover"><sc-if value="{{nums}}" hint-placeholder-val="{{ false }}"><span class="num b">{{s04.lab}}</span></sc-if></figure>
-<figure style="aspect-ratio: 1 / 1"><img src="{{s05.src}}" alt="" loading="lazy" style="object-fit: cover"><sc-if value="{{nums}}" hint-placeholder-val="{{ false }}"><span class="num b">{{s05.lab}}</span></sc-if></figure>
+<figure style="aspect-ratio: 1 / 1; background: #fff"><img src="{{s06.src}}" alt="Shirt composition concepts and stencil iterations" loading="lazy" style="object-fit: contain"><sc-if value="{{nums}}" hint-placeholder-val="{{ false }}"><span class="num b">{{s06.lab}}</span></sc-if></figure>
+<figure style="aspect-ratio: 1 / 1; background: #fff"><img src="{{s07.src}}" alt="Stencil illustrations" loading="lazy" style="object-fit: contain"><sc-if value="{{nums}}" hint-placeholder-val="{{ false }}"><span class="num b">{{s07.lab}}</span></sc-if></figure>
 </div>
 </div>
 </div>
@@ -247,13 +264,13 @@ a{color:inherit}a:hover{color:#ED217C}
 <section class="chap">
 <div class="chap-head">
 <div class="chap-meta b lbl" style="display: flex; align-items: center; gap: 12px; font-size: 12px"><span>02</span></div>
-<h3 class="h chap-title" style="margin: 0; font-size: 56px">Illustration &amp; stickers</h3>
+<h3 class="h chap-title" style="margin: 0; font-size: 56px">Bleach process</h3>
+<p class="b chap-text" style="margin: 0; font-size: 18px; line-height: 1.5">Stencils are drawn in Procreate and laser cut from clear acrylic. Bleach goes over the stencils and over objects like chains, then pieces get re-dyed in new colors, so a silhouette turns into a bold pattern.</p>
 </div>
 <div class="chap-body">
-<div class="blk" style="max-width: 880px">
-<div class="fig" style="grid-template-columns: repeat(2, minmax(0, 1fr))">
-<figure style="aspect-ratio: 1 / 1; background: #fff"><img src="{{s06.src}}" alt="" loading="lazy" style="object-fit: contain"><sc-if value="{{nums}}" hint-placeholder-val="{{ false }}"><span class="num b">{{s06.lab}}</span></sc-if></figure>
-<figure style="aspect-ratio: 1 / 1; background: #fff"><img src="{{s07.src}}" alt="" loading="lazy" style="object-fit: contain"><sc-if value="{{nums}}" hint-placeholder-val="{{ false }}"><span class="num b">{{s07.lab}}</span></sc-if></figure>
+<div class="blk" style="max-width: 380px; margin: 0">
+<div class="fig" style="grid-template-columns: repeat(1, minmax(0, 1fr))">
+<figure style="aspect-ratio: 9 / 16"><video ref="{{vidRef}}" src="/_blob/d72bc965863f6444c62ae1aa4456091b" poster="/_blob/c83ef7d5890060e5164be3f674f77dee" autoplay="" muted="" loop="" playsinline="" controls="" preload="metadata" aria-label="From iPad drawing to laser-cut stencil to bleached shirt"></video></figure>
 </div>
 </div>
 </div>
@@ -261,10 +278,48 @@ a{color:inherit}a:hover{color:#ED217C}
 <section class="chap">
 <div class="chap-head">
 <div class="chap-meta b lbl" style="display: flex; align-items: center; gap: 12px; font-size: 12px"><span>03</span></div>
-<h3 class="h chap-title" style="margin: 0; font-size: 56px">Imagery</h3>
+<h3 class="h chap-title" style="margin: 0; font-size: 56px">Final shirts</h3>
+<p class="b chap-text" style="margin: 0; font-size: 18px; line-height: 1.5">Two designs, made as a pair.</p>
 </div>
 <div class="chap-body">
-<div class="blk" style="max-width: 380px">
+<div class="blk" style="max-width: 100%">
+<div class="fig" style="grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 12px">
+<div class="shirt"><figure style="aspect-ratio: 1 / 1"><img src="{{s04.src}}" alt="Enraged Entropy shirt" loading="lazy" style="object-fit: cover"><sc-if value="{{nums}}" hint-placeholder-val="{{ false }}"><span class="num b">{{s04.lab}}</span></sc-if></figure><h4 class="h">Enraged Entropy</h4><p class="b cap" style="font-size: 15px; opacity: 1">50/50 cotton-poly. Navy, bleached to a light blue-silver. Violence, steel and urchins: an asymmetrical urchin pattern with lightning-bolt veins.</p></div>
+<div class="shirt"><figure style="aspect-ratio: 1 / 1"><img src="{{s05.src}}" alt="Rebel Wings Butterfly shirt" loading="lazy" style="object-fit: cover"><sc-if value="{{nums}}" hint-placeholder-val="{{ false }}"><span class="num b">{{s05.lab}}</span></sc-if></figure><h4 class="h">Rebel Wings &#8212; Butterfly</h4><p class="b cap" style="font-size: 15px; opacity: 1">100% cotton. Lilac, bleached to bright pink. Harmony: a symmetrical butterfly with ornamental sleeves and a double butterfly on the back.</p></div>
+</div>
+</div>
+</div>
+</section>
+<section class="chap">
+<div class="chap-head">
+<div class="chap-meta b lbl" style="display: flex; align-items: center; gap: 12px; font-size: 12px"><span>04</span></div>
+<h3 class="h chap-title" style="margin: 0; font-size: 56px">More colorways</h3>
+<p class="b chap-text" style="margin: 0; font-size: 18px; line-height: 1.5">Newer pieces from the same stencil and bleach process.</p>
+</div>
+<div class="chap-body">
+<div class="blk" style="max-width: 100%">
+<div class="fig" style="grid-template-columns: repeat(3, minmax(0, 1fr))">
+<figure style="aspect-ratio: 3 / 4"><img src="{{s09.src}}" alt="" loading="lazy" style="object-fit: cover"><sc-if value="{{nums}}" hint-placeholder-val="{{ false }}"><span class="num b">{{s09.lab}}</span></sc-if></figure>
+<figure style="aspect-ratio: 3 / 4"><img src="{{s10.src}}" alt="" loading="lazy" style="object-fit: cover"><sc-if value="{{nums}}" hint-placeholder-val="{{ false }}"><span class="num b">{{s10.lab}}</span></sc-if></figure>
+<figure style="aspect-ratio: 3 / 4"><img src="{{s11.src}}" alt="" loading="lazy" style="object-fit: cover"><sc-if value="{{nums}}" hint-placeholder-val="{{ false }}"><span class="num b">{{s11.lab}}</span></sc-if></figure>
+</div>
+</div>
+<div class="blk" style="max-width: 100%">
+<div class="fig" style="grid-template-columns: repeat(2, minmax(0, 1fr))">
+<figure style="aspect-ratio: 3 / 4"><img src="{{s12.src}}" alt="" loading="lazy" style="object-fit: cover"><sc-if value="{{nums}}" hint-placeholder-val="{{ false }}"><span class="num b">{{s12.lab}}</span></sc-if></figure>
+<figure style="aspect-ratio: 3 / 4"><img src="{{s13.src}}" alt="" loading="lazy" style="object-fit: cover"><sc-if value="{{nums}}" hint-placeholder-val="{{ false }}"><span class="num b">{{s13.lab}}</span></sc-if></figure>
+</div>
+</div>
+</div>
+</section>
+<section class="chap">
+<div class="chap-head">
+<div class="chap-meta b lbl" style="display: flex; align-items: center; gap: 12px; font-size: 12px"><span>05</span></div>
+<h3 class="h chap-title" style="margin: 0; font-size: 56px">Imagery</h3>
+<p class="b chap-text" style="margin: 0; font-size: 18px; line-height: 1.5">Promotional imagery for the line.</p>
+</div>
+<div class="chap-body">
+<div class="blk" style="max-width: 380px; margin: 0">
 <div class="fig" style="grid-template-columns: repeat(1, minmax(0, 1fr))">
 <figure style="aspect-ratio: 9 / 16"><img src="{{s08.src}}" alt="" loading="lazy" style="object-fit: cover"><sc-if value="{{nums}}" hint-placeholder-val="{{ false }}"><span class="num b">{{s08.lab}}</span></sc-if></figure>
 </div>
@@ -298,9 +353,9 @@ a{color:inherit}a:hover{color:#ED217C}
 </a>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"Font pairing":{"editor":"enum","options":["Original — Stack Sans + Yellowtail","Familjen Grotesk + Instrument Serif","Inter Tight + Newsreader","Archivo Condensed + Instrument Serif","Bricolage Grotesque + Fraunces"],"default":"Original — Stack Sans + Yellowtail","section":"Type"},"Caps · headings":{"editor":"boolean","default":true,"section":"Type"},"Caps · project name":{"editor":"boolean","default":true,"section":"Type"},"Caps · menu":{"editor":"boolean","default":true,"section":"Type"},"Caps · small labels":{"editor":"boolean","default":true,"section":"Type"},"Caps · body text":{"editor":"boolean","default":false,"section":"Type"},"Background":{"editor":"enum","options":["White","Paper","Black","Dot grid","Line grid"],"default":"White","section":"Background &amp; pattern"},"Pattern":{"editor":"enum","options":["Checker","Stripes","Dots","Grid","Triangles","None"],"default":"Checker","section":"Background &amp; pattern"},"Pattern size":{"editor":"range","min":6,"max":40,"step":1,"unit":"px","default":14,"section":"Background &amp; pattern"},"Pattern moves":{"editor":"boolean","default":false,"section":"Background &amp; pattern"},"Pattern speed":{"editor":"range","min":5,"max":200,"step":5,"unit":"px/s","default":30,"section":"Background &amp; pattern"},"Layout":{"editor":"enum","options":["Stacked","Side notes","Dense","Centered"],"default":"Stacked","section":"Layout"},"Switch-project pill color":{"editor":"color","default":"#FFF200","options":["#FFF200","#E1E434","#ED217C","#13A89E"],"section":"Layout"},"Always show bottom toolbar":{"editor":"boolean","default":false,"section":"Layout"},"Show image numbers":{"editor":"boolean","default":false,"section":"Images"},"Spot 01":{"editor":"enum","options":["01 · Hero","02 · Hero","03 · Hero","04 · Shirts","05 · Shirts","06 · Illustration &amp; stickers","07 · Illustration &amp; stickers","08 · Imagery"],"default":"01 · Hero","section":"Images"},"Spot 02":{"editor":"enum","options":["01 · Hero","02 · Hero","03 · Hero","04 · Shirts","05 · Shirts","06 · Illustration &amp; stickers","07 · Illustration &amp; stickers","08 · Imagery"],"default":"02 · Hero","section":"Images"},"Spot 03":{"editor":"enum","options":["01 · Hero","02 · Hero","03 · Hero","04 · Shirts","05 · Shirts","06 · Illustration &amp; stickers","07 · Illustration &amp; stickers","08 · Imagery"],"default":"03 · Hero","section":"Images"},"Spot 04":{"editor":"enum","options":["01 · Hero","02 · Hero","03 · Hero","04 · Shirts","05 · Shirts","06 · Illustration &amp; stickers","07 · Illustration &amp; stickers","08 · Imagery"],"default":"04 · Shirts","section":"Images"},"Spot 05":{"editor":"enum","options":["01 · Hero","02 · Hero","03 · Hero","04 · Shirts","05 · Shirts","06 · Illustration &amp; stickers","07 · Illustration &amp; stickers","08 · Imagery"],"default":"05 · Shirts","section":"Images"},"Spot 06":{"editor":"enum","options":["01 · Hero","02 · Hero","03 · Hero","04 · Shirts","05 · Shirts","06 · Illustration &amp; stickers","07 · Illustration &amp; stickers","08 · Imagery"],"default":"06 · Illustration &amp; stickers","section":"Images"},"Spot 07":{"editor":"enum","options":["01 · Hero","02 · Hero","03 · Hero","04 · Shirts","05 · Shirts","06 · Illustration &amp; stickers","07 · Illustration &amp; stickers","08 · Imagery"],"default":"07 · Illustration &amp; stickers","section":"Images"},"Spot 08":{"editor":"enum","options":["01 · Hero","02 · Hero","03 · Hero","04 · Shirts","05 · Shirts","06 · Illustration &amp; stickers","07 · Illustration &amp; stickers","08 · Imagery"],"default":"08 · Imagery","section":"Images"},"Button size":{"editor":"range","min":96,"max":260,"step":2,"unit":"px","default":150,"section":"Let&#39;s talk button"},"Button color":{"editor":"color","default":"#4E5EAB","options":["#4E5EAB","#2E3A8C","#13A89E","#ED217C","#000000"],"section":"Let&#39;s talk button"},"Button spin":{"editor":"enum","options":["Off","Slow","Medium","Fast"],"default":"Fast","section":"Let&#39;s talk button"},"Button shapes":{"editor":"enum","options":["Star, cube, triangle, flower","Star only","Star + flower","Cube + triangle","Every shape"],"default":"Every shape","section":"Let&#39;s talk button"},"Shape speed":{"editor":"enum","options":["Fast","Medium","Slow"],"default":"Fast","section":"Let&#39;s talk button"},"Button text":{"editor":"enum","options":["Stacked","One line","Circular","None"],"default":"Stacked","section":"Let&#39;s talk button"},"Button outline":{"editor":"enum","options":["Match page pattern","White","None"],"default":"None","section":"Let&#39;s talk button"},"Button gradient":{"editor":"enum","options":["Off","Indigo","Teal","Brand pops","Mono"],"default":"Off","section":"Let&#39;s talk button"},"$preview":{"width":1440,"height":4500}}'>
-const LIB = ["95624000d4b0a9ffe17c7f4cd02953a8", "d1a4e8fed11bf7051d993b261febd552", "beff2002e0c3eeec75c1d6a6fdb73d75", "dc6bebfb30c9697853fb0616e05e2444", "66e5fd8c85d0b2186f18d2cf6c7893f3", "aa893d4e448c7cbff539bb465ae3fc5e", "89bbd1c40f22bfa44825dea666f4555e", "9b0ab39c9877eab39f6d8e3bb32327f9"];
-const SLOTS = 8;
+<script type="text/x-dc" data-dc-script data-props='{"Font pairing": {"editor": "enum", "options": ["Original — Stack Sans + Yellowtail", "Familjen Grotesk + Instrument Serif", "Inter Tight + Newsreader", "Archivo Condensed + Instrument Serif", "Bricolage Grotesque + Fraunces"], "default": "Original — Stack Sans + Yellowtail", "section": "Type"}, "Caps · headings": {"editor": "boolean", "default": true, "section": "Type"}, "Caps · project name": {"editor": "boolean", "default": true, "section": "Type"}, "Caps · menu": {"editor": "boolean", "default": true, "section": "Type"}, "Caps · small labels": {"editor": "boolean", "default": true, "section": "Type"}, "Caps · body text": {"editor": "boolean", "default": false, "section": "Type"}, "Background": {"editor": "enum", "options": ["White", "Paper", "Black", "Dot grid", "Line grid"], "default": "White", "section": "Background &amp; pattern"}, "Pattern": {"editor": "enum", "options": ["Checker", "Stripes", "Dots", "Grid", "Triangles", "None"], "default": "Checker", "section": "Background &amp; pattern"}, "Pattern size": {"editor": "range", "min": 6, "max": 40, "step": 1, "unit": "px", "default": 14, "section": "Background &amp; pattern"}, "Pattern moves": {"editor": "boolean", "default": false, "section": "Background &amp; pattern"}, "Pattern speed": {"editor": "range", "min": 5, "max": 200, "step": 5, "unit": "px/s", "default": 30, "section": "Background &amp; pattern"}, "Layout": {"editor": "enum", "options": ["Stacked", "Side notes", "Dense", "Centered"], "default": "Stacked", "section": "Layout"}, "Switch-project pill color": {"editor": "color", "default": "#FFF200", "options": ["#FFF200", "#E1E434", "#ED217C", "#13A89E"], "section": "Layout"}, "Always show bottom toolbar": {"editor": "boolean", "default": false, "section": "Layout"}, "Show image numbers": {"editor": "boolean", "default": false, "section": "Images"}, "Spot 01": {"editor": "enum", "options": ["01 · Hero", "02 · Hero", "03 · Hero", "04 · Shirts", "05 · Shirts", "06 · Illustration &amp; stickers", "07 · Illustration &amp; stickers", "08 · Imagery", "09 · Red colorway", "10 · Blue colorway", "11 · Purple colorway", "12 · Pink colorway", "13 · Orange colorway"], "default": "01 · Hero", "section": "Images"}, "Spot 02": {"editor": "enum", "options": ["01 · Hero", "02 · Hero", "03 · Hero", "04 · Shirts", "05 · Shirts", "06 · Illustration &amp; stickers", "07 · Illustration &amp; stickers", "08 · Imagery", "09 · Red colorway", "10 · Blue colorway", "11 · Purple colorway", "12 · Pink colorway", "13 · Orange colorway"], "default": "02 · Hero", "section": "Images"}, "Spot 03": {"editor": "enum", "options": ["01 · Hero", "02 · Hero", "03 · Hero", "04 · Shirts", "05 · Shirts", "06 · Illustration &amp; stickers", "07 · Illustration &amp; stickers", "08 · Imagery", "09 · Red colorway", "10 · Blue colorway", "11 · Purple colorway", "12 · Pink colorway", "13 · Orange colorway"], "default": "03 · Hero", "section": "Images"}, "Spot 04": {"editor": "enum", "options": ["01 · Hero", "02 · Hero", "03 · Hero", "04 · Shirts", "05 · Shirts", "06 · Illustration &amp; stickers", "07 · Illustration &amp; stickers", "08 · Imagery", "09 · Red colorway", "10 · Blue colorway", "11 · Purple colorway", "12 · Pink colorway", "13 · Orange colorway"], "default": "04 · Shirts", "section": "Images"}, "Spot 05": {"editor": "enum", "options": ["01 · Hero", "02 · Hero", "03 · Hero", "04 · Shirts", "05 · Shirts", "06 · Illustration &amp; stickers", "07 · Illustration &amp; stickers", "08 · Imagery", "09 · Red colorway", "10 · Blue colorway", "11 · Purple colorway", "12 · Pink colorway", "13 · Orange colorway"], "default": "05 · Shirts", "section": "Images"}, "Spot 06": {"editor": "enum", "options": ["01 · Hero", "02 · Hero", "03 · Hero", "04 · Shirts", "05 · Shirts", "06 · Illustration &amp; stickers", "07 · Illustration &amp; stickers", "08 · Imagery", "09 · Red colorway", "10 · Blue colorway", "11 · Purple colorway", "12 · Pink colorway", "13 · Orange colorway"], "default": "06 · Illustration &amp; stickers", "section": "Images"}, "Spot 07": {"editor": "enum", "options": ["01 · Hero", "02 · Hero", "03 · Hero", "04 · Shirts", "05 · Shirts", "06 · Illustration &amp; stickers", "07 · Illustration &amp; stickers", "08 · Imagery", "09 · Red colorway", "10 · Blue colorway", "11 · Purple colorway", "12 · Pink colorway", "13 · Orange colorway"], "default": "07 · Illustration &amp; stickers", "section": "Images"}, "Spot 08": {"editor": "enum", "options": ["01 · Hero", "02 · Hero", "03 · Hero", "04 · Shirts", "05 · Shirts", "06 · Illustration &amp; stickers", "07 · Illustration &amp; stickers", "08 · Imagery", "09 · Red colorway", "10 · Blue colorway", "11 · Purple colorway", "12 · Pink colorway", "13 · Orange colorway"], "default": "08 · Imagery", "section": "Images"}, "Spot 09": {"editor": "enum", "options": ["01 · Hero", "02 · Hero", "03 · Hero", "04 · Shirts", "05 · Shirts", "06 · Illustration &amp; stickers", "07 · Illustration &amp; stickers", "08 · Imagery", "09 · Red colorway", "10 · Blue colorway", "11 · Purple colorway", "12 · Pink colorway", "13 · Orange colorway"], "default": "09 · Red colorway", "section": "Images"}, "Spot 10": {"editor": "enum", "options": ["01 · Hero", "02 · Hero", "03 · Hero", "04 · Shirts", "05 · Shirts", "06 · Illustration &amp; stickers", "07 · Illustration &amp; stickers", "08 · Imagery", "09 · Red colorway", "10 · Blue colorway", "11 · Purple colorway", "12 · Pink colorway", "13 · Orange colorway"], "default": "10 · Blue colorway", "section": "Images"}, "Spot 11": {"editor": "enum", "options": ["01 · Hero", "02 · Hero", "03 · Hero", "04 · Shirts", "05 · Shirts", "06 · Illustration &amp; stickers", "07 · Illustration &amp; stickers", "08 · Imagery", "09 · Red colorway", "10 · Blue colorway", "11 · Purple colorway", "12 · Pink colorway", "13 · Orange colorway"], "default": "11 · Purple colorway", "section": "Images"}, "Spot 12": {"editor": "enum", "options": ["01 · Hero", "02 · Hero", "03 · Hero", "04 · Shirts", "05 · Shirts", "06 · Illustration &amp; stickers", "07 · Illustration &amp; stickers", "08 · Imagery", "09 · Red colorway", "10 · Blue colorway", "11 · Purple colorway", "12 · Pink colorway", "13 · Orange colorway"], "default": "12 · Pink colorway", "section": "Images"}, "Spot 13": {"editor": "enum", "options": ["01 · Hero", "02 · Hero", "03 · Hero", "04 · Shirts", "05 · Shirts", "06 · Illustration &amp; stickers", "07 · Illustration &amp; stickers", "08 · Imagery", "09 · Red colorway", "10 · Blue colorway", "11 · Purple colorway", "12 · Pink colorway", "13 · Orange colorway"], "default": "13 · Orange colorway", "section": "Images"}, "Button size": {"editor": "range", "min": 96, "max": 260, "step": 2, "unit": "px", "default": 150, "section": "Let&#39;s talk button"}, "Button color": {"editor": "color", "default": "#4E5EAB", "options": ["#4E5EAB", "#2E3A8C", "#13A89E", "#ED217C", "#000000"], "section": "Let&#39;s talk button"}, "Button spin": {"editor": "enum", "options": ["Off", "Slow", "Medium", "Fast"], "default": "Fast", "section": "Let&#39;s talk button"}, "Button shapes": {"editor": "enum", "options": ["Star, cube, triangle, flower", "Star only", "Star + flower", "Cube + triangle", "Every shape"], "default": "Every shape", "section": "Let&#39;s talk button"}, "Shape speed": {"editor": "enum", "options": ["Fast", "Medium", "Slow"], "default": "Fast", "section": "Let&#39;s talk button"}, "Button text": {"editor": "enum", "options": ["Stacked", "One line", "Circular", "None"], "default": "Stacked", "section": "Let&#39;s talk button"}, "Button outline": {"editor": "enum", "options": ["Match page pattern", "White", "None"], "default": "None", "section": "Let&#39;s talk button"}, "Button gradient": {"editor": "enum", "options": ["Off", "Indigo", "Teal", "Brand pops", "Mono"], "default": "Off", "section": "Let&#39;s talk button"}, "$preview": {"width": 1440, "height": 7400}}'>
+const LIB = ["95624000d4b0a9ffe17c7f4cd02953a8", "d1a4e8fed11bf7051d993b261febd552", "beff2002e0c3eeec75c1d6a6fdb73d75", "dc6bebfb30c9697853fb0616e05e2444", "66e5fd8c85d0b2186f18d2cf6c7893f3", "aa893d4e448c7cbff539bb465ae3fc5e", "89bbd1c40f22bfa44825dea666f4555e", "9b0ab39c9877eab39f6d8e3bb32327f9", "eb0b29de1ed0eb121fba7b79a8cf72e8", "ac3d4d295158dfb4ac4a7406d779a470", "27836a4ff402b079e80bafe7f008317e", "c7bbbdeebd787b57b220746427520b40", "a2ad0d7d367f1327cfaa64af4306ff88"];
+const SLOTS = 13;
 const FONT_KEYS = {'Original — Stack Sans + Yellowtail': 'original', 'Familjen Grotesk + Instrument Serif': 'familjen', 'Inter Tight + Newsreader': 'intertight', 'Archivo Condensed + Instrument Serif': 'archivo', 'Bricolage Grotesque + Fraunces': 'bricolage'};
 const BGS = {'White': 'bg-white', 'Paper': 'bg-paper', 'Black': 'bg-black', 'Dot grid': 'bg-dots', 'Line grid': 'bg-lines'};
 const COMPS = {'Stacked': 'comp-stacked', 'Side notes': 'comp-side', 'Dense': 'comp-dense', 'Centered': 'comp-centered'};
@@ -503,6 +558,13 @@ class Component extends DCLogic {
     this.tick = this.tick.bind(this);
     this.onScroll = this.onScroll.bind(this);
     this.ltRef = (el) => { this.ltEl = el; };
+    this.vidRef = (el) => {
+      if (!el || el._sk) return;
+      el._sk = true; el.muted = true; el.defaultMuted = true;
+      let still = false; try { still = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+      if (still) { el.removeAttribute('autoplay'); try { el.pause(); } catch (e) {} return; }
+      try { const pr = el.play(); if (pr && pr.catch) pr.catch(() => {}); } catch (e) {}
+    };
   }
   tick(ts) {
     const last = this._ts || ts;
@@ -608,6 +670,7 @@ class Component extends DCLogic {
       ltTxtLine: ltCfg(p).txt === 'One line',
       ltTxtCirc: ltCfg(p).txt === 'Circular',
       ltRef: this.ltRef,
+      vidRef: this.vidRef,
       ltD: LT_D0,
       s1: sh(1), s2: sh(2), s3: sh(3)
     };

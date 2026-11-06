@@ -46,6 +46,10 @@
       "destination": "/img/v2/3d9e9d721586be9162d2bbc77fc0a355.mp4"
     },
     {
+      "source": "/_blob/d72bc965863f6444c62ae1aa4456091b",
+      "destination": "/img/v2/d72bc965863f6444c62ae1aa4456091b.mp4"
+    },
+    {
       "source": "/_blob/:id",
       "destination": "/img/v2/:id.webp"
     }
