@@ -360,7 +360,7 @@ body{-webkit-user-select:none;user-select:none}
   <span class="mid">Fiamma · Vision presentation</span><span>Concept · not final</span>
 </header>
 <div class="toast" id="toast"></div>
-<a class="fsym" id="fsym" href="#top" aria-label="Back to top"><svg viewBox="-34 -34 68 68" aria-hidden="true"><defs><radialGradient id="fsg" cx="42%" cy="36%" r="70%"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#ffb35c"/><stop offset="1" stop-color="#ff4a1c"/></radialGradient></defs><path fill="url(#fsg)" d="M0 -22C12.15 -22 22 -12.15 22 0C22 12.15 12.15 22 0 22C-12.15 22 -22 12.15 -22 0C-22 -12.15 -12.15 -22 0 -22Z"><animate attributeName="d" dur="18s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.35;.5;.8;.95;1" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1;.45 0 .55 1;.45 0 .55 1" values="M0 -22C12.15 -22 22 -12.15 22 0C22 12.15 12.15 22 0 22C-12.15 22 -22 12.15 -22 0C-22 -12.15 -12.15 -22 0 -22Z;M0 -22C12.15 -22 22 -12.15 22 0C22 12.15 12.15 22 0 22C-12.15 22 -22 12.15 -22 0C-22 -12.15 -12.15 -22 0 -22Z;M0 -27C2 -8 8 -2 27 0C8 2 2 8 0 27C-2 8 -8 2 -27 0C-8 -2 -2 -8 0 -27Z;M0 -27C2 -8 8 -2 27 0C8 2 2 8 0 27C-2 8 -8 2 -27 0C-8 -2 -2 -8 0 -27Z;M0 -22C12.15 -22 22 -12.15 22 0C22 12.15 12.15 22 0 22C-12.15 22 -22 12.15 -22 0C-22 -12.15 -12.15 -22 0 -22Z;M0 -22C12.15 -22 22 -12.15 22 0C22 12.15 12.15 22 0 22C-12.15 22 -22 12.15 -22 0C-22 -12.15 -12.15 -22 0 -22Z"/></path></svg></a>
+<a class="fsym" id="fsym" href="#top" aria-label="Back to top"><svg viewBox="-34 -34 68 68" aria-hidden="true"><defs><radialGradient id="fsg" cx="42%" cy="36%" r="70%"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#ffb35c"/><stop offset="1" stop-color="#ff4a1c"/></radialGradient></defs><path id="fsp" fill="url(#fsg)" d="M0 -22C12.15 -22 22 -12.15 22 0C22 12.15 12.15 22 0 22C-12.15 22 -22 12.15 -22 0C-22 -12.15 -12.15 -22 0 -22Z"></path></svg></a>
 
 
 <!-- INTRO -->
@@ -852,10 +852,19 @@ body{-webkit-user-select:none;user-select:none}
   });
 })();
 
-(function(){var a=document.getElementById('fsym');if(!a)return;var svg=a.querySelector('svg'),t=Date.now();
-try{svg.setCurrentTime((t%18000)/1000);svg.style.animationDelay=(-(t%9000))+'ms'}catch(e){}
-function u(){var y=window.scrollY||document.documentElement.scrollTop||0;var bottom=(window.innerHeight+y)>=(document.documentElement.scrollHeight-120);a.classList.toggle('on',y>480&&!bottom)}
-window.addEventListener('scroll',u,{passive:true});window.addEventListener('resize',u);u()})();
+(function(){var a=document.getElementById('fsym');if(!a)return;var P=document.getElementById('fsp'),svg=a.querySelector('svg');
+var C=[0,-22,12.15,-22,22,-12.15,22,0,22,12.15,12.15,22,0,22,-12.15,22,-22,12.15,-22,0,-22,-12.15,-12.15,-22,0,-22];
+var S=[0,-27,2,-8,8,-2,27,0,8,2,2,8,0,27,-2,8,-8,2,-27,0,-8,-2,-2,-8,0,-27];
+var cmd=['M','C','C','C','C'];
+function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
+function shape(k){var o='';var pts=[];for(var i=0;i<C.length;i++)pts.push((C[i]+(S[i]-C[i])*k).toFixed(2));
+o='M'+pts[0]+' '+pts[1];for(var q=0;q<4;q++){var b=2+q*6;o+='C'+pts[b]+' '+pts[b+1]+' '+pts[b+2]+' '+pts[b+3]+' '+pts[b+4]+' '+pts[b+5]}return o+'Z'}
+/* 18s loop = 2 x the 9s Let's talk beat: circle, ease to star, hold, ease back */
+function k(t){if(t<.2)return 0;if(t<.4)return ease((t-.2)/.2);if(t<.65)return 1;if(t<.85)return 1-ease((t-.65)/.2);return 0}
+function frame(){var t=(Date.now()%18000)/18000;P.setAttribute('d',shape(k(t)));requestAnimationFrame(frame)}
+svg.style.animationDelay=(-(Date.now()%9000))+'ms';frame();
+function u(){var d=document.documentElement,y=window.pageYOffset||d.scrollTop||document.body.scrollTop||0;var h=Math.max(d.scrollHeight,document.body.scrollHeight);var bottom=(window.innerHeight+y)>=(h-200);a.classList.toggle('on',y>480&&!bottom)}
+window.addEventListener('scroll',u,{passive:true});window.addEventListener('touchmove',u,{passive:true});window.addEventListener('resize',u);setInterval(u,150);u()})();
 </script>
 </body>
 </html>
