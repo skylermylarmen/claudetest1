@@ -19,7 +19,7 @@
     '.ember-wash.go{clip-path:circle(150% at 29px calc(100% - 29px))}' +
     '@media (prefers-reduced-motion: reduce){.ember-portal i{animation:none}}';
   document.head.appendChild(css);
-  // Circle <-> 4-point ember star, a gentle 9s loop (the Let's talk beat),
+  // Circle <-> 4-point ember star, a gentle 9s loop (the Let's talk beat); the ember itself stays a round sphere, only the corner sparkles twinkle,
   // and it fades out at the page bottom exactly when Let's talk does.
   function morph(a) {
     var P = a.querySelector('#emp');
@@ -41,7 +41,6 @@
     P.setAttribute('d', shape(0));
     if (!reduce) (function frame() {
       var t = (Date.now() % 9000) / 9000;
-      P.setAttribute('d', shape(k(t)));
       var a1 = tw(t, .42, .3), a2 = tw(t, .6, .3);
       T1.setAttribute('transform', 'translate(30 -28) rotate(' + (a1 * 70).toFixed(1) + ') scale(' + (a1 * 1.15).toFixed(3) + ')');
       T2.setAttribute('transform', 'translate(-29 27) rotate(' + (-a2 * 70).toFixed(1) + ') scale(' + (a2 * .8).toFixed(3) + ')');
