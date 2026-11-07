@@ -96,7 +96,7 @@ a{color:inherit}a:hover{color:#ED217C}
 .pn:hover,.pn:focus-visible{background:#ED217C;border-color:#ED217C;color:#fff}
 .hdr{display:flex;align-items:center;justify-content:space-between;padding:22px 48px}
 .ftr{display:flex;justify-content:space-between;gap:16px;padding:20px 48px;font-size:12px}
-@media (max-width:760px){.fig{grid-template-columns:minmax(0,1fr)!important}.hdr,.ftr{padding-left:20px!important;padding-right:20px!important}.wrap{padding-left:20px!important;padding-right:20px!important}.two{grid-template-columns:minmax(0,1fr)!important}}
+@media (max-width:760px){.fig.pgrid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.fig{grid-template-columns:minmax(0,1fr)!important}.hdr,.ftr{padding-left:20px!important;padding-right:20px!important}.wrap{padding-left:20px!important;padding-right:20px!important}.two{grid-template-columns:minmax(0,1fr)!important}}
 .lt-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}.lt-rot{transform-origin:0 0;animation:ltSpin 22s linear infinite}.lt-gfx{opacity:0;animation:ltPulse 9s ease-in-out infinite}.lt-off{display:none}.lt:hover .lt-gfx,.lt:focus-visible .lt-gfx{opacity:1!important}.lt:hover .lt-rot{animation-play-state:paused}.lt-circ{transform-origin:0 0;animation:ltSpin 18s linear infinite reverse}
 
 
@@ -158,7 +158,7 @@ a{color:inherit}a:hover{color:#ED217C}
 </div>
 <section style="display: flex; flex-direction: column; gap: 20px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px"><h2 class="h" style="margin: 0; font-size: 56px">Brand, packaging &amp; visualization</h2><span class="b lbl mut" style="font-size: 12px">10 projects</span></div>
-<div class="fig" style="grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px">
+<div class="fig pgrid" style="grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px">
 <div style="display: flex; flex-direction: column; gap: 8px"><a class="tile" href="work-reverra.html"><img src="{{pvReverra.src}}" style="object-position: {{pvReverra.x}}% {{pvReverra.y}}%" alt="Reverra"><span class="tile-cap h" style="font-size: 18px">Reverra</span></a><button class="vbtn b" type="button" onClick="{{ob.bReverra}}">View project</button></div>
 <div style="display: flex; flex-direction: column; gap: 8px"><a class="tile" href="work-mtrx.html"><img src="{{pvMTRX.src}}" style="object-position: {{pvMTRX.x}}% {{pvMTRX.y}}%" alt="MTRX"><span class="tile-cap h" style="font-size: 18px">MTRX</span></a><button class="vbtn b" type="button" onClick="{{ob.bMTRX}}">View project</button></div>
 <div style="display: flex; flex-direction: column; gap: 8px"><a class="tile" href="work-zlushy.html"><img src="{{pvZlushy.src}}" style="object-position: {{pvZlushy.x}}% {{pvZlushy.y}}%" alt="Zlushy"><span class="tile-cap h" style="font-size: 18px">Zlushy</span></a><button class="vbtn b" type="button" onClick="{{ob.bZlushy}}">View project</button></div>
