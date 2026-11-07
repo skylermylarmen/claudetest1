@@ -65,7 +65,7 @@ body{font-family:'Stack Sans Headline',sans-serif}
 .card:hover .card-name{color:#ED217C}
 .card:focus-visible{outline:3px solid #ED217C;outline-offset:6px}
 @media (min-width:900px){.panel{position:sticky;top:0;height:100vh}}
-@media (max-width:760px){.cards{grid-template-columns:minmax(0,1fr)!important}.pad{padding:24px 20px!important}}
+@media (max-width:760px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:28px 12px!important}.cards .card-name{font-size:20px!important;line-height:1}.cards .card>span:last-child{grid-template-columns:22px minmax(0,1fr)!important;gap:4px 4px!important}.cards .card>span:last-child .b{font-size:11px!important}.cards .card>span:last-child span:nth-child(4){font-size:12px!important}.pad{padding:24px 20px!important}}
 .lt{position:fixed;right:24px;bottom:24px;z-index:50;display:block;text-decoration:none;border-radius:50%}
 .lt-spin{position:absolute;inset:0;animation:ltSpin 22s linear infinite}
 .lt-spin img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .7s,transform .9s cubic-bezier(.65,0,.35,1)}
@@ -183,7 +183,7 @@ body{font-family:'Stack Sans Headline',sans-serif}
 <main id="work" class="pad" style="flex: 999 1 560px; min-width: 0; box-sizing: border-box; padding: 40px 48px 160px; display: flex; flex-direction: column; gap: 32px">
 <div class="b" style="display: flex; justify-content: space-between; align-items: baseline; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #666; border-bottom: 1.5px solid #000; padding-bottom: 12px">
 <span>Selected work</span>
-<span>10 projects</span>
+<span>12 projects</span>
 </div>
 <div class="cards" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 24px">
 <a class="card" href="work-reverra.html">

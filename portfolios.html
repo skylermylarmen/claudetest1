@@ -96,7 +96,7 @@ a{color:inherit}a:hover{color:#ED217C}
 .pn:hover,.pn:focus-visible{background:#ED217C;border-color:#ED217C;color:#fff}
 .hdr{display:flex;align-items:center;justify-content:space-between;padding:22px 48px}
 .ftr{display:flex;justify-content:space-between;gap:16px;padding:20px 48px;font-size:12px}
-@media (max-width:760px){.fig.pgrid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.fig{grid-template-columns:minmax(0,1fr)!important}.hdr,.ftr{padding-left:20px!important;padding-right:20px!important}.wrap{padding-left:20px!important;padding-right:20px!important}.two{grid-template-columns:minmax(0,1fr)!important}}
+@media (max-width:760px){.fig.pgrid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px!important}.pgrid .vbtn{font-size:10px!important;padding-left:4px!important;padding-right:4px!important;letter-spacing:.04em!important}.pgrid .tile-cap{display:none}.fig{grid-template-columns:minmax(0,1fr)!important}.hdr,.ftr{padding-left:20px!important;padding-right:20px!important}.wrap{padding-left:20px!important;padding-right:20px!important}.two{grid-template-columns:minmax(0,1fr)!important}}
 .lt-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}.lt-rot{transform-origin:0 0;animation:ltSpin 22s linear infinite}.lt-gfx{opacity:0;animation:ltPulse 9s ease-in-out infinite}.lt-off{display:none}.lt:hover .lt-gfx,.lt:focus-visible .lt-gfx{opacity:1!important}.lt:hover .lt-rot{animation-play-state:paused}.lt-circ{transform-origin:0 0;animation:ltSpin 18s linear infinite reverse}
 
 
@@ -157,8 +157,8 @@ a{color:inherit}a:hover{color:#ED217C}
 <h1 class="h" style="margin: 0; font-size: min(120px, 13vw)">Portfolios</h1>
 </div>
 <section style="display: flex; flex-direction: column; gap: 20px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px"><h2 class="h" style="margin: 0; font-size: 56px">Brand, packaging &amp; visualization</h2><span class="b lbl mut" style="font-size: 12px">10 projects</span></div>
-<div class="fig pgrid" style="grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px"><h2 class="h" style="margin: 0; font-size: 56px">Brand, packaging &amp; visualization</h2><span class="b lbl mut" style="font-size: 12px">12 projects</span></div>
+<div class="fig pgrid" style="grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px">
 <div style="display: flex; flex-direction: column; gap: 8px"><a class="tile" href="work-reverra.html"><img src="{{pvReverra.src}}" style="object-position: {{pvReverra.x}}% {{pvReverra.y}}%" alt="Reverra"><span class="tile-cap h" style="font-size: 18px">Reverra</span></a><button class="vbtn b" type="button" onClick="{{ob.bReverra}}">View project</button></div>
 <div style="display: flex; flex-direction: column; gap: 8px"><a class="tile" href="work-mtrx.html"><img src="{{pvMTRX.src}}" style="object-position: {{pvMTRX.x}}% {{pvMTRX.y}}%" alt="MTRX"><span class="tile-cap h" style="font-size: 18px">MTRX</span></a><button class="vbtn b" type="button" onClick="{{ob.bMTRX}}">View project</button></div>
 <div style="display: flex; flex-direction: column; gap: 8px"><a class="tile" href="work-zlushy.html"><img src="{{pvZlushy.src}}" style="object-position: {{pvZlushy.x}}% {{pvZlushy.y}}%" alt="Zlushy"><span class="tile-cap h" style="font-size: 18px">Zlushy</span></a><button class="vbtn b" type="button" onClick="{{ob.bZlushy}}">View project</button></div>
@@ -169,6 +169,8 @@ a{color:inherit}a:hover{color:#ED217C}
 <div style="display: flex; flex-direction: column; gap: 8px"><a class="tile" href="work-ironsky.html"><img src="{{pvIronSky.src}}" style="object-position: {{pvIronSky.x}}% {{pvIronSky.y}}%" alt="Iron Sky Studios"><span class="tile-cap h" style="font-size: 18px">Iron Sky Studios</span></a><button class="vbtn b" type="button" onClick="{{ob.bIronSky}}">View project</button></div>
 <div style="display: flex; flex-direction: column; gap: 8px"><a class="tile" href="work-farrahmoan.html"><img src="{{pvFarrahMoan.src}}" style="object-position: {{pvFarrahMoan.x}}% {{pvFarrahMoan.y}}%" alt="Farrah Moan"><span class="tile-cap h" style="font-size: 18px">Farrah Moan</span></a><button class="vbtn b" type="button" onClick="{{ob.bFarrahMoan}}">View project</button></div>
 <div style="display: flex; flex-direction: column; gap: 8px"><a class="tile" href="work-kronton.html"><img src="{{pvKronton.src}}" style="object-position: {{pvKronton.x}}% {{pvKronton.y}}%" alt="Kronton"><span class="tile-cap h" style="font-size: 18px">Kronton</span></a><button class="vbtn b" type="button" onClick="{{ob.bKronton}}">View project</button></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><a class="tile" href="work-neuromancer.html"><img src="/_blob/c12ba20b3383ce1aa23af8469e0f3226" style="object-position: 50% 50%" alt="Neuromancer LIVE"><span class="tile-cap h" style="font-size: 18px">Neuromancer LIVE</span></a><a class="vbtn b" href="work-neuromancer.html" style="text-decoration: none">View project</a></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><a class="tile" href="work-cornucopia.html"><img src="/_blob/9b444a51846df4e3abb051de28b57680" style="object-position: 50% 50%" alt="Gateway to Cornucopia"><span class="tile-cap h" style="font-size: 18px">Gateway to Cornucopia</span></a><a class="vbtn b" href="work-cornucopia.html" style="text-decoration: none">View project</a></div>
 </div>
 </section>
 <section style="display: flex; flex-direction: column; gap: 28px">
