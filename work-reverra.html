@@ -145,7 +145,7 @@ a{color:inherit}a:hover{color:#ED217C}
 .tb-btn{all:unset;box-sizing:border-box;cursor:pointer;min-height:44px;padding:0 16px;border-radius:999px;display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#fff;text-decoration:none;white-space:nowrap}
 .tb-btn:hover,.tb-btn:focus-visible{background:#ED217C;color:#fff}
 .tb-sep{width:1px;height:22px;background:rgba(255,255,255,.25)}
-@media (max-width:760px){.feat-l{grid-row:auto;aspect-ratio:4 / 5}.intro,.chap-head,.comp-side .chap{grid-template-columns:minmax(0,1fr)!important}.chap-text{grid-column:1!important;grid-row:auto!important}.tb-name{display:none}}
+@media (max-width:760px){.feat-l{grid-row:auto;aspect-ratio:4 / 5}.intro,.chap-head,.comp-side .chap{grid-template-columns:minmax(0,1fr)!important}.chap-text{grid-column:1!important;grid-row:auto!important}.tb-name{display:none}.fig.dl4{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}}
 </style>
 </helmet>
 <div class="{{rootCls}}" style="min-height: 100vh; display: flex; flex-direction: column">
@@ -273,8 +273,8 @@ a{color:inherit}a:hover{color:#ED217C}
 </div>
 </div>
 <div class="blk" style="max-width: 100%">
-<span class="b lbl mut blk-label" style="font-size: 12px">Final dielines</span>
-<div class="fig" style="grid-template-columns: repeat(4, minmax(0, 1fr))">
+<span class="b lbl mut blk-label" style="font-size: 12px">Dielines</span>
+<div class="fig dl4" style="grid-template-columns: repeat(4, minmax(0, 1fr))">
 <figure style="aspect-ratio: 1 / 1"><img src="{{s07.src}}" alt="" loading="lazy" style="object-fit: contain"><sc-if value="{{nums}}" hint-placeholder-val="{{ false }}"><span class="num b">{{s07.lab}}</span></sc-if></figure>
 <figure style="aspect-ratio: 1 / 1"><img src="{{s08.src}}" alt="" loading="lazy" style="object-fit: contain"><sc-if value="{{nums}}" hint-placeholder-val="{{ false }}"><span class="num b">{{s08.lab}}</span></sc-if></figure>
 <figure style="aspect-ratio: 1 / 1"><img src="{{s09.src}}" alt="" loading="lazy" style="object-fit: contain"><sc-if value="{{nums}}" hint-placeholder-val="{{ false }}"><span class="num b">{{s09.lab}}</span></sc-if></figure>
