@@ -32,7 +32,8 @@
       for (var q = 0; q < 4; q++) { var b = 2 + q*6; o += 'C' + p[b] + ' ' + p[b+1] + ' ' + p[b+2] + ' ' + p[b+3] + ' ' + p[b+4] + ' ' + p[b+5]; }
       return o + 'Z';
     }
-    function k(t) { if (t < .2) return 0; if (t < .4) return ease((t - .2) / .2); if (t < .65) return 1; if (t < .85) return 1 - ease((t - .65) / .2); return 0; }
+    // rests as a circle; every 18s it springs to the star and back a few times, each flash softer, then settles
+    function k(t) { if (t < .55 || t > .8) return 0; var u = (t - .55) / .25; return Math.pow(1 - u, 1.1) * .5 * (1 - Math.cos(u * Math.PI * 2 * 3)); }
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     P.setAttribute('d', shape(0));
     if (!reduce) (function frame() { P.setAttribute('d', shape(k((Date.now() % 18000) / 18000))); requestAnimationFrame(frame); })();
