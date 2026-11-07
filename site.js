@@ -35,8 +35,18 @@
     // rests as a circle; every 9s (the Let's talk beat) it springs to the star and back a few times, each flash softer, then settles
     function k(t) { if (t < .5 || t > .85) return 0; var u = (t - .5) / .35; return Math.pow(1 - u, 1.1) * .5 * (1 - Math.cos(u * Math.PI * 2 * 3)); }
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // two tiny sparkles twinkle in the corners around the main flash
+    var T1 = a.querySelector('#ems1'), T2 = a.querySelector('#ems2');
+    function tw(t, from, len) { var u = (t - from) / len; return u < 0 || u > 1 ? 0 : Math.pow(Math.sin(u * Math.PI), 2); }
     P.setAttribute('d', shape(0));
-    if (!reduce) (function frame() { P.setAttribute('d', shape(k((Date.now() % 9000) / 9000))); requestAnimationFrame(frame); })();
+    if (!reduce) (function frame() {
+      var t = (Date.now() % 9000) / 9000;
+      P.setAttribute('d', shape(k(t)));
+      var a1 = tw(t, .42, .3), a2 = tw(t, .6, .3);
+      T1.setAttribute('transform', 'translate(30 -28) rotate(' + (a1 * 70).toFixed(1) + ') scale(' + (a1 * 1.15).toFixed(3) + ')');
+      T2.setAttribute('transform', 'translate(-29 27) rotate(' + (-a2 * 70).toFixed(1) + ') scale(' + (a2 * .8).toFixed(3) + ')');
+      requestAnimationFrame(frame);
+    })();
     function u() {
       var d = document.documentElement, y = window.pageYOffset || d.scrollTop || 0;
       a.classList.toggle('ember-hide', (window.innerHeight + y) >= (Math.max(d.scrollHeight, document.body.scrollHeight) - 120));
@@ -46,7 +56,7 @@
   function add() {
     var a = document.createElement('a');
     a.className = 'ember-portal'; a.href = '/fiamma/'; a.setAttribute('aria-label', 'Open the Fiamma presentation');
-    a.innerHTML = '<i><svg viewBox="-34 -34 68 68" aria-hidden="true"><defs><radialGradient id="emg" cx="45%" cy="40%" r="62%"><stop offset="0" stop-color="#fff3d6"/><stop offset=".35" stop-color="#ffb35c"/><stop offset=".7" stop-color="#ff4a1c"/></radialGradient></defs><path id="emp" fill="url(#emg)" d=""/></svg></i><span>Fiamma →</span>';
+    a.innerHTML = '<i><svg viewBox="-34 -34 68 68" aria-hidden="true"><defs><radialGradient id="emg" cx="45%" cy="40%" r="62%"><stop offset="0" stop-color="#fff3d6"/><stop offset=".35" stop-color="#ffb35c"/><stop offset=".7" stop-color="#ff4a1c"/></radialGradient></defs><path id="emp" fill="url(#emg)" d=""/><path id="ems1" fill="#ffb35c" d="M0 -9C.9 -3 3 -.9 9 0C3 .9 .9 3 0 9C-.9 3 -3 .9 -9 0C-3 -.9 -.9 -3 0 -9Z" transform="translate(30 -28) scale(0)"/><path id="ems2" fill="#ff6a3d" d="M0 -9C.9 -3 3 -.9 9 0C3 .9 .9 3 0 9C-.9 3 -3 .9 -9 0C-3 -.9 -.9 -3 0 -9Z" transform="translate(-29 27) scale(0)"/></svg></i><span>Fiamma →</span>';
     morph(a);
     a.addEventListener('click', function (e) {
       if (e.metaKey || e.ctrlKey || e.shiftKey) return;
