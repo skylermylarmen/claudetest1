@@ -7,8 +7,9 @@
   var css = document.createElement('style');
   css.textContent =
     '.ember-portal{position:fixed;left:6px;bottom:6px;z-index:9999;width:46px;height:46px;display:grid;place-items:center;text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent}' +
-    '.ember-portal i{width:14px;height:14px;border-radius:50%;background:radial-gradient(circle at 45% 40%,#fff3d6,#ffb35c 35%,#ff4a1c 70%);' +
-      'box-shadow:0 0 8px 2px rgba(255,120,40,.9),0 0 24px 6px rgba(255,74,28,.55),0 0 46px 10px rgba(255,42,42,.25);animation:emberFlicker 3.4s infinite,emberFloat 6s ease-in-out infinite;transition:transform .5s cubic-bezier(.2,.7,.2,1)}' +
+    '.ember-portal{transition:opacity .35s}.ember-portal.ember-hide{opacity:0;pointer-events:none}' +
+    '.ember-portal i{position:relative;display:block;width:14px;height:14px;animation:emberFlicker 3.4s infinite,emberFloat 6s ease-in-out infinite;transition:transform .5s cubic-bezier(.2,.7,.2,1)}' +
+    '.ember-portal i svg{position:absolute;left:-5px;top:-5px;width:24px;height:24px;overflow:visible;filter:drop-shadow(0 0 4px rgba(255,120,40,.95)) drop-shadow(0 0 12px rgba(255,74,28,.6)) drop-shadow(0 0 22px rgba(255,42,42,.3))}' +
     '.ember-portal span{position:absolute;left:14px;bottom:62px;white-space:nowrap;font:500 11px/1 ui-monospace,Menlo,monospace;letter-spacing:.18em;text-transform:uppercase;color:#ff4a1c;opacity:0;transform:translateY(6px);transition:opacity .5s,transform .5s;pointer-events:none}' +
     '.ember-portal:hover i,.ember-portal:focus-visible i{transform:scale(1.45)}' +
     '.ember-portal:hover span,.ember-portal:focus-visible span{opacity:1;transform:none}' +
@@ -18,10 +19,34 @@
     '.ember-wash.go{clip-path:circle(150% at 29px calc(100% - 29px))}' +
     '@media (prefers-reduced-motion: reduce){.ember-portal i{animation:none}}';
   document.head.appendChild(css);
+  // Circle <-> 4-point ember star, a gentle 18s loop (2x the 9s Let's talk beat),
+  // and it fades out at the page bottom exactly when Let's talk does.
+  function morph(a) {
+    var P = a.querySelector('#emp');
+    var C = [0,-22,12.15,-22,22,-12.15,22,0,22,12.15,12.15,22,0,22,-12.15,22,-22,12.15,-22,0,-22,-12.15,-12.15,-22,0,-22];
+    var S = [0,-27,2,-8,8,-2,27,0,8,2,2,8,0,27,-2,8,-8,2,-27,0,-8,-2,-2,-8,0,-27];
+    function ease(t) { return t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2; }
+    function shape(k) {
+      var p = []; for (var i = 0; i < C.length; i++) p.push((C[i] + (S[i] - C[i]) * k).toFixed(2));
+      var o = 'M' + p[0] + ' ' + p[1];
+      for (var q = 0; q < 4; q++) { var b = 2 + q*6; o += 'C' + p[b] + ' ' + p[b+1] + ' ' + p[b+2] + ' ' + p[b+3] + ' ' + p[b+4] + ' ' + p[b+5]; }
+      return o + 'Z';
+    }
+    function k(t) { if (t < .2) return 0; if (t < .4) return ease((t - .2) / .2); if (t < .65) return 1; if (t < .85) return 1 - ease((t - .65) / .2); return 0; }
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    P.setAttribute('d', shape(0));
+    if (!reduce) (function frame() { P.setAttribute('d', shape(k((Date.now() % 18000) / 18000))); requestAnimationFrame(frame); })();
+    function u() {
+      var d = document.documentElement, y = window.pageYOffset || d.scrollTop || 0;
+      a.classList.toggle('ember-hide', (window.innerHeight + y) >= (Math.max(d.scrollHeight, document.body.scrollHeight) - 120));
+    }
+    window.addEventListener('scroll', u, { passive: true }); window.addEventListener('resize', u); setInterval(u, 200); u();
+  }
   function add() {
     var a = document.createElement('a');
     a.className = 'ember-portal'; a.href = '/fiamma/'; a.setAttribute('aria-label', 'Open the Fiamma presentation');
-    a.innerHTML = '<i></i><span>Fiamma →</span>';
+    a.innerHTML = '<i><svg viewBox="-34 -34 68 68" aria-hidden="true"><defs><radialGradient id="emg" cx="45%" cy="40%" r="62%"><stop offset="0" stop-color="#fff3d6"/><stop offset=".35" stop-color="#ffb35c"/><stop offset=".7" stop-color="#ff4a1c"/></radialGradient></defs><path id="emp" fill="url(#emg)" d=""/></svg></i><span>Fiamma →</span>';
+    morph(a);
     a.addEventListener('click', function (e) {
       if (e.metaKey || e.ctrlKey || e.shiftKey) return;
       e.preventDefault();

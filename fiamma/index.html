@@ -342,14 +342,6 @@ a{color:inherit}
 img,video,svg,canvas{-webkit-user-drag:none;-webkit-touch-callout:none}
 body{-webkit-user-select:none;user-select:none}
 
-/* floating ember symbol: circle <-> 4-point star, 18s = 2x the Let's talk 9s beat; fades like it at page bottom */
-.fsym{position:fixed;right:24px;bottom:24px;width:64px;height:64px;z-index:60;display:block;opacity:0;pointer-events:none;transition:opacity .35s;-webkit-tap-highlight-color:transparent}
-.fsym.on{opacity:.9;pointer-events:auto}
-.fsym:hover{opacity:1}
-.fsym svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 0 10px rgba(255,74,28,.55));animation:fsglow 9s ease-in-out infinite}
-@keyframes fsglow{50%{filter:drop-shadow(0 0 18px rgba(255,120,50,.8)) brightness(1.15)}}
-@media (max-width:760px){.fsym{right:16px;bottom:16px;width:52px;height:52px}}
-@media (prefers-reduced-motion:reduce){.fsym svg{animation:none}}
 </style>
 </head>
 <body>
@@ -360,7 +352,6 @@ body{-webkit-user-select:none;user-select:none}
   <span class="mid">Fiamma · Vision presentation</span><span>Concept · not final</span>
 </header>
 <div class="toast" id="toast"></div>
-<a class="fsym" id="fsym" href="#top" aria-label="Back to top"><svg viewBox="-34 -34 68 68" aria-hidden="true"><defs><radialGradient id="fsg" cx="42%" cy="36%" r="70%"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#ffb35c"/><stop offset="1" stop-color="#ff4a1c"/></radialGradient></defs><path id="fsp" fill="url(#fsg)" d="M0 -22C12.15 -22 22 -12.15 22 0C22 12.15 12.15 22 0 22C-12.15 22 -22 12.15 -22 0C-22 -12.15 -12.15 -22 0 -22Z"></path></svg></a>
 
 
 <!-- INTRO -->
@@ -852,19 +843,6 @@ body{-webkit-user-select:none;user-select:none}
   });
 })();
 
-(function(){var a=document.getElementById('fsym');if(!a)return;var P=document.getElementById('fsp'),svg=a.querySelector('svg');
-var C=[0,-22,12.15,-22,22,-12.15,22,0,22,12.15,12.15,22,0,22,-12.15,22,-22,12.15,-22,0,-22,-12.15,-12.15,-22,0,-22];
-var S=[0,-27,2,-8,8,-2,27,0,8,2,2,8,0,27,-2,8,-8,2,-27,0,-8,-2,-2,-8,0,-27];
-var cmd=['M','C','C','C','C'];
-function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
-function shape(k){var o='';var pts=[];for(var i=0;i<C.length;i++)pts.push((C[i]+(S[i]-C[i])*k).toFixed(2));
-o='M'+pts[0]+' '+pts[1];for(var q=0;q<4;q++){var b=2+q*6;o+='C'+pts[b]+' '+pts[b+1]+' '+pts[b+2]+' '+pts[b+3]+' '+pts[b+4]+' '+pts[b+5]}return o+'Z'}
-/* 18s loop = 2 x the 9s Let's talk beat: circle, ease to star, hold, ease back */
-function k(t){if(t<.2)return 0;if(t<.4)return ease((t-.2)/.2);if(t<.65)return 1;if(t<.85)return 1-ease((t-.65)/.2);return 0}
-function frame(){var t=(Date.now()%18000)/18000;P.setAttribute('d',shape(k(t)));requestAnimationFrame(frame)}
-svg.style.animationDelay=(-(Date.now()%9000))+'ms';frame();
-function u(){var d=document.documentElement,y=window.pageYOffset||d.scrollTop||document.body.scrollTop||0;var h=Math.max(d.scrollHeight,document.body.scrollHeight);var bottom=(window.innerHeight+y)>=(h-200);a.classList.toggle('on',y>480&&!bottom)}
-window.addEventListener('scroll',u,{passive:true});window.addEventListener('touchmove',u,{passive:true});window.addEventListener('resize',u);setInterval(u,150);u()})();
 </script>
 </body>
 </html>
