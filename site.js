@@ -19,7 +19,7 @@
     '.ember-wash.go{clip-path:circle(150% at 29px calc(100% - 29px))}' +
     '@media (prefers-reduced-motion: reduce){.ember-portal i{animation:none}}';
   document.head.appendChild(css);
-  // Circle <-> 4-point ember star, a gentle 18s loop (2x the 9s Let's talk beat),
+  // Circle <-> 4-point ember star, a gentle 9s loop (the Let's talk beat),
   // and it fades out at the page bottom exactly when Let's talk does.
   function morph(a) {
     var P = a.querySelector('#emp');
@@ -32,11 +32,11 @@
       for (var q = 0; q < 4; q++) { var b = 2 + q*6; o += 'C' + p[b] + ' ' + p[b+1] + ' ' + p[b+2] + ' ' + p[b+3] + ' ' + p[b+4] + ' ' + p[b+5]; }
       return o + 'Z';
     }
-    // rests as a circle; every 18s it springs to the star and back a few times, each flash softer, then settles
-    function k(t) { if (t < .55 || t > .8) return 0; var u = (t - .55) / .25; return Math.pow(1 - u, 1.1) * .5 * (1 - Math.cos(u * Math.PI * 2 * 3)); }
+    // rests as a circle; every 9s (the Let's talk beat) it springs to the star and back a few times, each flash softer, then settles
+    function k(t) { if (t < .5 || t > .85) return 0; var u = (t - .5) / .35; return Math.pow(1 - u, 1.1) * .5 * (1 - Math.cos(u * Math.PI * 2 * 3)); }
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     P.setAttribute('d', shape(0));
-    if (!reduce) (function frame() { P.setAttribute('d', shape(k((Date.now() % 18000) / 18000))); requestAnimationFrame(frame); })();
+    if (!reduce) (function frame() { P.setAttribute('d', shape(k((Date.now() % 9000) / 9000))); requestAnimationFrame(frame); })();
     function u() {
       var d = document.documentElement, y = window.pageYOffset || d.scrollTop || 0;
       a.classList.toggle('ember-hide', (window.innerHeight + y) >= (Math.max(d.scrollHeight, document.body.scrollHeight) - 120));
