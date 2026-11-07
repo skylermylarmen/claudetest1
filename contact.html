@@ -117,6 +117,7 @@ a{color:inherit}a:hover{color:#ED217C}
 .tile:hover .tile-cap,.tile:focus-visible .tile-cap{transform:none}
 .pidx a{text-decoration:none}
 .sticky{position:sticky;top:24px}
+#sent{display:none}#sent:target{display:block}
 </style>
 </helmet>
 <div class="{{rootCls}}" style="min-height: 100vh; display: flex; flex-direction: column">
@@ -146,13 +147,19 @@ a{color:inherit}a:hover{color:#ED217C}
 <a class="row-link" href="portfolios.html"><span class="b lbl mut" style="font-size: 12px">Work</span><span class="b" style="font-size: 20px">Portfolios</span></a>
 <a class="row-link" href="/_blob/96b28389198e6fd5cb16443de088cc1b" download="Skyler-Kapel-Resume.pdf"><span class="b lbl mut" style="font-size: 12px">Resume</span><span class="b" style="font-size: 20px">Download PDF</span></a>
 </div>
-<form class="b" action="mailto:skylerkapel@gmail.com" method="post" enctype="text/plain" style="display: flex; flex-direction: column; gap: 28px">
+<p id="sent" class="b" style="margin:0 0 4px;font-size:18px">Thanks, your message was sent. I'll reply soon.</p>
+<form id="contact-form" class="b" action="https://formsubmit.co/skylerkapel@gmail.com" method="POST" style="display: flex; flex-direction: column; gap: 28px">
+<input type="hidden" name="_subject" value="New message from your portfolio site">
+<input type="hidden" name="_next" value="https://studio-pi-eight-18.vercel.app/contact.html#sent">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
+<input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 28px">
 <label class="field"><span class="lbl mut" style="font-size: 12px">Name</span><input type="text" name="name" autocomplete="name"></label>
-<label class="field"><span class="lbl mut" style="font-size: 12px">Email</span><input type="email" name="email" autocomplete="email"></label>
+<label class="field"><span class="lbl mut" style="font-size: 12px">Email</span><input type="email" name="email" autocomplete="email" required></label>
 </div>
 <label class="field"><span class="lbl mut" style="font-size: 12px">Company</span><input type="text" name="company" autocomplete="organization"></label>
-<label class="field"><span class="lbl mut" style="font-size: 12px">Message</span><textarea name="message" rows="5"></textarea></label>
+<label class="field"><span class="lbl mut" style="font-size: 12px">Message</span><textarea name="message" rows="5" required></textarea></label>
 <div><button class="btn lbl" type="submit">Send message</button></div>
 </form>
 </section>
