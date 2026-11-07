@@ -149,12 +149,16 @@ a{color:inherit}a:hover{color:#ED217C}
 .tl-now .tl-dot::after{content:"";position:absolute;inset:0;border-radius:50%;background:inherit;animation:tlPing 2.4s ease-out 2.6s infinite}
 @keyframes tlPing{0%{transform:scale(1);opacity:.55}80%,100%{transform:scale(2.6);opacity:0}}
 .tl-item:hover .tl-dot{transform:scale(1.25)}
-@media (max-width:760px){.tl-list{grid-template-columns:minmax(0,1fr);gap:64px}.tl-line{display:none}
-.tl-item{padding-left:62px;min-height:44px}
+@media (max-width:760px){.tl-list{grid-template-columns:minmax(0,1fr);gap:56px}.tl-line{display:none}
+.tl-item{padding-left:46px;padding-bottom:56px;min-height:44px}
+.tl-item:nth-child(even){padding-left:0;padding-right:46px;text-align:right}
 .tl-dot{position:absolute;top:0;left:0;margin:0}
-.tl-item:nth-child(even) .tl-dot{left:22px}
-.tl-item:not(:last-child)::after{content:"";position:absolute;left:0;top:11px;width:44px;height:calc(100% + 64px);background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 100' preserveAspectRatio='none'%3E%3Cpath d='M11 0C11 55 33 45 33 100' fill='none' stroke='black' stroke-width='2' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") 0 0/100% 100% no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 100' preserveAspectRatio='none'%3E%3Cpath d='M11 0C11 55 33 45 33 100' fill='none' stroke='black' stroke-width='2' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") 0 0/100% 100% no-repeat}
-.tl-item:nth-child(even):not(:last-child)::after{transform:scaleX(-1)}}
+.tl-item:nth-child(even) .tl-dot{left:auto;right:0}
+.tl-item::after{content:"";position:absolute;top:22px;bottom:56px;left:10px;width:2px;background:currentColor}
+.tl-item:nth-child(even)::after{left:auto;right:10px}
+.tl-item:not(:last-child)::before{content:"";position:absolute;left:10px;right:10px;top:calc(100% - 56px);height:112px;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 0C0 72 100 28 100 100' fill='none' stroke='black' stroke-width='2' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") center/100% 100% no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 0C0 72 100 28 100 100' fill='none' stroke='black' stroke-width='2' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") center/100% 100% no-repeat}
+.tl-item:nth-child(even):not(:last-child)::before{transform:scaleX(-1)}
+.tl-item:last-child{padding-bottom:0}.tl-item:last-child::after{bottom:auto;height:0}}
 @media (prefers-reduced-motion:reduce){.tl-line,.tl-item,.tl-dot{transition:none!important;transform:none!important;opacity:1!important}.tl-now .tl-dot::after{animation:none}}
 </style>
 </helmet>
