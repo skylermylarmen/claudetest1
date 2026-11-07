@@ -68,6 +68,7 @@ a{color:inherit}a:hover{color:#ED217C}
 .bg-black .c-indigo{color:#7D8AD0}
 @keyframes nvLoop{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .lt{position:fixed;right:24px;bottom:24px;z-index:50;display:block;text-decoration:none;border-radius:50%}
+.lt{transition:opacity .35s}.lt-hide{opacity:0!important;pointer-events:none!important}
 .lt-spin{position:absolute;inset:0;animation:ltSpin 22s linear infinite}
 .lt-spin img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .7s,transform .9s cubic-bezier(.65,0,.35,1)}
 .lt-g{position:absolute;inset:9%;background-size:300% 300%;animation:ltShift 6s ease-in-out infinite,ltPulse 9s ease-in-out infinite;-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center}
@@ -96,7 +97,7 @@ a{color:inherit}a:hover{color:#ED217C}
 .pn:hover,.pn:focus-visible{background:#ED217C;border-color:#ED217C;color:#fff}
 .hdr{display:flex;align-items:center;justify-content:space-between;padding:22px 48px}
 .ftr{display:flex;justify-content:space-between;gap:16px;padding:20px 48px;font-size:12px}
-@media (max-width:760px){.fig.pgrid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px!important}.pgrid .vbtn{font-size:10px!important;padding-left:4px!important;padding-right:4px!important;letter-spacing:.04em!important}.pgrid .tile-cap{display:none}.fig{grid-template-columns:minmax(0,1fr)!important}.hdr,.ftr{padding-left:20px!important;padding-right:20px!important}.wrap{padding-left:20px!important;padding-right:20px!important}.two{grid-template-columns:minmax(0,1fr)!important}}
+@media (max-width:760px){.fig.bgrid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}.fig.pgrid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px!important}.pgrid .vbtn{font-size:10px!important;padding-left:4px!important;padding-right:4px!important;letter-spacing:.04em!important}.pgrid .tile-cap{display:none}.fig{grid-template-columns:minmax(0,1fr)!important}.hdr,.ftr{padding-left:20px!important;padding-right:20px!important}.wrap{padding-left:20px!important;padding-right:20px!important}.two{grid-template-columns:minmax(0,1fr)!important}}
 .lt-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}.lt-rot{transform-origin:0 0;animation:ltSpin 22s linear infinite}.lt-gfx{opacity:0;animation:ltPulse 9s ease-in-out infinite}.lt-off{display:none}.lt:hover .lt-gfx,.lt:focus-visible .lt-gfx{opacity:1!important}.lt:hover .lt-rot{animation-play-state:paused}.lt-circ{transform-origin:0 0;animation:ltSpin 18s linear infinite reverse}
 
 
@@ -178,14 +179,14 @@ a{color:inherit}a:hover{color:#ED217C}
 <p class="b pidx" style="margin: 0; font-size: 16px; line-height: 1.7"><a href="#pf-1">Dis/Connect</a> · <a href="#pf-2">Neuromancer LIVE</a> · <a href="#pf-3">Bioloft Collection</a> · <a href="#pf-4">Iron Sky Studios</a> · <a href="#pf-5">Flood Cruiser Kit</a> · <a href="#pf-6">Gateway to Cornucopia</a> · <a href="#pf-7">Extra projects</a></p>
 <section id="pf-0" class="rule" style="display: flex; flex-direction: column; gap: 20px; padding-top: 22px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px"><div style="display: flex; flex-direction: column; gap: 8px"><h3 class="h" style="margin: 0; font-size: 40px">Introduction</h3></div><div style="display: flex; align-items: center; gap: 16px"><span class="b lbl mut" style="font-size: 12px">pp. 1–2</span><button class="vbtn b" type="button" onClick="{{ob.pf0}}">View project</button></div></div>
-<div class="fig" style="grid-template-columns: repeat(4, minmax(0, 1fr))">
+<div class="fig bgrid" style="grid-template-columns: repeat(4, minmax(0, 1fr))">
 <figure style="aspect-ratio: 612 / 792"><img src="/_blob/79062c761975dadd96ee8f27accebc21" alt="Introduction, page 1" loading="lazy" style="object-fit: cover"></figure>
 <figure style="aspect-ratio: 612 / 792"><img src="/_blob/9d9fbeece20404b1656c13fd49245ebe" alt="Introduction, page 2" loading="lazy" style="object-fit: cover"></figure>
 </div>
 </section>
 <section id="pf-1" class="rule" style="display: flex; flex-direction: column; gap: 20px; padding-top: 22px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px"><div style="display: flex; flex-direction: column; gap: 8px"><span class="b lbl mut" style="font-size: 12px">Thesis studio</span><h3 class="h" style="margin: 0; font-size: 40px">Dis/Connect</h3></div><div style="display: flex; align-items: center; gap: 16px"><span class="b lbl mut" style="font-size: 12px">pp. 3–11</span><button class="vbtn b" type="button" onClick="{{ob.pf1}}">View project</button></div></div>
-<div class="fig" style="grid-template-columns: repeat(4, minmax(0, 1fr))">
+<div class="fig bgrid" style="grid-template-columns: repeat(4, minmax(0, 1fr))">
 <figure style="aspect-ratio: 612 / 792"><img src="/_blob/754c15327840f2967ca261ca5ec70f6f" alt="Dis/Connect, page 3" loading="lazy" style="object-fit: cover"></figure>
 <figure style="aspect-ratio: 612 / 792"><img src="/_blob/24ca908fb7a7dc01ce312c72c8cabc34" alt="Dis/Connect, page 4" loading="lazy" style="object-fit: cover"></figure>
 <figure style="aspect-ratio: 612 / 792"><img src="/_blob/49d211b96242104dc8e4b8da2c81e927" alt="Dis/Connect, page 5" loading="lazy" style="object-fit: cover"></figure>
@@ -199,7 +200,7 @@ a{color:inherit}a:hover{color:#ED217C}
 </section>
 <section id="pf-2" class="rule" style="display: flex; flex-direction: column; gap: 20px; padding-top: 22px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px"><div style="display: flex; flex-direction: column; gap: 8px"><span class="b lbl mut" style="font-size: 12px">Collaborative studio</span><h3 class="h" style="margin: 0; font-size: 40px">Neuromancer LIVE</h3></div><div style="display: flex; align-items: center; gap: 16px"><span class="b lbl mut" style="font-size: 12px">pp. 12–19</span><button class="vbtn b" type="button" onClick="{{ob.pf2}}">View project</button></div></div>
-<div class="fig" style="grid-template-columns: repeat(4, minmax(0, 1fr))">
+<div class="fig bgrid" style="grid-template-columns: repeat(4, minmax(0, 1fr))">
 <figure style="aspect-ratio: 612 / 792"><img src="/_blob/bcb63caabb7e6293664fa60b1e1f91d0" alt="Neuromancer LIVE, page 12" loading="lazy" style="object-fit: cover"></figure>
 <figure style="aspect-ratio: 612 / 792"><img src="/_blob/de36fd2598b66f43b34a55bfe4a64c4f" alt="Neuromancer LIVE, page 13" loading="lazy" style="object-fit: cover"></figure>
 <figure style="aspect-ratio: 612 / 792"><img src="/_blob/bb69540842d414dcd65a4e4492df3c55" alt="Neuromancer LIVE, page 14" loading="lazy" style="object-fit: cover"></figure>
@@ -212,7 +213,7 @@ a{color:inherit}a:hover{color:#ED217C}
 </section>
 <section id="pf-3" class="rule" style="display: flex; flex-direction: column; gap: 20px; padding-top: 22px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px"><div style="display: flex; flex-direction: column; gap: 8px"><span class="b lbl mut" style="font-size: 12px">Furniture studio</span><h3 class="h" style="margin: 0; font-size: 40px">Bioloft Collection</h3></div><div style="display: flex; align-items: center; gap: 16px"><span class="b lbl mut" style="font-size: 12px">pp. 20–31</span><button class="vbtn b" type="button" onClick="{{ob.pf3}}">View project</button></div></div>
-<div class="fig" style="grid-template-columns: repeat(4, minmax(0, 1fr))">
+<div class="fig bgrid" style="grid-template-columns: repeat(4, minmax(0, 1fr))">
 <figure style="aspect-ratio: 612 / 792"><img src="/_blob/3696694500628753948b34eda3b0b5ef" alt="Bioloft Collection, page 20" loading="lazy" style="object-fit: cover"></figure>
 <figure style="aspect-ratio: 612 / 792"><img src="/_blob/bb3897335196dab37eb28280adf27e69" alt="Bioloft Collection, page 21" loading="lazy" style="object-fit: cover"></figure>
 <figure style="aspect-ratio: 612 / 792"><img src="/_blob/96f1e7423cc7831d06c1fcb69fef6e7e" alt="Bioloft Collection, page 22" loading="lazy" style="object-fit: cover"></figure>
@@ -229,7 +230,7 @@ a{color:inherit}a:hover{color:#ED217C}
 </section>
 <section id="pf-4" class="rule" style="display: flex; flex-direction: column; gap: 20px; padding-top: 22px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px"><div style="display: flex; flex-direction: column; gap: 8px"><span class="b lbl mut" style="font-size: 12px">Personal project</span><h3 class="h" style="margin: 0; font-size: 40px">Iron Sky Studios</h3></div><div style="display: flex; align-items: center; gap: 16px"><span class="b lbl mut" style="font-size: 12px">pp. 32–38</span><button class="vbtn b" type="button" onClick="{{ob.pf4}}">View project</button></div></div>
-<div class="fig" style="grid-template-columns: repeat(4, minmax(0, 1fr))">
+<div class="fig bgrid" style="grid-template-columns: repeat(4, minmax(0, 1fr))">
 <figure style="aspect-ratio: 612 / 792"><img src="/_blob/ed13f92a59195acf604542641ff8435c" alt="Iron Sky Studios, page 32" loading="lazy" style="object-fit: cover"></figure>
 <figure style="aspect-ratio: 612 / 792"><img src="/_blob/1fc257ca167abec7526fcb015694fc52" alt="Iron Sky Studios, page 33" loading="lazy" style="object-fit: cover"></figure>
 <figure style="aspect-ratio: 612 / 792"><img src="/_blob/605c4d840aa41622b6e085b30fcc21a3" alt="Iron Sky Studios, page 34" loading="lazy" style="object-fit: cover"></figure>
@@ -241,7 +242,7 @@ a{color:inherit}a:hover{color:#ED217C}
 </section>
 <section id="pf-5" class="rule" style="display: flex; flex-direction: column; gap: 20px; padding-top: 22px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px"><div style="display: flex; flex-direction: column; gap: 8px"><span class="b lbl mut" style="font-size: 12px">Global issues studio</span><h3 class="h" style="margin: 0; font-size: 40px">Flood Cruiser Kit</h3></div><div style="display: flex; align-items: center; gap: 16px"><span class="b lbl mut" style="font-size: 12px">pp. 39–46</span><button class="vbtn b" type="button" onClick="{{ob.pf5}}">View project</button></div></div>
-<div class="fig" style="grid-template-columns: repeat(4, minmax(0, 1fr))">
+<div class="fig bgrid" style="grid-template-columns: repeat(4, minmax(0, 1fr))">
 <figure style="aspect-ratio: 612 / 792"><img src="/_blob/ecce0ca0836e62c5c9690fc2d607a5f6" alt="Flood Cruiser Kit, page 39" loading="lazy" style="object-fit: cover"></figure>
 <figure style="aspect-ratio: 612 / 792"><img src="/_blob/c7fb6167d8366629e0755b5ab11ec660" alt="Flood Cruiser Kit, page 40" loading="lazy" style="object-fit: cover"></figure>
 <figure style="aspect-ratio: 612 / 792"><img src="/_blob/59bc8cabbddccc854a40af388ea6753c" alt="Flood Cruiser Kit, page 41" loading="lazy" style="object-fit: cover"></figure>
@@ -254,7 +255,7 @@ a{color:inherit}a:hover{color:#ED217C}
 </section>
 <section id="pf-6" class="rule" style="display: flex; flex-direction: column; gap: 20px; padding-top: 22px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px"><div style="display: flex; flex-direction: column; gap: 8px"><span class="b lbl mut" style="font-size: 12px">Collaborative studio</span><h3 class="h" style="margin: 0; font-size: 40px">Gateway to Cornucopia</h3></div><div style="display: flex; align-items: center; gap: 16px"><span class="b lbl mut" style="font-size: 12px">pp. 47–51</span><button class="vbtn b" type="button" onClick="{{ob.pf6}}">View project</button></div></div>
-<div class="fig" style="grid-template-columns: repeat(4, minmax(0, 1fr))">
+<div class="fig bgrid" style="grid-template-columns: repeat(4, minmax(0, 1fr))">
 <figure style="aspect-ratio: 612 / 792"><img src="/_blob/51610c1a65cfc21bdf1ad0eea7ae5457" alt="Gateway to Cornucopia, page 47" loading="lazy" style="object-fit: cover"></figure>
 <figure style="aspect-ratio: 612 / 792"><img src="/_blob/44e939390af0577f4549d5e76a6866d9" alt="Gateway to Cornucopia, page 48" loading="lazy" style="object-fit: cover"></figure>
 <figure style="aspect-ratio: 612 / 792"><img src="/_blob/590b226ec9b50f55060e033f3aa50f35" alt="Gateway to Cornucopia, page 49" loading="lazy" style="object-fit: cover"></figure>
@@ -264,13 +265,13 @@ a{color:inherit}a:hover{color:#ED217C}
 </section>
 <section id="pf-7" class="rule" style="display: flex; flex-direction: column; gap: 20px; padding-top: 22px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px"><div style="display: flex; flex-direction: column; gap: 8px"><h3 class="h" style="margin: 0; font-size: 40px">Extra projects</h3></div><div style="display: flex; align-items: center; gap: 16px"><span class="b lbl mut" style="font-size: 12px">p. 52</span><button class="vbtn b" type="button" onClick="{{ob.pf7}}">View project</button></div></div>
-<div class="fig" style="grid-template-columns: repeat(4, minmax(0, 1fr))">
+<div class="fig bgrid" style="grid-template-columns: repeat(4, minmax(0, 1fr))">
 <figure style="aspect-ratio: 612 / 792"><img src="/_blob/673bf962bd57b5c9ceb78cb95e58946f" alt="Extra projects, page 52" loading="lazy" style="object-fit: cover"></figure>
 </div>
 </section>
 <section id="pf-8" class="rule" style="display: flex; flex-direction: column; gap: 20px; padding-top: 22px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px"><div style="display: flex; flex-direction: column; gap: 8px"><h3 class="h" style="margin: 0; font-size: 40px">Resume</h3></div><div style="display: flex; align-items: center; gap: 16px"><span class="b lbl mut" style="font-size: 12px">p. 53</span><button class="vbtn b" type="button" onClick="{{ob.pf8}}">View project</button></div></div>
-<div class="fig" style="grid-template-columns: repeat(4, minmax(0, 1fr))">
+<div class="fig bgrid" style="grid-template-columns: repeat(4, minmax(0, 1fr))">
 <figure style="aspect-ratio: 612 / 792"><img src="/_blob/775ea6d206a3a2e7236884345420a0f0" alt="Resume, page 53" loading="lazy" style="object-fit: cover"></figure>
 </div>
 </section>
@@ -689,7 +690,7 @@ class Component extends DCLogic {
   }
   onScroll() {
     const y = window.scrollY || document.documentElement.scrollTop || 0;
-    const on = y > 480;
+    const on = y > 480; try{const el=document.querySelector('.lt');if(el){el.classList.toggle('lt-hide',(window.innerHeight+y)>=(document.documentElement.scrollHeight-120));}}catch(e){}
     if (on !== this.state.sc) this.setState({ sc: on });
   }
   startShapes() {
