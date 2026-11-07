@@ -63,6 +63,7 @@ body{font-family:'Stack Sans Headline',sans-serif}
 .tile-cap{transform:translateY(101%);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
 .tile:hover .tile-cap,.tile:focus-visible .tile-cap{transform:none}
 .lt{position:fixed;right:24px;bottom:24px;z-index:50;display:block;text-decoration:none;border-radius:50%}
+.lt{transition:opacity .35s}.lt-hide{opacity:0!important;pointer-events:none!important}
 .lt-spin{position:absolute;inset:0;animation:ltSpin 22s linear infinite}
 .lt-spin img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .7s,transform .9s cubic-bezier(.65,0,.35,1)}
 .lt-g{position:absolute;inset:9%;background-size:300% 300%;animation:ltShift 6s ease-in-out infinite,ltPulse 9s ease-in-out infinite;-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center}
@@ -526,6 +527,7 @@ class Component extends DCLogic {
     }
     dotCo(this, this.ckEl);
     ltFrame(this, ts);
+    try{const el=document.querySelector('.lt');if(el){const y=window.scrollY||document.documentElement.scrollTop||0;el.classList.toggle('lt-hide',(window.innerHeight+y)>=(document.documentElement.scrollHeight-120));}}catch(e){}
     this._raf = requestAnimationFrame(this.tick);
   }
   measure() {
