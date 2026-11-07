@@ -95,7 +95,7 @@ a{color:inherit}a:hover{color:#ED217C}
 .pn:hover,.pn:focus-visible{background:#ED217C;border-color:#ED217C;color:#fff}
 .hdr{display:flex;align-items:center;justify-content:space-between;padding:22px 48px}
 .ftr{display:flex;justify-content:space-between;gap:16px;padding:20px 48px;font-size:12px}
-@media (max-width:760px){.fig figure{grid-column:auto!important}.fig{grid-template-columns:minmax(0,1fr)!important}.hdr,.ftr{padding-left:20px!important;padding-right:20px!important}.wrap{padding-left:20px!important;padding-right:20px!important}.two{grid-template-columns:minmax(0,1fr)!important}}
+@media (max-width:760px){.fig{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px}.fig figure{grid-column:span 1!important}.fig figure.wide{grid-column:span 2!important}.fig figure.sk{aspect-ratio:1 / 1!important}.fig figure.sk.wide{aspect-ratio:2 / 1!important}.fig figure.w32{grid-column:span 2!important;aspect-ratio:3 / 2!important}.fig figure.w169{aspect-ratio:16 / 9!important}.fig figure.w11{grid-column:span 2!important;aspect-ratio:1 / 1!important}.hdr,.ftr{padding-left:20px!important;padding-right:20px!important}.wrap{padding-left:20px!important;padding-right:20px!important}.two{grid-template-columns:minmax(0,1fr)!important}}
 .lt-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}.lt-rot{transform-origin:0 0;animation:ltSpin 22s linear infinite}.lt-gfx{opacity:0;animation:ltPulse 9s ease-in-out infinite}.lt-off{display:none}.lt:hover .lt-gfx,.lt:focus-visible .lt-gfx{opacity:1!important}.lt:hover .lt-rot{animation-play-state:paused}.lt-circ{transform-origin:0 0;animation:ltSpin 18s linear infinite reverse}
 
 
@@ -190,31 +190,16 @@ a{color:inherit}a:hover{color:#ED217C}
 <span class="b mut" style="font-size: 18px">Jewelry visualization</span>
 </div>
 </div>
-<sc-if value="{{nums}}" hint-placeholder-val="{{ false }}">
-<div class="libp b">
-<span class="lbl" style="font-size: 12px">Image library · pick by number in Tweaks › Image spots</span>
-<div class="libp-g">
-<figure><img src="/_blob/68b986d38ced5d4a3994d3153352dfa9" alt="" loading="lazy"><span class="num b">01</span></figure>
-<figure><img src="/_blob/64bf91f008f161816900693d63745632" alt="" loading="lazy"><span class="num b">02</span></figure>
-<figure><img src="/_blob/3c7c8ad67d7063f6e7ed3ca0b93aebda" alt="" loading="lazy"><span class="num b">03</span></figure>
-<figure><img src="/_blob/b7c586562e55109e9ac3aa051e718053" alt="" loading="lazy"><span class="num b">04</span></figure>
-<figure><img src="/_blob/31bb8c28c0a3555ece67a78664873eb0" alt="" loading="lazy"><span class="num b">05</span></figure>
-<figure><img src="/_blob/f86fb009367c8d41754c85304ee0abd5" alt="" loading="lazy"><span class="num b">06</span></figure>
-<figure><img src="/_blob/aac75b0efbf61741208cd759e819b75d" alt="" loading="lazy"><span class="num b">07</span></figure>
-<figure><img src="/_blob/ced89aae7b5a8ef6436508c47da3da45" alt="" loading="lazy"><span class="num b">08</span></figure>
-</div>
-</div>
-</sc-if>
 <div class="blk" style="max-width: 100%">
 <div class="fig" style="grid-template-columns: repeat(1, minmax(0, 1fr))">
-<figure style="aspect-ratio: 16 / 9"><img src="{{s01.src}}" alt="XOMOX" loading="lazy" style="object-fit: cover"><sc-if value="{{nums}}" hint-placeholder-val="{{ false }}"><span class="num b">{{s01.lab}}</span></sc-if></figure>
+<figure class="wide" style="aspect-ratio: 16 / 9"><img src="/_blob/7c1cfe30fffaca3a91a2b27ec083db88" alt="Render of a purple wax ring tree beside the same tree in gold" style="object-fit: cover; object-position: 100% 50%"></figure>
 </div>
 </div>
 <section class="intro">
-<h2 class="h" style="margin: 0; font-size: 44px; line-height: 1">Technical CAD and renders for a jewelry brand.</h2>
+<h2 class="h" style="margin: 0; font-size: 44px; line-height: 1">From sketch to wax to cast gold.</h2>
 <div style="display: flex; flex-direction: column; gap: 14px">
-<p class="b" style="margin: 0; font-size: 17px; line-height: 1.55">I joined XOMOX as a Junior CAD Designer in 2024, working side by side with the jewelers to turn their sketches into production-ready pieces.</p>
-<p class="b" style="margin: 0; font-size: 17px; line-height: 1.55">I built parametric CAD models, digitally sculpted the organic components, and ran wax 3D printing for lost-wax casting, then rendered the finished designs for the brand.</p>
+<p class="b" style="margin: 0; font-size: 17px; line-height: 1.55">I joined XOMOX Jewelry as a Junior CAD Designer in 2024, building parametric CAD models and digitally sculpted components with input from the jewelers.</p>
+<p class="b" style="margin: 0; font-size: 17px; line-height: 1.55">I also organized and ran the wax 3D printing that feeds lost-wax casting, then rendered the finished designs for the brand.</p>
 </div>
 </section>
 <dl class="specs b">
@@ -224,11 +209,11 @@ a{color:inherit}a:hover{color:#ED217C}
 </div>
 <div style="display: flex; flex-direction: column; gap: 8px">
 <dt class="lbl mut" style="font-size: 11px">Scope</dt>
-<dd style="margin: 0; font-size: 15px; line-height: 1.4">Technical CAD, digital sculpting, 3D rendering</dd>
+<dd style="margin: 0; font-size: 15px; line-height: 1.4">Parametric CAD, digital sculpting, wax 3D printing, 3D rendering</dd>
 </div>
 <div style="display: flex; flex-direction: column; gap: 8px">
 <dt class="lbl mut" style="font-size: 11px">Role</dt>
-<dd style="margin: 0; font-size: 15px; line-height: 1.4">Junior CAD Designer, 2024</dd>
+<dd style="margin: 0; font-size: 15px; line-height: 1.4">Junior CAD Designer, Jan – Sep 2024</dd>
 </div>
 <div style="display: flex; flex-direction: column; gap: 8px">
 <dt class="lbl mut" style="font-size: 11px">Industry</dt>
@@ -238,18 +223,109 @@ a{color:inherit}a:hover{color:#ED217C}
 <section class="chap">
 <div class="chap-head">
 <div class="chap-meta b lbl" style="display: flex; align-items: center; gap: 12px; font-size: 12px"><span>01</span></div>
-<h3 class="h chap-title" style="margin: 0; font-size: 56px">Renders</h3>
+<h3 class="h chap-title" style="margin: 0; font-size: 56px">Sketches</h3>
+<p class="b chap-text" style="margin: 0; font-size: 17px; line-height: 1.55">Pieces start as quick concept sketches, marked up with stone seats, prong placement and the slope of the band.</p>
 </div>
 <div class="chap-body">
 <div class="blk" style="max-width: 100%">
 <div class="fig" style="grid-template-columns: repeat(12, minmax(0, 1fr))">
-<figure style="grid-column: span 3; aspect-ratio: 4 / 5"><img src="{{s02.src}}" alt="" loading="lazy" style="object-fit: cover"><sc-if value="{{nums}}" hint-placeholder-val="{{ false }}"><span class="num b">{{s02.lab}}</span></sc-if></figure>
-<figure style="grid-column: span 3; aspect-ratio: 4 / 5"><img src="{{s03.src}}" alt="" loading="lazy" style="object-fit: cover"><sc-if value="{{nums}}" hint-placeholder-val="{{ false }}"><span class="num b">{{s03.lab}}</span></sc-if></figure>
-<figure style="grid-column: span 3; aspect-ratio: 4 / 5"><img src="{{s04.src}}" alt="" loading="lazy" style="object-fit: cover"><sc-if value="{{nums}}" hint-placeholder-val="{{ false }}"><span class="num b">{{s04.lab}}</span></sc-if></figure>
-<figure style="grid-column: span 3; aspect-ratio: 4 / 5"><img src="{{s05.src}}" alt="" loading="lazy" style="object-fit: cover"><sc-if value="{{nums}}" hint-placeholder-val="{{ false }}"><span class="num b">{{s05.lab}}</span></sc-if></figure>
-<figure style="grid-column: span 4; aspect-ratio: 4 / 5"><img src="{{s06.src}}" alt="" loading="lazy" style="object-fit: cover"><sc-if value="{{nums}}" hint-placeholder-val="{{ false }}"><span class="num b">{{s06.lab}}</span></sc-if></figure>
-<figure style="grid-column: span 4; aspect-ratio: 4 / 5"><img src="{{s07.src}}" alt="" loading="lazy" style="object-fit: cover"><sc-if value="{{nums}}" hint-placeholder-val="{{ false }}"><span class="num b">{{s07.lab}}</span></sc-if></figure>
-<figure style="grid-column: span 4; aspect-ratio: 4 / 5"><img src="{{s08.src}}" alt="" loading="lazy" style="object-fit: cover"><sc-if value="{{nums}}" hint-placeholder-val="{{ false }}"><span class="num b">{{s08.lab}}</span></sc-if></figure>
+<figure class="sk" style="grid-column: span 3; aspect-ratio: 3 / 4; background: #fff"><img src="/_blob/a6d004ed644c2e5ac34a13afddc8029b" alt="Ring concept sketched on a hand with a green stone" loading="lazy" style="object-fit: contain"></figure>
+<figure class="sk" style="grid-column: span 3; aspect-ratio: 3 / 4; background: #fff"><img src="/_blob/8427b0d66b40767e1fa67182856f3066" alt="Two ring concepts sketched on a finger" loading="lazy" style="object-fit: contain"></figure>
+<figure class="sk" style="grid-column: span 3; aspect-ratio: 3 / 4; background: #fff"><img src="/_blob/01a431f0e02311ffe4d489d4d348c45c" alt="Ring concepts with a red markup note about the stone" loading="lazy" style="object-fit: contain"></figure>
+<figure class="sk" style="grid-column: span 3; aspect-ratio: 3 / 4; background: #fff"><img src="/_blob/14ff0a901665caea764971c69549b8a8" alt="Ring concepts with red, green and blue stones" loading="lazy" style="object-fit: contain"></figure>
+<figure class="sk" style="grid-column: span 4; aspect-ratio: 4 / 3; background: #fff"><img src="/_blob/936c115ace082a7657694e29416f02bd" alt="Sketch of a gold ring with an emerald and prongs" loading="lazy" style="object-fit: contain"></figure>
+<figure class="sk" style="grid-column: span 4; aspect-ratio: 4 / 3; background: #fff"><img src="/_blob/d3886c2ea8fa9d7ea9d35d57f325f310" alt="Sketch noting the prong, the emerald and the slope from the top" loading="lazy" style="object-fit: contain"></figure>
+<figure class="wide sk" style="grid-column: span 4; aspect-ratio: 4 / 3; background: #fff"><img src="/_blob/37695b522714d21bdd723040361c3347" alt="Gold ring with a square emerald, sketched" loading="lazy" style="object-fit: contain"></figure>
+</div>
+</div>
+</div>
+</section>
+<section class="chap">
+<div class="chap-head">
+<div class="chap-meta b lbl" style="display: flex; align-items: center; gap: 12px; font-size: 12px"><span>02</span></div>
+<h3 class="h chap-title" style="margin: 0; font-size: 56px">CAD</h3>
+<p class="b chap-text" style="margin: 0; font-size: 17px; line-height: 1.55">Parametric models in Fusion 360 keep dimensions adjustable, and organic forms are sculpted digitally in Blender.</p>
+</div>
+<div class="chap-body">
+<div class="blk" style="max-width: 100%">
+<div class="fig" style="grid-template-columns: repeat(12, minmax(0, 1fr))">
+<figure style="grid-column: span 6; aspect-ratio: 1 / 1"><img src="/_blob/faa0c1223dec3a58208f1ff61d6ef4b8" alt="Parametric stone seat and prongs in Fusion 360" loading="lazy" style="object-fit: cover"></figure>
+<figure style="grid-column: span 6; aspect-ratio: 1 / 1"><img src="/_blob/dd3400526ec18e3240e6e99a8d170ec5" alt="Three twisted organic bands sculpted in Blender, in gold, rose gold and white metal" loading="lazy" style="object-fit: cover"></figure>
+</div>
+</div>
+</div>
+</section>
+<section class="chap">
+<div class="chap-head">
+<div class="chap-meta b lbl" style="display: flex; align-items: center; gap: 12px; font-size: 12px"><span>03</span></div>
+<h3 class="h chap-title" style="margin: 0; font-size: 56px">Wax</h3>
+<p class="b chap-text" style="margin: 0; font-size: 17px; line-height: 1.55">Finished models are printed in wax, ready to be cast. These are the studio's printers, the prints themselves, and renders of the wax stage.</p>
+</div>
+<div class="chap-body">
+<div class="blk" style="max-width: 100%">
+<div class="fig" style="grid-template-columns: repeat(12, minmax(0, 1fr))">
+<figure style="grid-column: span 6; aspect-ratio: 4 / 5"><img src="/_blob/9c0cf68875ceba926011bc36277dc4e7" alt="Wax 3D printer in the studio" loading="lazy" style="object-fit: cover"></figure>
+<figure style="grid-column: span 6; aspect-ratio: 4 / 5"><img src="/_blob/65f248c9680fe44bac831b308d71c765" alt="Red wax ring prints with sprues on a paper towel" loading="lazy" style="object-fit: cover"></figure>
+<figure style="grid-column: span 6; aspect-ratio: 4 / 3"><img src="/_blob/142b559a0c3d7696645c222377161594" alt="Resin 3D printer with an orange hood" loading="lazy" style="object-fit: cover"></figure>
+<figure style="grid-column: span 6; aspect-ratio: 4 / 3"><img src="/_blob/95088c24509b84426cd08007df62e6d0" alt="Jeweler's bench tools: files, gravers and hammers" loading="lazy" style="object-fit: cover"></figure>
+<figure style="grid-column: span 6; aspect-ratio: 3 / 2"><img src="/_blob/53e2920e2c14acebd0bbe59bb624c7cf" alt="Render of purple wax rings on a marble surface" loading="lazy" style="object-fit: cover"></figure>
+<figure style="grid-column: span 6; aspect-ratio: 3 / 2"><img src="/_blob/45e5ad51c7756ffe634cb7ceee4ef934" alt="Render of wax rings on a XOMOX box in front of a keyboard" loading="lazy" style="object-fit: cover"></figure>
+</div>
+</div>
+</div>
+</section>
+<section class="chap">
+<div class="chap-head">
+<div class="chap-meta b lbl" style="display: flex; align-items: center; gap: 12px; font-size: 12px"><span>04</span></div>
+<h3 class="h chap-title" style="margin: 0; font-size: 56px">Casting</h3>
+<p class="b chap-text" style="margin: 0; font-size: 17px; line-height: 1.55">In lost-wax casting, the wax is burned out of its mold and molten metal takes its place. The wax is lost; the shape stays.</p>
+</div>
+<div class="chap-body">
+<div class="blk" style="max-width: 100%">
+<div class="fig" style="grid-template-columns: repeat(12, minmax(0, 1fr))">
+<figure style="grid-column: span 6; aspect-ratio: 4 / 5"><img src="/_blob/cc84f78ebe77deac4e6aa187ea61e7ec" alt="A gloved hand reaching into the chamber of a casting machine" loading="lazy" style="object-fit: cover"></figure>
+<figure style="grid-column: span 6; aspect-ratio: 4 / 5"><img src="/_blob/7db8c2b567cb7d79f7ce598140d9cb19" alt="Glowing metal seen through the viewing port of a casting machine" loading="lazy" style="object-fit: cover"></figure>
+</div>
+</div>
+</div>
+</section>
+<section class="chap">
+<div class="chap-head">
+<div class="chap-meta b lbl" style="display: flex; align-items: center; gap: 12px; font-size: 12px"><span>05</span></div>
+<h3 class="h chap-title" style="margin: 0; font-size: 56px">Renders</h3>
+<p class="b chap-text" style="margin: 0; font-size: 17px; line-height: 1.55">The finished designs, rendered for the brand.</p>
+</div>
+<div class="chap-body">
+<div class="blk" style="max-width: 100%">
+<div class="fig" style="grid-template-columns: repeat(12, minmax(0, 1fr))">
+<figure style="grid-column: span 3; aspect-ratio: 4 / 5"><img src="/_blob/7d99143de1bd730c1a47bab66eb58356" alt="Gold diamond band with a clover on a blue gradient" loading="lazy" style="object-fit: cover"></figure>
+<figure style="grid-column: span 3; aspect-ratio: 4 / 5"><img src="/_blob/4ecf1c40017097b732cbc1ee69c22610" alt="Gold diamond chain and flower on green fabric" loading="lazy" style="object-fit: cover"></figure>
+<figure class="w11" style="grid-column: span 3; aspect-ratio: 4 / 5"><img src="/_blob/1b363723314551761ec2548d2677d809" alt="Sapphire ring and band on rippled sand with pink stones" loading="lazy" style="object-fit: cover"></figure>
+<figure style="grid-column: span 3; aspect-ratio: 4 / 5"><img src="/_blob/28039dd89a6349d1c848ae0b734a89aa" alt="Garnet eternity band on dark rock against a teal gradient" loading="lazy" style="object-fit: cover"></figure>
+<figure style="grid-column: span 4; aspect-ratio: 4 / 5"><img src="/_blob/83a9bb39e3d194392392a76893dda129" alt="Rose gold band standing on grey rock" loading="lazy" style="object-fit: cover"></figure>
+<figure style="grid-column: span 4; aspect-ratio: 4 / 5"><img src="/_blob/fac820d649522c183bc1fb72ea553385" alt="Green stone band in mixed cuts, front view" loading="lazy" style="object-fit: cover"></figure>
+<figure style="grid-column: span 4; aspect-ratio: 4 / 5"><img src="/_blob/2f4d84d5dde8bd57dd4b4eee1ae231cb" alt="Green stone band in mixed cuts, angled view" loading="lazy" style="object-fit: cover"></figure>
+<figure class="wide" style="grid-column: span 6; aspect-ratio: 5 / 4"><img src="/_blob/70a679f28eb21506cd03aa046db9307d" alt="Sapphire and garnet eternity bands" loading="lazy" style="object-fit: cover"></figure>
+<figure class="wide w169" style="grid-column: span 6; aspect-ratio: 5 / 4"><img src="/_blob/6fade4c1e93a9daeb40cabd42a7c9d15" alt="Diamond band on a flower stem" loading="lazy" style="object-fit: cover"></figure>
+</div>
+</div>
+</div>
+</section>
+<section class="chap">
+<div class="chap-head">
+<div class="chap-meta b lbl" style="display: flex; align-items: center; gap: 12px; font-size: 12px"><span>06</span></div>
+<h3 class="h chap-title" style="margin: 0; font-size: 56px">Campaign</h3>
+<p class="b chap-text" style="margin: 0; font-size: 17px; line-height: 1.55">XOMOX-branded packaging and campaign visuals built around the finished pieces.</p>
+</div>
+<div class="chap-body">
+<div class="blk" style="max-width: 100%">
+<div class="fig" style="grid-template-columns: repeat(12, minmax(0, 1fr))">
+<figure class="wide" style="grid-column: span 12; aspect-ratio: 16 / 9"><img src="/_blob/74ef4be52290798fcf392d1dd2144082" alt="Three rings on a dark stage in front of a radiating pattern" loading="lazy" style="object-fit: cover"></figure>
+<figure style="grid-column: span 4; aspect-ratio: 4 / 5"><img src="/_blob/60d05f46a0c1023d0c01b232f14c5b4b" alt="Silver and gold beaded rings with pink stones" loading="lazy" style="object-fit: cover"></figure>
+<figure style="grid-column: span 4; aspect-ratio: 4 / 5"><img src="/_blob/a3604612116c49cf096db20c6256e533" alt="Ring in a XOMOX gift box among flowers" loading="lazy" style="object-fit: cover"></figure>
+<figure class="w32" style="grid-column: span 4; aspect-ratio: 4 / 5"><img src="/_blob/86f1d4a8ce8158d72ba46fd6b8dbc374" alt="Halo ring on green ribbons" loading="lazy" style="object-fit: cover"></figure>
+<figure style="grid-column: span 6; aspect-ratio: 4 / 5"><img src="/_blob/e04895c7f970ea906edfd7b3f58850dc" alt="Gold diamond ring on a navy column with the XOMOX wordmark" loading="lazy" style="object-fit: cover"></figure>
+<figure style="grid-column: span 6; aspect-ratio: 4 / 5"><img src="/_blob/885e21b84df545363526aa7f74a7891c" alt="Gold flower rings on glass cubes with pink flowers" loading="lazy" style="object-fit: cover"></figure>
 </div>
 </div>
 </div>
@@ -281,7 +357,7 @@ a{color:inherit}a:hover{color:#ED217C}
 </a>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"Font pairing":{"editor":"enum","options":["Original — Stack Sans + Yellowtail","Familjen Grotesk + Instrument Serif","Inter Tight + Newsreader","Archivo Condensed + Instrument Serif","Bricolage Grotesque + Fraunces"],"default":"Original — Stack Sans + Yellowtail","section":"Type"},"Caps · headings":{"editor":"boolean","default":true,"section":"Type"},"Caps · project name":{"editor":"boolean","default":true,"section":"Type"},"Caps · menu":{"editor":"boolean","default":true,"section":"Type"},"Caps · small labels":{"editor":"boolean","default":true,"section":"Type"},"Caps · body text":{"editor":"boolean","default":false,"section":"Type"},"Background":{"editor":"enum","options":["White","Paper","Black","Dot grid","Line grid"],"default":"White","section":"Background &amp; pattern"},"Pattern":{"editor":"enum","options":["Checker","Stripes","Dots","Grid","Triangles","None"],"default":"Checker","section":"Background &amp; pattern"},"Pattern size":{"editor":"range","min":6,"max":40,"step":1,"unit":"px","default":14,"section":"Background &amp; pattern"},"Pattern moves":{"editor":"boolean","default":false,"section":"Background &amp; pattern"},"Pattern speed":{"editor":"range","min":5,"max":200,"step":5,"unit":"px/s","default":30,"section":"Background &amp; pattern"},"Layout":{"editor":"enum","options":["Stacked","Side notes","Dense","Centered"],"default":"Stacked","section":"Layout"},"Switch-project pill color":{"editor":"color","default":"#FFF200","options":["#FFF200","#E1E434","#ED217C","#13A89E"],"section":"Layout"},"Always show bottom toolbar":{"editor":"boolean","default":false,"section":"Layout"},"Show image numbers":{"editor":"boolean","default":false,"section":"Images"},"Spot 01":{"editor":"enum","options":["01 · Hero","02 · Renders","03 · Renders","04 · Renders","05 · Renders","06 · Renders","07 · Renders","08 · Renders"],"default":"01 · Hero","section":"Images"},"Spot 02":{"editor":"enum","options":["01 · Hero","02 · Renders","03 · Renders","04 · Renders","05 · Renders","06 · Renders","07 · Renders","08 · Renders"],"default":"02 · Renders","section":"Images"},"Spot 03":{"editor":"enum","options":["01 · Hero","02 · Renders","03 · Renders","04 · Renders","05 · Renders","06 · Renders","07 · Renders","08 · Renders"],"default":"03 · Renders","section":"Images"},"Spot 04":{"editor":"enum","options":["01 · Hero","02 · Renders","03 · Renders","04 · Renders","05 · Renders","06 · Renders","07 · Renders","08 · Renders"],"default":"04 · Renders","section":"Images"},"Spot 05":{"editor":"enum","options":["01 · Hero","02 · Renders","03 · Renders","04 · Renders","05 · Renders","06 · Renders","07 · Renders","08 · Renders"],"default":"05 · Renders","section":"Images"},"Spot 06":{"editor":"enum","options":["01 · Hero","02 · Renders","03 · Renders","04 · Renders","05 · Renders","06 · Renders","07 · Renders","08 · Renders"],"default":"06 · Renders","section":"Images"},"Spot 07":{"editor":"enum","options":["01 · Hero","02 · Renders","03 · Renders","04 · Renders","05 · Renders","06 · Renders","07 · Renders","08 · Renders"],"default":"07 · Renders","section":"Images"},"Spot 08":{"editor":"enum","options":["01 · Hero","02 · Renders","03 · Renders","04 · Renders","05 · Renders","06 · Renders","07 · Renders","08 · Renders"],"default":"08 · Renders","section":"Images"},"Button size":{"editor":"range","min":96,"max":260,"step":2,"unit":"px","default":150,"section":"Let&#39;s talk button"},"Button color":{"editor":"color","default":"#4E5EAB","options":["#4E5EAB","#2E3A8C","#13A89E","#ED217C","#000000"],"section":"Let&#39;s talk button"},"Button spin":{"editor":"enum","options":["Off","Slow","Medium","Fast"],"default":"Fast","section":"Let&#39;s talk button"},"Button shapes":{"editor":"enum","options":["Star, cube, triangle, flower","Star only","Star + flower","Cube + triangle","Every shape"],"default":"Every shape","section":"Let&#39;s talk button"},"Shape speed":{"editor":"enum","options":["Fast","Medium","Slow"],"default":"Fast","section":"Let&#39;s talk button"},"Button text":{"editor":"enum","options":["Stacked","One line","Circular","None"],"default":"Stacked","section":"Let&#39;s talk button"},"Button outline":{"editor":"enum","options":["Match page pattern","White","None"],"default":"None","section":"Let&#39;s talk button"},"Button gradient":{"editor":"enum","options":["Off","Indigo","Teal","Brand pops","Mono"],"default":"Off","section":"Let&#39;s talk button"},"$preview":{"width":1440,"height":4100}}'>
+<script type="text/x-dc" data-dc-script data-props='{"Font pairing":{"editor":"enum","options":["Original — Stack Sans + Yellowtail","Familjen Grotesk + Instrument Serif","Inter Tight + Newsreader","Archivo Condensed + Instrument Serif","Bricolage Grotesque + Fraunces"],"default":"Original — Stack Sans + Yellowtail","section":"Type"},"Caps · headings":{"editor":"boolean","default":true,"section":"Type"},"Caps · project name":{"editor":"boolean","default":true,"section":"Type"},"Caps · menu":{"editor":"boolean","default":true,"section":"Type"},"Caps · small labels":{"editor":"boolean","default":true,"section":"Type"},"Caps · body text":{"editor":"boolean","default":false,"section":"Type"},"Background":{"editor":"enum","options":["White","Paper","Black","Dot grid","Line grid"],"default":"White","section":"Background &amp; pattern"},"Pattern":{"editor":"enum","options":["Checker","Stripes","Dots","Grid","Triangles","None"],"default":"Checker","section":"Background &amp; pattern"},"Pattern size":{"editor":"range","min":6,"max":40,"step":1,"unit":"px","default":14,"section":"Background &amp; pattern"},"Pattern moves":{"editor":"boolean","default":false,"section":"Background &amp; pattern"},"Pattern speed":{"editor":"range","min":5,"max":200,"step":5,"unit":"px/s","default":30,"section":"Background &amp; pattern"},"Layout":{"editor":"enum","options":["Stacked","Side notes","Dense","Centered"],"default":"Stacked","section":"Layout"},"Switch-project pill color":{"editor":"color","default":"#FFF200","options":["#FFF200","#E1E434","#ED217C","#13A89E"],"section":"Layout"},"Always show bottom toolbar":{"editor":"boolean","default":false,"section":"Layout"},"Button size":{"editor":"range","min":96,"max":260,"step":2,"unit":"px","default":150,"section":"Let&#39;s talk button"},"Button color":{"editor":"color","default":"#4E5EAB","options":["#4E5EAB","#2E3A8C","#13A89E","#ED217C","#000000"],"section":"Let&#39;s talk button"},"Button spin":{"editor":"enum","options":["Off","Slow","Medium","Fast"],"default":"Fast","section":"Let&#39;s talk button"},"Button shapes":{"editor":"enum","options":["Star, cube, triangle, flower","Star only","Star + flower","Cube + triangle","Every shape"],"default":"Every shape","section":"Let&#39;s talk button"},"Shape speed":{"editor":"enum","options":["Fast","Medium","Slow"],"default":"Fast","section":"Let&#39;s talk button"},"Button text":{"editor":"enum","options":["Stacked","One line","Circular","None"],"default":"Stacked","section":"Let&#39;s talk button"},"Button outline":{"editor":"enum","options":["Match page pattern","White","None"],"default":"None","section":"Let&#39;s talk button"},"Button gradient":{"editor":"enum","options":["Off","Indigo","Teal","Brand pops","Mono"],"default":"Off","section":"Let&#39;s talk button"},"$preview":{"width":1440,"height":9600}}'>
 const LIB = ["68b986d38ced5d4a3994d3153352dfa9", "64bf91f008f161816900693d63745632", "3c7c8ad67d7063f6e7ed3ca0b93aebda", "b7c586562e55109e9ac3aa051e718053", "31bb8c28c0a3555ece67a78664873eb0", "f86fb009367c8d41754c85304ee0abd5", "aac75b0efbf61741208cd759e819b75d", "ced89aae7b5a8ef6436508c47da3da45"];
 const SLOTS = 8;
 const FONT_KEYS = {'Original — Stack Sans + Yellowtail': 'original', 'Familjen Grotesk + Instrument Serif': 'familjen', 'Inter Tight + Newsreader': 'intertight', 'Archivo Condensed + Instrument Serif': 'archivo', 'Bricolage Grotesque + Fraunces': 'bricolage'};
