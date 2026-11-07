@@ -146,7 +146,10 @@ a{color:inherit}a:hover{color:#ED217C}
 .tb-on{transform:translate(-50%,0);opacity:1;pointer-events:auto}
 .tb-btn{all:unset;box-sizing:border-box;cursor:pointer;min-height:44px;padding:0 16px;border-radius:999px;display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#fff;text-decoration:none;white-space:nowrap}
 .tb-btn:hover,.tb-btn:focus-visible{background:#ED217C;color:#fff}
-.tb-sep{width:1px;height:22px;background:rgba(255,255,255,.25)}
+.tb-sep{width:1px;height:22px;background:rgba(255,255,255,.25);transition:width .5s cubic-bezier(.65,0,.35,1),opacity .3s,margin .5s}
+.tb-next{max-width:420px;overflow:hidden;transition:max-width .55s cubic-bezier(.65,0,.35,1),padding .55s cubic-bezier(.65,0,.35,1),opacity .3s}
+.tb-slim .tb-next{max-width:0;padding-left:0;padding-right:0;opacity:0;pointer-events:none}
+.tb-slim .tb-sep{width:0;opacity:0}
 @media (max-width:760px){.feat-l{grid-row:auto;aspect-ratio:4 / 5}.intro,.chap-head,.comp-side .chap{grid-template-columns:minmax(0,1fr)!important}.chap-text{grid-column:1!important;grid-row:auto!important}.tb-name{display:none}}
 </style>
 </helmet>
@@ -364,7 +367,7 @@ a{color:inherit}a:hover{color:#ED217C}
 <div class="{{tbCls}} b" role="toolbar" aria-label="Page tools">
 <button class="tb-btn" type="button" onClick="{{toTop}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20V5"></path><path d="M6 11l6-6 6 6"></path></svg>Top</button>
 <span class="tb-sep" aria-hidden="true"></span>
-<a class="tb-btn" href="work-cornucopia.html">Next: Gateway to Cornucopia<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="M13 6l6 6-6 6"></path></svg></a>
+<a class="tb-btn tb-next" href="work-cornucopia.html">Next: Gateway to Cornucopia<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="M13 6l6 6-6 6"></path></svg></a>
 </div>
 <footer class="ftr b rule">
 <span class="mut">© 2026 Skyler Kapel</span>
@@ -611,7 +614,9 @@ class Component extends DCLogic {
   onScroll() {
     const y = window.scrollY || document.documentElement.scrollTop || 0;
     const on = y > 480; try{const el=document.querySelector('.lt');if(el){el.classList.toggle('lt-hide',(window.innerHeight+y)>=(document.documentElement.scrollHeight-120));}}catch(e){}
-    if (on !== this.state.sc) this.setState({ sc: on });
+    const nx = document.querySelector('.nextp');
+    const slim = !!nx && nx.getBoundingClientRect().top < window.innerHeight - 60;
+    if (on !== this.state.sc || slim !== !!this.state.slim) this.setState({ sc: on, slim: slim });
   }
   startShapes() {
     clearInterval(this._sv);
@@ -677,7 +682,7 @@ class Component extends DCLogic {
       toggle: () => this.setState((st) => ({ open: !st.open })),
       close: () => this.setState({ open: false }),
       toTop: () => { try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { window.scrollTo(0, 0); } },
-      tbCls: 'tb' + ((this.state.sc || p.toolbarAlways) ? ' tb-on' : ''),
+      tbCls: 'tb' + ((this.state.sc || p.toolbarAlways) ? ' tb-on' : '') + (this.state.slim ? ' tb-slim' : ''),
       cue: p.cueColor ?? '#FFF200',
       ltCls: 'lt-g lt-m' + this.state.shape,
       ltPx: ltCfg(p).px,
