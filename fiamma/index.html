@@ -185,16 +185,6 @@ a{color:inherit}
 .crest .f{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--serif);font-size:78px;line-height:1}
 @keyframes spin{to{transform:rotate(360deg)}}
 
-/* demo: burn circle */
-.d-burn{height:300px;display:grid;place-items:center;background:radial-gradient(circle at 50% 50%,rgba(255,60,30,.3) 0,rgba(255,40,20,.12) 150px,rgba(255,40,20,0) 260px),#070303}
-.bcircle{width:220px;height:220px;border-radius:50%;position:relative;overflow:hidden;background:#000;
-  box-shadow:0 0 26px 6px rgba(255,70,30,.6),0 0 64px 14px rgba(255,40,20,.3);animation:bglow 6s ease-in-out infinite}
-@keyframes bglow{50%{box-shadow:0 0 34px 9px rgba(255,90,40,.72),0 0 80px 20px rgba(255,50,30,.4)}}
-.bword{position:absolute;inset:0;display:grid;place-items:center;font:900 54px/1 var(--cond);text-transform:uppercase;letter-spacing:.01em;
-  color:#ffd9a8;text-shadow:0 0 6px #fff1d0,0 0 18px #ff9a4a,0 0 36px #ff3a1a,0 0 70px #ff2a1a;filter:blur(.4px);
-  opacity:0;transform:scale(.94);transition:opacity 1.3s ease,transform 2.6s var(--ease),filter 1.3s}
-.bword.on{opacity:1;transform:scale(1)}
-.bcircle .bn{position:absolute;inset:0;opacity:.1;border-radius:50%;clip-path:circle(50% at 50% 50%);-webkit-mask-image:radial-gradient(circle,#000 52%,transparent 68%);mask-image:radial-gradient(circle,#000 52%,transparent 68%);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
 
 /* demo: mat */
 .d-mat{height:240px;display:grid;place-items:center;background:radial-gradient(ellipse at 40% 30%,#8a0a0a,#2a0202 70%)}
@@ -648,9 +638,6 @@ body{-webkit-user-select:none;user-select:none}
       <p class="lede">Each class gets its own typography, glowing on the feature circle in step with the walls around it.</p>
       <ul><li>A shared glow, with a different voice per class</li><li>Soft for yin, cheeky for burlesque, loud for HIIT</li></ul>
       <div class="chips"><span class="chip">Wordmarks</span><span class="chip">Feature circle</span></div>
-      <div class="demo d-burn"><div class="bcircle" id="bcircle">
-        <span class="bword on">Burn</span><span class="bword">Sculpt</span><span class="bword">Flow</span><span class="bword">HIIT</span><span class="bword">Ballet</span><span class="bword">Yin</span><div class="bn"></div>
-      </div></div>
     </div>
   </article>
   <article class="ref">
@@ -820,10 +807,6 @@ body{-webkit-user-select:none;user-select:none}
     var n=10,el=document.getElementById('count');
     setInterval(function(){n=n<=0?10:n-1;el.textContent=n===0?'FINISH':n;el.style.fontSize=n===0?'40px':''},1000);
   })();
-
-  /* burn circle: class names fade in and out */
-  var bw=document.querySelectorAll('#bcircle .bword'),bi=0;
-  setInterval(function(){bw[bi].classList.remove('on');bi=(bi+1)%bw.length;bw[bi].classList.add('on')},2600);
 
   /* warm lines swatches */
   var dl=document.getElementById('dlines');
