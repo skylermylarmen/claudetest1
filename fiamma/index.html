@@ -145,18 +145,7 @@ a{color:inherit}
 .demo{margin-top:26px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#070404;position:relative}
 
 /* demo: CRT two-tone glow */
-.d-crt{height:190px;padding:18px;background:#050303}
-.screen{position:relative;height:100%;border-radius:26px/34px;overflow:hidden;display:grid;place-items:center;
-  background:linear-gradient(115deg,#ff2e17 0%,#ff5a2a 38%,#ff6f9e 100%);background-size:220% 220%;animation:twotone 10s ease-in-out infinite;
-  box-shadow:0 0 34px rgba(255,74,28,.55),0 0 90px rgba(255,80,120,.22),inset 0 0 50px rgba(30,0,0,.55)}
 @keyframes twotone{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-.screen .word{position:relative;z-index:1;font:900 clamp(54px,6vw,76px)/1 var(--cond);letter-spacing:.01em;text-transform:uppercase;color:#1c0505;
-  text-shadow:0 0 2px rgba(28,5,5,.6),0 0 14px rgba(120,10,10,.35);transition:opacity .25s,filter .25s}
-.screen .word.out{opacity:0;filter:blur(6px)}
-.screen .noise{position:absolute;inset:-20%;z-index:2;opacity:.5;mix-blend-mode:overlay;pointer-events:none;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain .7s steps(5) infinite}
-.screen .scan{position:absolute;inset:0;z-index:3;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.14) 0 1px,transparent 1px 3px);mix-blend-mode:multiply}
-.screen .vig{position:absolute;inset:0;z-index:3;pointer-events:none;background:radial-gradient(ellipse at center,transparent 50%,rgba(20,0,0,.55) 100%)}
 
 /* demo: sphere */
 .d-sphere{height:300px}
@@ -619,7 +608,6 @@ body{-webkit-user-select:none;user-select:none}
       <p class="lede">This energy belongs on social media. It's too loud for the studio itself, but two things go straight into the Kit.</p>
       <ul><li>A two-tone glow drifting from hot red-orange to pink</li><li>Analog grain over everything, so it feels warm and alive</li><li>Fast one-word cuts for socials</li></ul>
       <div class="chips"><span class="chip">Kit</span><span class="chip">Socials</span></div>
-      <div class="demo d-crt"><div class="screen"><span class="word" id="crtword">FUOCO</span><div class="noise"></div><div class="scan"></div><div class="vig"></div></div></div>
     </div>
   </article>
 </div>
@@ -832,10 +820,6 @@ body{-webkit-user-select:none;user-select:none}
     var n=10,el=document.getElementById('count');
     setInterval(function(){n=n<=0?10:n-1;el.textContent=n===0?'FINISH':n;el.style.fontSize=n===0?'40px':''},1000);
   })();
-
-  /* CRT word cuts */
-  var cw=document.getElementById('crtword'),CW=['FUOCO','HEAT','FLOW','RISE','BURN','SWEAT'],cwi=0;
-  setInterval(function(){cw.classList.add('out');setTimeout(function(){cwi=(cwi+1)%CW.length;cw.textContent=CW[cwi];cw.classList.remove('out')},260)},1700);
 
   /* burn circle: class names fade in and out */
   var bw=document.querySelectorAll('#bcircle .bword'),bi=0;
