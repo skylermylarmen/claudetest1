@@ -24,7 +24,7 @@ Small text fixes can still be made directly in these files (below), but the next
 | Portfolios | `portfolios.html` |
 | Fiamma pitch presentation (private, not indexed) | `fiamma/index.html` (images in `fiamma/ref/`) |
 | Rise presentation (private, not indexed, animated deck) | `rise/index.html` (photos and logos in `rise/img/`, animation engine `rise/gsap.min.js`) |
-| Project pages | `work-reverra.html`, `work-mtrx.html`, `work-zlushy.html`, `work-amazingbotanicals.html`, `work-xomox.html`, `work-faceallies.html`, `work-highrollers.html`, `work-ironsky.html`, `work-farrahmoan.html`, `work-kronton.html` |
+| Project pages | `work-reverra.html`, `work-mtrx.html`, `work-zlushy.html`, `work-amazingbotanicals.html`, `work-xomox.html`, `work-faceallies.html`, `work-highrollers.html`, `work-ironsky.html`, `work-farrahmoan.html`, `work-kronton.html`, `work-neuromancer.html`, `work-cornucopia.html`, `work-bioloft.html` |
 
 ## Quick edits on github.com (no tools needed)
 
