@@ -23,6 +23,7 @@ Small text fixes can still be made directly in these files (below), but the next
 | Resume | `resume.html` |
 | Portfolios | `portfolios.html` |
 | Fiamma pitch presentation (private, not indexed) | `fiamma/index.html` (images in `fiamma/ref/`) |
+| Rise presentation (private, not indexed, animated deck) | `rise/index.html` (photos and logos in `rise/img/`, animation engine `rise/gsap.min.js`) |
 | Project pages | `work-reverra.html`, `work-mtrx.html`, `work-zlushy.html`, `work-amazingbotanicals.html`, `work-xomox.html`, `work-faceallies.html`, `work-highrollers.html`, `work-ironsky.html`, `work-farrahmoan.html`, `work-kronton.html` |
 
 ## Quick edits on github.com (no tools needed)
@@ -56,7 +57,7 @@ All images are in `img/v2/`. A new image you add on the canvas needs to be copie
 - Rip protection: right-click, dragging images, long-press saving, text copying and Cmd/Ctrl+S, U and P are blocked on every page and on Fiamma. Email and phone links and form fields can still be copied. Code is at the end of `site.js` and `site.css` (and inline in `fiamma/index.html`). It only stops casual saving; screenshots and browser dev tools still work.
 - Page switch: a simple fade out and fade in between SK pages. Code is near the end of `site.js` (change `280` for speed) and `site.css`.
 - Headings never split a word across lines: on narrow screens `site.js` ("Fit headings") shrinks a heading just enough for its longest word to fit.
-- `site.js` has the flickering Fiamma ember (bottom left, opens `/fiamma/`) and the 3D tilt on gallery cards (change `MAX_TILT` for more or less tilt).
+- `site.js` has the glowing blue Rise dot next to the ember (opens `/rise/`) and the flickering Fiamma ember (bottom left, opens `/fiamma/`) and the 3D tilt on gallery cards (change `MAX_TILT` for more or less tilt).
 - `vercel.json` points the canvas image links (`/_blob/...`) at the files in `img/v2/`.
 - Share preview image: `og.png`. Browser tab icon: `favicon.png`.
 

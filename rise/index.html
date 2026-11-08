@@ -1,0 +1,914 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Rise · Together, We Rise</title>
+<meta name="description" content="Rise community impact presentation, 2026.">
+<link rel="icon" type="image/png" href="/favicon.png">
+<style>
+:root{
+  --cream:#F3EEE1; --paper:#FBF8F0; --navy:#00285A; --blue:#1370B8; --sky:#3BA0E6; --pale:#CFE5F6;
+  --orange:#EE7B30; --sun:#F7C32E; --lime:#A8C050; --teal:#315B6A; --ink:#0B1B33;
+  --sans:"Helvetica Neue",Helvetica,Arial,"Liberation Sans",sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--navy);overflow:hidden}
+body{font-family:var(--sans);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.35}
+a{color:inherit}
+img{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+
+#deck{position:fixed;inset:0;overflow:hidden}
+.slide{position:absolute;inset:0;visibility:hidden;overflow:hidden;background:var(--bg,var(--cream));color:var(--fg,var(--ink))}
+.slide.on,.slide.under{visibility:visible}
+.slide.on{z-index:3}.slide.under{z-index:2}
+.nogsap .slide:not(.on){display:none}
+
+/* layout */
+.in{position:relative;z-index:2;height:100%;padding:clamp(76px,12vh,116px) clamp(22px,6vw,96px) clamp(84px,13vh,124px);display:grid;align-items:center;gap:clamp(20px,4.2vw,76px);will-change:transform}
+.in.two{grid-template-columns:1.02fr 1fr}
+.in.two.flip{grid-template-columns:1fr 1.02fr}
+.in.col{grid-template-columns:1fr;align-content:center}
+
+/* type */
+.kick{font-size:clamp(10px,1.05vw,13px);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent,var(--blue))}
+.h1{font-weight:700;letter-spacing:-.045em;line-height:.93;font-size:clamp(40px,min(7.4vw,14vh),132px)}
+.h2{font-weight:700;letter-spacing:-.04em;line-height:.96;font-size:clamp(34px,min(5.4vw,10.5vh),92px)}
+.h3{font-weight:700;letter-spacing:-.03em;line-height:1;font-size:clamp(22px,2.3vw,38px)}
+.lede{font-size:clamp(15px,min(1.55vw,2.9vh),24px);line-height:1.38;opacity:.78;max-width:30em}
+.small{font-size:clamp(12px,1.05vw,15px);opacity:.7}
+.ln{display:block;overflow:hidden;padding:.07em .02em .1em;margin:-.07em -.02em -.1em}
+.ln>span{display:block}
+.b{color:var(--blue)}.o{color:var(--orange)}.y{color:var(--sun)}.s{color:var(--sky)}.l{color:var(--lime)}
+.stack{display:grid;gap:clamp(12px,2.4vh,26px);align-content:center}
+
+/* shapes */
+.ph{position:relative;overflow:hidden;background:var(--pale)}
+.ph img{width:100%;height:100%;object-fit:cover}
+.arch{border-radius:999px 999px 0 0}.circle{border-radius:50%;aspect-ratio:1}.pill{border-radius:999px}.rr{border-radius:clamp(18px,2.2vw,34px)}
+.blob{border-radius:46% 54% 42% 58%/52% 44% 56% 48%}
+.dot{position:absolute;border-radius:50%}
+.float{animation:flo 7s ease-in-out infinite}
+.float.b2{animation-duration:9s;animation-delay:-3s}
+.float.b3{animation-duration:11s;animation-delay:-6s}
+@keyframes flo{0%,100%{translate:0 0}50%{translate:0 -14px}}
+.spin{animation:spin 60s linear infinite}
+.spin.fast{animation-duration:24s}
+@keyframes spin{to{rotate:360deg}}
+.slide:not(.on):not(.under) *{animation-play-state:paused}
+.bg{position:absolute;z-index:1;pointer-events:none;translate:calc(var(--px,0)*var(--d,10)*1px) calc(var(--py,0)*var(--d,10)*1px)}
+.bg svg{display:block;width:100%;height:100%;overflow:visible}
+
+/* chips + facts */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-block;padding:.62em 1.05em;border-radius:999px;font-weight:700;font-size:clamp(12px,1.05vw,15px);background:var(--chip,#fff);color:var(--chipfg,var(--navy));transition:transform .35s var(--ease)}
+.chip:hover{transform:translateY(-3px) rotate(-2deg)}
+.facts{display:grid;grid-template-columns:auto auto;gap:6px clamp(24px,4vw,64px);justify-content:start;padding-top:clamp(10px,2vh,20px);border-top:2px solid currentColor;border-color:color-mix(in srgb,currentColor 22%,transparent)}
+.facts h4{font-size:10px;letter-spacing:.22em;text-transform:uppercase;opacity:.6;margin-bottom:4px}
+.facts p{font-size:clamp(13px,1.15vw,16px);font-weight:700}
+.tag{display:inline-flex;align-items:center;gap:14px;background:#fff;border-radius:18px;padding:10px 16px;width:max-content;max-width:100%}
+.tag img{height:clamp(34px,6vh,58px);width:auto}
+
+/* HUD */
+.hud{position:fixed;z-index:50;color:var(--hud,var(--navy));transition:color .5s;pointer-events:none}
+.hud>*{pointer-events:auto}
+#label{left:clamp(22px,6vw,96px);top:clamp(22px,4.4vh,40px);font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;opacity:.75}
+#logo{right:clamp(22px,6vw,96px);top:clamp(16px,3.4vh,32px)}
+#logo img{height:clamp(30px,5.4vh,46px);width:auto;transition:filter .5s}
+#logo[data-theme=dark] img{filter:brightness(0) invert(1)}
+#bar{left:clamp(22px,6vw,96px);right:clamp(22px,6vw,96px);bottom:clamp(16px,3.4vh,30px);display:flex;align-items:center;gap:clamp(12px,2vw,28px);padding-bottom:env(safe-area-inset-bottom)}
+#count{font-size:12px;font-weight:700;letter-spacing:.14em;font-variant-numeric:tabular-nums;min-width:6.2em}
+#back{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;text-decoration:none;opacity:.6;transition:opacity .2s}
+#back:hover{opacity:1}
+#segs{flex:1;display:flex;gap:4px;align-items:center}
+#segs button{flex:1;height:22px;position:relative}
+#segs button::after{content:"";position:absolute;left:0;right:0;top:9px;height:4px;border-radius:4px;background:currentColor;opacity:.2;transition:opacity .3s,height .3s,top .3s}
+#segs button.done::after{opacity:.5}
+#segs button.cur::after{opacity:1;top:8px;height:6px}
+#segs button:hover::after{opacity:.9}
+.arrows{display:flex;gap:8px}
+.arrows button{width:42px;height:42px;border-radius:50%;border:2px solid currentColor;display:grid;place-items:center;transition:transform .25s var(--ease),background .25s,color .25s}
+.arrows button:hover{background:currentColor}
+.arrows button:hover svg{stroke:var(--bgnow,#fff)}
+.arrows button:active{transform:scale(.9)}
+.arrows svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.arrows button:disabled{opacity:.25;pointer-events:none}
+
+/* ---- slide-specific ---- */
+/* 1 cover */
+.cover .art{position:relative;height:100%;min-height:0;display:grid;place-items:end center}
+.cover .archwrap{position:relative;width:min(100%,62vh);aspect-ratio:.82;margin-bottom:-2vh}
+.cover .archwrap .ph{position:absolute;inset:0}
+.cover .sunbg{position:absolute;left:50%;top:6%;width:132%;aspect-ratio:1;translate:-50% -18%;z-index:0}
+.cover .pressline{display:flex;align-items:center;gap:12px;font-size:11px;letter-spacing:.22em;font-weight:700;text-transform:uppercase;color:var(--blue)}
+.cover .pressline i{display:block;width:34px;height:2px;background:var(--blue);transform-origin:left}
+.cover .rule{width:88px;height:6px;border-radius:6px;background:var(--orange)}
+
+/* 2 needs */
+.needs .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(8px,1.2vw,16px);align-self:center}
+.needs .bub{aspect-ratio:1;border-radius:50%;display:grid;place-content:center;text-align:center;padding:10%;font-weight:700;font-size:clamp(12px,1.35vw,20px);line-height:1.08;letter-spacing:-.01em;color:var(--f);background:var(--c);cursor:default;transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
+.needs .bub:hover{transform:scale(1.12) rotate(-6deg)}
+.needs .bub small{display:block;font-size:.62em;letter-spacing:.18em;opacity:.7;margin-bottom:.5em}
+.needs .grid .bub:nth-child(2),.needs .grid .bub:nth-child(5),.needs .grid .bub:nth-child(8){border-radius:50% 50% 50% 8%}
+.needs .grid .bub:nth-child(3),.needs .grid .bub:nth-child(6){border-radius:8% 50% 50% 50%}
+
+/* 3 who we are */
+.who .art{position:relative;height:100%;display:grid;place-items:center}
+.who .ph{width:min(100%,60vh);aspect-ratio:.86}
+.big{font-weight:700;letter-spacing:-.05em;line-height:.85;font-variant-numeric:tabular-nums;font-size:clamp(54px,min(9vw,17vh),160px)}
+.who .row{display:flex;gap:clamp(16px,3vw,44px);align-items:flex-end;padding-top:clamp(10px,2vh,22px);border-top:2px solid rgba(0,40,90,.15)}
+.who .row p.k{font-weight:700;letter-spacing:-.02em;line-height:1.08;font-size:clamp(17px,min(1.9vw,3.4vh),30px);color:var(--navy)}
+
+/* 4 what we do */
+.do .cards{display:grid;grid-template-columns:1fr 1fr;gap:clamp(8px,1.2vw,16px)}
+.do .card{background:#fff;border-radius:clamp(16px,1.8vw,26px);padding:clamp(14px,2vw,26px);display:grid;gap:clamp(18px,3.6vh,40px);align-content:space-between;min-height:clamp(110px,19vh,190px);transition:transform .45s var(--ease)}
+.do .card:hover{transform:translateY(-6px) rotate(-1deg)}
+.do .card svg{width:clamp(34px,3.6vw,54px);height:clamp(34px,3.6vw,54px);transition:transform .8s var(--ease)}
+.do .card:hover svg{transform:rotate(90deg) scale(1.1)}
+.do .card b{font-size:clamp(15px,1.55vw,24px);letter-spacing:-.025em;line-height:1.05;color:var(--navy)}
+.do .photo{position:relative;height:100%;display:grid;place-items:center}
+.do .photo .ph{width:100%;height:min(100%,72vh)}
+
+/* 5 6 7 places */
+.place .art{position:relative;height:100%;display:grid;place-items:center}
+.place .art .ph{width:100%;height:100%;max-height:74vh}
+.place .badge{position:absolute;z-index:3;width:clamp(86px,9vw,140px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;text-align:center;font-weight:700;font-size:clamp(11px,1.05vw,15px);line-height:1.05;letter-spacing:-.01em;padding:12px}
+.place .stack{gap:clamp(10px,2vh,22px)}
+.place .lab{font-size:10px;letter-spacing:.22em;font-weight:700;text-transform:uppercase;opacity:.7;margin-bottom:6px}
+
+/* 8 serve */
+.serve .art{position:relative;height:100%;display:grid;place-items:center}
+.serve .rw{position:relative;width:min(100%,66vh);aspect-ratio:1}
+.serve .rw .ph{position:relative;z-index:2;width:100%}
+.serve .rw .rip{position:absolute;inset:0;border-radius:50%;border:3px solid var(--blue);opacity:0;animation:rip 4.8s ease-out infinite;z-index:1}
+.serve .rw .rip:nth-child(2){animation-delay:1.6s;border-color:var(--orange)}
+.serve .rw .rip:nth-child(3){animation-delay:3.2s;border-color:var(--lime)}
+@keyframes rip{0%{transform:scale(1);opacity:.75}100%{transform:scale(1.75);opacity:0}}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:clamp(8px,1.2vw,16px)}
+.stat{border-radius:clamp(18px,2vw,30px);padding:clamp(14px,2vw,28px);background:var(--c);color:var(--f);display:grid;gap:8px;transition:transform .45s var(--ease)}
+.stat:hover{transform:translateY(-5px) rotate(1deg)}
+.stat .big{font-size:clamp(38px,min(5.4vw,10vh),88px)}
+.stat>span{font-size:clamp(12px,1.1vw,16px);font-weight:700;opacity:.85}
+
+/* 9 did you know */
+.know .nums{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(10px,1.6vw,26px)}
+.know .num{display:grid;gap:10px;align-content:start}
+.know .num>i{display:block;width:clamp(16px,1.6vw,26px);aspect-ratio:1;border-radius:50%;background:var(--c)}
+.know .num:nth-child(2)>i{border-radius:50% 50% 50% 0}.know .num:nth-child(4)>i{border-radius:0 50% 50% 50%}
+.know .big{font-size:clamp(28px,min(4.2vw,8.5vh),72px);letter-spacing:-.045em;white-space:nowrap}
+.know .num>span{font-size:clamp(12px,1.1vw,16px);opacity:.75;max-width:10em}
+
+/* 10 impact */
+.impact .mega{font-size:clamp(70px,min(14vw,27vh),240px);color:var(--blue);line-height:.8}
+.impact .mega.o{color:var(--orange)}
+.impact .mega em{font-style:normal;font-size:.34em;letter-spacing:-.03em;margin-left:.1em}
+.impact .cap{font-weight:700;font-size:clamp(18px,2vw,32px);letter-spacing:-.025em;color:var(--navy);margin-top:.35em}
+.impact .panel{background:#fff;border-radius:clamp(20px,2.4vw,36px);padding:clamp(18px,2.4vw,40px);display:grid;gap:clamp(12px,2.2vh,24px)}
+.bars{list-style:none;display:grid;gap:clamp(10px,2vh,20px)}
+.bars li{cursor:pointer;transition:opacity .3s}
+.bars:hover li:not(:hover){opacity:.4}
+.bars .top{display:flex;justify-content:space-between;font-weight:700;font-size:clamp(14px,1.4vw,20px);letter-spacing:-.02em;color:var(--navy)}
+.bars .track{height:clamp(14px,2.2vh,22px);border-radius:99px;background:#E4EAF1;margin-top:8px;overflow:hidden}
+.bars .track i{display:block;height:100%;border-radius:99px;background:var(--c);width:var(--w);transform-origin:left;transition:filter .3s}
+.bars li:hover .track i{filter:saturate(1.3) brightness(1.06)}
+
+/* 11 quote */
+.quote .in{align-content:center;gap:clamp(18px,3.4vh,40px)}
+.quote .mark{width:clamp(54px,6vw,96px);fill:var(--orange)}
+.quote blockquote{font-weight:700;letter-spacing:-.04em;line-height:1;font-size:clamp(30px,min(5.6vw,11vh),96px);max-width:15em}
+.quote .w{display:inline-block;overflow:hidden;vertical-align:top;padding:.06em .02em .1em;margin:-.06em -.02em -.1em}
+.quote .w>span{display:inline-block}
+.quote cite{font-style:normal;font-size:clamp(10px,1vw,13px);letter-spacing:.2em;text-transform:uppercase;font-weight:700;opacity:.8}
+
+/* 12 voices */
+.voices .wall{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(8px,1.2vw,16px);margin-top:clamp(14px,3vh,34px)}
+.voices .vq{background:var(--c);color:var(--f);border-radius:clamp(16px,1.8vw,26px);padding:clamp(14px,1.7vw,26px);font-weight:700;letter-spacing:-.02em;line-height:1.12;font-size:clamp(15px,1.75vw,26px);display:grid;gap:12px;align-content:space-between;min-height:clamp(110px,22vh,200px);transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
+.voices .vq:hover{transform:rotate(-2.2deg) scale(1.04)}
+.voices .vq em{font-style:normal;font-size:10px;letter-spacing:.22em;text-transform:uppercase;opacity:.75}
+.voices .src{margin-top:clamp(10px,2vh,20px)}
+
+/* 13 partners */
+.team .collage{position:relative;height:100%;min-height:0}
+.team .collage .ph{position:absolute}
+.team .c1{left:0;top:4%;width:56%;height:92%}
+.team .c2{right:0;top:0;width:40%;aspect-ratio:1}
+.team .c3{right:3%;bottom:0;width:40%;height:46%}
+.partners{display:grid;grid-template-columns:1fr 1fr;gap:clamp(8px,1.2vw,16px)}
+.partners .p{background:#fff;border-radius:999px;display:flex;align-items:center;gap:12px;padding:clamp(8px,1vw,12px) clamp(14px,1.6vw,22px) clamp(8px,1vw,12px) clamp(8px,1vw,12px);font-weight:700;font-size:clamp(13px,1.35vw,20px);letter-spacing:-.02em;line-height:1.05;color:var(--navy);transition:transform .45s var(--ease)}
+.partners .p:hover{transform:translateX(6px)}
+.partners .p i{flex:none;width:clamp(30px,3vw,46px);aspect-ratio:1;border-radius:50%;background:var(--c)}
+.partners .p:nth-child(2) i{border-radius:50% 50% 0 50%}.partners .p:nth-child(3) i{border-radius:0 50% 50% 50%}
+
+/* 14 volunteers */
+.vol .mosaic{position:relative;height:100%;min-height:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:clamp(8px,1.2vw,16px);max-height:74vh;align-self:center}
+.vol .mosaic .ph{width:100%;height:100%}
+.vol .m1{border-radius:999px 999px 10px 10px}.vol .m2{border-radius:10px 40% 10px 40%}.vol .m3{border-radius:40% 10px 40% 10px}.vol .m4{border-radius:10px 10px 999px 999px}
+.vol .row{display:flex;gap:16px;align-items:baseline;flex-wrap:wrap;padding-top:clamp(10px,2vh,22px);border-top:2px solid rgba(0,40,90,.25)}
+.vol .row .big{font-size:clamp(40px,min(5vw,9vh),84px);color:var(--navy)}
+.vol .row>span{font-weight:700;font-size:clamp(14px,1.4vw,20px);letter-spacing:-.02em}
+
+/* 15 future */
+.next .cols{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(8px,1.2vw,16px);margin-top:clamp(16px,3.4vh,40px)}
+.next .col1{background:#fff;border-radius:clamp(18px,2vw,30px);padding:clamp(16px,2vw,30px);display:grid;gap:clamp(10px,2vh,18px);align-content:start;min-height:clamp(190px,36vh,330px);position:relative;overflow:hidden;transition:transform .5s var(--ease)}
+.next .col1:hover{transform:translateY(-8px)}
+.next .col1 svg{width:clamp(44px,5vw,76px);aspect-ratio:1;transition:transform 1s var(--ease)}
+.next .col1:hover svg{transform:rotate(180deg) scale(1.1)}
+.next .col1 h3{font-size:clamp(17px,1.9vw,29px);letter-spacing:-.03em;line-height:1;color:var(--navy);margin-top:auto}
+.next .col1 p{font-size:clamp(13px,1.2vw,17px);opacity:.72;line-height:1.32}
+.next .col1::after{content:"";position:absolute;left:0;right:0;bottom:0;height:8px;background:var(--c)}
+
+/* 16 join */
+.join .photobg{position:absolute;inset:0;z-index:0}
+.join .photobg img{width:100%;height:100%;object-fit:cover;opacity:.32;mix-blend-mode:luminosity}
+.join .photobg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,40,90,.55),rgba(0,40,90,.92))}
+.join .acts{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(8px,1.2vw,16px)}
+.join .act{border-radius:clamp(18px,2vw,30px);padding:clamp(14px,1.8vw,26px);background:var(--c);color:var(--f);display:grid;gap:clamp(18px,4vh,46px);align-content:space-between;text-decoration:none;transition:transform .45s var(--ease)}
+.join .act:hover{transform:translateY(-8px) rotate(-1.5deg)}
+.join .act b{font-size:clamp(20px,2.4vw,38px);letter-spacing:-.04em}
+.join .act span{font-size:clamp(12px,1.1vw,16px);font-weight:700;opacity:.85;line-height:1.2}
+.join .contact{display:flex;flex-wrap:wrap;gap:8px clamp(18px,3vw,44px);font-weight:700;font-size:clamp(15px,1.7vw,26px);letter-spacing:-.02em}
+.join .contact a{text-decoration:none;border-bottom:3px solid var(--orange);padding-bottom:3px;transition:color .2s}
+.join .contact a:hover{color:var(--sun)}
+.join .rising{position:absolute;z-index:1;left:50%;bottom:0;width:min(96vw,140vh);aspect-ratio:1;translate:-50% 66%;pointer-events:none;opacity:.42}
+
+/* ---- topical motion helpers ---- */
+.big,.odo{white-space:nowrap}
+.who .h2{font-size:clamp(32px,min(4.7vw,9vh),82px)}
+.who .big{font-size:clamp(48px,min(6.6vw,12.5vh),116px)}
+.animating *{transition:none!important}
+.odo{display:inline-flex;vertical-align:top;align-items:flex-start}
+.od{position:relative;display:inline-block;height:.9em;overflow:hidden}
+.oc{display:block;will-change:transform}
+.oc i{display:block;font-style:normal;height:.9em;line-height:.9em}
+.oz{display:inline-block;height:.9em;line-height:.9em}
+.years{display:flex;gap:3px;height:clamp(16px,3.4vh,30px);align-items:flex-end;margin-top:clamp(2px,1vh,10px)}
+.years i{flex:1;height:100%;background:var(--blue);border-radius:2px}
+.years i:nth-child(10n){background:var(--orange)}
+.shelf{height:8px;border-radius:8px;background:var(--navy);margin-top:-1px}
+.hang{position:absolute;z-index:4;left:-1%;top:-7%;transform-origin:50% 0;animation:sway 5s ease-in-out infinite}
+@keyframes sway{0%,100%{rotate:-3deg}50%{rotate:3deg}}
+.hang .str{display:block;width:2px;height:clamp(46px,9vh,100px);background:var(--navy);margin:0 auto}
+.hang .pt{position:relative;width:clamp(112px,11vw,164px);padding:clamp(24px,3.6vh,32px) 14px 16px;background:var(--orange);color:var(--navy);font-weight:700;font-size:clamp(12px,1.15vw,16px);line-height:1.08;text-align:center;letter-spacing:-.01em;clip-path:polygon(0 14%,14% 0,86% 0,100% 14%,100% 100%,0 100%)}
+.hang .pt::before{content:"";position:absolute;left:50%;top:10px;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:#BFDDF5}
+.crowd{display:flex;flex-wrap:wrap;gap:6px;max-width:34em}
+.crowd i{width:clamp(8px,.9vw,12px);aspect-ratio:1;border-radius:50%;display:block}
+.voices .vq{position:relative}
+.voices .vq::after{content:"";position:absolute;left:22px;bottom:-11px;border-style:solid;border-width:12px 12px 0 0;border-color:var(--c) transparent transparent transparent}
+.voices .vq:nth-child(even)::after{left:auto;right:22px;border-width:12px 0 0 12px}
+.quote .w.grad>span{position:relative}
+.quote .w.grad>span::after{content:"";position:absolute;left:0;right:0;bottom:.02em;height:.09em;background:var(--orange);border-radius:6px;transform:scaleX(var(--u,1));transform-origin:left}
+
+/* ---- mobile / narrow ---- */
+@media (max-width:860px){
+  html,body{overflow:hidden}
+  .slide{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch}
+  .in,.in.two,.in.two.flip{grid-template-columns:1fr;height:auto;min-height:100%;align-content:start;padding-top:74px;padding-bottom:104px;gap:22px}
+  .h1{font-size:clamp(44px,14vw,84px)}.h2{font-size:clamp(34px,10.6vw,64px)}
+  .lede{font-size:16px}
+  #label{max-width:62vw;line-height:1.3;font-size:10px}
+  #bar{gap:10px;background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--bgnow,#fff) 92%,transparent) 40%);padding-top:18px;bottom:0;left:0;right:0;padding-left:clamp(22px,6vw,96px);padding-right:clamp(22px,6vw,96px);padding-bottom:calc(14px + env(safe-area-inset-bottom))}
+  #back{display:none}
+  .arrows button{width:38px;height:38px}
+  .cover .art{height:auto;order:-1;margin-top:-6px}
+  .cover .archwrap{width:min(78vw,52vh);margin:0 auto}
+  .cover .sunbg{width:150%}
+  .in.cover{align-content:center}
+  .needs .grid{grid-template-columns:repeat(4,1fr)}
+  .needs .bub{font-size:10.5px;padding:6%}
+  .who .art{height:auto;order:-1}.who .ph{width:min(70vw,44vh)}
+  .do .photo{order:-1}.do .photo .ph{height:44vw}
+  .do .cards{grid-template-columns:1fr 1fr}
+  .place .art{height:auto;order:-1}.place .art .ph{height:min(62vw,40vh);max-height:none;width:100%}
+  .place .badge{width:84px;font-size:10px}
+  .serve .art{height:auto;order:-1}.serve .rw{width:min(64vw,40vh)}
+  .know .nums{grid-template-columns:1fr 1fr}
+  .know .num:last-child{grid-column:1/-1}
+  .impact .panel{padding:18px}
+  .voices .wall{grid-template-columns:1fr 1fr}
+  .team .collage{height:56vw;order:-1}
+  .partners{grid-template-columns:1fr}
+  .vol .mosaic{height:62vw;order:-1;max-height:none}
+  .next .cols{grid-template-columns:1fr 1fr}
+  .next .col1{min-height:0}
+  .join .acts{grid-template-columns:1fr 1fr}
+  .join .act{gap:12px}
+}
+@media (max-width:480px){
+  .needs .grid{grid-template-columns:repeat(2,1fr)}.needs .bub{font-size:15px}
+  .voices .wall,.next .cols{grid-template-columns:1fr}.do .card{min-height:96px}
+  .stats{grid-template-columns:1fr 1fr}
+  .vol .row{gap:8px 14px}
+}
+@media (prefers-reduced-motion:reduce){.float,.spin{animation:none}}
+</style>
+</head>
+<body>
+
+<div class="hud" id="label" aria-hidden="true">Community Impact · 2026</div>
+<a class="hud" id="logo" href="https://njrise.org" target="_blank" rel="noopener" aria-label="Rise"><img src="/rise/img/logo-rise.webp" alt="rise"></a>
+<div class="hud" id="bar">
+  <a id="back" href="/">← Studio</a>
+  <div id="count">01 / 16</div>
+  <div id="segs" role="tablist" aria-label="Slides"></div>
+  <div class="arrows">
+    <button id="prev" aria-label="Previous slide"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button id="next" aria-label="Next slide"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+  </div>
+</div>
+
+<main id="deck">
+
+<!-- 01 COVER -->
+<section class="slide cover" data-label="Community Impact · 2026" style="--bg:var(--cream)">
+  <div class="bg" style="left:-12vw;bottom:-12vw;width:26vw;aspect-ratio:1;--d:-14"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#1370B8"/></svg></div>
+  <div class="in two">
+    <div class="stack">
+      <div class="rule" data-pop style="transform-origin:left"></div>
+      <h1 class="h1"><span class="ln"><span style="color:var(--navy)">Together,</span></span><span class="ln"><span style="color:var(--navy)">We <span class="b">Rise.</span></span></span></h1>
+      <p class="lede" data-fade style="color:var(--navy);opacity:.7">A center of social support serving Hightstown, East Windsor &amp; surrounding communities.</p>
+      <div class="pressline" data-fade><i></i><span>Press → or scroll to begin</span></div>
+    </div>
+    <div class="art">
+      <div class="archwrap">
+        <svg class="sunbg spin" data-sun viewBox="-100 -100 200 200" aria-hidden="true"></svg>
+        <div class="ph arch" data-photo><img src="/rise/img/cover.webp" alt="The Rise building entrance with a mosaic sunrise above the door"></div>
+      </div>
+      <div class="dot float" style="width:7vmin;height:7vmin;background:var(--orange);left:6%;top:18%" data-pop></div>
+      <div class="dot float b2" style="width:4vmin;height:4vmin;background:var(--lime);right:4%;top:44%" data-pop></div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 NEEDS -->
+<section class="slide needs" data-label="01 · Community needs" data-theme="dark" style="--bg:var(--navy);--fg:var(--cream)">
+  <div class="bg" style="right:-8vw;top:-10vw;width:34vw;aspect-ratio:1;--d:12"><svg viewBox="-100 -100 200 200" class="spin fast" data-ast="#1370B8"></svg></div>
+  <div class="in two">
+    <div class="stack">
+      <h2 class="h1" style="font-size:clamp(40px,min(6.6vw,13vh),118px)"><span class="ln"><span>Needs</span></span><span class="ln"><span>rarely come</span></span><span class="ln"><span class="o">one at a</span></span><span class="ln"><span class="o">time.</span></span></h2>
+      <p class="lede" data-fade>Behind every household is a different challenge — and often several at once.</p>
+    </div>
+    <div class="grid">
+      <div class="bub" data-pop style="--c:var(--blue);--f:#fff"><div><small>01</small>Food assistance</div></div>
+      <div class="bub" data-pop style="--c:var(--sun);--f:var(--navy)"><div><small>02</small>Healthcare enrollment</div></div>
+      <div class="bub" data-pop style="--c:var(--orange);--f:var(--navy)"><div><small>03</small>Housing referrals</div></div>
+      <div class="bub" data-pop style="--c:var(--cream);--f:var(--navy)"><div><small>04</small>Workforce development</div></div>
+      <div class="bub" data-pop style="--c:var(--lime);--f:var(--navy)"><div><small>05</small>Youth &amp; family support</div></div>
+      <div class="bub" data-pop style="--c:var(--teal);--f:#fff"><div><small>06</small>Bilingual assistance</div></div>
+      <div class="bub" data-pop style="--c:var(--sky);--f:var(--navy)"><div><small>07</small>WIC · TANF · SNAP</div></div>
+      <div class="bub" data-pop style="--c:var(--paper);--f:var(--orange)"><div><small>08</small>Emergency assistance</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 WHO WE ARE -->
+<section class="slide who" data-label="02 · Who we are" style="--bg:var(--cream)">
+  <div class="bg" style="left:-4vw;top:12vh;width:22vw;aspect-ratio:1;--d:16"><svg viewBox="0 0 100 100"><path d="M0 100A100 100 0 0 1 100 0V100Z" fill="#F7C32E"/></svg></div>
+  <div class="in two flip">
+    <div class="art">
+      <div class="bg" style="inset:auto;right:2%;bottom:3%;width:30%;aspect-ratio:1;--d:-20"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#EE7B30"/></svg></div>
+      <div class="ph arch" data-photo style="position:relative;z-index:2"><img src="/rise/img/couple.webp" alt="Two Rise Pantry volunteers smiling together"></div>
+    </div>
+    <div class="stack">
+      <h2 class="h2" style="color:var(--navy)"><span class="ln"><span>A center of social</span></span><span class="ln"><span>support for <span class="b">central</span></span></span><span class="ln"><span class="b">New Jersey.</span></span></h2>
+      <p class="lede" data-fade style="color:var(--navy)">Through direct services, trusted relationships and community partnerships, we help families and individuals overcome obstacles and build brighter futures.</p>
+      <div class="row" data-fade>
+        <div><div class="big b"><span data-count="58">58</span>+</div><p class="small" style="margin-top:8px">years serving the community</p></div>
+        <p class="k">The largest social service agency &amp; food pantry in Eastern Mercer County.</p>
+      </div>
+      <div class="years" data-years aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 WHAT WE DO -->
+<section class="slide do" data-label="03 · What we do" style="--bg:var(--pale)">
+  <div class="in two">
+    <div class="stack">
+      <h2 class="h2" style="color:var(--navy)"><span class="ln"><span>One door. <span class="b">Many</span></span></span><span class="ln"><span class="b">ways forward.</span></span></h2>
+      <div class="cards">
+        <div class="card" data-pop><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#1370B8"/></svg><b>Food &amp; Basic Needs</b></div>
+        <div class="card" data-pop><svg viewBox="0 0 100 100"><path d="M0 100A50 50 0 0 1 100 100Z" fill="#EE7B30" transform="translate(0 -25)"/></svg><b>Youth &amp; Family Programs</b></div>
+        <div class="card" data-pop><svg viewBox="0 0 100 100"><rect x="6" y="6" width="88" height="88" rx="8" fill="#315B6A"/></svg><b>Education &amp; Wellness</b></div>
+        <div class="card" data-pop><svg viewBox="0 0 100 100"><path d="M50 2C60 30 70 40 98 50C70 60 60 70 50 98C40 70 30 60 2 50C30 40 40 30 50 2Z" fill="#A8C050"/></svg><b>Community Support Services</b></div>
+      </div>
+      <p class="small" data-fade style="color:var(--navy);opacity:.72;max-width:44em;font-size:clamp(11px,1vw,14px)">Rise case managers learn each family’s unique needs, then connect them to NJ FamilyCare &amp; Medicare, SNAP, WIC, TANF, housing referrals, workforce development, bilingual assistance and emergency help.</p>
+    </div>
+    <div class="photo">
+      <div class="bg" style="inset:auto;left:-6%;top:6%;width:26%;aspect-ratio:1;--d:-18;z-index:3"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#F7C32E"/></svg></div>
+      <div class="ph rr" data-photo style="border-radius:999px 24px 999px 24px"><img src="/rise/img/event.webp" alt="A volunteer hands a folder to a neighbor at an outdoor Rise community event"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 PANTRY -->
+<section class="slide place" data-label="03 · What we do — Where it happens" style="--bg:var(--sun)">
+  <div class="bg" style="left:-17vw;bottom:-17vw;width:28vw;aspect-ratio:1;--d:14"><svg viewBox="-100 -100 200 200" class="spin" data-ast="#EE7B30"></svg></div>
+  <div class="in two flip">
+    <div class="art">
+      <div class="ph arch" data-photo style="max-width:min(100%,58vh)"><img src="/rise/img/pantry.webp" alt="Four Rise Pantry volunteers in pink shirts beside shelves of supplies"></div>
+      <div class="badge float" style="background:var(--navy);color:#fff;right:4%;bottom:8%" data-pop>Fresh, healthy food</div>
+    </div>
+    <div class="stack" style="color:var(--navy)">
+      <div class="tag" data-fade><img src="/rise/img/logo-pantry.webp" alt="Rise Pantry"></div>
+      <h2 class="h2"><span class="ln"><span>Dignity, choice</span></span><span class="ln"><span>and community.</span></span></h2>
+      <p class="lede" data-fade style="opacity:.82">More than a building — a space where neighbors help neighbors and every family has access to fresh, healthy food.</p>
+      <div data-fade><div class="lab">Programs</div><div class="chips"><span class="chip">Families Understanding Nutrition (FUN)</span><span class="chip">Recipe of the Month</span><span class="chip">Community Dinners</span><span class="chip">Personal Care Packages</span><span class="chip">Thanksgiving Baskets</span><span class="chip">Community Partner Outreach &amp; Resource Table</span></div><div class="shelf"></div></div>
+      <div class="facts" data-fade><div><h4>Location</h4><p>133 Broad Street, Hightstown, NJ 08520</p></div><div><h4>Hours</h4><p>Mon · Wed · Fri: 9am–12pm<br>1st, 2nd &amp; 3rd Wed each month: 5pm–7pm</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 THRIFT -->
+<section class="slide place" data-label="03 · What we do — Where it happens" style="--bg:#BFDDF5">
+  <div class="bg" style="right:-8vw;top:-9vw;width:26vw;aspect-ratio:1;--d:-12"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#F7C32E"/></svg></div>
+  <div class="in two">
+    <div class="stack" style="color:var(--navy)">
+      <div class="tag" data-fade><img src="/rise/img/logo-thrift.webp" alt="Rise Thrift — shop for the greater good"><img src="/rise/img/logo-annex.webp" alt="Rise Thrift Annex" style="height:clamp(30px,5.4vh,52px)"></div>
+      <h2 class="h2"><span class="ln"><span>Great finds.</span></span><span class="ln"><span class="b">Greater good.</span></span></h2>
+      <p class="lede" data-fade style="opacity:.82;font-size:clamp(14px,min(1.4vw,2.6vh),21px)">Every donation and purchase supports Rise programs, extends the life of quality goods, and creates workforce development and community employment opportunities. The newly expanded Annex adds space for clothing, inventory and a more welcoming shopping experience.</p>
+      <div data-fade><div class="lab">Shop online</div><div class="chips"><span class="chip">Etsy</span><span class="chip">eBay</span></div></div>
+      <div class="facts" data-fade><div><h4>Location</h4><p>114 Rogers Ave, Hightstown, NJ 08520</p></div><div><h4>Hours</h4><p>Mon–Sat: 10am–7pm<br>Sun: 10am–4pm</p></div></div>
+    </div>
+    <div class="art">
+      <div class="ph rr" data-photo style="border-radius:24px 999px 24px 999px"><img src="/rise/img/thrift.webp" alt="Student volunteers in Rise Thrift aprons holding a thank-you sign"></div>
+      <div class="hang"><i class="str"></i><div class="pt">Shop for the greater good</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 URISE -->
+<section class="slide place" data-label="03 · What we do — Where it happens" data-theme="dark" style="--bg:var(--blue);--fg:#fff">
+  <div class="bg" style="right:-9vw;top:-10vw;width:30vw;aspect-ratio:1;--d:14"><svg viewBox="-100 -100 200 200" class="spin fast" data-ast="#2A8FD9"></svg></div>
+  <div class="in two flip">
+    <div class="art">
+      <div class="ph arch" data-photo style="border-radius:999px;aspect-ratio:1;height:auto;max-width:min(100%,64vh)"><img src="/rise/img/urise.webp" alt="uRise team members in blue shirts in front of a colorful mural"></div>
+      <div class="badge float" style="background:var(--sun);color:var(--navy);right:2%;top:8%" data-pop>Learn · Grow · Connect</div>
+    </div>
+    <div class="stack">
+      <div class="tag" data-fade><img src="/rise/img/logo-urise.webp" alt="uRise, powered by PenFed"></div>
+      <h2 class="h2"><span class="ln"><span>Skills, confidence</span></span><span class="ln"><span class="y">and connection.</span></span></h2>
+      <p class="lede" data-fade style="opacity:.9">A community learning campus where neighbors build skills, confidence, wellness and connection.</p>
+      <div data-fade><div class="lab">Opportunities</div><div class="chips"><span class="chip" style="--chip:rgba(255,255,255,.16);--chipfg:#fff">English Classes</span><span class="chip" style="--chip:rgba(255,255,255,.16);--chipfg:#fff">Youth Leadership</span><span class="chip" style="--chip:rgba(255,255,255,.16);--chipfg:#fff">Nutrition &amp; Wellness</span><span class="chip" style="--chip:rgba(255,255,255,.16);--chipfg:#fff">Financial Workshops</span><span class="chip" style="--chip:rgba(255,255,255,.16);--chipfg:#fff">Family-centered workshops</span><span class="chip" style="--chip:rgba(255,255,255,.16);--chipfg:#fff">Bilingual programming</span></div></div>
+      <div class="facts" data-fade><div><h4>Location</h4><p>116 N. Main Street, Hightstown, NJ 08520</p></div><div><h4>Hours</h4><p>Hours vary</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 WHO WE SERVE -->
+<section class="slide serve" data-label="04 · Who we serve" style="--bg:var(--cream)">
+  <div class="bg" style="left:-5vw;top:-6vw;width:24vw;aspect-ratio:1;--d:14"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#A8C050"/></svg></div>
+  <div class="in two flip">
+    <div class="art">
+      <div class="rw"><i class="rip"></i><i class="rip"></i><i class="rip"></i><div class="ph circle" data-photo><img src="/rise/img/family.webp" alt="A mother holding her baby beside her daughter, who carries a wrapped gift"></div></div>
+    </div>
+    <div class="stack">
+      <h2 class="h2" style="color:var(--navy)"><span class="ln"><span>Neighbors of</span></span><span class="ln"><span class="b">every age.</span></span></h2>
+      <p class="lede" data-fade style="color:var(--navy)">From children to seniors, with bilingual assistance and programming in English and Spanish.</p>
+      <div class="stats">
+        <div class="stat" data-pop style="--c:var(--orange);--f:var(--navy)"><div class="big"><span data-count="1173">1,173</span></div><span>Children served</span></div>
+        <div class="stat" data-pop style="--c:var(--teal);--f:#fff"><div class="big"><span data-count="392">392</span></div><span>Seniors served</span></div>
+        <div class="stat" data-pop style="--c:var(--blue);--f:#fff"><div class="big"><span data-count="4500">4,500</span>+</div><span>Individuals served</span></div>
+        <div class="stat" data-pop style="--c:var(--navy);--f:#fff"><div class="big"><span data-count="1300">1,300</span>+</div><span>Pantry families</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 DID YOU KNOW -->
+<section class="slide know" data-label="05 · Our impact in numbers" data-theme="dark" style="--bg:var(--navy);--fg:#fff">
+  <div class="bg" style="right:-12vw;top:34vh;width:24vw;aspect-ratio:1;--d:-12"><svg viewBox="-100 -100 200 200" data-sun class="spin"></svg></div>
+  <div class="in col">
+    <div class="stack" style="gap:clamp(18px,4vh,44px)">
+      <div class="kick" style="color:var(--orange)" data-fade>Did you know?</div>
+      <h2 class="h2" style="max-width:15em"><span class="ln"><span>Rise is the largest social</span></span><span class="ln"><span>service agency &amp; food pantry in</span></span><span class="ln"><span class="o">Eastern Mercer County.</span></span></h2>
+      <div class="nums">
+        <div class="num" data-fade style="--c:var(--orange)"><i></i><div class="big"><span data-count="429000">429,000</span>+</div><span>Food &amp; essentials distributed</span></div>
+        <div class="num" data-fade style="--c:var(--sun)"><i></i><div class="big"><span data-count="4500">4,500</span>+</div><span>Individuals served</span></div>
+        <div class="num" data-fade style="--c:var(--sky)"><i></i><div class="big"><span data-count="1300">1,300</span>+</div><span>Pantry families</span></div>
+        <div class="num" data-fade style="--c:var(--lime)"><i></i><div class="big"><span data-count="21000">21,000</span>+</div><span>Volunteer hours contributed</span></div>
+        <div class="num" data-fade style="--c:#fff"><i></i><div class="big"><span data-count="58">58</span>+</div><span>Years serving the community</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 IMPACT -->
+<section class="slide impact" data-label="05 · Our impact in numbers" style="--bg:var(--cream)">
+    <div class="in two">
+    <div class="stack" style="gap:clamp(8px,2vh,22px)">
+      <div class="kick" data-fade>Our impact together</div>
+      <h2 class="h3" data-fade style="color:var(--navy);font-size:clamp(20px,2.6vw,42px)">Making a difference in Eastern Mercer County</h2>
+      <div data-fade><div class="big mega"><span data-count="13827">13,827</span></div><div class="cap">pantry visits</div></div>
+      <div data-fade><div class="small" style="margin-bottom:4px">Nearly</div><div class="big mega o">$<span data-count="2.9" data-dec="1">2.9</span><em>million</em></div><div class="cap">in food distributed</div></div>
+    </div>
+    <div class="panel" data-pop>
+      <div class="kick" style="color:var(--navy);opacity:.6">People reached · Hover or tap a bar</div>
+      <ul class="bars">
+        <li style="--c:var(--blue);--w:100%"><div class="top"><span>Individuals served</span><span>4,500+</span></div><div class="track"><i></i></div></li>
+        <li style="--c:var(--orange);--w:28.9%"><div class="top"><span>Pantry families</span><span>1,300+</span></div><div class="track"><i></i></div></li>
+        <li style="--c:var(--sun);--w:26.1%"><div class="top"><span>Children served</span><span>1,173</span></div><div class="track"><i></i></div></li>
+        <li style="--c:var(--teal);--w:8.7%"><div class="top"><span>Seniors served</span><span>392</span></div><div class="track"><i></i></div></li>
+      </ul>
+      <p style="font-size:clamp(13px,1.2vw,17px);color:var(--navy)"><b class="b">Individuals served:</b> Neighbors who turned to Rise for support.</p>
+      <p class="small" style="color:var(--navy)">Figures as reported in the Rise Media Kit 2026. Groups may overlap.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 11 QUOTE -->
+<section class="slide quote" data-label="06 · Real stories" data-theme="dark" style="--bg:var(--blue);--fg:#fff">
+  <div class="bg" style="right:-10vw;top:-10vw;width:40vw;aspect-ratio:1;--d:16"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#1b80cc"/></svg></div>
+  <div class="bg" style="left:-8vw;bottom:-14vw;width:36vw;aspect-ratio:1;--d:-14"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#0e63a5"/></svg></div>
+  <div class="in col">
+    <svg class="mark" data-pop viewBox="0 0 64 48" aria-hidden="true"><path d="M0 48V27C0 11 8 2 24 0l2 8C17 10 13 15 13 22h13v26zM38 48V27C38 11 46 2 62 0l2 8c-9 2-13 7-13 14h13v26z"/></svg>
+    <blockquote data-words>Because of Rise I was able to raise and provide for my young children; they’ve both graduated now, thanks to Rise.</blockquote>
+    <cite data-fade>A Rise neighbor · Rise Pantry Focus Groups, February 2025</cite>
+  </div>
+</section>
+
+<!-- 12 VOICES -->
+<section class="slide voices" data-label="06 · Real stories" style="--bg:var(--cream)">
+  <div class="in col">
+    <div>
+      <h2 class="h2 b"><span class="ln"><span>Voices from the community</span></span></h2>
+      <div class="wall">
+        <div class="vq" data-pop style="--c:var(--blue);--f:#fff"><span>“Rise represents friendly guiding hand, a hand of support, and solidarity to offer help.”</span><em>Spanish</em></div>
+        <div class="vq" data-pop style="--c:var(--sun);--f:var(--navy)"><span>“Rise takes us by the hand and leads us through the different situations we may face.”</span><em>Spanish</em></div>
+        <div class="vq" data-pop style="--c:var(--navy);--f:#fff"><span>“Support, and that is what I feel when I come to Rise.”</span></div>
+        <div class="vq" data-pop style="--c:var(--orange);--f:var(--navy)"><span>“Rise makes me feel connected to the community.”</span></div>
+        <div class="vq" data-pop style="--c:var(--lime);--f:var(--navy)"><span>“Rise always helps people with open arms.”</span></div>
+        <div class="vq" data-pop style="--c:var(--teal);--f:#fff"><span>“Rise gives us support at just the right moment.”</span></div>
+        <div class="vq" data-pop style="--c:var(--pale);--f:var(--navy)"><span>“Rise helps meet many needs.”</span></div>
+        <div class="vq" data-pop style="--c:#fff;--f:var(--navy)"><span>“People are very friendly and helpful.”</span></div>
+      </div>
+      <p class="small src" data-fade style="color:var(--navy)">Source: Rise Pantry Focus Groups, February 2025</p>
+    </div>
+  </div>
+</section>
+
+<!-- 13 PARTNERSHIPS -->
+<section class="slide team" data-label="07 · Partnerships" style="--bg:#E4EBC4">
+  <div class="in two">
+    <div class="stack" style="color:var(--navy)">
+      <h2 class="h2"><span class="ln"><span>Impact is a <span class="b">team</span></span></span><span class="ln"><span class="b">sport.</span></span></h2>
+      <p class="lede" data-fade style="opacity:.8">Continued partnerships bring fresh, healthy food to the Rise Pantry.</p>
+      <div class="partners">
+        <div class="p" data-pop><i style="--c:var(--lime)"></i>Local farms</div>
+        <div class="p" data-pop><i style="--c:var(--orange)"></i>Food rescue organizations</div>
+        <div class="p" data-pop><i style="--c:var(--blue)"></i>Grocery retailers</div>
+        <div class="p" data-pop><i style="--c:var(--sun)"></i>Community donors</div>
+      </div>
+    </div>
+    <div class="collage">
+      <div class="ph c1 arch" data-photo><img src="/rise/img/truck.webp" alt="Boxes of food being unloaded from a car trunk" style="object-position:30% 50%"></div>
+      <div class="ph c2 circle" data-photo><img src="/rise/img/van.webp" alt="Volunteers sorting bags of food beside a van"></div>
+      <div class="ph c3 rr" data-photo style="border-radius:24px 24px 999px 24px"><img src="/rise/img/hat.webp" alt="A volunteer in an orange hat loading groceries" style="object-position:50% 40%"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 14 VOLUNTEERS -->
+<section class="slide vol" data-label="07 · Partnerships — Our volunteers" style="--bg:var(--orange)">
+  <div class="bg" style="left:-8vw;top:-8vw;width:26vw;aspect-ratio:1;--d:14"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#F7C32E"/></svg></div>
+  <div class="in two">
+    <div class="stack" style="color:var(--navy)">
+      <div class="big" style="color:#fff;font-size:clamp(64px,min(12vw,23vh),210px)"><span data-count="1700">1,700</span>+</div>
+      <h2 class="h3" style="font-size:clamp(22px,min(2.9vw,5.2vh),48px);max-width:14em;letter-spacing:-.035em;line-height:1.02" data-fade>volunteers contribute thousands of hours each year to help Rise strengthen the community.</h2>
+      <div class="crowd" data-crowd aria-hidden="true" data-fade></div>
+      <div class="row" data-fade><div class="big"><span data-count="21000">21,000</span>+</div><span>volunteer hours contributed</span></div>
+    </div>
+    <div class="mosaic">
+      <div class="ph m1" data-photo><img src="/rise/img/class.webp" alt="Volunteers helping children at tables in a classroom"></div>
+      <div class="ph m2" data-photo><img src="/rise/img/thriftguy.webp" alt="A Rise Thrift volunteer smiling while holding a stack of plates" style="object-position:40% 50%"></div>
+      <div class="ph m3" data-photo><img src="/rise/img/couple.webp" alt="Two Rise Pantry volunteers smiling together"></div>
+      <div class="ph m4" data-photo><img src="/rise/img/store.webp" alt="Aerial view of the Rise Thrift store floor"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 15 FUTURE -->
+<section class="slide next" data-label="08 · Future opportunities" style="--bg:var(--cream)">
+  <div class="bg" style="right:-6vw;top:-8vw;width:26vw;aspect-ratio:1;--d:14"><svg viewBox="-100 -100 200 200" class="spin fast" data-ast="#A8C050"></svg></div>
+  <div class="in col">
+    <div>
+      <h2 class="h2" style="color:var(--navy)"><span class="ln"><span>Where your support <span class="b">grows next.</span></span></span></h2>
+      <div class="cols">
+        <div class="col1" data-pop style="--c:var(--blue)"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#1370B8"/></svg><h3>Fresh food for every table</h3><p>Expand access to fresh produce, dairy, proteins and whole grains.</p></div>
+        <div class="col1" data-pop style="--c:var(--orange)"><svg viewBox="0 0 100 100"><path d="M0 90A50 50 0 0 1 100 90Z" fill="#EE7B30" transform="translate(0 -12)"/></svg><h3>Jobs and growth</h3><p>Grow the Thrift &amp; Annex stores that fund programs and create employment.</p></div>
+        <div class="col1" data-pop style="--c:var(--teal)"><svg viewBox="0 0 100 100"><rect x="6" y="6" width="88" height="88" rx="8" fill="#315B6A"/></svg><h3>Learning that lifts</h3><p>Power uRise classes in English, finance, wellness and youth leadership.</p></div>
+        <div class="col1" data-pop style="--c:var(--lime)"><svg viewBox="0 0 100 100"><path d="M50 2C60 30 70 40 98 50C70 60 60 70 50 98C40 70 30 60 2 50C30 40 40 30 50 2Z" fill="#A8C050"/></svg><h3>More hands</h3><p>Join 1,700+ volunteers turning neighbors into community.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 16 JOIN -->
+<section class="slide join" data-label="09 · Join us" data-theme="dark" style="--bg:var(--navy);--fg:#fff">
+  <div class="photobg"><img src="/rise/img/group.webp" alt="Rise staff and volunteers gathered together for a group photo"></div>
+  <svg class="rising spin" data-sun viewBox="-100 -100 200 200" aria-hidden="true"></svg>
+  <div class="in col">
+    <div class="stack" style="gap:clamp(18px,4vh,44px)">
+      <h2 class="h1"><span class="ln"><span>Together,</span></span><span class="ln"><span>we <span class="o">rise.</span></span></span></h2>
+      <div class="acts">
+        <a class="act" data-pop href="https://njrise.org" target="_blank" rel="noopener" style="--c:var(--sun);--f:var(--navy)"><b>Shop</b><span>Rise Thrift &amp; Annex, Etsy, eBay</span></a>
+        <a class="act" data-pop href="https://njrise.org" target="_blank" rel="noopener" style="--c:var(--orange);--f:var(--navy)"><b>Donate</b><span>Fuel food, learning and support</span></a>
+        <a class="act" data-pop href="https://njrise.org" target="_blank" rel="noopener" style="--c:var(--sky);--f:var(--navy)"><b>Volunteer</b><span>Give your time. Change a week.</span></a>
+        <a class="act" data-pop href="https://njrise.org" target="_blank" rel="noopener" style="--c:var(--lime);--f:var(--navy)"><b>Partner</b><span>Build impact with us</span></a>
+      </div>
+      <div class="contact" data-fade><a href="mailto:getintouch@njrise.org">getintouch@njrise.org</a><a href="https://njrise.org" target="_blank" rel="noopener">njrise.org</a><a href="tel:+16094434464">(609) 443-4464</a></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script src="/rise/gsap.min.js"></script>
+<script>
+(function(){
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasG = !!window.gsap;
+  if(!hasG) document.documentElement.classList.add('nogsap');
+  var NS='http://www.w3.org/2000/svg';
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  var N=slides.length, cur=0, busy=false;
+
+  /* ---- generated shapes ---- */
+  function el(n,a){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);return e}
+  // sunburst, echoing the mosaic sun above the Rise door
+  [].forEach.call(document.querySelectorAll('[data-sun]'),function(svg){
+    var rays=14;
+    for(var i=0;i<rays;i++){
+      var long=i%2===0, L=long?96:78, w=long?9:7;
+      var p=el('path',{d:'M0 -42Q'+w+' -'+((42+L)/2+4)+' 0 -'+L+'Q-'+w+' -'+((42+L)/2+4)+' 0 -42Z',fill:long?'#F7C32E':'#EE7B30',transform:'rotate('+(i*360/rays)+')'});
+      svg.appendChild(p);
+    }
+    svg.appendChild(el('circle',{r:44,fill:'#F7C32E'}));
+    svg.appendChild(el('circle',{r:33,fill:'#EE7B30'}));
+    svg.appendChild(el('circle',{r:20,fill:'#F7C32E'}));
+  });
+  // bold asterisk
+  [].forEach.call(document.querySelectorAll('[data-ast]'),function(svg){
+    var c=svg.getAttribute('data-ast');
+    for(var i=0;i<3;i++) svg.appendChild(el('rect',{x:-13,y:-96,width:26,height:192,rx:13,fill:c,transform:'rotate('+(i*60)+')'}));
+  });
+  // quote words
+  [].forEach.call(document.querySelectorAll('[data-words]'),function(b){
+    var t=b.textContent.trim().split(/\s+/);b.textContent='';
+    t.forEach(function(w,i){var o=document.createElement('span');o.className='w'+(/^graduated/.test(w)?' grad':'');var s=document.createElement('span');s.textContent=w;o.appendChild(s);b.appendChild(o);if(i<t.length-1)b.appendChild(document.createTextNode(' '))});
+  });
+
+  /* ---- HUD ---- */
+  var segs=document.getElementById('segs'), count=document.getElementById('count'), label=document.getElementById('label');
+  var hudEls=document.querySelectorAll('.hud');
+  slides.forEach(function(s,i){
+    var b=document.createElement('button');b.setAttribute('aria-label','Go to slide '+(i+1));
+    b.addEventListener('click',function(){go(i)});segs.appendChild(b);
+  });
+  function pad(n){return (n<10?'0':'')+n}
+  function hud(i,instant){
+    var s=slides[i], dark=s.getAttribute('data-theme')==='dark';
+    var bg=getComputedStyle(s).getPropertyValue('--bg').trim();
+    [].forEach.call(hudEls,function(h){h.style.setProperty('--hud',dark?'#fff':'#00285A');h.style.setProperty('--bgnow',dark?'#00285A':'#fff');h.setAttribute('data-theme',dark?'dark':'light')});
+    document.getElementById('bar').style.setProperty('--bgnow',bg||'#F3EEE1');
+    document.getElementById('logo').setAttribute('data-theme',dark?'dark':'light');
+    count.textContent=pad(i+1)+' / '+N;
+    label.textContent=s.getAttribute('data-label')||'';
+    [].forEach.call(segs.children,function(b,j){b.className=j<i?'done':(j===i?'cur':'')});
+    document.getElementById('prev').disabled=i===0;
+    document.getElementById('next').disabled=i===N-1;
+  }
+
+  /* ---- odometer numbers (big numbers roll up like a counter) ---- */
+  function fmt(v,dec){return v.toLocaleString('en-US',{minimumFractionDigits:dec,maximumFractionDigits:dec})}
+  [].forEach.call(document.querySelectorAll('[data-count]'),function(c){
+    var t=parseFloat(c.getAttribute('data-count')),dec=parseInt(c.getAttribute('data-dec')||'0',10),str=fmt(t,dec);
+    c.setAttribute('aria-label',str);c.textContent='';c.className+=' odo';
+    var cols=[];
+    str.split('').forEach(function(ch){
+      if(/\d/.test(ch)){
+        var d=+ch,od=document.createElement('span');od.className='od';od.setAttribute('aria-hidden','true');
+        var col=document.createElement('span');col.className='oc';
+        for(var r=0;r<20;r++){var i=document.createElement('i');i.textContent=r%10;col.appendChild(i)}
+        var to=-(10+d)*5;col.setAttribute('data-to',to);
+        if(hasG) gsap.set(col,{yPercent:to}); else col.style.transform='translateY('+to+'%)';
+        od.appendChild(col);c.appendChild(od);cols.push(col);
+      }else{var z=document.createElement('span');z.className='oz';z.setAttribute('aria-hidden','true');z.textContent=ch;c.appendChild(z)}
+    });
+    c._cols=cols;
+  });
+  // 58 ticks: one per year
+  [].forEach.call(document.querySelectorAll('[data-years]'),function(w){for(var i=0;i<58;i++)w.appendChild(document.createElement('i'))});
+  // a crowd of dots: the volunteers
+  [].forEach.call(document.querySelectorAll('[data-crowd]'),function(w){
+    var cs=['#00285A','#FFFFFF','#F7C32E','#00285A','#FFFFFF','#A8C050'];
+    for(var i=0;i<78;i++){var d=document.createElement('i');d.style.background=cs[(i*7)%cs.length];w.appendChild(d)}
+  });
+
+  var KEYS=['cover','needs','who','do','pantry','thrift','urise','serve','know','impact','quote','voices','team','vol','next','join'];
+  var SKIP={needs:'.bub',do:'.card',team:'.p',voices:'.vq',next:'.col1'};
+  var HOVERS='.bub,.card,.stat,.p,.col1,.vq,.act,.chip';
+
+  /* ---- confetti for "graduated" ---- */
+  function burst(node){
+    var r=node.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;
+    var cols=['#EE7B30','#F7C32E','#ffffff','#A8C050','#3BA0E6'];
+    for(var i=0;i<34;i++){
+      var d=document.createElement('i'),sz=7+Math.random()*9;
+      d.style.cssText='position:fixed;z-index:60;pointer-events:none;left:'+cx+'px;top:'+cy+'px;width:'+sz+'px;height:'+sz+'px;background:'+cols[i%cols.length]+';border-radius:'+(i%3===0?'50%':(i%3===1?'2px':'50% 50% 0 0'));
+      document.body.appendChild(d);
+      var ang=-Math.PI/2+(Math.random()-.5)*2.5,v=170+Math.random()*340;
+      gsap.timeline({onComplete:(function(el){return function(){el.remove()}})(d)})
+        .to(d,{x:Math.cos(ang)*v,y:Math.sin(ang)*v,rotation:Math.random()*540-270,duration:.75,ease:'power2.out'})
+        .to(d,{y:'+='+(320+Math.random()*260),opacity:0,duration:1.3,ease:'power2.in'},'>-0.05');
+    }
+  }
+
+  /* ---- entrances: every slide moves in a way that says what it says ---- */
+  function enter(s,delay){
+    if(!hasG||reduce) return;
+    var k=KEYS[slides.indexOf(s)];
+    var q=function(sel){return [].slice.call(s.querySelectorAll(sel))};
+    gsap.killTweensOf(s.querySelectorAll('*'));
+    var hv=q(HOVERS); if(hv.length) gsap.set(hv,{clearProps:'transform'});
+    s.classList.add('animating');
+    var tl=gsap.timeline({delay:delay,onComplete:function(){var h=q(HOVERS); if(h.length) gsap.set(h,{clearProps:'transform'}); s.classList.remove('animating')}});
+
+    var lines=q('.ln>span'); if(lines.length) tl.from(lines,{yPercent:115,duration:1,ease:'power4.out',stagger:.09},0);
+    var words=q('.w>span'); if(words.length) tl.from(words,{yPercent:115,rotate:4,duration:.8,ease:'power4.out',stagger:.035},.1);
+    var phSkip=k==='do'?'.ph':null;
+    q('[data-photo]').forEach(function(p,i){
+      if(phSkip&&p.matches(phSkip)) return;
+      tl.from(p,{clipPath:'inset(100% 0% 0% 0%)',duration:1.15,ease:'power4.inOut'},.05+i*.12);
+      tl.from(p.querySelector('img'),{scale:1.35,duration:1.6,ease:'power3.out'},.05+i*.12);
+    });
+    var skip=SKIP[k];
+    var pops=q('[data-pop]').filter(function(p){return !(skip&&p.matches(skip))});
+    if(pops.length) tl.from(pops,{scale:0,rotation:function(){return gsap.utils.random(-22,22)},duration:.9,ease:'back.out(1.7)',stagger:{each:.06,from:'random'}},.25);
+    var fades=q('[data-fade]'); if(fades.length) tl.from(fades,{y:26,opacity:0,duration:.8,ease:'power3.out',stagger:.09},.35);
+    q('.bars .track i').forEach(function(b,i){tl.from(b,{scaleX:0,transformOrigin:'left center',duration:1.3,ease:'power4.out'},.55+i*.1)});
+    // odometer: digits spin up, leftmost digit rolls longest
+    q('[data-count]').forEach(function(c,ci){
+      var n=c._cols.length;
+      c._cols.forEach(function(col,i){
+        tl.fromTo(col,{yPercent:0},{yPercent:parseFloat(col.getAttribute('data-to')),duration:1.3+(n-1-i)*.16,ease:'power3.inOut'},.45+ci*.08);
+      });
+    });
+
+    /* per-slide ideas */
+    if(k==='cover'){
+      var sun=q('.cover .sunbg'); if(sun.length) tl.from(sun,{yPercent:58,scale:.55,opacity:0,duration:2.4,ease:'power3.out'},.1); // the sun rises behind the doorway
+      var rule=q('.pressline i'); if(rule.length) tl.from(rule,{scaleX:0,duration:1,ease:'power3.out'},.9);
+    }
+    if(k==='needs'){ // needs never come one at a time: they all crash in together, then spread out
+      var bs=q('.bub'),gr=q('.needs .grid')[0].getBoundingClientRect(),cx=gr.left+gr.width/2,cy=gr.top+gr.height/2;
+      tl.from(bs,{y:function(){return -innerHeight*.75-Math.random()*140},rotation:function(){return gsap.utils.random(-50,50)},duration:1,ease:'bounce.out',stagger:.025},.2);
+      tl.from(bs,{x:function(i,t){var r=t.getBoundingClientRect();return (cx-(r.left+r.width/2))*.92},duration:1.5,ease:'power3.out',stagger:.025},.2);
+      tl.from(bs,{scale:1.18,duration:.5,ease:'power2.out',stagger:.025},.2);
+    }
+    if(k==='who'){ // 58 ticks: one for every year
+      var ticks=q('.years i'); if(ticks.length) tl.fromTo(ticks,{opacity:.14,scaleY:.35},{opacity:1,scaleY:1,transformOrigin:'50% 100%',duration:.35,ease:'back.out(3)',stagger:{each:1.75/58}},.45);
+    }
+    if(k==='do'){ // one door opens, many ways forward fan out of it
+      var ph=q('.do .ph')[0]; gsap.set(ph,{clearProps:'transform,opacity'});
+      var pr=ph.getBoundingClientRect(),pcx=pr.left+pr.width/2,pcy=pr.top+pr.height/2,cards=q('.card');
+      tl.from(ph,{rotationY:-88,transformPerspective:1500,transformOrigin:'left center',opacity:0,duration:1.4,ease:'power3.out'},.1);
+      tl.from(cards,{x:function(i,t){var r=t.getBoundingClientRect();return (pcx-(r.left+r.width/2))*.9},y:function(i,t){var r=t.getBoundingClientRect();return (pcy-(r.top+r.height/2))*.9},scale:.12,opacity:0,rotation:function(){return gsap.utils.random(-30,30)},duration:1.1,ease:'back.out(1.4)',stagger:.13},.8);
+    }
+    if(k==='pantry'){ // stocking the shelves
+      tl.from(q('.shelf'),{scaleX:0,transformOrigin:'left center',duration:1,ease:'power3.out'},.5);
+      tl.from(q('.chip'),{y:-170,opacity:0,duration:.9,ease:'bounce.out',stagger:.11},.6);
+    }
+    if(k==='thrift'){ // a price tag swings, finds slide along the rail
+      tl.from(q('.hang'),{rotation:42,transformOrigin:'50% 0%',duration:2.8,ease:'elastic.out(1,.26)'},.45);
+      tl.from(q('.chip'),{x:140,rotation:9,opacity:0,duration:.8,ease:'power3.out',stagger:.14},.7);
+    }
+    if(k==='urise'){ // skills build step by step
+      var ph2=q('.ph')[0]; if(ph2) tl.from(ph2,{scale:.4,duration:1.8,ease:'elastic.out(1,.6)'},.15);
+      tl.from(q('.chip'),{y:function(i){return 50+i*30},opacity:0,duration:.9,ease:'back.out(2.2)',stagger:.12},.6);
+    }
+    if(k==='know'){
+      tl.from(q('.num>i'),{scale:0,duration:.8,ease:'back.out(3)',stagger:.1},.3);
+    }
+    if(k==='quote'){ // a graduation, celebrated
+      var g=q('.w.grad')[0];
+      if(g){
+        tl.fromTo(g,{'--u':0},{'--u':1,duration:.8,ease:'power3.out'},1.9);
+        tl.call(function(){if(slides[cur]===s) burst(g)},null,1.95);
+      }
+    }
+    if(k==='voices'){ // voices speaking one after another
+      var vq=q('.vq');
+      vq.forEach(function(v,i){v.style.transformOrigin=i%2?'right bottom':'left bottom'});
+      tl.from(vq,{scale:0,rotation:function(i){return i%2?7:-7},opacity:0,duration:.8,ease:'back.out(2.2)',stagger:.18},.35);
+    }
+    if(k==='team'){ // partners come together from every side
+      tl.from(q('.p'),{x:function(i){return i%2?280:-280},y:function(i){return i<2?-150:150},rotation:function(i){return [-16,14,13,-11][i]},opacity:0,duration:1.15,ease:'back.out(1.5)',stagger:.12},.45);
+      tl.from(q('.c1'),{x:-190,duration:1.3,ease:'power3.out'},.1);
+      tl.from(q('.c2'),{y:-170,duration:1.3,ease:'power3.out'},.2);
+      tl.from(q('.c3'),{x:190,duration:1.3,ease:'power3.out'},.3);
+    }
+    if(k==='vol'){ // a crowd of hands joins in
+      tl.from(q('.crowd i'),{scale:0,duration:.5,ease:'back.out(3)',stagger:{amount:1.8,from:'random'}},.5);
+    }
+    if(k==='next'){ // support grows upward
+      tl.from(q('.col1'),{clipPath:'inset(74% 0% 0% 0%)',y:70,duration:1.15,ease:'power3.out',stagger:.15},.35);
+      tl.from(q('.col1 svg'),{scale:0,rotation:-90,duration:1.3,ease:'elastic.out(1,.5)',stagger:.15},.85);
+    }
+    if(k==='join'){
+      var rising=q('.rising'); if(rising.length) tl.from(rising,{yPercent:30,duration:2.4,ease:'power3.out'},.1);
+    }
+  }
+
+  /* ---- navigation: a sunrise wipe ---- */
+  function go(n,fromHash){
+    n=Math.max(0,Math.min(N-1,n));
+    if(n===cur||busy) return;
+    var dir=n>cur?1:-1, prev=slides[cur], next=slides[n];
+    cur=n; hud(n);
+    if(!fromHash) history.replaceState(null,'','#'+(n+1));
+    if(!hasG||reduce){prev.classList.remove('on');next.classList.add('on');next.scrollTop=0;return}
+    busy=true;
+    next.scrollTop=0;
+    prev.classList.remove('on');prev.classList.add('under');
+    next.classList.add('on');
+    var origin=dir>0?'50% 100%':'50% 0%';
+    gsap.fromTo(next,{clipPath:'circle(0% at '+origin+')'},{clipPath:'circle(150% at '+origin+')',duration:1.05,ease:'power3.inOut',onComplete:function(){
+      prev.classList.remove('under');gsap.set(next,{clearProps:'clipPath'});gsap.set(prev.querySelector('.in'),{clearProps:'all'});busy=false}});
+    gsap.to(prev.querySelector('.in'),{scale:.94,opacity:.35,duration:1.05,ease:'power2.inOut'});
+    enter(next,.5);
+  }
+  function step(d){go(cur+d)}
+  document.getElementById('next').addEventListener('click',function(){step(1)});
+  document.getElementById('prev').addEventListener('click',function(){step(-1)});
+
+  document.addEventListener('keydown',function(e){
+    if(e.metaKey||e.ctrlKey||e.altKey) return;
+    var k=e.key;
+    if(k==='ArrowRight'||k==='PageDown'||k===' '||k==='ArrowDown'){e.preventDefault();step(1)}
+    else if(k==='ArrowLeft'||k==='PageUp'||k==='ArrowUp'){e.preventDefault();step(-1)}
+    else if(k==='Home'){go(0)}else if(k==='End'){go(N-1)}
+  });
+  var wheelLock=0;
+  document.addEventListener('wheel',function(e){
+    var s=slides[cur];
+    if(s.scrollHeight>s.clientHeight+4){ // slide can scroll itself (small screens)
+      var atEnd=s.scrollTop+s.clientHeight>=s.scrollHeight-2, atTop=s.scrollTop<=0;
+      if(!((e.deltaY>0&&atEnd)||(e.deltaY<0&&atTop))) return;
+    }
+    var now=Date.now(); if(Math.abs(e.deltaY)<24||now<wheelLock) return;
+    wheelLock=now+1100; step(e.deltaY>0?1:-1);
+  },{passive:true});
+  var tx=0,ty=0;
+  document.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;ty=e.touches[0].clientY},{passive:true});
+  document.addEventListener('touchend',function(e){
+    var dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;
+    if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.4) step(dx<0?1:-1);
+  },{passive:true});
+
+  /* mouse parallax on background shapes */
+  if(!reduce&&window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+    document.addEventListener('mousemove',function(e){
+      var x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;
+      slides[cur].style.setProperty('--px',x.toFixed(3));slides[cur].style.setProperty('--py',y.toFixed(3));
+    });
+  }
+  /* bars: tap to highlight on touch */
+  [].forEach.call(document.querySelectorAll('.bars li'),function(li){li.addEventListener('click',function(){
+    var all=li.parentNode.children;[].forEach.call(all,function(o){o.style.opacity=o===li?1:.4});
+    setTimeout(function(){[].forEach.call(all,function(o){o.style.opacity=''})},1800);
+  })});
+
+  /* start (supports #n deep links) */
+  var h=parseInt((location.hash||'').slice(1),10);
+  var start=(h>=1&&h<=N)?h-1:0;
+  cur=start; slides[start].classList.add('on'); hud(start);
+  var go0=function(){enter(slides[start],.15)};
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(go0); else go0();
+})();
+</script>
+<script>
+// Rip protection (deterrent): blocks right-click, dragging media, copying and save/view-source shortcuts.
+// Contact details (email/phone links) and form fields can still be selected and copied.
+(function () {
+  var OK = 'input, textarea, [contenteditable], a[href^="mailto"], a[href^="tel"]';
+  function ok(n) { return n && n.closest && n.closest(OK); }
+  document.addEventListener('contextmenu', function (e) { if (!ok(e.target)) e.preventDefault(); });
+  document.addEventListener('dragstart', function (e) { if (e.target && /^(IMG|VIDEO|SVG|CANVAS|A)$/i.test(e.target.nodeName || '')) e.preventDefault(); });
+  ['copy', 'cut'].forEach(function (t) {
+    document.addEventListener(t, function (e) {
+      var s = window.getSelection && window.getSelection(), n = s && s.anchorNode;
+      if (n && n.nodeType === 3) n = n.parentNode;
+      if (!ok(n) && !ok(document.activeElement)) e.preventDefault();
+    });
+  });
+  document.addEventListener('keydown', function (e) {
+    var k = (e.key || '').toLowerCase();
+    if ((e.metaKey || e.ctrlKey) && (k === 's' || k === 'u' || k === 'p')) e.preventDefault();
+  });
+})();
+</script>
+</body>
+</html>
