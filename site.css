@@ -86,3 +86,4 @@ input, textarea, [contenteditable], a[href^="mailto"], a[href^="tel"] { -webkit-
   .lt { transition: bottom .45s cubic-bezier(.34, 1.56, .64, 1); }
   html:has(.tb.tb-on) .lt { bottom: 100px !important; }
 }
+.cue{animation:cueFade 1.6s ease-in-out infinite}@keyframes cueFade{45%,88%{background-color:#fff}}@media (prefers-reduced-motion:reduce){.cue{animation:none}}
