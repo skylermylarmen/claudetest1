@@ -73,52 +73,6 @@
   });
 })();
 
-// Rise portal: a calm glowing blue orb next to the Fiamma ember (bottom left),
-// opens the Rise presentation at /rise/. Soft breathing glow with ripples that spread outward.
-(function () {
-  if (/^\/(fiamma|rise)/.test(location.pathname)) return;
-  var css = document.createElement('style');
-  css.textContent =
-    '.rise-portal{position:fixed;left:52px;bottom:6px;z-index:9999;width:46px;height:46px;display:grid;place-items:center;text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:opacity .35s}' +
-    '.rise-portal.rp-hide{opacity:0;pointer-events:none}' +
-    '.rise-portal i{position:relative;display:block;width:13px;height:13px;border-radius:50%;background:radial-gradient(circle at 38% 34%,#eaf6ff 0,#7cc4ff 34%,#2a8fe8 70%,#1370b8 100%);box-shadow:0 0 5px 1px rgba(120,200,255,.95),0 0 14px 3px rgba(42,143,232,.7),0 0 28px 6px rgba(19,112,184,.4);animation:rpBreathe 3.8s ease-in-out infinite,rpFloat 7s ease-in-out infinite;transition:transform .5s cubic-bezier(.2,.7,.2,1)}' +
-    '.rise-portal i::before,.rise-portal i::after{content:"";position:absolute;inset:-1px;border-radius:50%;border:1.5px solid rgba(110,190,255,.85);opacity:0;animation:rpRing 3.8s ease-out infinite}' +
-    '.rise-portal i::after{animation-delay:1.9s}' +
-    '.rise-portal span{position:absolute;left:-6px;bottom:62px;white-space:nowrap;font:500 11px/1 ui-monospace,Menlo,monospace;letter-spacing:.18em;text-transform:uppercase;color:#3ba0ff;opacity:0;transform:translateY(6px);transition:opacity .5s,transform .5s;pointer-events:none}' +
-    '.rise-portal:hover i,.rise-portal:focus-visible i{transform:scale(1.45)}' +
-    '.rise-portal:hover span,.rise-portal:focus-visible span{opacity:1;transform:none}' +
-    '@keyframes rpBreathe{0%,100%{filter:brightness(1)}50%{filter:brightness(1.35)}}' +
-    '@keyframes rpFloat{0%,100%{translate:0 0}50%{translate:0 -4px}}' +
-    '@keyframes rpRing{0%{transform:scale(1);opacity:.85}100%{transform:scale(3.6);opacity:0}}' +
-    '.rise-wash{position:fixed;inset:0;z-index:10000;pointer-events:none;background:radial-gradient(circle at 75px calc(100% - 29px),#7cc4ff,#1370b8 38%,#00285a 80%);clip-path:circle(0 at 75px calc(100% - 29px));transition:clip-path 1.1s cubic-bezier(.6,.05,.3,1)}' +
-    '.rise-wash.go{clip-path:circle(150% at 75px calc(100% - 29px))}' +
-    '@media (prefers-reduced-motion: reduce){.rise-portal i,.rise-portal i::before,.rise-portal i::after{animation:none}}';
-  document.head.appendChild(css);
-  function add() {
-    var a = document.createElement('a');
-    a.className = 'rise-portal'; a.href = '/rise/'; a.setAttribute('aria-label', 'Open the Rise presentation');
-    a.innerHTML = '<i></i><span>Rise →</span>';
-    function u() {
-      var d = document.documentElement, y = window.pageYOffset || d.scrollTop || 0;
-      a.classList.toggle('rp-hide', (window.innerHeight + y) >= (Math.max(d.scrollHeight, document.body.scrollHeight) - 120));
-    }
-    window.addEventListener('scroll', u, { passive: true }); window.addEventListener('resize', u); setInterval(u, 200); u();
-    a.addEventListener('click', function (e) {
-      if (e.metaKey || e.ctrlKey || e.shiftKey) return;
-      e.preventDefault();
-      var w = document.createElement('div'); w.className = 'rise-wash'; document.body.appendChild(w);
-      requestAnimationFrame(function () { requestAnimationFrame(function () { w.classList.add('go'); }); });
-      setTimeout(function () { location.href = '/rise/'; }, 1000);
-    });
-    document.body.appendChild(a);
-  }
-  if (document.body) add(); else document.addEventListener('DOMContentLoaded', add);
-  // Coming back with the browser's back button: clear the glow wash
-  window.addEventListener('pageshow', function () {
-    document.querySelectorAll('.rise-wash').forEach(function (w) { w.remove(); });
-  });
-})();
-
 (function () {
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   // Gentle 3D tilt on gallery cards (mouse only, skipped when motion is off)
@@ -144,7 +98,7 @@
   document.addEventListener('click', function (e) {
     if (reduce || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     var a = e.target.closest && e.target.closest('a[href]');
-    if (!a || a.target === '_blank' || a.hasAttribute('download') || a.classList.contains('ember-portal') || a.classList.contains('rise-portal')) return;
+    if (!a || a.target === '_blank' || a.hasAttribute('download') || a.classList.contains('ember-portal')) return;
     var u; try { u = new URL(a.href, location.href); } catch (err) { return; }
     if (u.origin !== location.origin || /^\/(fiamma|rise)/.test(u.pathname) || /\.(pdf|png|jpe?g|webp|zip)$/i.test(u.pathname)) return;
     if (u.pathname === location.pathname) return; // same page (anchors, back to top)
