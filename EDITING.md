@@ -24,6 +24,7 @@ Small text fixes can still be made directly in these files (below), but the next
 | Portfolios | `portfolios.html` |
 | Fiamma pitch presentation (private, not indexed) | `fiamma/index.html` (images in `fiamma/ref/`) |
 | Rise presentation (private, not indexed, animated deck) | `rise/index.html` (photos and logos in `rise/img/`, animation engine `rise/gsap.min.js`) |
+| Art section (bottom of Portfolios; images in `img/art/`, HTML in `tools/art-section.html`, re-added on every export) | `portfolios.html` |
 | Project pages | `work-reverra.html`, `work-mtrx.html`, `work-zlushy.html`, `work-amazingbotanicals.html`, `work-xomox.html`, `work-faceallies.html`, `work-highrollers.html`, `work-ironsky.html`, `work-farrahmoan.html`, `work-kronton.html`, `work-jive.html`, `work-neuromancer.html`, `work-cornucopia.html`, `work-bioloft.html` |
 
 ## Quick edits on github.com (no tools needed)
@@ -43,7 +44,7 @@ All images are in `img/v2/`. A new image you add on the canvas needs to be copie
 ## Design controls (on the canvas)
 
 - **Which home page is live:** on **Home D**, Tweaks › Live site › "Live site home page" (A, B or D). Then ask Claude to re-export and push.
-- **Home switcher button:** the faint flashing button next to the logo on each home cycles A → B → D, so you can show clients all three.
+- **Home switcher button:** removed. Home A, B and D still exist as pages (`home-a.html`, `home-b.html`, `home-d.html`) but nothing on the site links between them. The export tool strips the button if it is still in the canvas.
 - **Let's talk button:** tweak it on **Home D**. Every other page copies Home D's settings automatically.
 - **Gallery image position:** on **Home A**, under "Preview images (sitewide)":
   - "<Project> crop" moves an image **up/down**.

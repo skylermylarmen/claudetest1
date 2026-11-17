@@ -46,9 +46,18 @@ def convert(name, slug):
         n, hash_ = m.group(1), m.group(2) or ''
         return 'href="' + ('index.html' if n in HOMES.values() else PAGES.get(n, n) + '.html') + hash_ + '"'
     # the home switcher button goes to the next home's own page, not the front page
-    t = re.sub(r'class="hsw" href="([A-Za-z0-9-]+)\.dc\.html"', lambda m: 'class="hsw" href="' + PAGES[m.group(1)] + '.html"', t)
+    # the home switcher button was removed from the live site: strip it (and its CSS) so a re-export doesn't bring it back
+    t = re.sub(r'<a class="hsw".*?</a>\n?', '', t, flags=re.S)
+    t = re.sub(r'\.hsw\{[^\n]*?@media \(prefers-reduced-motion:reduce\)\{\.hsw\{animation:none;opacity:\.25\}\}', '', t)
     t = re.sub(r'href="([A-Za-z0-9-]+)\.dc\.html(#[^"]*)?"', link, t)
     t = t.replace('<script src="./support.js"></script>', '<script src="support.js"></script>')
+    # Art section at the bottom of Portfolios (lives in the repo, not the canvas): re-inject on every export
+    if slug == 'portfolios' and 'id="art"' not in t:
+        here = os.path.dirname(os.path.abspath(__file__))
+        art = open(os.path.join(here, 'art-section.html')).read()
+        art_css = open(os.path.join(here, 'art-section.css')).read()
+        t = t.replace('</section>\n</main>', '</section>\n' + art + '</main>', 1)
+        t = t.replace('.fig img{display:block;width:100%;height:100%}', '.fig img{display:block;width:100%;height:100%}\n' + art_css.strip(), 1)
     title = 'Skyler Kapel — Design' if slug in ('index', 'home-a', 'home-b', 'home-d') else TITLES.get(slug, re.search(r'<title>([^<]*)</title>', t).group(1)) + ' — Skyler Kapel'
     t = re.sub(r'<title>[^<]*</title>', '<title>' + html.escape(title) + '</title>', t, count=1)
     t = t.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n' + head(slug, title), 1)

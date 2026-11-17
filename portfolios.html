@@ -92,6 +92,7 @@ a{color:inherit}a:hover{color:#ED217C}
 .libp .num{left:4px;top:4px;padding:3px 7px;font-size:11px}
 .num{position:absolute;left:8px;top:8px;z-index:2;padding:5px 10px;border-radius:999px;background:#ED217C;color:#fff;font-size:12px;font-weight:700;letter-spacing:.04em;pointer-events:none}
 .fig img{display:block;width:100%;height:100%}
+.agrid{grid-template-columns:repeat(3,minmax(0,1fr))}.agrid .aw{grid-column:1/-1}@media (max-width:760px){.agrid{grid-template-columns:minmax(0,1fr)!important;gap:8px!important}}
 .blk{display:flex;flex-direction:column;gap:10px;width:100%;margin:0 auto}
 .pn{all:unset;box-sizing:border-box;cursor:pointer;width:48px;height:48px;border:1.5px solid currentColor;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;transition:background .2s,color .2s}
 .pn:hover,.pn:focus-visible{background:#ED217C;border-color:#ED217C;color:#fff}
@@ -276,6 +277,15 @@ a{color:inherit}a:hover{color:#ED217C}
 <figure style="aspect-ratio: 612 / 792"><img src="/_blob/775ea6d206a3a2e7236884345420a0f0" alt="Resume, page 53" loading="lazy" style="object-fit: cover"></figure>
 </div>
 </section>
+</section>
+<section id="art" style="display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px"><h2 class="h" style="margin: 0; font-size: 56px">Art</h2><span class="b lbl mut" style="font-size: 12px">3D &amp; digital · 4 pieces</span></div>
+<div class="fig agrid">
+<figure style="aspect-ratio: 4 / 5"><img src="img/art/art-1-red-serpent.webp" width="1200" height="1500" alt="Red and chrome serpent coiled above a glowing sphere, 3D render" loading="lazy" style="object-fit: cover"></figure>
+<figure style="aspect-ratio: 4 / 5"><img src="img/art/art-2-copper-figures.webp" width="1200" height="1500" alt="Spiral of copper and pale human figures, 3D render" loading="lazy" style="object-fit: cover"></figure>
+<figure style="aspect-ratio: 4 / 5"><img src="img/art/art-3-smiling-orb.webp" width="1380" height="1725" alt="Smiling black orb in a metal cage inside a furred landscape, 3D render" loading="lazy" style="object-fit: cover"></figure>
+<figure class="aw" style="aspect-ratio: 16 / 9"><img src="img/art/art-4-halo-creature.webp" width="2000" height="1125" alt="Giant haloed creature towering over a city at night, 3D render" loading="lazy" style="object-fit: cover"></figure>
+</div>
 </section>
 </main>
 <sc-if value="{{bk.open}}" hint-placeholder-val="{{ false }}">
