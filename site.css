@@ -87,3 +87,6 @@ input, textarea, [contenteditable], a[href^="mailto"], a[href^="tel"] { -webkit-
   html:has(.tb.tb-on) .lt { bottom: 100px !important; }
 }
 .cue{animation:cueFade 1.6s ease-in-out infinite}@keyframes cueFade{45%,88%{background-color:#fff}}@media (prefers-reduced-motion:reduce){.cue{animation:none}}
+
+/* nav item colors: Art */
+.c-yellow{color:#E8B100}

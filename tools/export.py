@@ -51,13 +51,10 @@ def convert(name, slug):
     t = re.sub(r'\.hsw\{[^\n]*?@media \(prefers-reduced-motion:reduce\)\{\.hsw\{animation:none;opacity:\.25\}\}', '', t)
     t = re.sub(r'href="([A-Za-z0-9-]+)\.dc\.html(#[^"]*)?"', link, t)
     t = t.replace('<script src="./support.js"></script>', '<script src="support.js"></script>')
-    # Art section at the bottom of Portfolios (lives in the repo, not the canvas): re-inject on every export
-    if slug == 'portfolios' and 'id="art"' not in t:
-        here = os.path.dirname(os.path.abspath(__file__))
-        art = open(os.path.join(here, 'art-section.html')).read()
-        art_css = open(os.path.join(here, 'art-section.css')).read()
-        t = t.replace('</section>\n</main>', '</section>\n' + art + '</main>', 1)
-        t = t.replace('.fig img{display:block;width:100%;height:100%}', '.fig img{display:block;width:100%;height:100%}\n' + art_css.strip(), 1)
+    # Art is a main-menu page that lives in the repo (art.html), not in the canvas: add its menu link after Portfolios on every export
+    if 'class="nv" href="art.html"' not in t:
+        t = re.sub(r'(<a class="nv" href="portfolios\.html"[^>]*>.*?</a>\n)',
+                   lambda m: m.group(1) + '<a class="nv" href="art.html"><span class="nv-s">Art</span><span class="nv-l c-yellow" aria-hidden="true"><span>Art&nbsp;Art&nbsp;Art&nbsp;Art&nbsp;Art&nbsp;Art&nbsp;</span></span></a>\n', t, count=1, flags=re.S)
     title = 'Skyler Kapel — Design' if slug in ('index', 'home-a', 'home-b', 'home-d') else TITLES.get(slug, re.search(r'<title>([^<]*)</title>', t).group(1)) + ' — Skyler Kapel'
     t = re.sub(r'<title>[^<]*</title>', '<title>' + html.escape(title) + '</title>', t, count=1)
     t = t.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n' + head(slug, title), 1)
