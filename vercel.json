@@ -50,6 +50,18 @@
       "destination": "/img/v2/d72bc965863f6444c62ae1aa4456091b.mp4"
     },
     {
+      "source": "/_blob/f0ae652a4ad56b472799969b97ca8822",
+      "destination": "/img/v2/f0ae652a4ad56b472799969b97ca8822.mp4"
+    },
+    {
+      "source": "/_blob/38fb01acea9250371eceb1f19164cb7f",
+      "destination": "/img/v2/38fb01acea9250371eceb1f19164cb7f.mp4"
+    },
+    {
+      "source": "/_blob/2231c0017eb3005d1b49b858ce9d1e68",
+      "destination": "/img/v2/2231c0017eb3005d1b49b858ce9d1e68.mp4"
+    },
+    {
       "source": "/_blob/:id",
       "destination": "/img/v2/:id.webp"
     }
