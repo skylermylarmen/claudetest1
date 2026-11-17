@@ -3,6 +3,9 @@
 // Fiamma portal: a small flickering ember, always on screen (bottom left),
 // that opens the Fiamma presentation at /fiamma/.
 (function () {
+  // Set to true to bring the ember back on every page.
+  var SHOW_EMBER = false;
+  if (!SHOW_EMBER) return;
   if (/^\/(fiamma|rise)/.test(location.pathname)) return;
   var css = document.createElement('style');
   css.textContent =
